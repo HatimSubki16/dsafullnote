@@ -1,0 +1,4045 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive DSA study page generated from the provided lecture slides.">
+  <title>DSA Study Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-copy">
+      <p class="eyebrow">CSEB3213 DSA Study Hub</p>
+      <h1>Data Structures and Algorithms</h1>
+      <div class="meta-strip" aria-label="Study guide summary">
+        <span>12 sections</span>
+        <span>116 subtopics</span>
+        <span>Static GitHub Pages</span>
+      </div>
+    </div>
+    <img src="assets/dsa-map.png" alt="Visual map of stacks, linked lists, trees, and graphs.">
+  </header>
+
+  <main>
+    <section class="study-console" aria-label="Interactive content">
+      <div class="console-toolbar">
+        <label class="search-box">
+          <span>Search</span>
+          <input id="topicSearch" type="search" placeholder="linked list, stack, tree, sorting...">
+        </label>
+        <button type="button" class="reset-button" id="resetFilters">All topics</button>
+      </div>
+      <div class="chapter-tabs" id="chapterTabs">
+        <button type="button" class="chapter-tab" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl">Ch. 1: Abstract Data Type and Introduction to STL</button>
+<button type="button" class="chapter-tab" data-chapter="chapter-2-complexity-analysis">Ch. 2: Complexity Analysis</button>
+<button type="button" class="chapter-tab" data-chapter="chapter-3-linked-lists-part-1">Ch. 3: Linked Lists, Part 1</button>
+<button type="button" class="chapter-tab" data-chapter="chapter-3-linked-lists-part-2">Ch. 3: Linked Lists, Part 2</button>
+<button type="button" class="chapter-tab" data-chapter="chapter-4-stacks">Ch. 4: Stacks</button>
+<button type="button" class="chapter-tab" data-chapter="chapter-5-queues">Ch. 5: Queues</button>
+<button type="button" class="chapter-tab" data-chapter="chapter-6-tree-part-1">Ch. 6: Tree, Part 1</button>
+<button type="button" class="chapter-tab" data-chapter="chapter-6-tree-part-2">Ch. 6: Tree, Part 2</button>
+<button type="button" class="chapter-tab" data-chapter="chapter-7-graph">Ch. 7: Graph</button>
+<button type="button" class="chapter-tab" data-chapter="chapter-8-sorting">Ch. 8: Sorting</button>
+<button type="button" class="chapter-tab" data-chapter="chapter-9-searching">Ch. 9: Searching</button>
+<button type="button" class="chapter-tab" data-chapter="exam-focused-master-checklist">Exam-Focused Master Checklist</button>
+      </div>
+      <div class="subtopic-grid" id="subtopicGrid">
+        <button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-learning-targets" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>Learning Targets</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-1-data-structure" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.1 Data Structure</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-2-core-data-operations" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.2 Core Data Operations</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-3-adt-abstract-data-type" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.3 ADT: Abstract Data Type</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-4-adt-example-stack" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.4 ADT Example: Stack</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-5-stl-standard-template-library" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.5 STL: Standard Template Library</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-6-stl-containers" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.6 STL Containers</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-7-stl-iterators" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.7 STL Iterators</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-8-stl-algorithms" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.8 STL Algorithms</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-9-vector-code-segments" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.9 Vector Code Segments</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-learning-targets" data-chapter="chapter-2-complexity-analysis"><span>Learning Targets</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-1-computational-and-asymptotic-complexity" data-chapter="chapter-2-complexity-analysis"><span>2.1 Computational and Asymptotic Complexity</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-2-performance-vs-complexity" data-chapter="chapter-2-complexity-analysis"><span>2.2 Performance vs Complexity</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-3-big-o-notation" data-chapter="chapter-2-complexity-analysis"><span>2.3 Big O Notation</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-4-how-to-determine-big-o" data-chapter="chapter-2-complexity-analysis"><span>2.4 How to Determine Big O</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-5-o-1-constant-time" data-chapter="chapter-2-complexity-analysis"><span>2.5 O(1): Constant Time</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-6-o-n-linear-time" data-chapter="chapter-2-complexity-analysis"><span>2.6 O(n): Linear Time</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-7-o-n-2-quadratic-time" data-chapter="chapter-2-complexity-analysis"><span>2.7 O(n^2): Quadratic Time</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-8-o-log-n-logarithmic-time" data-chapter="chapter-2-complexity-analysis"><span>2.8 O(log n): Logarithmic Time</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-9-o-n-log-n-linearithmic-time" data-chapter="chapter-2-complexity-analysis"><span>2.9 O(n log n): Linearithmic Time</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-learning-targets" data-chapter="chapter-3-linked-lists-part-1"><span>Learning Targets</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-1-why-linked-lists" data-chapter="chapter-3-linked-lists-part-1"><span>3.1 Why Linked Lists?</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-2-what-is-a-linked-list" data-chapter="chapter-3-linked-lists-part-1"><span>3.2 What Is a Linked List?</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-3-advantages-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1"><span>3.3 Advantages of Linked Lists</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-4-limitations-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1"><span>3.4 Limitations of Linked Lists</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-5-array-vs-linked-list" data-chapter="chapter-3-linked-lists-part-1"><span>3.5 Array vs Linked List</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-6-types-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1"><span>3.6 Types of Linked Lists</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-7-singly-linked-list" data-chapter="chapter-3-linked-lists-part-1"><span>3.7 Singly Linked List</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-8-basic-singly-linked-list-operations" data-chapter="chapter-3-linked-lists-part-1"><span>3.8 Basic Singly Linked List Operations</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-9-singly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-1"><span>3.9 Singly Linked List Node Creation</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-10-singly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-1"><span>3.10 Singly Linked List Insertion: Empty List</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-11-singly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-1"><span>3.11 Singly Linked List Insertion: End</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-12-singly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-1"><span>3.12 Singly Linked List Insertion: Beginning</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-13-singly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-1"><span>3.13 Singly Linked List Insertion: Middle</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-14-singly-linked-list-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1"><span>3.14 Singly Linked List with Tail Pointer</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-15-singly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-1"><span>3.15 Singly Linked List Deletion: Beginning</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-16-singly-linked-list-deletion-middle-by-value" data-chapter="chapter-3-linked-lists-part-1"><span>3.16 Singly Linked List Deletion: Middle by Value</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-17-singly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-1"><span>3.17 Singly Linked List Deletion: End</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-18-deletion-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1"><span>3.18 Deletion with Tail Pointer</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-19-singly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-1"><span>3.19 Singly Linked List Traversal</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-20-singly-linked-list-update" data-chapter="chapter-3-linked-lists-part-1"><span>3.20 Singly Linked List Update</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-21-singly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-1"><span>3.21 Singly Linked List Reversal</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-22-doubly-linked-list" data-chapter="chapter-3-linked-lists-part-2"><span>3.22 Doubly Linked List</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-23-doubly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-2"><span>3.23 Doubly Linked List Node Creation</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-24-doubly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-2"><span>3.24 Doubly Linked List Insertion: Empty List</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-25-doubly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-2"><span>3.25 Doubly Linked List Insertion: End</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-26-doubly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-2"><span>3.26 Doubly Linked List Insertion: Beginning</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-27-doubly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-2"><span>3.27 Doubly Linked List Insertion: Middle</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-28-doubly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-2"><span>3.28 Doubly Linked List Deletion: Beginning</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-29-doubly-linked-list-deletion-middle" data-chapter="chapter-3-linked-lists-part-2"><span>3.29 Doubly Linked List Deletion: Middle</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-30-doubly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-2"><span>3.30 Doubly Linked List Deletion: End</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-31-doubly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-2"><span>3.31 Doubly Linked List Traversal</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-32-doubly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-2"><span>3.32 Doubly Linked List Reversal</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-33-doubly-linked-list-advantages" data-chapter="chapter-3-linked-lists-part-2"><span>3.33 Doubly Linked List Advantages</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-34-doubly-linked-list-disadvantages" data-chapter="chapter-3-linked-lists-part-2"><span>3.34 Doubly Linked List Disadvantages</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-learning-targets" data-chapter="chapter-4-stacks"><span>Learning Targets</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-1-what-is-a-stack" data-chapter="chapter-4-stacks"><span>4.1 What Is a Stack?</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-2-stack-implementation-methods" data-chapter="chapter-4-stacks"><span>4.2 Stack Implementation Methods</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-3-stl-stack" data-chapter="chapter-4-stacks"><span>4.3 STL Stack</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-4-linked-list-stack" data-chapter="chapter-4-stacks"><span>4.4 Linked List Stack</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-5-stack-applications" data-chapter="chapter-4-stacks"><span>4.5 Stack Applications</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-6-balanced-parentheses-algorithm" data-chapter="chapter-4-stacks"><span>4.6 Balanced Parentheses Algorithm</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-7-infix-to-postfix-conversion" data-chapter="chapter-4-stacks"><span>4.7 Infix to Postfix Conversion</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-8-postfix-evaluation" data-chapter="chapter-4-stacks"><span>4.8 Postfix Evaluation</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-5-queues-learning-targets" data-chapter="chapter-5-queues"><span>Learning Targets</span><small>Ch. 5: Queues</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-5-queues-5-1-what-is-a-queue" data-chapter="chapter-5-queues"><span>5.1 What Is a Queue?</span><small>Ch. 5: Queues</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-5-queues-5-2-stl-queue" data-chapter="chapter-5-queues"><span>5.2 STL Queue</span><small>Ch. 5: Queues</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-5-queues-5-3-linked-list-queue" data-chapter="chapter-5-queues"><span>5.3 Linked List Queue</span><small>Ch. 5: Queues</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-5-queues-5-4-queue-applications" data-chapter="chapter-5-queues"><span>5.4 Queue Applications</span><small>Ch. 5: Queues</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-learning-targets" data-chapter="chapter-6-tree-part-1"><span>Learning Targets</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-1-what-is-a-tree" data-chapter="chapter-6-tree-part-1"><span>6.1 What Is a Tree?</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-2-types-of-tree-data-structures" data-chapter="chapter-6-tree-part-1"><span>6.2 Types of Tree Data Structures</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-3-tree-terminology" data-chapter="chapter-6-tree-part-1"><span>6.3 Tree Terminology</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-4-binary-tree" data-chapter="chapter-6-tree-part-1"><span>6.4 Binary Tree</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-5-binary-tree-types-and-formulas" data-chapter="chapter-6-tree-part-1"><span>6.5 Binary Tree Types and Formulas</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-6-binary-search-tree" data-chapter="chapter-6-tree-part-1"><span>6.6 Binary Search Tree</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-7-bst-insertion" data-chapter="chapter-6-tree-part-1"><span>6.7 BST Insertion</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-8-bst-deletion" data-chapter="chapter-6-tree-part-1"><span>6.8 BST Deletion</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-9-expression-tree" data-chapter="chapter-6-tree-part-2"><span>6.9 Expression Tree</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-10-tree-traversal" data-chapter="chapter-6-tree-part-2"><span>6.10 Tree Traversal</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-11-bfs-breadth-first-traversal" data-chapter="chapter-6-tree-part-2"><span>6.11 BFS: Breadth First Traversal</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-12-dfs-traversals" data-chapter="chapter-6-tree-part-2"><span>6.12 DFS Traversals</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-13-binary-postfix-postorder-on-expression-tree" data-chapter="chapter-6-tree-part-2"><span>6.13 Binary Postfix: Postorder on Expression Tree</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-14-tree-linked-list-implementation" data-chapter="chapter-6-tree-part-2"><span>6.14 Tree Linked List Implementation</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-15-bst-search" data-chapter="chapter-6-tree-part-2"><span>6.15 BST Search</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-16-tree-summary" data-chapter="chapter-6-tree-part-2"><span>6.16 Tree Summary</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-7-graph-learning-targets" data-chapter="chapter-7-graph"><span>Learning Targets</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-1-what-is-a-graph" data-chapter="chapter-7-graph"><span>7.1 What Is a Graph?</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-2-graph-applications" data-chapter="chapter-7-graph"><span>7.2 Graph Applications</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-3-graph-types" data-chapter="chapter-7-graph"><span>7.3 Graph Types</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-4-graph-representation-adjacency-list" data-chapter="chapter-7-graph"><span>7.4 Graph Representation: Adjacency List</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-5-graph-representation-adjacency-matrix" data-chapter="chapter-7-graph"><span>7.5 Graph Representation: Adjacency Matrix</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-6-dijkstra-s-shortest-path-algorithm" data-chapter="chapter-7-graph"><span>7.6 Dijkstra&#x27;s Shortest Path Algorithm</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-7-spanning-tree" data-chapter="chapter-7-graph"><span>7.7 Spanning Tree</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-8-kruskal-s-algorithm" data-chapter="chapter-7-graph"><span>7.8 Kruskal&#x27;s Algorithm</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-learning-targets" data-chapter="chapter-8-sorting"><span>Learning Targets</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-1-what-is-sorting" data-chapter="chapter-8-sorting"><span>8.1 What Is Sorting?</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-2-insertion-sort" data-chapter="chapter-8-sorting"><span>8.2 Insertion Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-3-selection-sort" data-chapter="chapter-8-sorting"><span>8.3 Selection Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-4-bubble-sort" data-chapter="chapter-8-sorting"><span>8.4 Bubble Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-5-heap-sort" data-chapter="chapter-8-sorting"><span>8.5 Heap Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-6-quick-sort" data-chapter="chapter-8-sorting"><span>8.6 Quick Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-7-merge-sort" data-chapter="chapter-8-sorting"><span>8.7 Merge Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-learning-targets" data-chapter="chapter-9-searching"><span>Learning Targets</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-1-what-is-searching" data-chapter="chapter-9-searching"><span>9.1 What Is Searching?</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-2-types-of-searching" data-chapter="chapter-9-searching"><span>9.2 Types of Searching</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-3-sequential-search" data-chapter="chapter-9-searching"><span>9.3 Sequential Search</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-4-binary-search" data-chapter="chapter-9-searching"><span>9.4 Binary Search</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-5-hashing" data-chapter="chapter-9-searching"><span>9.5 Hashing</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-6-requirements-of-a-good-hash-function" data-chapter="chapter-9-searching"><span>9.6 Requirements of a Good Hash Function</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-7-hashing-functions" data-chapter="chapter-9-searching"><span>9.7 Hashing Functions</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-8-collision" data-chapter="chapter-9-searching"><span>9.8 Collision</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-9-linear-probing" data-chapter="chapter-9-searching"><span>9.9 Linear Probing</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-10-quadratic-probing" data-chapter="chapter-9-searching"><span>9.10 Quadratic Probing</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-11-chaining" data-chapter="chapter-9-searching"><span>9.11 Chaining</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-12-double-hashing" data-chapter="chapter-9-searching"><span>9.12 Double Hashing</span><small>Ch. 9: Searching</small></button>
+      </div>
+    </section>
+
+    <div class="content-layout">
+      <aside class="quick-map" aria-label="Chapter map">
+        <p>Chapter Map</p>
+        <nav>
+          <a href="#chapter-1-abstract-data-type-and-introduction-to-stl">Chapter 1: Abstract Data Type and Introduction to STL</a><a href="#chapter-2-complexity-analysis">Chapter 2: Complexity Analysis</a><a href="#chapter-3-linked-lists-part-1">Chapter 3: Linked Lists, Part 1</a><a href="#chapter-3-linked-lists-part-2">Chapter 3: Linked Lists, Part 2</a><a href="#chapter-4-stacks">Chapter 4: Stacks</a><a href="#chapter-5-queues">Chapter 5: Queues</a><a href="#chapter-6-tree-part-1">Chapter 6: Tree, Part 1</a><a href="#chapter-6-tree-part-2">Chapter 6: Tree, Part 2</a><a href="#chapter-7-graph">Chapter 7: Graph</a><a href="#chapter-8-sorting">Chapter 8: Sorting</a><a href="#chapter-9-searching">Chapter 9: Searching</a><a href="#exam-focused-master-checklist">Exam-Focused Master Checklist</a>
+        </nav>
+      </aside>
+      <section class="notes-content" id="notesContent">
+        <section class="source-note"><h2>DSA Study Notes From Uploaded Slides</h2>
+<ul class="note-list">
+<li>Source basis:</li>
+<ul class="note-list">
+<li>Chapter 1 Abstract Data Type and Introduction to STL (Part 1)</li>
+<li>Chapter 2 Complexity Analysis</li>
+<li>Chapter 3 Linked Lists (Part 1)</li>
+<li>Chapter 3 Linked Lists (Part 2)</li>
+<li>Chapter 4 Stacks</li>
+<li>Chapter 5 Queues</li>
+<li>Chapter 6 Tree (Part 1)</li>
+<li>Chapter 6 Tree (Part 2)</li>
+<li>Chapter 7 Graph</li>
+<li>Chapter 8 Sorting</li>
+<li>Chapter 9 Searching</li>
+</ul>
+<li>Study-rule acknowledgement:</li>
+<ul class="note-list">
+<li>These notes follow the chapter order in the uploaded decks.</li>
+<li>The notes are based on the slide content.</li>
+<li>Extra C++ code is included only to explain slide concepts fully, because the slides often show partial code or pseudocode.</li>
+<li>Slide-code corrections are marked when needed.</li>
+<li>Paragraphs are kept short and bullets are used heavily for revision.</li>
+</ul>
+</ul>
+</section>
+<section class="chapter-section" id="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="Chapter 1: Abstract Data Type and Introduction to STL"><h2>Chapter 1: Abstract Data Type and Introduction to STL</h2>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-learning-targets" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="Learning Targets"><h3>Learning Targets</h3>
+<ul class="note-list">
+<li>Understand:</li>
+<ul class="note-list">
+<li>Data structures</li>
+<li>Abstract Data Types (ADTs)</li>
+<li>Standard Template Library (STL)</li>
+<li>Containers, iterators, and algorithms</li>
+<li>Vector/list mentions in STL context</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-1-data-structure" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.1 Data Structure"><h3>1.1 Data Structure</h3>
+<ul class="note-list">
+<li>A program is made of:</li>
+<ul class="note-list">
+<li>Data</li>
+<li>Algorithms</li>
+</ul>
+<li>A data structure is:</li>
+<ul class="note-list">
+<li>A logical or mathematical model for organizing data</li>
+<li>A technique for storing and organizing data efficiently</li>
+<li>A way to describe relationships among elements, not only memory storage</li>
+</ul>
+<li>Choosing a data structure depends on:</li>
+<ul class="note-list">
+<li>Whether it represents real-world relationships well</li>
+<li>Whether it is simple enough to process effectively</li>
+</ul>
+<li>Why learn data structures:</li>
+<ul class="note-list">
+<li>They make algorithms simpler</li>
+<li>They make code easier to maintain</li>
+<li>They often make programs faster</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-2-core-data-operations" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.2 Core Data Operations"><h3>1.2 Core Data Operations</h3>
+<ul class="note-list">
+<li>Main operations from the slides:</li>
+<ul class="note-list">
+<li>Insert</li>
+<li>Delete</li>
+<li>Traverse</li>
+<li>Search</li>
+</ul>
+<li>Additional special operations:</li>
+<ul class="note-list">
+<li>Sort</li>
+<li>Merge</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-3-adt-abstract-data-type" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.3 ADT: Abstract Data Type"><h3>1.3 ADT: Abstract Data Type</h3>
+<ul class="note-list">
+<li>Definition:</li>
+<ul class="note-list">
+<li>An ADT is a mathematical model for data types.</li>
+<li>It defines behavior from the user&#x27;s point of view.</li>
+<li>It focuses on:</li>
+<ul class="note-list">
+<li>Possible values</li>
+<li>Possible operations</li>
+<li>Behavior of those operations</li>
+</ul>
+</ul>
+<li>Important idea:</li>
+<ul class="note-list">
+<li>An ADT tells you what can be done.</li>
+<li>It does not tell you how it is implemented.</li>
+</ul>
+<li>Examples from the slides:</li>
+<ul class="note-list">
+<li>Array</li>
+<li>List</li>
+<li>Queue</li>
+<li>Stack</li>
+<li>Table</li>
+<li>Tree</li>
+<li>Vector</li>
+</ul>
+</ul>
+<h4>ADT Memory Aid: &quot;VOB&quot;</h4>
+<ul class="note-list">
+<li>V = Values allowed</li>
+<li>O = Operations allowed</li>
+<li>B = Behavior of those operations</li>
+<li>Exam phrase:</li>
+<ul class="note-list">
+<li>&quot;An ADT defines VOB, not code.&quot;</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-4-adt-example-stack" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.4 ADT Example: Stack"><h3>1.4 ADT Example: Stack</h3>
+<ul class="note-list">
+<li>Stack ADT behavior:</li>
+<ul class="note-list">
+<li>Last In First Out (LIFO)</li>
+<li>Items are added and removed from one end only</li>
+</ul>
+<li>Stack operations from the slides:</li>
+<ul class="note-list">
+<li>PUSH: add an item</li>
+<li>POP: remove the top item</li>
+<li>TOP: return the top item without removing it</li>
+<li>EMPTY: check whether the stack is empty</li>
+<li>CREATE: create a new empty stack</li>
+</ul>
+<li>ADT point:</li>
+<ul class="note-list">
+<li>These operations describe what the stack does.</li>
+<li>Implementation details are saved for the actual code.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-5-stl-standard-template-library" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.5 STL: Standard Template Library"><h3>1.5 STL: Standard Template Library</h3>
+<ul class="note-list">
+<li>STL provides generic entities:</li>
+<ul class="note-list">
+<li>Containers</li>
+<li>Iterators</li>
+<li>Algorithms</li>
+<li>Function objects</li>
+</ul>
+<li>STL also provides ready-made common C++ classes:</li>
+<ul class="note-list">
+<li>Containers</li>
+<li>Associative arrays</li>
+</ul>
+<li>STL can be used with:</li>
+<ul class="note-list">
+<li>Built-in types</li>
+<li>User-defined types that support required operations</li>
+</ul>
+<li>STL uses templates:</li>
+<ul class="note-list">
+<li>This gives static binding polymorphism.</li>
+<li>The slides state this is often more efficient than run-time/dynamic binding.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-6-stl-containers" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.6 STL Containers"><h3>1.6 STL Containers</h3>
+<ul class="note-list">
+<li>A container is:</li>
+<ul class="note-list">
+<li>A data structure designed to hold objects of the same type</li>
+<li>A way stored data is organized in memory</li>
+<li>Implemented as a template class</li>
+</ul>
+<li>Container methods:</li>
+<ul class="note-list">
+<li>Some methods are common to all containers.</li>
+<li>Some are specific to one container.</li>
+</ul>
+<li>If pointers are involved:</li>
+<ul class="note-list">
+<li>Data stored in containers must support the needed basic methods and operations.</li>
+</ul>
+</ul>
+<h4>Code Mastery: Simple Node Container-Style Class</h4>
+<ul class="note-list">
+<li>Understand it:</li>
+<ul class="note-list">
+<li>The slides show a class that creates a node dynamically.</li>
+<li>The node stores data and a pointer to the next node.</li>
+</ul>
+<li>Read it:</li>
+<ul class="note-list">
+<li><code>Node *next</code> means the node stores an address of another node.</li>
+<li><code>new Node()</code> allocates memory dynamically.</li>
+<li><code>n-&gt;data</code> accesses a member through a pointer.</li>
+<li><code>NULL</code> marks no next node.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class MyClass {
+    struct Node {
+        int data;
+        Node *next;
+    };
+
+    Node *head;
+
+public:
+    MyClass() {
+        head = NULL;
+    }
+
+    Node* createNode() {
+        Node *n = new Node();
+        cout &lt;&lt; &quot;Enter a number: &quot;;
+        cin &gt;&gt; n-&gt;data;
+        n-&gt;next = NULL;
+        return n;
+    }
+};
+
+int main() {
+    MyClass record;
+    record.createNode();
+    return 0;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-7-stl-iterators" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.7 STL Iterators"><h3>1.7 STL Iterators</h3>
+<ul class="note-list">
+<li>An iterator is:</li>
+<ul class="note-list">
+<li>An object that accesses container elements</li>
+<li>A generalization of a pointer</li>
+<li>Something that can point to elements in a container</li>
+</ul>
+<li>Iterator behavior:</li>
+<ul class="note-list">
+<li>It can move from one element to another.</li>
+<li>It allows generic STL algorithms to work with different containers.</li>
+</ul>
+<li>Iterator types from the slides:</li>
+<ul class="note-list">
+<li>Input iterator: reads a sequence of values</li>
+<li>Output iterator: writes a sequence of values</li>
+<li>Forward iterator: reads, writes, and moves forward</li>
+<li>Bidirectional iterator: forward iterator plus backward movement</li>
+<li>Random iterator: moves freely in any direction</li>
+</ul>
+</ul>
+<h4>Iterator Memory Aid: &quot;IOFBR&quot;</h4>
+<ul class="note-list">
+<li>I = Input reads</li>
+<li>O = Output writes</li>
+<li>F = Forward moves forward</li>
+<li>B = Bidirectional moves both ways</li>
+<li>R = Random moves anywhere</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-8-stl-algorithms" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.8 STL Algorithms"><h3>1.8 STL Algorithms</h3>
+<ul class="note-list">
+<li>STL algorithms are procedures applied to containers.</li>
+<li>Examples from the slides:</li>
+<ul class="note-list">
+<li>Searching</li>
+<li>Sorting</li>
+</ul>
+<li>STL provides about 70 generic functions.</li>
+<li>Algorithms rely on iterator capability.</li>
+<li>Some algorithms are implemented as member functions for efficiency.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-9-vector-code-segments" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.9 Vector Code Segments"><h3>1.9 Vector Code Segments</h3>
+<ul class="note-list">
+<li>Source note:</li>
+<ul class="note-list">
+<li>Chapter 1 names Vector as an ADT/STL example.</li>
+<li>Chapter 2 gives these vector-related code examples:</li>
+<ul class="note-list">
+<li><code>vec.size()</code> is O(1)</li>
+<li>Traversing a vector using an iterator is O(n)</li>
+</ul>
+<li>Chapter 3 says adding to the end of a linked list is equivalent to <code>push_back()</code> in STL vector and STL list.</li>
+</ul>
+<li>Understand it:</li>
+<ul class="note-list">
+<li>A vector is an STL container.</li>
+<li>It supports direct size checking.</li>
+<li>It supports iterator traversal from <code>begin()</code> to <code>end()</code>.</li>
+</ul>
+<li>Read it:</li>
+<ul class="note-list">
+<li><code>vector&lt;int&gt; vec;</code> means a vector storing integers.</li>
+<li><code>vec.size()</code> returns the number of elements.</li>
+<li><code>vector&lt;int&gt;::iterator i</code> declares an iterator.</li>
+<li><code>*i</code> reads the value pointed to by the iterator.</li>
+<li><code>i++</code> moves to the next element.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; vec;
+
+    vec.push_back(10);
+    vec.push_back(20);
+    vec.push_back(30);
+
+    cout &lt;&lt; &quot;Size: &quot; &lt;&lt; vec.size() &lt;&lt; endl; // O(1)
+
+    vector&lt;int&gt;::iterator i = vec.begin();
+    for (; i &lt; vec.end(); i++) {            // O(n)
+        cout &lt;&lt; *i &lt;&lt; &quot; &quot;;
+    }
+
+    return 0;
+}</code></pre></div>
+<ul class="note-list">
+<li>Under-the-hood exam intuition:</li>
+<ul class="note-list">
+<li><code>size()</code> is constant time because the STL stores the size as part of the vector.</li>
+<li>Traversal is linear because every element is visited once.</li>
+</ul>
+</ul>
+</article>
+</section>
+<section class="chapter-section" id="chapter-2-complexity-analysis" data-title="Chapter 2: Complexity Analysis"><h2>Chapter 2: Complexity Analysis</h2>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-learning-targets" data-chapter="chapter-2-complexity-analysis" data-title="Learning Targets"><h3>Learning Targets</h3>
+<ul class="note-list">
+<li>Understand:</li>
+<ul class="note-list">
+<li>Complexity analysis</li>
+<li>Big O notation</li>
+<li>Common growth rates</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-1-computational-and-asymptotic-complexity" data-chapter="chapter-2-complexity-analysis" data-title="2.1 Computational and Asymptotic Complexity"><h3>2.1 Computational and Asymptotic Complexity</h3>
+<ul class="note-list">
+<li>Algorithms are essential to data structures.</li>
+<li>Data structures are implemented using algorithms.</li>
+<li>Some algorithms are more efficient than others.</li>
+<li>Complexity describes efficiency based on how much data must be processed.</li>
+<li>Time complexity:</li>
+<ul class="note-list">
+<li>Measures how long a function takes in computational steps.</li>
+</ul>
+<li>Space complexity:</li>
+<ul class="note-list">
+<li>Measures how much memory a function uses.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-2-performance-vs-complexity" data-chapter="chapter-2-complexity-analysis" data-title="2.2 Performance vs Complexity"><h3>2.2 Performance vs Complexity</h3>
+<ul class="note-list">
+<li>Performance:</li>
+<ul class="note-list">
+<li>Actual time, memory, disk, or network use when the program runs.</li>
+<li>Depends on the machine, compiler, and code.</li>
+</ul>
+<li>Complexity:</li>
+<ul class="note-list">
+<li>How resource needs scale as the input size grows.</li>
+</ul>
+<li>Key point:</li>
+<ul class="note-list">
+<li>Complexity affects performance.</li>
+<li>Performance does not define complexity.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-3-big-o-notation" data-chapter="chapter-2-complexity-analysis" data-title="2.3 Big O Notation"><h3>2.3 Big O Notation</h3>
+<ul class="note-list">
+<li>Big O describes:</li>
+<ul class="note-list">
+<li>Algorithm performance</li>
+<li>Algorithm complexity</li>
+<li>Execution time or space as input grows</li>
+</ul>
+<li>The slides describe Big O as an upper bound:</li>
+<ul class="note-list">
+<li>It focuses on the worst-case scenario.</li>
+<li>Worst-case analysis removes uncertainty.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-4-how-to-determine-big-o" data-chapter="chapter-2-complexity-analysis" data-title="2.4 How to Determine Big O"><h3>2.4 How to Determine Big O</h3>
+<ul class="note-list">
+<li>Rules from the slides:</li>
+<ul class="note-list">
+<li>Ignore constants.</li>
+<li>Keep the fastest-growing term.</li>
+<li>Drop low-order terms.</li>
+</ul>
+<li>Examples:</li>
+<ul class="note-list">
+<li>O(2n) becomes O(n)</li>
+<li>O(n^2 + n + 1000) becomes O(n^2)</li>
+</ul>
+<li>Growth order from the slides:</li>
+<ul class="note-list">
+<li>O(1)</li>
+<li>O(log n)</li>
+<li>O(n)</li>
+<li>O(n log n)</li>
+<li>O(n^2)</li>
+<li>O(2^n)</li>
+<li>O(n!)</li>
+</ul>
+</ul>
+<h4>Big O Memory Aid: &quot;Drop, Dominate, Decide&quot;</h4>
+<ul class="note-list">
+<li>Drop constants.</li>
+<li>Dominate with the fastest-growing term.</li>
+<li>Decide the final Big O.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-5-o-1-constant-time" data-chapter="chapter-2-complexity-analysis" data-title="2.5 O(1): Constant Time"><h3>2.5 O(1): Constant Time</h3>
+<ul class="note-list">
+<li>Constant time means:</li>
+<ul class="note-list">
+<li>Same amount of work regardless of input size.</li>
+<li>Execution time is independent of input size.</li>
+</ul>
+<li>Slide example:</li>
+<ul class="note-list">
+<li><code>vec.size()</code> is O(1) because the STL stores the vector size.</li>
+</ul>
+<li>Read it:</li>
+<ul class="note-list">
+<li>Look for direct access or fixed-count operations.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>int getVectorSize(const vector&lt;int&gt;&amp; vec) {
+    return vec.size(); // O(1)
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-6-o-n-linear-time" data-chapter="chapter-2-complexity-analysis" data-title="2.6 O(n): Linear Time"><h3>2.6 O(n): Linear Time</h3>
+<ul class="note-list">
+<li>Linear time means:</li>
+<ul class="note-list">
+<li>Runtime grows directly with input size.</li>
+<li>If input doubles, operations roughly double.</li>
+</ul>
+<li>Slide example:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>vector&lt;int&gt;::iterator i = vec.begin();
+for (; i &lt; vec.end(); i++)
+    cout &lt;&lt; *i;</code></pre></div>
+<ul class="note-list">
+<li>Understand it:</li>
+<ul class="note-list">
+<li>The loop visits each element once.</li>
+</ul>
+<li>Read it:</li>
+<ul class="note-list">
+<li>One loop over n elements usually means O(n).</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void printVector(const vector&lt;int&gt;&amp; vec) {
+    for (auto i = vec.begin(); i &lt; vec.end(); i++) {
+        cout &lt;&lt; *i &lt;&lt; &quot; &quot;;
+    }
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-7-o-n-2-quadratic-time" data-chapter="chapter-2-complexity-analysis" data-title="2.7 O(n^2): Quadratic Time"><h3>2.7 O(n^2): Quadratic Time</h3>
+<ul class="note-list">
+<li>From the slides:</li>
+<ul class="note-list">
+<li>Nested loops where each loop runs n times produce n * n operations.</li>
+<li>Complexity is O(n^2).</li>
+</ul>
+<li>Read it:</li>
+<ul class="note-list">
+<li>A loop inside another loop over the same input is the common sign.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void printPairs(int arr[], int n) {
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = 0; j &lt; n; j++) {
+            cout &lt;&lt; arr[i] &lt;&lt; &quot;,&quot; &lt;&lt; arr[j] &lt;&lt; endl;
+        }
+    }
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-8-o-log-n-logarithmic-time" data-chapter="chapter-2-complexity-analysis" data-title="2.8 O(log n): Logarithmic Time"><h3>2.8 O(log n): Logarithmic Time</h3>
+<ul class="note-list">
+<li>Logarithmic time grows slowly as n grows.</li>
+<li>Slide rule:</li>
+<ul class="note-list">
+<li>A loop is often O(log n) if the counter doubles instead of increasing by 1.</li>
+</ul>
+<li>Slide correction:</li>
+<ul class="note-list">
+<li>The slide shows <code>for(int i = 0; i &lt; n; i *= 2)</code>.</li>
+<li>Starting at <code>i = 0</code> causes <code>i</code> to stay 0 forever.</li>
+<li>Exam-safe corrected version starts at <code>i = 1</code>.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void logLoop(int n) {
+    for (int i = 1; i &lt; n; i *= 2) {
+        cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+    }
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-9-o-n-log-n-linearithmic-time" data-chapter="chapter-2-complexity-analysis" data-title="2.9 O(n log n): Linearithmic Time"><h3>2.9 O(n log n): Linearithmic Time</h3>
+<ul class="note-list">
+<li>From the slides:</li>
+<ul class="note-list">
+<li>Linearithmic algorithms perform well with large data sets.</li>
+<li>Examples named:</li>
+<ul class="note-list">
+<li>Heapsort</li>
+<li>Merge sort</li>
+<li>Quick sort</li>
+</ul>
+</ul>
+<li>Read it:</li>
+<ul class="note-list">
+<li>Often appears as:</li>
+<ul class="note-list">
+<li>One loop over n items</li>
+<li>Inside it, a logarithmic loop</li>
+</ul>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void nLogNLoop(int n) {
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = 1; j &lt; n; j *= 2) {
+            cout &lt;&lt; i &lt;&lt; &quot;,&quot; &lt;&lt; j &lt;&lt; endl;
+        }
+    }
+}</code></pre></div>
+</article>
+</section>
+<section class="chapter-section" id="chapter-3-linked-lists-part-1" data-title="Chapter 3: Linked Lists, Part 1"><h2>Chapter 3: Linked Lists, Part 1</h2>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-learning-targets" data-chapter="chapter-3-linked-lists-part-1" data-title="Learning Targets"><h3>Learning Targets</h3>
+<ul class="note-list">
+<li>Understand:</li>
+<ul class="note-list">
+<li>Singly linked list implementation</li>
+<li>Doubly linked list implementation</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-1-why-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-title="3.1 Why Linked Lists?"><h3>3.1 Why Linked Lists?</h3>
+<ul class="note-list">
+<li>Arrays have two major limitations from the slides:</li>
+<ul class="note-list">
+<li>The size must be known at compile time.</li>
+<li>Insertion may require shifting many elements because array elements are the same distance apart in memory.</li>
+</ul>
+<li>Linked lists help overcome these limitations.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-2-what-is-a-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-title="3.2 What Is a Linked List?"><h3>3.2 What Is a Linked List?</h3>
+<ul class="note-list">
+<li>A linked list is:</li>
+<ul class="note-list">
+<li>A non-sequential collection of independent memory locations called nodes</li>
+<li>A structure where each node stores data and links to other nodes</li>
+</ul>
+<li>Important idea:</li>
+<ul class="note-list">
+<li>Nodes are not necessarily stored next to each other in memory.</li>
+<li>Each node points to the next node.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-3-advantages-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-title="3.3 Advantages of Linked Lists"><h3>3.3 Advantages of Linked Lists</h3>
+<ul class="note-list">
+<li>Dynamic data structure.</li>
+<li>Efficient memory utilization:</li>
+<ul class="note-list">
+<li>Memory is allocated when needed.</li>
+<li>Memory is deallocated when no longer needed.</li>
+</ul>
+<li>Insertion and deletion are easier and efficient at specified positions.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-4-limitations-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-title="3.4 Limitations of Linked Lists"><h3>3.4 Limitations of Linked Lists</h3>
+<ul class="note-list">
+<li>More space is used because pointers must be stored.</li>
+<li>Searching can be difficult and time consuming.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-5-array-vs-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-title="3.5 Array vs Linked List"><h3>3.5 Array vs Linked List</h3>
+<ul class="note-list">
+<li>Static array:</li>
+<ul class="note-list">
+<li>Efficient random access</li>
+<li>Inefficient insertion/deletion</li>
+<li>No extra pointer overhead</li>
+</ul>
+<li>Linked list:</li>
+<ul class="note-list">
+<li>Efficient insertion/deletion</li>
+<li>Efficient element rearrangement</li>
+<li>Inefficient random access</li>
+<li>Requires 1 or 2 links per element</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-6-types-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-title="3.6 Types of Linked Lists"><h3>3.6 Types of Linked Lists</h3>
+<ul class="note-list">
+<li>Covered:</li>
+<ul class="note-list">
+<li>Singly linked list</li>
+<li>Doubly linked list</li>
+</ul>
+<li>Mentioned but not covered in syllabus:</li>
+<ul class="note-list">
+<li>Circular linked list</li>
+<li>Circular double linked list</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-7-singly-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-title="3.7 Singly Linked List"><h3>3.7 Singly Linked List</h3>
+<ul class="note-list">
+<li>A singly linked list:</li>
+<ul class="note-list">
+<li>Links nodes using one pointer.</li>
+<li>Moves forward in sequential order.</li>
+<li>Is also called a linear linked list.</li>
+</ul>
+<li>Key pointers:</li>
+<ul class="note-list">
+<li><code>head</code> stores the address of the first node.</li>
+<li>Last node has <code>next = NULL</code>.</li>
+<li><code>tail</code> is optional.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-8-basic-singly-linked-list-operations" data-chapter="chapter-3-linked-lists-part-1" data-title="3.8 Basic Singly Linked List Operations"><h3>3.8 Basic Singly Linked List Operations</h3>
+<ul class="note-list">
+<li>Creation</li>
+<li>Insertion</li>
+<li>Traversal</li>
+<li>Deletion</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-9-singly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-1" data-title="3.9 Singly Linked List Node Creation"><h3>3.9 Singly Linked List Node Creation</h3>
+<ul class="note-list">
+<li>Understand it:</li>
+<ul class="note-list">
+<li>A node has data and a <code>next</code> pointer.</li>
+<li>New nodes are allocated dynamically.</li>
+</ul>
+<li>Read it:</li>
+<ul class="note-list">
+<li><code>Node *n = new Node();</code> creates a node.</li>
+<li><code>n-&gt;no = 6;</code> stores data.</li>
+<li><code>n-&gt;next = NULL;</code> marks no next node yet.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>class Node {
+public:
+    int no;
+    Node *next;
+};
+
+Node* createNode(int value) {
+    Node *n = new Node();
+    n-&gt;no = value;
+    n-&gt;next = NULL;
+    return n;
+}</code></pre></div>
+<h4>Singly Linked List Memory Aid: &quot;DAN&quot;</h4>
+<ul class="note-list">
+<li>D = Data</li>
+<li>A = Address</li>
+<li>N = NULL at the end</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-10-singly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-1" data-title="3.10 Singly Linked List Insertion: Empty List"><h3>3.10 Singly Linked List Insertion: Empty List</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Create node.</li>
+<li>Set node data.</li>
+<li>Set <code>next</code> to <code>NULL</code>.</li>
+<li>If <code>head == NULL</code>, assign <code>head = n</code>.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create a new node.</p>
+<p class="numbered-step">2. Store the value.</p>
+<p class="numbered-step">3. Set <code>n-&gt;next = NULL</code>.</p>
+<p class="numbered-step">4. Check whether the list is empty.</p>
+<p class="numbered-step">5. If empty, set <code>head = n</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertEmpty(Node *&amp;head, int value) {
+    Node *n = createNode(value);
+    if (head == NULL) {
+        head = n;
+    }
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-11-singly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-1" data-title="3.11 Singly Linked List Insertion: End"><h3>3.11 Singly Linked List Insertion: End</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Use pointer <code>p</code> to move to the last node.</li>
+<li>Link the last node to the new node.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create a new node.</p>
+<p class="numbered-step">2. If the list is empty, set <code>head = n</code>.</p>
+<p class="numbered-step">3. Otherwise, set <code>p = head</code>.</p>
+<p class="numbered-step">4. Move <code>p</code> while <code>p-&gt;next != NULL</code>.</p>
+<p class="numbered-step">5. Set <code>p-&gt;next = n</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertEnd(Node *&amp;head, int value) {
+    Node *n = createNode(value);
+
+    if (head == NULL) {
+        head = n;
+        return;
+    }
+
+    Node *p = head;
+    while (p-&gt;next != NULL) {
+        p = p-&gt;next;
+    }
+
+    p-&gt;next = n;
+}</code></pre></div>
+<ul class="note-list">
+<li>STL comparison from slides:</li>
+<ul class="note-list">
+<li>Equivalent idea to <code>push_back()</code> in STL vector and STL list.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-12-singly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-1" data-title="3.12 Singly Linked List Insertion: Beginning"><h3>3.12 Singly Linked List Insertion: Beginning</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Point new node to current head.</li>
+<li>Move head to new node.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create a new node.</p>
+<p class="numbered-step">2. Set <code>n-&gt;next = head</code>.</p>
+<p class="numbered-step">3. Set <code>head = n</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertBeginning(Node *&amp;head, int value) {
+    Node *n = createNode(value);
+    n-&gt;next = head;
+    head = n;
+}</code></pre></div>
+<ul class="note-list">
+<li>STL comparison from slides:</li>
+<ul class="note-list">
+<li>Equivalent idea to <code>push_front()</code> in STL list.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-13-singly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-1" data-title="3.13 Singly Linked List Insertion: Middle"><h3>3.13 Singly Linked List Insertion: Middle</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Move pointer <code>p</code> to one position before the insertion location.</li>
+<li>Connect the new node to the next node.</li>
+<li>Connect <code>p</code> to the new node.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create a new node.</p>
+<p class="numbered-step">2. Set <code>p = head</code>.</p>
+<p class="numbered-step">3. Move <code>p</code> until it is one node before the target position.</p>
+<p class="numbered-step">4. Set <code>n-&gt;next = p-&gt;next</code>.</p>
+<p class="numbered-step">5. Set <code>p-&gt;next = n</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertAfterPosition(Node *head, int posBefore, int value) {
+    Node *n = createNode(value);
+    Node *p = head;
+    int i = 1;
+
+    while (i &lt; posBefore &amp;&amp; p != NULL) {
+        p = p-&gt;next;
+        i++;
+    }
+
+    if (p == NULL) return;
+
+    n-&gt;next = p-&gt;next;
+    p-&gt;next = n;
+}</code></pre></div>
+<h4>Insertion Memory Aid: &quot;C-M-L&quot;</h4>
+<ul class="note-list">
+<li>C = Create the node</li>
+<li>M = Move pointer to the correct place</li>
+<li>L = Link in the correct order</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-14-singly-linked-list-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1" data-title="3.14 Singly Linked List with Tail Pointer"><h3>3.14 Singly Linked List with Tail Pointer</h3>
+<ul class="note-list">
+<li>Tail pointer:</li>
+<ul class="note-list">
+<li>Points to the last node.</li>
+<li>Makes insertion at the end faster.</li>
+</ul>
+<li>Empty list insertion:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertFirstWithTail(Node *&amp;head, Node *&amp;tail, int value) {
+    Node *n = createNode(value);
+    if (head == NULL) {
+        head = tail = n;
+    }
+}</code></pre></div>
+<ul class="note-list">
+<li>End insertion with tail:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertEndWithTail(Node *&amp;head, Node *&amp;tail, int value) {
+    Node *n = createNode(value);
+
+    if (head == NULL) {
+        head = tail = n;
+        return;
+    }
+
+    tail-&gt;next = n;
+    tail = n;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-15-singly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-1" data-title="3.15 Singly Linked List Deletion: Beginning"><h3>3.15 Singly Linked List Deletion: Beginning</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Store old head in temporary pointer.</li>
+<li>Move head to next node.</li>
+<li>Delete old head.</li>
+</ul>
+<li>Slide-code correction:</li>
+<ul class="note-list">
+<li>The slides use <code>free(n)</code>.</li>
+<li>Since nodes are created using <code>new</code>, use <code>delete n</code> in C++.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. If the list is empty, stop.</p>
+<p class="numbered-step">2. Set <code>n = head</code>.</p>
+<p class="numbered-step">3. Set <code>head = head-&gt;next</code>.</p>
+<p class="numbered-step">4. Delete <code>n</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void deleteBeginning(Node *&amp;head) {
+    if (head == NULL) return;
+
+    Node *n = head;
+    head = head-&gt;next;
+    delete n;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-16-singly-linked-list-deletion-middle-by-value" data-chapter="chapter-3-linked-lists-part-1" data-title="3.16 Singly Linked List Deletion: Middle by Value"><h3>3.16 Singly Linked List Deletion: Middle by Value</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Move <code>n</code> to the node before the targeted node.</li>
+<li>Put <code>x</code> at the target node.</li>
+<li>Link around <code>x</code>.</li>
+<li>Delete <code>x</code>.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. If list is empty or has no next node, handle separately.</p>
+<p class="numbered-step">2. Move <code>n</code> until <code>n-&gt;next</code> is the target.</p>
+<p class="numbered-step">3. Set <code>x = n-&gt;next</code>.</p>
+<p class="numbered-step">4. Set <code>n-&gt;next = x-&gt;next</code>.</p>
+<p class="numbered-step">5. Delete <code>x</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void deleteValue(Node *&amp;head, int target) {
+    if (head == NULL) return;
+
+    if (head-&gt;no == target) {
+        deleteBeginning(head);
+        return;
+    }
+
+    Node *n = head;
+    while (n-&gt;next != NULL &amp;&amp; n-&gt;next-&gt;no != target) {
+        n = n-&gt;next;
+    }
+
+    if (n-&gt;next == NULL) return;
+
+    Node *x = n-&gt;next;
+    n-&gt;next = x-&gt;next;
+    delete x;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-17-singly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-1" data-title="3.17 Singly Linked List Deletion: End"><h3>3.17 Singly Linked List Deletion: End</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Move pointer to one node before the last node.</li>
+<li>Delete last node.</li>
+<li>Set second-last node&#x27;s <code>next</code> to <code>NULL</code>.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. If list is empty, stop.</p>
+<p class="numbered-step">2. If list has one node, delete it and set <code>head = NULL</code>.</p>
+<p class="numbered-step">3. Move <code>n</code> while <code>n-&gt;next-&gt;next != NULL</code>.</p>
+<p class="numbered-step">4. Set <code>x = n-&gt;next</code>.</p>
+<p class="numbered-step">5. Set <code>n-&gt;next = NULL</code>.</p>
+<p class="numbered-step">6. Delete <code>x</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void deleteEnd(Node *&amp;head) {
+    if (head == NULL) return;
+
+    if (head-&gt;next == NULL) {
+        delete head;
+        head = NULL;
+        return;
+    }
+
+    Node *n = head;
+    while (n-&gt;next-&gt;next != NULL) {
+        n = n-&gt;next;
+    }
+
+    Node *x = n-&gt;next;
+    n-&gt;next = NULL;
+    delete x;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-18-deletion-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1" data-title="3.18 Deletion with Tail Pointer"><h3>3.18 Deletion with Tail Pointer</h3>
+<ul class="note-list">
+<li>Beginning deletion with tail:</li>
+<ul class="note-list">
+<li>If deleting the only node, both <code>head</code> and <code>tail</code> become <code>NULL</code>.</li>
+</ul>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void deleteBeginningWithTail(Node *&amp;head, Node *&amp;tail) {
+    if (head == NULL) return;
+
+    Node *n = head;
+    head = head-&gt;next;
+    delete n;
+
+    if (head == NULL) {
+        tail = NULL;
+    }
+}</code></pre></div>
+<ul class="note-list">
+<li>End deletion with tail:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void deleteEndWithTail(Node *&amp;head, Node *&amp;tail) {
+    if (head == NULL) return;
+
+    if (head == tail) {
+        delete head;
+        head = tail = NULL;
+        return;
+    }
+
+    Node *n = head;
+    while (n-&gt;next != tail) {
+        n = n-&gt;next;
+    }
+
+    delete tail;
+    tail = n;
+    tail-&gt;next = NULL;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-19-singly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-1" data-title="3.19 Singly Linked List Traversal"><h3>3.19 Singly Linked List Traversal</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Create temporary pointer <code>n = head</code>.</li>
+<li>Keep moving until <code>n == NULL</code>.</li>
+<li>Print data at each node.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Set <code>n = head</code>.</p>
+<p class="numbered-step">2. While <code>n != NULL</code>, process <code>n-&gt;no</code>.</p>
+<p class="numbered-step">3. Move <code>n = n-&gt;next</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void display(Node *head) {
+    Node *n = head;
+    while (n != NULL) {
+        cout &lt;&lt; n-&gt;no &lt;&lt; &quot; &quot;;
+        n = n-&gt;next;
+    }
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-20-singly-linked-list-update" data-chapter="chapter-3-linked-lists-part-1" data-title="3.20 Singly Linked List Update"><h3>3.20 Singly Linked List Update</h3>
+<ul class="note-list">
+<li>Based on the slide exercise:</li>
+<ul class="note-list">
+<li>Update a node containing value 7 to value 3.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Start at <code>head</code>.</p>
+<p class="numbered-step">2. Traverse until value 7 is found.</p>
+<p class="numbered-step">3. Change it to 3.</p>
+<p class="numbered-step">4. Stop or continue depending on whether only one node should change.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void updateValue(Node *head, int oldValue, int newValue) {
+    Node *n = head;
+    while (n != NULL) {
+        if (n-&gt;no == oldValue) {
+            n-&gt;no = newValue;
+            return;
+        }
+        n = n-&gt;next;
+    }
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-21-singly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-1" data-title="3.21 Singly Linked List Reversal"><h3>3.21 Singly Linked List Reversal</h3>
+<ul class="note-list">
+<li>Source note:</li>
+<ul class="note-list">
+<li>Reversal is not directly shown in the slides.</li>
+<li>It is included because the requested highlighted subchapter asks for reversing linked lists.</li>
+<li>It uses the same pointer-linking ideas from insertion, deletion, and traversal.</li>
+</ul>
+<li>Understand it:</li>
+<ul class="note-list">
+<li>Reverse every <code>next</code> pointer.</li>
+<li>The old head becomes the tail.</li>
+<li>The old tail becomes the head.</li>
+</ul>
+<li>Read it:</li>
+<ul class="note-list">
+<li>Look for three pointers:</li>
+<ul class="note-list">
+<li><code>prev</code></li>
+<li><code>curr</code></li>
+<li><code>nextNode</code></li>
+</ul>
+<li>The core line is <code>curr-&gt;next = prev</code>.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Set <code>prev = NULL</code>.</p>
+<p class="numbered-step">2. Set <code>curr = head</code>.</p>
+<p class="numbered-step">3. Save next node as <code>nextNode = curr-&gt;next</code>.</p>
+<p class="numbered-step">4. Reverse current link: <code>curr-&gt;next = prev</code>.</p>
+<p class="numbered-step">5. Move <code>prev = curr</code>.</p>
+<p class="numbered-step">6. Move <code>curr = nextNode</code>.</p>
+<p class="numbered-step">7. Repeat until <code>curr == NULL</code>.</p>
+<p class="numbered-step">8. Set <code>head = prev</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void reverseSingly(Node *&amp;head) {
+    Node *prev = NULL;
+    Node *curr = head;
+
+    while (curr != NULL) {
+        Node *nextNode = curr-&gt;next;
+        curr-&gt;next = prev;
+        prev = curr;
+        curr = nextNode;
+    }
+
+    head = prev;
+}</code></pre></div>
+<h4>Reversal Memory Aid: &quot;Save, Swing, Step&quot;</h4>
+<ul class="note-list">
+<li>Save the next node.</li>
+<li>Swing the link backward.</li>
+<li>Step both pointers forward.</li>
+</ul>
+</article>
+</section>
+<section class="chapter-section" id="chapter-3-linked-lists-part-2" data-title="Chapter 3: Linked Lists, Part 2"><h2>Chapter 3: Linked Lists, Part 2</h2>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-22-doubly-linked-list" data-chapter="chapter-3-linked-lists-part-2" data-title="3.22 Doubly Linked List"><h3>3.22 Doubly Linked List</h3>
+<ul class="note-list">
+<li>A doubly linked list:</li>
+<ul class="note-list">
+<li>Uses two links/pointers.</li>
+<li>Can access the successor and predecessor of a node.</li>
+</ul>
+<li>Each node contains:</li>
+<ul class="note-list">
+<li>Data</li>
+<li><code>prev</code> link</li>
+<li><code>next</code> link</li>
+</ul>
+<li><code>prev</code> points to predecessor.</li>
+<li><code>next</code> points to successor.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-23-doubly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-2" data-title="3.23 Doubly Linked List Node Creation"><h3>3.23 Doubly Linked List Node Creation</h3>
+<ul class="note-list">
+<li>Understand it:</li>
+<ul class="note-list">
+<li>Each node must maintain two directions.</li>
+</ul>
+<li>Read it:</li>
+<ul class="note-list">
+<li><code>Node *next, *prev;</code> means two node pointers.</li>
+<li>Both should be initialized to <code>NULL</code>.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>class DNode {
+public:
+    int no;
+    DNode *next;
+    DNode *prev;
+};
+
+DNode* createDNode(int value) {
+    DNode *n = new DNode();
+    n-&gt;no = value;
+    n-&gt;next = NULL;
+    n-&gt;prev = NULL;
+    return n;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-24-doubly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-2" data-title="3.24 Doubly Linked List Insertion: Empty List"><h3>3.24 Doubly Linked List Insertion: Empty List</h3>
+<ul class="note-list">
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create a new node.</p>
+<p class="numbered-step">2. Set <code>n-&gt;next = NULL</code>.</p>
+<p class="numbered-step">3. Set <code>n-&gt;prev = NULL</code>.</p>
+<p class="numbered-step">4. If <code>head == NULL</code>, set <code>head = n</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertEmpty(DNode *&amp;head, int value) {
+    DNode *n = createDNode(value);
+    if (head == NULL) {
+        head = n;
+    }
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-25-doubly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-2" data-title="3.25 Doubly Linked List Insertion: End"><h3>3.25 Doubly Linked List Insertion: End</h3>
+<ul class="note-list">
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create a new node.</p>
+<p class="numbered-step">2. If empty, set <code>head = n</code>.</p>
+<p class="numbered-step">3. Move <code>p</code> to the last node.</p>
+<p class="numbered-step">4. Set <code>p-&gt;next = n</code>.</p>
+<p class="numbered-step">5. Set <code>n-&gt;prev = p</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertEnd(DNode *&amp;head, int value) {
+    DNode *n = createDNode(value);
+
+    if (head == NULL) {
+        head = n;
+        return;
+    }
+
+    DNode *p = head;
+    while (p-&gt;next != NULL) {
+        p = p-&gt;next;
+    }
+
+    p-&gt;next = n;
+    n-&gt;prev = p;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-26-doubly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-2" data-title="3.26 Doubly Linked List Insertion: Beginning"><h3>3.26 Doubly Linked List Insertion: Beginning</h3>
+<ul class="note-list">
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create a new node.</p>
+<p class="numbered-step">2. Set <code>n-&gt;next = head</code>.</p>
+<p class="numbered-step">3. Set <code>head-&gt;prev = n</code>.</p>
+<p class="numbered-step">4. Set <code>head = n</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertBeginning(DNode *&amp;head, int value) {
+    DNode *n = createDNode(value);
+
+    if (head != NULL) {
+        n-&gt;next = head;
+        head-&gt;prev = n;
+    }
+
+    head = n;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-27-doubly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-2" data-title="3.27 Doubly Linked List Insertion: Middle"><h3>3.27 Doubly Linked List Insertion: Middle</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Move <code>p</code> to one node before the insertion location.</li>
+<li>Connect four links.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create a new node.</p>
+<p class="numbered-step">2. Move <code>p</code> to one position before the insertion position.</p>
+<p class="numbered-step">3. Set <code>n-&gt;next = p-&gt;next</code>.</p>
+<p class="numbered-step">4. Set <code>p-&gt;next-&gt;prev = n</code>.</p>
+<p class="numbered-step">5. Set <code>p-&gt;next = n</code>.</p>
+<p class="numbered-step">6. Set <code>n-&gt;prev = p</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertAfter(DNode *p, int value) {
+    if (p == NULL) return;
+
+    DNode *n = createDNode(value);
+    n-&gt;next = p-&gt;next;
+    n-&gt;prev = p;
+
+    if (p-&gt;next != NULL) {
+        p-&gt;next-&gt;prev = n;
+    }
+
+    p-&gt;next = n;
+}</code></pre></div>
+<h4>Doubly Insertion Memory Aid: &quot;Next Before Prev&quot;</h4>
+<ul class="note-list">
+<li>First attach the new node to its future neighbors.</li>
+<li>Then attach the neighbors back to the new node.</li>
+<li>This avoids losing access to the rest of the list.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-28-doubly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-2" data-title="3.28 Doubly Linked List Deletion: Beginning"><h3>3.28 Doubly Linked List Deletion: Beginning</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Save old head.</li>
+<li>Move head to next.</li>
+<li>Delete old head.</li>
+<li>Set new head&#x27;s <code>prev</code> to <code>NULL</code>.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. If empty, stop.</p>
+<p class="numbered-step">2. Set <code>n = head</code>.</p>
+<p class="numbered-step">3. Set <code>head = head-&gt;next</code>.</p>
+<p class="numbered-step">4. If new head exists, set <code>head-&gt;prev = NULL</code>.</p>
+<p class="numbered-step">5. Delete <code>n</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void deleteBeginning(DNode *&amp;head) {
+    if (head == NULL) return;
+
+    DNode *n = head;
+    head = head-&gt;next;
+
+    if (head != NULL) {
+        head-&gt;prev = NULL;
+    }
+
+    delete n;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-29-doubly-linked-list-deletion-middle" data-chapter="chapter-3-linked-lists-part-2" data-title="3.29 Doubly Linked List Deletion: Middle"><h3>3.29 Doubly Linked List Deletion: Middle</h3>
+<ul class="note-list">
+<li>Option 1 from slides:</li>
+<ul class="note-list">
+<li>Use pointer before the target.</li>
+<li>Use pointer at the target.</li>
+</ul>
+<li>Option 2 from slides:</li>
+<ul class="note-list">
+<li>Move directly to the target.</li>
+<li>Use <code>prev</code> and <code>next</code> links.</li>
+</ul>
+<li>Slide-code correction:</li>
+<ul class="note-list">
+<li>The slide&#x27;s option 2 says <code>free(x)</code> even though the pointer shown is <code>n</code>.</li>
+<li>Correct deletion should delete the targeted pointer.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Move <code>n</code> to the target node.</p>
+<p class="numbered-step">2. Link previous node to next node: <code>n-&gt;prev-&gt;next = n-&gt;next</code>.</p>
+<p class="numbered-step">3. Link next node to previous node: <code>n-&gt;next-&gt;prev = n-&gt;prev</code>.</p>
+<p class="numbered-step">4. Delete <code>n</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void deleteMiddleNode(DNode *n) {
+    if (n == NULL) return;
+    if (n-&gt;prev == NULL || n-&gt;next == NULL) return;
+
+    n-&gt;prev-&gt;next = n-&gt;next;
+    n-&gt;next-&gt;prev = n-&gt;prev;
+    delete n;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-30-doubly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-2" data-title="3.30 Doubly Linked List Deletion: End"><h3>3.30 Doubly Linked List Deletion: End</h3>
+<ul class="note-list">
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. If empty, stop.</p>
+<p class="numbered-step">2. Move <code>n</code> until <code>n-&gt;next == NULL</code>.</p>
+<p class="numbered-step">3. Set <code>n-&gt;prev-&gt;next = NULL</code>.</p>
+<p class="numbered-step">4. Delete <code>n</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void deleteEnd(DNode *&amp;head) {
+    if (head == NULL) return;
+
+    if (head-&gt;next == NULL) {
+        delete head;
+        head = NULL;
+        return;
+    }
+
+    DNode *n = head;
+    while (n-&gt;next != NULL) {
+        n = n-&gt;next;
+    }
+
+    n-&gt;prev-&gt;next = NULL;
+    delete n;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-31-doubly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-2" data-title="3.31 Doubly Linked List Traversal"><h3>3.31 Doubly Linked List Traversal</h3>
+<ul class="note-list">
+<li>Forward traversal:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void displayForward(DNode *head) {
+    DNode *p = head;
+    while (p != NULL) {
+        cout &lt;&lt; p-&gt;no &lt;&lt; &quot; &quot;;
+        p = p-&gt;next;
+    }
+}</code></pre></div>
+<ul class="note-list">
+<li>Backward traversal:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void displayBackward(DNode *tail) {
+    DNode *p = tail;
+    while (p != NULL) {
+        cout &lt;&lt; p-&gt;no &lt;&lt; &quot; &quot;;
+        p = p-&gt;prev;
+    }
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-32-doubly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-2" data-title="3.32 Doubly Linked List Reversal"><h3>3.32 Doubly Linked List Reversal</h3>
+<ul class="note-list">
+<li>Source note:</li>
+<ul class="note-list">
+<li>Reversal is included as requested.</li>
+<li>It extends the slide concept that DLL nodes maintain both <code>next</code> and <code>prev</code>.</li>
+</ul>
+<li>Understand it:</li>
+<ul class="note-list">
+<li>Swap <code>next</code> and <code>prev</code> for every node.</li>
+<li>The old last node becomes the new head.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Start at <code>head</code>.</p>
+<p class="numbered-step">2. For each node, save <code>next</code>.</p>
+<p class="numbered-step">3. Swap the node&#x27;s <code>next</code> and <code>prev</code>.</p>
+<p class="numbered-step">4. Move to the saved original next node.</p>
+<p class="numbered-step">5. Track the last processed node.</p>
+<p class="numbered-step">6. Set <code>head</code> to the last processed node.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void reverseDoubly(DNode *&amp;head) {
+    DNode *curr = head;
+    DNode *last = NULL;
+
+    while (curr != NULL) {
+        DNode *nextNode = curr-&gt;next;
+        curr-&gt;next = curr-&gt;prev;
+        curr-&gt;prev = nextNode;
+        last = curr;
+        curr = nextNode;
+    }
+
+    head = last;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-33-doubly-linked-list-advantages" data-chapter="chapter-3-linked-lists-part-2" data-title="3.33 Doubly Linked List Advantages"><h3>3.33 Doubly Linked List Advantages</h3>
+<ul class="note-list">
+<li>Can be traversed forward and backward.</li>
+<li>Deletion is more efficient if the pointer to the node is already given.</li>
+<li>Can insert before a given node quickly.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-34-doubly-linked-list-disadvantages" data-chapter="chapter-3-linked-lists-part-2" data-title="3.34 Doubly Linked List Disadvantages"><h3>3.34 Doubly Linked List Disadvantages</h3>
+<ul class="note-list">
+<li>Extra space is needed for the previous pointer.</li>
+<li>Operations must maintain the extra previous pointer.</li>
+</ul>
+</article>
+</section>
+<section class="chapter-section" id="chapter-4-stacks" data-title="Chapter 4: Stacks"><h2>Chapter 4: Stacks</h2>
+<article class="subtopic-card" id="chapter-4-stacks-learning-targets" data-chapter="chapter-4-stacks" data-title="Learning Targets"><h3>Learning Targets</h3>
+<ul class="note-list">
+<li>Understand:</li>
+<ul class="note-list">
+<li>Stack using STL</li>
+<li>Stack using linked list</li>
+<li>Stack applications</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-4-stacks-4-1-what-is-a-stack" data-chapter="chapter-4-stacks" data-title="4.1 What Is a Stack?"><h3>4.1 What Is a Stack?</h3>
+<ul class="note-list">
+<li>A stack is:</li>
+<ul class="note-list">
+<li>A restricted access linear data structure.</li>
+<li>Accessible at one end only for adding/removing data.</li>
+<li>LIFO: Last In First Out.</li>
+</ul>
+<li>Useful when:</li>
+<ul class="note-list">
+<li>Data must be stored and processed in reverse order.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-4-stacks-4-2-stack-implementation-methods" data-chapter="chapter-4-stacks" data-title="4.2 Stack Implementation Methods"><h3>4.2 Stack Implementation Methods</h3>
+<ul class="note-list">
+<li>From the slides:</li>
+<ul class="note-list">
+<li>Array-based, not covered in syllabus</li>
+<li>STL</li>
+<li>Linked list</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-4-stacks-4-3-stl-stack" data-chapter="chapter-4-stacks" data-title="4.3 STL Stack"><h3>4.3 STL Stack</h3>
+<ul class="note-list">
+<li>Main STL stack functions:</li>
+<ul class="note-list">
+<li><code>empty()</code>: checks if stack is empty</li>
+<li><code>push(el)</code>: pushes item onto top</li>
+<li><code>pop()</code>: removes top element</li>
+<li><code>top()</code>: returns top element without removing it</li>
+<li><code>swap()</code>: swaps two stacks of same type</li>
+<li><code>emplace()</code>: inserts new element on top</li>
+</ul>
+<li>Read it:</li>
+<ul class="note-list">
+<li><code>stack&lt;char&gt; mystack;</code> creates a stack of characters.</li>
+<li><code>mystack.push(&#x27;C&#x27;);</code> puts <code>C</code> on top.</li>
+<li><code>mystack.top();</code> reads the top.</li>
+<li><code>mystack.pop();</code> removes the top.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>#include &lt;iostream&gt;
+#include &lt;stack&gt;
+using namespace std;
+
+int main() {
+    stack&lt;char&gt; mystack;
+
+    mystack.push(&#x27;C&#x27;);
+    mystack.push(&#x27;A&#x27;);
+    mystack.emplace(&#x27;D&#x27;);
+
+    cout &lt;&lt; mystack.top() &lt;&lt; endl;
+
+    while (!mystack.empty()) {
+        cout &lt;&lt; mystack.top() &lt;&lt; &quot; &quot;;
+        mystack.pop();
+    }
+
+    return 0;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-4-stacks-4-4-linked-list-stack" data-chapter="chapter-4-stacks" data-title="4.4 Linked List Stack"><h3>4.4 Linked List Stack</h3>
+<ul class="note-list">
+<li>Option 1 from slides:</li>
+<ul class="note-list">
+<li>Push: insert at beginning of linked list.</li>
+<li>Pop: delete at beginning of linked list.</li>
+</ul>
+<li>Option 2 from slides:</li>
+<ul class="note-list">
+<li>Push: insert at end of linked list.</li>
+<li>Pop: delete at end of linked list.</li>
+</ul>
+<li>Exam preference:</li>
+<ul class="note-list">
+<li>Option 1 is simpler because both operations happen at head.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>class StackLL {
+    struct Node {
+        int data;
+        Node *next;
+    };
+
+    Node *topNode;
+
+public:
+    StackLL() {
+        topNode = NULL;
+    }
+
+    bool empty() {
+        return topNode == NULL;
+    }
+
+    void push(int value) {
+        Node *n = new Node();
+        n-&gt;data = value;
+        n-&gt;next = topNode;
+        topNode = n;
+    }
+
+    void pop() {
+        if (topNode == NULL) return;
+        Node *old = topNode;
+        topNode = topNode-&gt;next;
+        delete old;
+    }
+
+    int top() {
+        return topNode-&gt;data;
+    }
+};</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-4-stacks-4-5-stack-applications" data-chapter="chapter-4-stacks" data-title="4.5 Stack Applications"><h3>4.5 Stack Applications</h3>
+<ul class="note-list">
+<li>From the slides:</li>
+<ul class="note-list">
+<li>Evaluating expressions and parsing syntax</li>
+<li>Balancing delimiters in program code</li>
+<li>Converting numbers between bases</li>
+<li>Processing financial data</li>
+<li>Backtracking algorithms</li>
+<li>Undo function</li>
+<li>Infix to postfix/prefix conversion</li>
+<li>Forward/backward browser feature</li>
+<li>Tower of Hanoi</li>
+<li>Tree traversals</li>
+<li>Stock span problem</li>
+<li>Histogram problem</li>
+<li>Graph algorithms such as topological sorting and strongly connected components</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-4-stacks-4-6-balanced-parentheses-algorithm" data-chapter="chapter-4-stacks" data-title="4.6 Balanced Parentheses Algorithm"><h3>4.6 Balanced Parentheses Algorithm</h3>
+<ul class="note-list">
+<li>Slide algorithm:</li>
+<ul class="note-list">
+<li>Read each token.</li>
+<li>Push opening brackets.</li>
+<li>When closing bracket appears, pop and compare.</li>
+<li>If mismatch, report error.</li>
+<li>At the end, stack must be empty.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create an empty stack.</p>
+<p class="numbered-step">2. Read the expression from left to right.</p>
+<p class="numbered-step">3. If token is <code>(</code>, <code>{</code>, or <code>[</code>, push it.</p>
+<p class="numbered-step">4. If token is <code>)</code>, <code>}</code>, or <code>]</code>, check whether stack is empty.</p>
+<p class="numbered-step">5. If stack is empty, expression is not balanced.</p>
+<p class="numbered-step">6. Otherwise pop the top opening bracket.</p>
+<p class="numbered-step">7. Compare whether the opening and closing brackets match.</p>
+<p class="numbered-step">8. If they do not match, expression is not balanced.</p>
+<p class="numbered-step">9. After reading all tokens, expression is balanced only if stack is empty.</p>
+<h4>Balanced Bracket Memory Aid: &quot;Push Open, Pop Close, Empty Ends&quot;</h4>
+<ul class="note-list">
+<li>Push every opening bracket.</li>
+<li>Pop every closing bracket.</li>
+<li>Empty stack at the end means balanced.</li>
+</ul>
+<h4>C++ Balanced Parentheses Function</h4>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>#include &lt;stack&gt;
+#include &lt;string&gt;
+using namespace std;
+
+bool matches(char open, char close) {
+    return (open == &#x27;(&#x27; &amp;&amp; close == &#x27;)&#x27;) ||
+           (open == &#x27;[&#x27; &amp;&amp; close == &#x27;]&#x27;) ||
+           (open == &#x27;{&#x27; &amp;&amp; close == &#x27;}&#x27;);
+}
+
+bool isBalanced(const string&amp; expr) {
+    stack&lt;char&gt; st;
+
+    for (char token : expr) {
+        if (token == &#x27;(&#x27; || token == &#x27;[&#x27; || token == &#x27;{&#x27;) {
+            st.push(token);
+        } else if (token == &#x27;)&#x27; || token == &#x27;]&#x27; || token == &#x27;}&#x27;) {
+            if (st.empty()) return false;
+
+            char open = st.top();
+            st.pop();
+
+            if (!matches(open, token)) return false;
+        }
+    }
+
+    return st.empty();
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-4-stacks-4-7-infix-to-postfix-conversion" data-chapter="chapter-4-stacks" data-title="4.7 Infix to Postfix Conversion"><h3>4.7 Infix to Postfix Conversion</h3>
+<ul class="note-list">
+<li>Infix:</li>
+<ul class="note-list">
+<li>Human/programmer notation.</li>
+<li>Example: <code>A * (B + C)</code></li>
+</ul>
+<li>Postfix:</li>
+<ul class="note-list">
+<li>Easier for compilers to parse.</li>
+<li>No parentheses required during evaluation.</li>
+</ul>
+</ul>
+<h4>Operator Priority</h4>
+<ul class="note-list">
+<li>Highest in the slides:</li>
+<ul class="note-list">
+<li><code>*</code>, <code>/</code></li>
+</ul>
+<li>Lower:</li>
+<ul class="note-list">
+<li><code>+</code>, <code>-</code></li>
+</ul>
+<li>Parentheses:</li>
+<ul class="note-list">
+<li>Force grouping.</li>
+</ul>
+</ul>
+<h4>Infix to Postfix Step-by-Step Algorithm</h4>
+<p class="numbered-step">1. Create an empty stack.</p>
+<p class="numbered-step">2. Scan tokens from left to right.</p>
+<p class="numbered-step">3. If token is an operand:</p>
+<ul class="note-list">
+<li>Display/add it to postfix output.</li>
+</ul>
+<p class="numbered-step">4. If token is <code>(</code>:</p>
+<ul class="note-list">
+<li>Push it onto the stack.</li>
+</ul>
+<p class="numbered-step">5. If token is <code>)</code>:</p>
+<ul class="note-list">
+<li>Pop and display stack items until <code>(</code> is found.</li>
+<li>Do not display <code>(</code>.</li>
+<li>If <code>(</code> is not found, report an error.</li>
+</ul>
+<p class="numbered-step">6. If token is an operator:</p>
+<ul class="note-list">
+<li>If stack is empty, push it.</li>
+<li>If token has higher priority than stack top, push it.</li>
+<li>Otherwise, pop and display stack top.</li>
+<li>Repeat comparison with remaining stack items.</li>
+<li>Push current operator.</li>
+</ul>
+<p class="numbered-step">7. After the expression ends:</p>
+<ul class="note-list">
+<li>Pop and display all remaining operators.</li>
+</ul>
+<h4>Infix to Postfix Memory Aid: &quot;Operand Out, Open On, Close Clears, Operators Compare&quot;</h4>
+<ul class="note-list">
+<li>Operand Out: operands go straight to output.</li>
+<li>Open On: opening parenthesis goes onto stack.</li>
+<li>Close Clears: closing parenthesis clears until opening parenthesis.</li>
+<li>Operators Compare: compare precedence before pushing.</li>
+</ul>
+<h4>Detailed Dry Run 1: <code>A * ( B + C )</code></h4>
+<ul class="note-list">
+<li>Tokens:</li>
+<ul class="note-list">
+<li><code>A</code>, <code>*</code>, <code>(</code>, <code>B</code>, <code>+</code>, <code>C</code>, <code>)</code></li>
+</ul>
+<li>Initial:</li>
+<ul class="note-list">
+<li>Stack: empty</li>
+<li>Output: empty</li>
+</ul>
+</ul>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Step</th>
+<th>Token</th>
+<th>Action</th>
+<th>Stack</th>
+<th>Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>A</code></td>
+<td>Operand goes to output</td>
+<td>empty</td>
+<td><code>A</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>*</code></td>
+<td>Stack empty, push operator</td>
+<td><code>*</code></td>
+<td><code>A</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>(</code></td>
+<td>Push opening parenthesis</td>
+<td><code>* (</code></td>
+<td><code>A</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>B</code></td>
+<td>Operand goes to output</td>
+<td><code>* (</code></td>
+<td><code>A B</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>+</code></td>
+<td>Top is <code>(</code>, push operator</td>
+<td><code>* ( +</code></td>
+<td><code>A B</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>C</code></td>
+<td>Operand goes to output</td>
+<td><code>* ( +</code></td>
+<td><code>A B C</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>)</code></td>
+<td>Pop until <code>(</code>, output <code>+</code>, discard <code>(</code></td>
+<td><code>*</code></td>
+<td><code>A B C +</code></td>
+</tr>
+<tr>
+<td>End</td>
+<td>none</td>
+<td>Pop remaining <code>*</code></td>
+<td>empty</td>
+<td><code>A B C + *</code></td>
+</tr>
+</tbody></table></div>
+<ul class="note-list">
+<li>Final postfix:</li>
+<ul class="note-list">
+<li><code>A B C + *</code></li>
+</ul>
+</ul>
+<h4>Detailed Dry Run 2: <code>7 * 8 - ( 2 + 3 )</code></h4>
+<ul class="note-list">
+<li>Tokens:</li>
+<ul class="note-list">
+<li><code>7</code>, <code>*</code>, <code>8</code>, <code>-</code>, <code>(</code>, <code>2</code>, <code>+</code>, <code>3</code>, <code>)</code></li>
+</ul>
+<li>Initial:</li>
+<ul class="note-list">
+<li>Stack: empty</li>
+<li>Output: empty</li>
+</ul>
+</ul>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Step</th>
+<th>Token</th>
+<th>Action</th>
+<th>Stack</th>
+<th>Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>7</code></td>
+<td>Operand to output</td>
+<td>empty</td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>*</code></td>
+<td>Push operator</td>
+<td><code>*</code></td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>8</code></td>
+<td>Operand to output</td>
+<td><code>*</code></td>
+<td><code>7 8</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>-</code></td>
+<td><code>*</code> has higher priority, pop <code>*</code>; push <code>-</code></td>
+<td><code>-</code></td>
+<td><code>7 8 *</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>(</code></td>
+<td>Push opening parenthesis</td>
+<td><code>- (</code></td>
+<td><code>7 8 *</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>2</code></td>
+<td>Operand to output</td>
+<td><code>- (</code></td>
+<td><code>7 8 * 2</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>+</code></td>
+<td>Push after <code>(</code></td>
+<td><code>- ( +</code></td>
+<td><code>7 8 * 2</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>3</code></td>
+<td>Operand to output</td>
+<td><code>- ( +</code></td>
+<td><code>7 8 * 2 3</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>)</code></td>
+<td>Pop <code>+</code>, discard <code>(</code></td>
+<td><code>-</code></td>
+<td><code>7 8 * 2 3 +</code></td>
+</tr>
+<tr>
+<td>End</td>
+<td>none</td>
+<td>Pop remaining <code>-</code></td>
+<td>empty</td>
+<td><code>7 8 * 2 3 + -</code></td>
+</tr>
+</tbody></table></div>
+<ul class="note-list">
+<li>Final postfix:</li>
+<ul class="note-list">
+<li><code>7 8 * 2 3 + -</code></li>
+</ul>
+</ul>
+<h4>C++ Infix to Postfix</h4>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>#include &lt;iostream&gt;
+#include &lt;stack&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int precedence(char op) {
+    if (op == &#x27;*&#x27; || op == &#x27;/&#x27;) return 2;
+    if (op == &#x27;+&#x27; || op == &#x27;-&#x27;) return 1;
+    return 0;
+}
+
+bool isOperator(char c) {
+    return c == &#x27;+&#x27; || c == &#x27;-&#x27; || c == &#x27;*&#x27; || c == &#x27;/&#x27;;
+}
+
+string infixToPostfix(const string&amp; infix) {
+    stack&lt;char&gt; st;
+    string postfix;
+
+    for (char token : infix) {
+        if (token == &#x27; &#x27;) continue;
+
+        if (isalnum(token)) {
+            postfix += token;
+            postfix += &#x27; &#x27;;
+        } else if (token == &#x27;(&#x27;) {
+            st.push(token);
+        } else if (token == &#x27;)&#x27;) {
+            while (!st.empty() &amp;&amp; st.top() != &#x27;(&#x27;) {
+                postfix += st.top();
+                postfix += &#x27; &#x27;;
+                st.pop();
+            }
+            if (!st.empty()) st.pop();
+        } else if (isOperator(token)) {
+            while (!st.empty() &amp;&amp; st.top() != &#x27;(&#x27; &amp;&amp;
+                   precedence(st.top()) &gt;= precedence(token)) {
+                postfix += st.top();
+                postfix += &#x27; &#x27;;
+                st.pop();
+            }
+            st.push(token);
+        }
+    }
+
+    while (!st.empty()) {
+        postfix += st.top();
+        postfix += &#x27; &#x27;;
+        st.pop();
+    }
+
+    return postfix;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-4-stacks-4-8-postfix-evaluation" data-chapter="chapter-4-stacks" data-title="4.8 Postfix Evaluation"><h3>4.8 Postfix Evaluation</h3>
+<ul class="note-list">
+<li>Slide algorithm:</li>
+<ul class="note-list">
+<li>Create empty stack.</li>
+<li>Read token.</li>
+<li>If operand, push.</li>
+<li>If operator, pop top two items.</li>
+<li>Execute expression.</li>
+<li>Push result.</li>
+<li>Final value is at top of stack.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create empty stack.</p>
+<p class="numbered-step">2. Scan postfix expression left to right.</p>
+<p class="numbered-step">3. If token is operand, push it.</p>
+<p class="numbered-step">4. If token is operator, pop right operand.</p>
+<p class="numbered-step">5. Pop left operand.</p>
+<p class="numbered-step">6. Calculate <code>left operator right</code>.</p>
+<p class="numbered-step">7. Push result.</p>
+<p class="numbered-step">8. At the end, stack top is the final answer.</p>
+<ul class="note-list">
+<li>Slide example:</li>
+<ul class="note-list">
+<li><code>2 4 * 9 5 + -</code></li>
+<li><code>2 4 * = 8</code></li>
+<li><code>9 5 + = 14</code></li>
+<li><code>8 14 - = -6</code></li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>int evalPostfix(const vector&lt;string&gt;&amp; tokens) {
+    stack&lt;int&gt; st;
+
+    for (string token : tokens) {
+        if (token == &quot;+&quot; || token == &quot;-&quot; || token == &quot;*&quot; || token == &quot;/&quot;) {
+            int right = st.top(); st.pop();
+            int left = st.top(); st.pop();
+
+            if (token == &quot;+&quot;) st.push(left + right);
+            else if (token == &quot;-&quot;) st.push(left - right);
+            else if (token == &quot;*&quot;) st.push(left * right);
+            else st.push(left / right);
+        } else {
+            st.push(stoi(token));
+        }
+    }
+
+    return st.top();
+}</code></pre></div>
+</article>
+</section>
+<section class="chapter-section" id="chapter-5-queues" data-title="Chapter 5: Queues"><h2>Chapter 5: Queues</h2>
+<article class="subtopic-card" id="chapter-5-queues-learning-targets" data-chapter="chapter-5-queues" data-title="Learning Targets"><h3>Learning Targets</h3>
+<ul class="note-list">
+<li>Understand:</li>
+<ul class="note-list">
+<li>Queue using STL</li>
+<li>Queue using linked list</li>
+<li>Queue applications</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-5-queues-5-1-what-is-a-queue" data-chapter="chapter-5-queues" data-title="5.1 What Is a Queue?"><h3>5.1 What Is a Queue?</h3>
+<ul class="note-list">
+<li>A queue is:</li>
+<ul class="note-list">
+<li>A restricted access linear data structure.</li>
+<li>Insertions happen at the rear/end.</li>
+<li>Deletions happen at the front.</li>
+<li>FIFO: First In First Out.</li>
+</ul>
+<li>Queue operations:</li>
+<ul class="note-list">
+<li>Enqueue/append: insert at back.</li>
+<li>Dequeue/serve: remove from front.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-5-queues-5-2-stl-queue" data-chapter="chapter-5-queues" data-title="5.2 STL Queue"><h3>5.2 STL Queue</h3>
+<ul class="note-list">
+<li>Main functions:</li>
+<ul class="note-list">
+<li><code>empty()</code>: checks whether queue is empty</li>
+<li><code>push(el)</code>: inserts at the end</li>
+<li><code>pop()</code>: removes first element</li>
+<li><code>front()</code>: returns first element</li>
+<li><code>back()</code>: returns last element</li>
+<li><code>swap()</code>: swaps queues of same type</li>
+<li><code>emplace()</code>: inserts new element at the end</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>#include &lt;iostream&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+int main() {
+    queue&lt;char&gt; myQ;
+
+    myQ.push(&#x27;C&#x27;);
+    myQ.push(&#x27;A&#x27;);
+    myQ.emplace(&#x27;D&#x27;);
+
+    cout &lt;&lt; &quot;Front: &quot; &lt;&lt; myQ.front() &lt;&lt; endl;
+    cout &lt;&lt; &quot;Back: &quot; &lt;&lt; myQ.back() &lt;&lt; endl;
+
+    while (!myQ.empty()) {
+        cout &lt;&lt; myQ.front() &lt;&lt; &quot; &quot;;
+        myQ.pop();
+    }
+
+    return 0;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-5-queues-5-3-linked-list-queue" data-chapter="chapter-5-queues" data-title="5.3 Linked List Queue"><h3>5.3 Linked List Queue</h3>
+<ul class="note-list">
+<li>Option 1 from slides:</li>
+<ul class="note-list">
+<li>Enqueue: insert at end.</li>
+<li>Dequeue: remove at beginning.</li>
+</ul>
+<li>Option 2 from slides:</li>
+<ul class="note-list">
+<li>Enqueue: insert at beginning.</li>
+<li>Dequeue: remove at end.</li>
+</ul>
+<li>Exam preference:</li>
+<ul class="note-list">
+<li>Option 1 with <code>head</code> and <code>tail</code> is natural and efficient.</li>
+</ul>
+</ul>
+<h4>Queue Memory Aid: &quot;Back In, Front Out&quot;</h4>
+<ul class="note-list">
+<li>Back In = enqueue at rear.</li>
+<li>Front Out = dequeue at front.</li>
+</ul>
+<h4>C++ Linked List Queue</h4>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>class QueueLL {
+    struct Node {
+        int data;
+        Node *next;
+    };
+
+    Node *frontNode;
+    Node *rearNode;
+
+public:
+    QueueLL() {
+        frontNode = rearNode = NULL;
+    }
+
+    bool empty() {
+        return frontNode == NULL;
+    }
+
+    void enqueue(int value) {
+        Node *n = new Node();
+        n-&gt;data = value;
+        n-&gt;next = NULL;
+
+        if (rearNode == NULL) {
+            frontNode = rearNode = n;
+        } else {
+            rearNode-&gt;next = n;
+            rearNode = n;
+        }
+    }
+
+    void dequeue() {
+        if (frontNode == NULL) return;
+
+        Node *old = frontNode;
+        frontNode = frontNode-&gt;next;
+        delete old;
+
+        if (frontNode == NULL) {
+            rearNode = NULL;
+        }
+    }
+
+    int front() {
+        return frontNode-&gt;data;
+    }
+};</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-5-queues-5-4-queue-applications" data-chapter="chapter-5-queues" data-title="5.4 Queue Applications"><h3>5.4 Queue Applications</h3>
+<ul class="note-list">
+<li>From the slides:</li>
+<ul class="note-list">
+<li>CPU scheduling</li>
+<li>Disk scheduling</li>
+<li>IO buffers</li>
+<li>Pipes</li>
+<li>File IO</li>
+<li>Printer spooling</li>
+<li>Website traffic</li>
+<li>Media player playlist</li>
+<li>Network interrupts</li>
+<li>Routers and switches</li>
+<li>Mail systems</li>
+</ul>
+</ul>
+</article>
+</section>
+<section class="chapter-section" id="chapter-6-tree-part-1" data-title="Chapter 6: Tree, Part 1"><h2>Chapter 6: Tree, Part 1</h2>
+<article class="subtopic-card" id="chapter-6-tree-part-1-learning-targets" data-chapter="chapter-6-tree-part-1" data-title="Learning Targets"><h3>Learning Targets</h3>
+<ul class="note-list">
+<li>Understand:</li>
+<ul class="note-list">
+<li>Tree fundamentals</li>
+<li>Binary tree</li>
+<li>Binary search tree</li>
+<li>Expression tree</li>
+<li>Tree traversal</li>
+<li>Tree applications</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-1-what-is-a-tree" data-chapter="chapter-6-tree-part-1" data-title="6.1 What Is a Tree?"><h3>6.1 What Is a Tree?</h3>
+<ul class="note-list">
+<li>A tree is:</li>
+<ul class="note-list">
+<li>Non-linear</li>
+<li>Hierarchical</li>
+<li>A collection of nodes</li>
+<li>Nodes store a value and references to children</li>
+<li>Connected through edges</li>
+</ul>
+<li>The slides also describe Tree as:</li>
+<ul class="note-list">
+<li>A widely used ADT that simulates hierarchy.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-2-types-of-tree-data-structures" data-chapter="chapter-6-tree-part-1" data-title="6.2 Types of Tree Data Structures"><h3>6.2 Types of Tree Data Structures</h3>
+<ul class="note-list">
+<li>General tree:</li>
+<ul class="note-list">
+<li>No restriction on number of children.</li>
+</ul>
+<li>Binary tree:</li>
+<ul class="note-list">
+<li>Each node has at most 2 children.</li>
+<li>Children are usually named left and right.</li>
+</ul>
+<li>Binary search tree:</li>
+<ul class="note-list">
+<li>Left node value is less than parent.</li>
+<li>Right node value is greater than parent.</li>
+</ul>
+<li>Expression tree:</li>
+<ul class="note-list">
+<li>Internal nodes are operators.</li>
+<li>Leaf nodes are operands.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-3-tree-terminology" data-chapter="chapter-6-tree-part-1" data-title="6.3 Tree Terminology"><h3>6.3 Tree Terminology</h3>
+<ul class="note-list">
+<li>Root:</li>
+<ul class="note-list">
+<li>Node with no parent.</li>
+<li>Topmost node.</li>
+</ul>
+<li>Edge:</li>
+<ul class="note-list">
+<li>Line connecting two nodes.</li>
+<li>Also known as branch.</li>
+</ul>
+<li>Children:</li>
+<ul class="note-list">
+<li>Immediate successor nodes.</li>
+</ul>
+<li>Siblings:</li>
+<ul class="note-list">
+<li>Children of the same parent.</li>
+</ul>
+<li>Leaf node:</li>
+<ul class="note-list">
+<li>Node with no children.</li>
+<li>Also called external or terminal node.</li>
+</ul>
+<li>Internal node:</li>
+<ul class="note-list">
+<li>Node with at least one child.</li>
+</ul>
+<li>Size:</li>
+<ul class="note-list">
+<li>Number of nodes.</li>
+</ul>
+<li>Depth of node x:</li>
+<ul class="note-list">
+<li>Length of path from root to node x.</li>
+</ul>
+<li>Height of node x:</li>
+<ul class="note-list">
+<li>Number of edges in the longest path from node x to a leaf.</li>
+</ul>
+<li>Height of tree:</li>
+<ul class="note-list">
+<li>Height of root.</li>
+</ul>
+<li>Level:</li>
+<ul class="note-list">
+<li>Set of nodes at a given depth.</li>
+</ul>
+</ul>
+<h4>Tree Terminology Memory Aid: &quot;R-E-C-S-L-I&quot;</h4>
+<ul class="note-list">
+<li>R = Root</li>
+<li>E = Edge</li>
+<li>C = Children</li>
+<li>S = Siblings</li>
+<li>L = Leaf</li>
+<li>I = Internal</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-4-binary-tree" data-chapter="chapter-6-tree-part-1" data-title="6.4 Binary Tree"><h3>6.4 Binary Tree</h3>
+<ul class="note-list">
+<li>A binary tree:</li>
+<ul class="note-list">
+<li>Has at most two children per node.</li>
+<li>Is the simplest and most common tree type in the slides.</li>
+</ul>
+<li>Types from the slides:</li>
+<ul class="note-list">
+<li>Rooted binary tree</li>
+<li>Degenerate binary tree</li>
+<li>Full binary tree</li>
+<li>Complete binary tree</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-5-binary-tree-types-and-formulas" data-chapter="chapter-6-tree-part-1" data-title="6.5 Binary Tree Types and Formulas"><h3>6.5 Binary Tree Types and Formulas</h3>
+<ul class="note-list">
+<li>Binary tree:</li>
+<ul class="note-list">
+<li>Minimum nodes for height h: <code>h + 1</code></li>
+<li>Maximum nodes for height h: <code>2^(h+1) - 1</code></li>
+<li>Minimum height for n nodes: <code>log(n + 1) - 1</code></li>
+<li>Maximum height for n nodes: <code>n - 1</code></li>
+</ul>
+<li>Full binary tree:</li>
+<ul class="note-list">
+<li>Every node has either 0 or 2 children.</li>
+<li>Number of leaf nodes = number of internal nodes + 1.</li>
+<li>Minimum nodes for height h: <code>2h + 1</code></li>
+<li>Maximum nodes for height h: <code>2^(h+1) - 1</code></li>
+<li>Maximum height for n nodes: <code>(n - 1) / 2</code></li>
+</ul>
+<li>Complete binary tree:</li>
+<ul class="note-list">
+<li>All levels are filled except possibly the last.</li>
+<li>Last level nodes are as left as possible.</li>
+<li>Minimum nodes for height h: <code>2^h</code></li>
+<li>Maximum nodes for height h: <code>2^(h+1) - 1</code></li>
+<li>Maximum height for n nodes: <code>log(n)</code></li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-6-binary-search-tree" data-chapter="chapter-6-tree-part-1" data-title="6.6 Binary Search Tree"><h3>6.6 Binary Search Tree</h3>
+<ul class="note-list">
+<li>A BST is an enhanced binary tree.</li>
+<li>It needs:</li>
+<ul class="note-list">
+<li>A key</li>
+<li>A way to compare keys</li>
+<li>A storage rule</li>
+</ul>
+<li>BST rules:</li>
+<ul class="note-list">
+<li>Left child key is less than parent key.</li>
+<li>Right child key is greater than or equal to parent key.</li>
+<li>Left and right children are also BSTs.</li>
+</ul>
+<li>Performance from slides:</li>
+<ul class="note-list">
+<li>Searching improves to O(log n) by eliminating about 50% of potential nodes.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-7-bst-insertion" data-chapter="chapter-6-tree-part-1" data-title="6.7 BST Insertion"><h3>6.7 BST Insertion</h3>
+<ul class="note-list">
+<li>Slide algorithm:</li>
+<ul class="note-list">
+<li>If tree is empty, create root.</li>
+<li>Otherwise compare with current node.</li>
+<li>If equal, replace value.</li>
+<li>If greater, go right.</li>
+<li>If smaller, go left.</li>
+<li>Insert when an empty subtree is found.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. If <code>root == NULL</code>, new node becomes root.</p>
+<p class="numbered-step">2. Compare new key with current node.</p>
+<p class="numbered-step">3. If new key is smaller, move left.</p>
+<p class="numbered-step">4. If new key is greater or equal, move right.</p>
+<p class="numbered-step">5. Repeat until the correct empty child pointer is found.</p>
+<p class="numbered-step">6. Attach the new node there.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>struct TreeNode {
+    int data;
+    TreeNode *left;
+    TreeNode *right;
+};
+
+TreeNode* createTreeNode(int value) {
+    TreeNode *n = new TreeNode();
+    n-&gt;data = value;
+    n-&gt;left = n-&gt;right = NULL;
+    return n;
+}
+
+void insert(TreeNode *&amp;root, int value) {
+    if (root == NULL) {
+        root = createTreeNode(value);
+    } else if (value &lt; root-&gt;data) {
+        insert(root-&gt;left, value);
+    } else {
+        insert(root-&gt;right, value);
+    }
+}</code></pre></div>
+<h4>BST Insertion Memory Aid: &quot;Compare, Choose, Continue, Connect&quot;</h4>
+<ul class="note-list">
+<li>Compare with current node.</li>
+<li>Choose left or right.</li>
+<li>Continue down the tree.</li>
+<li>Connect at empty spot.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-8-bst-deletion" data-chapter="chapter-6-tree-part-1" data-title="6.8 BST Deletion"><h3>6.8 BST Deletion</h3>
+<ul class="note-list">
+<li>Three conditions from the slides:</li>
+<ul class="note-list">
+<li>Condition 1: node is a leaf node.</li>
+<li>Condition 2: node has one child.</li>
+<li>Condition 3: node has two children.</li>
+</ul>
+</ul>
+<h4>Condition 1: Leaf Node</h4>
+<ul class="note-list">
+<li>Step:</li>
+<ul class="note-list">
+<li>Delete the node directly.</li>
+</ul>
+</ul>
+<h4>Condition 2: One Child</h4>
+<ul class="note-list">
+<li>Steps:</li>
+</ul>
+<p class="numbered-step">1. Change the parent&#x27;s reference to point to the child of the deleted node.</p>
+<p class="numbered-step">2. The child and its subtrees take the deleted node&#x27;s place.</p>
+<h4>Condition 3: Two Children</h4>
+<ul class="note-list">
+<li>Steps from the slides:</li>
+</ul>
+<p class="numbered-step">1. Replace the node with its inorder successor.</p>
+<p class="numbered-step">2. The inorder successor is the last left node in the right subtree.</p>
+<p class="numbered-step">3. The inorder successor cannot have a left child.</p>
+<p class="numbered-step">4. If it has a right child, that child occupies the successor&#x27;s old position.</p>
+<h4>C++ BST Deletion</h4>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>TreeNode* findMin(TreeNode *root) {
+    while (root != NULL &amp;&amp; root-&gt;left != NULL) {
+        root = root-&gt;left;
+    }
+    return root;
+}
+
+TreeNode* deleteBST(TreeNode *root, int key) {
+    if (root == NULL) return NULL;
+
+    if (key &lt; root-&gt;data) {
+        root-&gt;left = deleteBST(root-&gt;left, key);
+    } else if (key &gt; root-&gt;data) {
+        root-&gt;right = deleteBST(root-&gt;right, key);
+    } else {
+        if (root-&gt;left == NULL &amp;&amp; root-&gt;right == NULL) {
+            delete root;
+            return NULL;
+        } else if (root-&gt;left == NULL) {
+            TreeNode *child = root-&gt;right;
+            delete root;
+            return child;
+        } else if (root-&gt;right == NULL) {
+            TreeNode *child = root-&gt;left;
+            delete root;
+            return child;
+        } else {
+            TreeNode *successor = findMin(root-&gt;right);
+            root-&gt;data = successor-&gt;data;
+            root-&gt;right = deleteBST(root-&gt;right, successor-&gt;data);
+        }
+    }
+
+    return root;
+}</code></pre></div>
+<h4>BST Deletion Memory Aid: &quot;Zero, One, Two&quot;</h4>
+<ul class="note-list">
+<li>Zero children: delete directly.</li>
+<li>One child: child replaces node.</li>
+<li>Two children: successor replaces node.</li>
+</ul>
+</article>
+</section>
+<section class="chapter-section" id="chapter-6-tree-part-2" data-title="Chapter 6: Tree, Part 2"><h2>Chapter 6: Tree, Part 2</h2>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-9-expression-tree" data-chapter="chapter-6-tree-part-2" data-title="6.9 Expression Tree"><h3>6.9 Expression Tree</h3>
+<ul class="note-list">
+<li>Expression tree:</li>
+<ul class="note-list">
+<li>A binary tree.</li>
+<li>Internal nodes are arithmetic operators.</li>
+<li>Leaf nodes are operands.</li>
+</ul>
+<li>Example from slides:</li>
+<ul class="note-list">
+<li><code>A * (B + C)</code></li>
+<li>Root is <code>*</code></li>
+<li>Left child is <code>A</code></li>
+<li>Right subtree is <code>+</code> with children <code>B</code> and <code>C</code></li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-10-tree-traversal" data-chapter="chapter-6-tree-part-2" data-title="6.10 Tree Traversal"><h3>6.10 Tree Traversal</h3>
+<ul class="note-list">
+<li>Two main traversal approaches:</li>
+<ul class="note-list">
+<li>Breadth First Traversal / Level Order Traversal</li>
+<li>Depth First Traversals</li>
+</ul>
+<li>DFS types:</li>
+<ul class="note-list">
+<li>Inorder: Left, Root, Right</li>
+<li>Preorder: Root, Left, Right</li>
+<li>Postorder: Left, Right, Root</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-11-bfs-breadth-first-traversal" data-chapter="chapter-6-tree-part-2" data-title="6.11 BFS: Breadth First Traversal"><h3>6.11 BFS: Breadth First Traversal</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>BFS uses a queue.</li>
+<li>Starts from root.</li>
+<li>Visits and marks one node at a time.</li>
+<li>Stores adjacent nodes in the queue.</li>
+<li>Suitable for nodes closer to root.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Create an empty queue.</p>
+<p class="numbered-step">2. Put root in queue.</p>
+<p class="numbered-step">3. While queue is not empty, remove front node.</p>
+<p class="numbered-step">4. Visit it.</p>
+<p class="numbered-step">5. Add its left child if present.</p>
+<p class="numbered-step">6. Add its right child if present.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>#include &lt;queue&gt;
+
+void bfs(TreeNode *root) {
+    if (root == NULL) return;
+
+    queue&lt;TreeNode*&gt; q;
+    q.push(root);
+
+    while (!q.empty()) {
+        TreeNode *p = q.front();
+        q.pop();
+
+        cout &lt;&lt; p-&gt;data &lt;&lt; &quot; &quot;;
+
+        if (p-&gt;left != NULL) q.push(p-&gt;left);
+        if (p-&gt;right != NULL) q.push(p-&gt;right);
+    }
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-12-dfs-traversals" data-chapter="chapter-6-tree-part-2" data-title="6.12 DFS Traversals"><h3>6.12 DFS Traversals</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>DFS is edge-based.</li>
+<li>DFS may traverse more edges to reach a destination.</li>
+<li>Suitable when solutions are away from source.</li>
+<li>Suitable for games or puzzles.</li>
+</ul>
+</ul>
+<h4>Preorder: Root, Left, Right</h4>
+<ul class="note-list">
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Visit root.</p>
+<p class="numbered-step">2. Traverse left subtree.</p>
+<p class="numbered-step">3. Traverse right subtree.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void preorder(TreeNode *p) {
+    if (p != NULL) {
+        cout &lt;&lt; p-&gt;data &lt;&lt; &quot; &quot;;
+        preorder(p-&gt;left);
+        preorder(p-&gt;right);
+    }
+}</code></pre></div>
+<h4>Inorder: Left, Root, Right</h4>
+<ul class="note-list">
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Traverse left subtree.</p>
+<p class="numbered-step">2. Visit root.</p>
+<p class="numbered-step">3. Traverse right subtree.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void inorder(TreeNode *p) {
+    if (p != NULL) {
+        inorder(p-&gt;left);
+        cout &lt;&lt; p-&gt;data &lt;&lt; &quot; &quot;;
+        inorder(p-&gt;right);
+    }
+}</code></pre></div>
+<h4>Postorder: Left, Right, Root</h4>
+<ul class="note-list">
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Traverse left subtree.</p>
+<p class="numbered-step">2. Traverse right subtree.</p>
+<p class="numbered-step">3. Visit root.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void postorder(TreeNode *p) {
+    if (p != NULL) {
+        postorder(p-&gt;left);
+        postorder(p-&gt;right);
+        cout &lt;&lt; p-&gt;data &lt;&lt; &quot; &quot;;
+    }
+}</code></pre></div>
+<h4>Traversal Memory Aid: &quot;V Position&quot;</h4>
+<ul class="note-list">
+<li>Preorder: VLR = Visit first.</li>
+<li>Inorder: LVR = Visit in middle.</li>
+<li>Postorder: LRV = Visit last.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-13-binary-postfix-postorder-on-expression-tree" data-chapter="chapter-6-tree-part-2" data-title="6.13 Binary Postfix: Postorder on Expression Tree"><h3>6.13 Binary Postfix: Postorder on Expression Tree</h3>
+<ul class="note-list">
+<li>Source connection:</li>
+<ul class="note-list">
+<li>Slides cover expression trees and postorder traversal.</li>
+<li>A postfix expression matches postorder traversal of an expression tree.</li>
+</ul>
+<li>Understand it:</li>
+<ul class="note-list">
+<li>Operators are internal nodes.</li>
+<li>Operands are leaves.</li>
+<li>Postorder prints left operand/subexpression, right operand/subexpression, then operator.</li>
+</ul>
+<li>Example:</li>
+<ul class="note-list">
+<li>Expression tree for <code>A * (B + C)</code></li>
+<li>Postorder:</li>
+<ul class="note-list">
+<li>Left: <code>A</code></li>
+<li>Right subtree: <code>B C +</code></li>
+<li>Root: <code>*</code></li>
+</ul>
+<li>Binary postfix result:</li>
+<ul class="note-list">
+<li><code>A B C + *</code></li>
+</ul>
+</ul>
+<li>C++ expression tree node:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>struct ExprNode {
+    char value;
+    ExprNode *left;
+    ExprNode *right;
+};
+
+void printPostfix(ExprNode *root) {
+    if (root == NULL) return;
+
+    printPostfix(root-&gt;left);
+    printPostfix(root-&gt;right);
+    cout &lt;&lt; root-&gt;value &lt;&lt; &quot; &quot;;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-14-tree-linked-list-implementation" data-chapter="chapter-6-tree-part-2" data-title="6.14 Tree Linked List Implementation"><h3>6.14 Tree Linked List Implementation</h3>
+<ul class="note-list">
+<li>Tree node from slides:</li>
+<ul class="note-list">
+<li>Data</li>
+<li>Left pointer</li>
+<li>Right pointer</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>class Node {
+public:
+    int data;
+    Node *left;
+    Node *right;
+};</code></pre></div>
+<ul class="note-list">
+<li>Node creation:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>Node* createNode(int value) {
+    Node *n = new Node();
+    n-&gt;data = value;
+    n-&gt;left = n-&gt;right = NULL;
+    return n;
+}</code></pre></div>
+<ul class="note-list">
+<li>BST insertion from slide sample:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insert(Node *n, Node *&amp;parent) {
+    if (parent == NULL) {
+        parent = n;
+    } else if (n-&gt;data &lt; parent-&gt;data) {
+        insert(n, parent-&gt;left);
+    } else {
+        insert(n, parent-&gt;right);
+    }
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-15-bst-search" data-chapter="chapter-6-tree-part-2" data-title="6.15 BST Search"><h3>6.15 BST Search</h3>
+<ul class="note-list">
+<li>Slide logic:</li>
+<ul class="note-list">
+<li>Start at root.</li>
+<li>If value matches, found.</li>
+<li>If current value is greater than key, move left.</li>
+<li>Otherwise move right.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Set <code>s = root</code>.</p>
+<p class="numbered-step">2. While <code>s != NULL</code>, compare key.</p>
+<p class="numbered-step">3. If <code>s-&gt;data == key</code>, found.</p>
+<p class="numbered-step">4. If <code>s-&gt;data &gt; key</code>, move left.</p>
+<p class="numbered-step">5. Else move right.</p>
+<p class="numbered-step">6. If loop ends, not found.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>bool searchBST(Node *root, int key) {
+    Node *s = root;
+
+    while (s != NULL) {
+        if (s-&gt;data == key) return true;
+
+        if (s-&gt;data &gt; key) {
+            s = s-&gt;left;
+        } else {
+            s = s-&gt;right;
+        }
+    }
+
+    return false;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-16-tree-summary" data-chapter="chapter-6-tree-part-2" data-title="6.16 Tree Summary"><h3>6.16 Tree Summary</h3>
+<ul class="note-list">
+<li>Trees are useful when data naturally forms a hierarchy.</li>
+<li>Example from slides:</li>
+<ul class="note-list">
+<li>File system folder structure.</li>
+</ul>
+<li>BST search can be faster than linked list search.</li>
+<li>Tree insertion and deletion can be performed in moderate time.</li>
+</ul>
+</article>
+</section>
+<section class="chapter-section" id="chapter-7-graph" data-title="Chapter 7: Graph"><h2>Chapter 7: Graph</h2>
+<article class="subtopic-card" id="chapter-7-graph-learning-targets" data-chapter="chapter-7-graph" data-title="Learning Targets"><h3>Learning Targets</h3>
+<ul class="note-list">
+<li>Understand:</li>
+<ul class="note-list">
+<li>Graph fundamentals</li>
+<li>Graph types</li>
+<li>Graph representation</li>
+<li>Shortest paths</li>
+<li>Spanning tree</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-7-graph-7-1-what-is-a-graph" data-chapter="chapter-7-graph" data-title="7.1 What Is a Graph?"><h3>7.1 What Is a Graph?</h3>
+<ul class="note-list">
+<li>A graph is:</li>
+<ul class="note-list">
+<li>A non-linear data structure.</li>
+<li>A finite set of vertices/nodes.</li>
+<li>A set of edges connecting pairs of nodes.</li>
+</ul>
+<li>Simple graph notation from slides:</li>
+<ul class="note-list">
+<li><code>G = (V, E)</code></li>
+<li><code>V</code> is the set of vertices.</li>
+<li><code>E</code> is a collection of unordered pairs <code>{u, v}</code>.</li>
+</ul>
+<li>Order of graph:</li>
+<ul class="note-list">
+<li>Number of vertices, written <code>|V|</code>.</li>
+</ul>
+<li>Size of graph:</li>
+<ul class="note-list">
+<li>Number of edges, written <code>|E|</code>.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-7-graph-7-2-graph-applications" data-chapter="chapter-7-graph" data-title="7.2 Graph Applications"><h3>7.2 Graph Applications</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>City paths</li>
+<li>Telephone networks</li>
+<li>Circuit networks</li>
+<li>Social networks</li>
+<li>Web pages</li>
+<li>Network connection</li>
+<li>Algorithm analysis</li>
+<li>Molecular structure</li>
+<li>Cell connection</li>
+<li>Road network/GPS</li>
+<li>Organization hierarchy</li>
+<li>Financial uses</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-7-graph-7-3-graph-types" data-chapter="chapter-7-graph" data-title="7.3 Graph Types"><h3>7.3 Graph Types</h3>
+<ul class="note-list">
+<li>Finite graph:</li>
+<ul class="note-list">
+<li>Finite vertices and finite edges.</li>
+</ul>
+<li>Infinite graph:</li>
+<ul class="note-list">
+<li>Infinite vertices and edges.</li>
+</ul>
+<li>Trivial graph:</li>
+<ul class="note-list">
+<li>One vertex and no edge.</li>
+</ul>
+<li>Null graph:</li>
+<ul class="note-list">
+<li><code>n</code> vertices and zero edges.</li>
+</ul>
+<li>Simple graph:</li>
+<ul class="note-list">
+<li>No more than one edge between a pair of vertices.</li>
+</ul>
+<li>Directed graph/digraph:</li>
+<ul class="note-list">
+<li>Edges have direction.</li>
+</ul>
+<li>Undirected graph:</li>
+<ul class="note-list">
+<li>Edges have no direction.</li>
+</ul>
+<li>Weighted graph:</li>
+<ul class="note-list">
+<li>Edges have costs/weights.</li>
+</ul>
+<li>Multigraph:</li>
+<ul class="note-list">
+<li>May contain parallel edges but no self-loop.</li>
+</ul>
+<li>Pseudograph:</li>
+<ul class="note-list">
+<li>Has self-loop and may have multiple edges.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-7-graph-7-4-graph-representation-adjacency-list" data-chapter="chapter-7-graph" data-title="7.4 Graph Representation: Adjacency List"><h3>7.4 Graph Representation: Adjacency List</h3>
+<ul class="note-list">
+<li>An adjacency list contains:</li>
+<ul class="note-list">
+<li>A list of vertices.</li>
+<li>For each vertex, a list of adjacent vertices.</li>
+</ul>
+<li>Can be designed as:</li>
+<ul class="note-list">
+<li>Table/star representation</li>
+<li>Linked list</li>
+</ul>
+<li>Array size equals number of vertices.</li>
+<li>Weighted graph:</li>
+<ul class="note-list">
+<li>Store pairs such as <code>(neighbor, weight)</code>.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>#include &lt;vector&gt;
+using namespace std;
+
+vector&lt;vector&lt;int&gt;&gt; adjList(5);
+
+void addEdge(int u, int v) {
+    adjList[u].push_back(v);
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-7-graph-7-5-graph-representation-adjacency-matrix" data-chapter="chapter-7-graph" data-title="7.5 Graph Representation: Adjacency Matrix"><h3>7.5 Graph Representation: Adjacency Matrix</h3>
+<ul class="note-list">
+<li>An adjacency matrix:</li>
+<ul class="note-list">
+<li>Uses a 2D array of size <code>V x V</code>.</li>
+<li>Put <code>1</code> at <code>matrix[i][j]</code> if edge exists.</li>
+<li>For weighted graphs, store weight <code>w</code>.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>const int V = 5;
+int adj[V][V] = {0};
+
+void addEdgeMatrix(int u, int v) {
+    adj[u][v] = 1;
+}
+
+void addWeightedEdge(int u, int v, int w) {
+    adj[u][v] = w;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-7-graph-7-6-dijkstra-s-shortest-path-algorithm" data-chapter="chapter-7-graph" data-title="7.6 Dijkstra&#x27;s Shortest Path Algorithm"><h3>7.6 Dijkstra&#x27;s Shortest Path Algorithm</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Proposed by Edsger Dijkstra in 1959.</li>
+<li>Applies to weighted directed or undirected graphs.</li>
+<li>Requires non-negative edge weights.</li>
+<li>Finds shortest distance/path from start node to target/all nodes.</li>
+</ul>
+<li>Slide algorithm:</li>
+<ul class="note-list">
+<li>Initialize <code>S = {1}</code>.</li>
+<li>Initialize distances from starting vertex.</li>
+<li>Repeatedly choose vertex <code>w</code> outside <code>S</code> with minimum distance.</li>
+<li>Add <code>w</code> to <code>S</code>.</li>
+<li>Relax neighboring distances:</li>
+<ul class="note-list">
+<li><code>D[v] = min(D[v], D[w] + C[w, v])</code></li>
+</ul>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Choose start vertex.</p>
+<p class="numbered-step">2. Set start distance to 0.</p>
+<p class="numbered-step">3. Set other distances to infinity.</p>
+<p class="numbered-step">4. Mark all vertices as unvisited.</p>
+<p class="numbered-step">5. Select unvisited vertex with smallest distance.</p>
+<p class="numbered-step">6. Mark it as visited.</p>
+<p class="numbered-step">7. For each unvisited neighbor, calculate new distance through selected vertex.</p>
+<p class="numbered-step">8. Keep the smaller distance.</p>
+<p class="numbered-step">9. Repeat until all vertices are visited or no reachable vertex remains.</p>
+<h4>Dijkstra Memory Aid: &quot;Smallest, Settle, Shorten&quot;</h4>
+<ul class="note-list">
+<li>Smallest distance vertex is selected.</li>
+<li>Settle it into the visited set.</li>
+<li>Shorten neighbors using relaxation.</li>
+</ul>
+<h4>C++ Dijkstra with Adjacency Matrix</h4>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;climits&gt;
+using namespace std;
+
+vector&lt;int&gt; dijkstra(vector&lt;vector&lt;int&gt;&gt;&amp; cost, int start) {
+    int n = cost.size();
+    vector&lt;int&gt; dist(n, INT_MAX);
+    vector&lt;bool&gt; visited(n, false);
+
+    dist[start] = 0;
+
+    for (int count = 0; count &lt; n - 1; count++) {
+        int w = -1;
+
+        for (int i = 0; i &lt; n; i++) {
+            if (!visited[i] &amp;&amp; (w == -1 || dist[i] &lt; dist[w])) {
+                w = i;
+            }
+        }
+
+        if (w == -1 || dist[w] == INT_MAX) break;
+
+        visited[w] = true;
+
+        for (int v = 0; v &lt; n; v++) {
+            if (!visited[v] &amp;&amp; cost[w][v] &gt; 0 &amp;&amp;
+                dist[w] + cost[w][v] &lt; dist[v]) {
+                dist[v] = dist[w] + cost[w][v];
+            }
+        }
+    }
+
+    return dist;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-7-graph-7-7-spanning-tree" data-chapter="chapter-7-graph" data-title="7.7 Spanning Tree"><h3>7.7 Spanning Tree</h3>
+<ul class="note-list">
+<li>A spanning tree:</li>
+<ul class="note-list">
+<li>Is a subset of a connected graph.</li>
+<li>Connects all vertices.</li>
+<li>Has no cycle.</li>
+<li>For <code>N</code> vertices, has <code>N - 1</code> edges.</li>
+</ul>
+<li>Minimum spanning tree:</li>
+<ul class="note-list">
+<li>For weighted connected undirected graph.</li>
+<li>Has weight less than or equal to every other spanning tree.</li>
+<li>Weight is the sum of edge weights.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-7-graph-7-8-kruskal-s-algorithm" data-chapter="chapter-7-graph" data-title="7.8 Kruskal&#x27;s Algorithm"><h3>7.8 Kruskal&#x27;s Algorithm</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Finds minimum cost spanning tree.</li>
+<li>Uses greedy approach.</li>
+<li>Picks the smallest edge that does not cause a cycle.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Sort all edges in non-decreasing order of weight.</p>
+<p class="numbered-step">2. Pick the smallest edge.</p>
+<p class="numbered-step">3. Check whether it forms a cycle.</p>
+<p class="numbered-step">4. If no cycle, include it.</p>
+<p class="numbered-step">5. If cycle, discard it.</p>
+<p class="numbered-step">6. Repeat until spanning tree has <code>V - 1</code> edges.</p>
+<h4>Kruskal Memory Aid: &quot;Sort, Select, Skip Cycles&quot;</h4>
+<ul class="note-list">
+<li>Sort edges.</li>
+<li>Select smallest valid edge.</li>
+<li>Skip edges that create cycles.</li>
+</ul>
+<h4>C++ Kruskal</h4>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+struct Edge {
+    int u;
+    int v;
+    int w;
+};
+
+int findParent(vector&lt;int&gt;&amp; parent, int x) {
+    if (parent[x] == x) return x;
+    parent[x] = findParent(parent, parent[x]);
+    return parent[x];
+}
+
+bool unite(vector&lt;int&gt;&amp; parent, int a, int b) {
+    int pa = findParent(parent, a);
+    int pb = findParent(parent, b);
+
+    if (pa == pb) return false;
+
+    parent[pb] = pa;
+    return true;
+}
+
+int kruskal(int V, vector&lt;Edge&gt;&amp; edges) {
+    sort(edges.begin(), edges.end(), [](Edge a, Edge b) {
+        return a.w &lt; b.w;
+    });
+
+    vector&lt;int&gt; parent(V);
+    for (int i = 0; i &lt; V; i++) parent[i] = i;
+
+    int total = 0;
+    int edgeCount = 0;
+
+    for (Edge e : edges) {
+        if (unite(parent, e.u, e.v)) {
+            total += e.w;
+            edgeCount++;
+            if (edgeCount == V - 1) break;
+        }
+    }
+
+    return total;
+}</code></pre></div>
+</article>
+</section>
+<section class="chapter-section" id="chapter-8-sorting" data-title="Chapter 8: Sorting"><h2>Chapter 8: Sorting</h2>
+<article class="subtopic-card" id="chapter-8-sorting-learning-targets" data-chapter="chapter-8-sorting" data-title="Learning Targets"><h3>Learning Targets</h3>
+<ul class="note-list">
+<li>Understand:</li>
+<ul class="note-list">
+<li>Sorting algorithm types</li>
+<li>Sorting implementation</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-8-sorting-8-1-what-is-sorting" data-chapter="chapter-8-sorting" data-title="8.1 What Is Sorting?"><h3>8.1 What Is Sorting?</h3>
+<ul class="note-list">
+<li>Sorting means arranging data in a particular format.</li>
+<li>Sorting improves searching efficiency.</li>
+<li>Choice of sorting method depends on:</li>
+<ul class="note-list">
+<li>Application</li>
+<li>User needs</li>
+<li>Number of comparisons</li>
+<li>Number of data movements</li>
+<li>Complexity</li>
+<li>Practical data size</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-8-sorting-8-2-insertion-sort" data-chapter="chapter-8-sorting" data-title="8.2 Insertion Sort"><h3>8.2 Insertion Sort</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Builds final sorted list one item at a time.</li>
+<li>Each repetition picks an input element.</li>
+<li>Inserts it into the correct position in the sorted part.</li>
+<li>Array is virtually split into sorted and unsorted parts.</li>
+</ul>
+<li>Step-by-step ascending algorithm:</li>
+</ul>
+<p class="numbered-step">1. Start from <code>arr[1]</code>.</p>
+<p class="numbered-step">2. Treat elements before it as sorted.</p>
+<p class="numbered-step">3. Store current element as <code>key</code>.</p>
+<p class="numbered-step">4. Compare <code>key</code> with its predecessor.</p>
+<p class="numbered-step">5. While previous elements are greater than <code>key</code>, move them one position right.</p>
+<p class="numbered-step">6. Insert <code>key</code> into the empty position.</p>
+<p class="numbered-step">7. Repeat until all elements are processed.</p>
+<ul class="note-list">
+<li>Time complexity:</li>
+<ul class="note-list">
+<li>Best case: O(n) when already sorted.</li>
+<li>Average/worst case: O(n^2).</li>
+<li>Note: The slides focus on mechanics; these complexity details complete the algorithm explanation.</li>
+</ul>
+</ul>
+<h4>Insertion Sort Memory Aid: &quot;Pick, Shift, Place&quot;</h4>
+<ul class="note-list">
+<li>Pick the key.</li>
+<li>Shift larger elements.</li>
+<li>Place key in the hole.</li>
+</ul>
+<h4>C++ Insertion Sort</h4>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertionSort(int arr[], int n) {
+    for (int i = 1; i &lt; n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+
+        while (j &gt;= 0 &amp;&amp; arr[j] &gt; key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+
+        arr[j + 1] = key;
+    }
+}</code></pre></div>
+<ul class="note-list">
+<li>Read it:</li>
+<ul class="note-list">
+<li>Outer loop selects the next unsorted item.</li>
+<li><code>key</code> is the item being inserted.</li>
+<li>Inner loop shifts larger values right.</li>
+<li><code>arr[j + 1] = key</code> fills the open slot.</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-8-sorting-8-3-selection-sort" data-chapter="chapter-8-sorting" data-title="8.3 Selection Sort"><h3>8.3 Selection Sort</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Repeatedly finds the minimum element from unsorted part.</li>
+<li>Places it at the beginning.</li>
+<li>Maintains sorted and unsorted subarrays.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Set the first unsorted index as <code>i</code>.</p>
+<p class="numbered-step">2. Find the smallest item from <code>i</code> to end.</p>
+<p class="numbered-step">3. Swap smallest item with item at <code>i</code>.</p>
+<p class="numbered-step">4. Move <code>i</code> one step right.</p>
+<p class="numbered-step">5. Repeat until sorted.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void selectionSort(int arr[], int n) {
+    for (int i = 0; i &lt; n - 1; i++) {
+        int minIndex = i;
+
+        for (int j = i + 1; j &lt; n; j++) {
+            if (arr[j] &lt; arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+
+        swap(arr[i], arr[minIndex]);
+    }
+}</code></pre></div>
+<h4>Selection Sort Memory Aid: &quot;Find Min, Front It&quot;</h4>
+<ul class="note-list">
+<li>Find the minimum.</li>
+<li>Move it to the front of the unsorted part.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-8-sorting-8-4-bubble-sort" data-chapter="chapter-8-sorting" data-title="8.4 Bubble Sort"><h3>8.4 Bubble Sort</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Repeatedly steps through the list.</li>
+<li>Compares adjacent pairs.</li>
+<li>Swaps if in wrong order.</li>
+<li>Repeats until no swaps are needed.</li>
+<li>Smaller elements &quot;bubble&quot; to the top.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Compare adjacent elements.</p>
+<p class="numbered-step">2. Swap if left element is greater than right element.</p>
+<p class="numbered-step">3. Continue to the end of the current pass.</p>
+<p class="numbered-step">4. Reduce the unsorted range.</p>
+<p class="numbered-step">5. Repeat until no swaps are needed.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void bubbleSort(int arr[], int n) {
+    bool swapped;
+
+    do {
+        swapped = false;
+        for (int i = 0; i &lt; n - 1; i++) {
+            if (arr[i] &gt; arr[i + 1]) {
+                swap(arr[i], arr[i + 1]);
+                swapped = true;
+            }
+        }
+        n--;
+    } while (swapped);
+}</code></pre></div>
+<h4>Bubble Sort Memory Aid: &quot;Compare Neighbors, Swap, Shrink&quot;</h4>
+<ul class="note-list">
+<li>Compare neighbors.</li>
+<li>Swap wrong pairs.</li>
+<li>Shrink the unsorted end.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-8-sorting-8-5-heap-sort" data-chapter="chapter-8-sorting" data-title="8.5 Heap Sort"><h3>8.5 Heap Sort</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Comparison-based sorting.</li>
+<li>Based on Binary Heap.</li>
+<li>Similar to selection sort.</li>
+<li>Uses min-heap or max-heap idea.</li>
+</ul>
+<li>Binary heap properties:</li>
+<ul class="note-list">
+<li>Complete tree.</li>
+<li>Min heap: root is minimum.</li>
+<li>Max heap: root is maximum.</li>
+</ul>
+<li>Ascending max-heap algorithm from slides:</li>
+</ul>
+<p class="numbered-step">1. Turn original array into heap array.</p>
+<p class="numbered-step">2. Exchange root/largest element with last unsorted element.</p>
+<p class="numbered-step">3. Reheap down to rebuild heap.</p>
+<p class="numbered-step">4. Repeat exchange and reheap until sorted.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void heapify(int arr[], int n, int i) {
+    int largest = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
+
+    if (left &lt; n &amp;&amp; arr[left] &gt; arr[largest]) {
+        largest = left;
+    }
+
+    if (right &lt; n &amp;&amp; arr[right] &gt; arr[largest]) {
+        largest = right;
+    }
+
+    if (largest != i) {
+        swap(arr[i], arr[largest]);
+        heapify(arr, n, largest);
+    }
+}
+
+void heapSort(int arr[], int n) {
+    for (int i = n / 2 - 1; i &gt;= 0; i--) {
+        heapify(arr, n, i);
+    }
+
+    for (int end = n - 1; end &gt; 0; end--) {
+        swap(arr[0], arr[end]);
+        heapify(arr, end, 0);
+    }
+}</code></pre></div>
+<h4>Heap Sort Memory Aid: &quot;Heap, Swap, Reheap&quot;</h4>
+<ul class="note-list">
+<li>Build heap.</li>
+<li>Swap root with last unsorted item.</li>
+<li>Reheap the remaining heap.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-8-sorting-8-6-quick-sort" data-chapter="chapter-8-sorting" data-title="8.6 Quick Sort"><h3>8.6 Quick Sort</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Divide and conquer algorithm.</li>
+<li>Picks a pivot.</li>
+<li>Partitions array around pivot.</li>
+<li>The syllabus covers choosing the last element as pivot.</li>
+</ul>
+<li>Step-by-step recursive quick sort:</li>
+</ul>
+<p class="numbered-step">1. If <code>low &lt; high</code>, continue.</p>
+<p class="numbered-step">2. Partition the array.</p>
+<p class="numbered-step">3. Pivot is placed in correct position.</p>
+<p class="numbered-step">4. Recursively quick sort the left side.</p>
+<p class="numbered-step">5. Recursively quick sort the right side.</p>
+<ul class="note-list">
+<li>Partition step:</li>
+</ul>
+<p class="numbered-step">1. Choose <code>arr[high]</code> as pivot.</p>
+<p class="numbered-step">2. Set <code>i = low - 1</code>.</p>
+<p class="numbered-step">3. For <code>j = low</code> to <code>high - 1</code>, compare <code>arr[j]</code> with pivot.</p>
+<p class="numbered-step">4. If <code>arr[j] &lt; pivot</code>, increment <code>i</code> and swap <code>arr[i]</code> with <code>arr[j]</code>.</p>
+<p class="numbered-step">5. After loop, swap <code>arr[i + 1]</code> with pivot.</p>
+<p class="numbered-step">6. Return <code>i + 1</code> as partition index.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+
+    for (int j = low; j &lt;= high - 1; j++) {
+        if (arr[j] &lt; pivot) {
+            i++;
+            swap(arr[i], arr[j]);
+        }
+    }
+
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
+
+void quickSort(int arr[], int low, int high) {
+    if (low &lt; high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}</code></pre></div>
+<h4>Quick Sort Memory Aid: &quot;Pivot, Partition, Proceed&quot;</h4>
+<ul class="note-list">
+<li>Pivot is chosen.</li>
+<li>Partition places smaller left and larger right.</li>
+<li>Proceed recursively.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-8-sorting-8-7-merge-sort" data-chapter="chapter-8-sorting" data-title="8.7 Merge Sort"><h3>8.7 Merge Sort</h3>
+<ul class="note-list">
+<li>Source note:</li>
+<ul class="note-list">
+<li>Merge sort is named in Chapter 2 as an O(n log n) linearithmic algorithm.</li>
+<li>The sorting deck does not provide detailed merge sort mechanics.</li>
+<li>The code and steps here are supplemental to explain the named algorithm.</li>
+</ul>
+<li>Understand it:</li>
+<ul class="note-list">
+<li>Divide array into halves.</li>
+<li>Sort each half.</li>
+<li>Merge sorted halves.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. If the array has one or zero elements, it is already sorted.</p>
+<p class="numbered-step">2. Split the array into left and right halves.</p>
+<p class="numbered-step">3. Recursively sort left half.</p>
+<p class="numbered-step">4. Recursively sort right half.</p>
+<p class="numbered-step">5. Merge the two sorted halves into one sorted array.</p>
+<ul class="note-list">
+<li>Time complexity:</li>
+<ul class="note-list">
+<li>O(n log n), matching the Chapter 2 linearithmic category.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void merge(int arr[], int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    vector&lt;int&gt; L(n1), R(n2);
+
+    for (int i = 0; i &lt; n1; i++) L[i] = arr[left + i];
+    for (int j = 0; j &lt; n2; j++) R[j] = arr[mid + 1 + j];
+
+    int i = 0, j = 0, k = left;
+
+    while (i &lt; n1 &amp;&amp; j &lt; n2) {
+        if (L[i] &lt;= R[j]) {
+            arr[k++] = L[i++];
+        } else {
+            arr[k++] = R[j++];
+        }
+    }
+
+    while (i &lt; n1) arr[k++] = L[i++];
+    while (j &lt; n2) arr[k++] = R[j++];
+}
+
+void mergeSort(int arr[], int left, int right) {
+    if (left &gt;= right) return;
+
+    int mid = left + (right - left) / 2;
+
+    mergeSort(arr, left, mid);
+    mergeSort(arr, mid + 1, right);
+    merge(arr, left, mid, right);
+}</code></pre></div>
+<h4>Merge Sort Memory Aid: &quot;Split, Sort, Stitch&quot;</h4>
+<ul class="note-list">
+<li>Split into halves.</li>
+<li>Sort each half.</li>
+<li>Stitch the sorted halves together.</li>
+</ul>
+</article>
+</section>
+<section class="chapter-section" id="chapter-9-searching" data-title="Chapter 9: Searching"><h2>Chapter 9: Searching</h2>
+<article class="subtopic-card" id="chapter-9-searching-learning-targets" data-chapter="chapter-9-searching" data-title="Learning Targets"><h3>Learning Targets</h3>
+<ul class="note-list">
+<li>Understand:</li>
+<ul class="note-list">
+<li>Searching algorithm types</li>
+<li>Searching implementation</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-1-what-is-searching" data-chapter="chapter-9-searching" data-title="9.1 What Is Searching?"><h3>9.1 What Is Searching?</h3>
+<ul class="note-list">
+<li>Searching is finding required information from a collection of items.</li>
+<li>Items may be stored in:</li>
+<ul class="note-list">
+<li>Array</li>
+<li>Linked list</li>
+<li>Graph</li>
+<li>Tree</li>
+</ul>
+<li>Slide examples:</li>
+<ul class="note-list">
+<li>Telephone number/name lookup</li>
+<li>Student/staff/sales databases</li>
+<li>Internet search engines</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-2-types-of-searching" data-chapter="chapter-9-searching" data-title="9.2 Types of Searching"><h3>9.2 Types of Searching</h3>
+<ul class="note-list">
+<li>Sequential search:</li>
+<ul class="note-list">
+<li>Traverse list/array sequentially.</li>
+<li>Check every component.</li>
+<li>Example: Linear search.</li>
+</ul>
+<li>Interval search:</li>
+<ul class="note-list">
+<li>Designed for sorted data structures.</li>
+<li>Repeatedly targets the center.</li>
+<li>Divides search space in half.</li>
+<li>Example: Binary search.</li>
+</ul>
+<li>Search by hashing.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-3-sequential-search" data-chapter="chapter-9-searching" data-title="9.3 Sequential Search"><h3>9.3 Sequential Search</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Simplest search algorithm.</li>
+<li>Checks each item until target is found or collection ends.</li>
+<li>Preferred when data is unsorted.</li>
+</ul>
+<li>Time complexity:</li>
+<ul class="note-list">
+<li>Best case: O(1), target at first element.</li>
+<li>Worst case: O(n), target at tail or not present.</li>
+<li>Average case: target somewhere in the middle.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Start at first element.</p>
+<p class="numbered-step">2. Compare current element with target.</p>
+<p class="numbered-step">3. If equal, return found.</p>
+<p class="numbered-step">4. Otherwise move to next element.</p>
+<p class="numbered-step">5. If end is reached, return not found.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>int linearSearch(int arr[], int n, int key) {
+    for (int i = 0; i &lt; n; i++) {
+        if (arr[i] == key) {
+            return i;
+        }
+    }
+    return -1;
+}</code></pre></div>
+<h4>Sequential Search Memory Aid: &quot;Look, Match, Move&quot;</h4>
+<ul class="note-list">
+<li>Look at current item.</li>
+<li>Match with key.</li>
+<li>Move if not found.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-4-binary-search" data-chapter="chapter-9-searching" data-title="9.4 Binary Search"><h3>9.4 Binary Search</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Works on sorted array.</li>
+<li>Repeatedly divides search interval in half.</li>
+<li>Uses divide and conquer.</li>
+<li>Runtime complexity: O(log n).</li>
+</ul>
+<li>Important:</li>
+<ul class="note-list">
+<li>Data must be sorted first.</li>
+</ul>
+<li>Slide algorithm:</li>
+<ul class="note-list">
+<li>Mark first element as LOW.</li>
+<li>Mark last element as HI.</li>
+<li>Calculate <code>MID = (LOW + HI) / 2</code>.</li>
+<li>If key equals middle item, found.</li>
+<li>If key is smaller, move HI to <code>MID - 1</code>.</li>
+<li>If key is larger, move LOW to <code>MID + 1</code>.</li>
+<li>Stop when found or LOW and HI cross.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Set <code>low = 0</code>.</p>
+<p class="numbered-step">2. Set <code>high = n - 1</code>.</p>
+<p class="numbered-step">3. While <code>low &lt;= high</code>, calculate middle.</p>
+<p class="numbered-step">4. Compare <code>arr[mid]</code> with key.</p>
+<p class="numbered-step">5. If equal, return <code>mid</code>.</p>
+<p class="numbered-step">6. If key is smaller, set <code>high = mid - 1</code>.</p>
+<p class="numbered-step">7. If key is larger, set <code>low = mid + 1</code>.</p>
+<p class="numbered-step">8. Return not found when <code>low &gt; high</code>.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>int binarySearch(int arr[], int n, int key) {
+    int low = 0;
+    int high = n - 1;
+
+    while (low &lt;= high) {
+        int mid = (low + high) / 2;
+
+        if (arr[mid] == key) {
+            return mid;
+        } else if (key &lt; arr[mid]) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    return -1;
+}</code></pre></div>
+<h4>Binary Search Memory Aid: &quot;Low, Mid, High, Halve&quot;</h4>
+<ul class="note-list">
+<li>Low and high mark the search range.</li>
+<li>Mid is checked.</li>
+<li>Halve the search space each time.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-5-hashing" data-chapter="chapter-9-searching" data-title="9.5 Hashing"><h3>9.5 Hashing</h3>
+<ul class="note-list">
+<li>Hashing:</li>
+<ul class="note-list">
+<li>Maps a large amount of data into small tables using a hash function.</li>
+<li>Identifies a specific item from similar items.</li>
+<li>Uses hash tables to store data in array format.</li>
+</ul>
+<li>Hash function:</li>
+<ul class="note-list">
+<li>Converts an item/key into a small integer/hash value.</li>
+<li>This value is used as an index.</li>
+</ul>
+<li>Example from slides:</li>
+<ul class="note-list">
+<li><code>index = ID % array size</code></li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-6-requirements-of-a-good-hash-function" data-chapter="chapter-9-searching" data-title="9.6 Requirements of a Good Hash Function"><h3>9.6 Requirements of a Good Hash Function</h3>
+<ul class="note-list">
+<li>Easy to compute.</li>
+<li>Distributes keys evenly.</li>
+<li>Avoids clustering.</li>
+<li>Avoids collisions when possible.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-7-hashing-functions" data-chapter="chapter-9-searching" data-title="9.7 Hashing Functions"><h3>9.7 Hashing Functions</h3>
+<h4>Truncation Method</h4>
+<ul class="note-list">
+<li>Truncates part of the key depending on table size.</li>
+<li>Can use:</li>
+<ul class="note-list">
+<li>Rightmost digits</li>
+<li>Leftmost digits</li>
+<li>Middle digits</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>int truncateRightTwo(int key) {
+    return key % 100;
+}
+
+int truncateLeftTwoOfFiveDigit(int key) {
+    return key / 1000;
+}
+
+int extractMiddleTwoOfFiveDigit(int key) {
+    return (key / 100) % 100;
+}</code></pre></div>
+<h4>Digit Extraction Method</h4>
+<ul class="note-list">
+<li>Select digits from the key and use them as address.</li>
+<li>Example from slides:</li>
+<ul class="note-list">
+<li>Key <code>90020479</code></li>
+<li>Extract first, fourth, and last three digits.</li>
+<li>Index becomes <code>92479</code>.</li>
+</ul>
+</ul>
+<h4>Modular Arithmetic</h4>
+<ul class="note-list">
+<li>Formula:</li>
+<ul class="note-list">
+<li><code>index = key % size</code></li>
+</ul>
+<li>Example:</li>
+<ul class="note-list">
+<li><code>100252 % 100 = 52</code></li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>int hashMod(int key, int size) {
+    return key % size;
+}</code></pre></div>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-8-collision" data-chapter="chapter-9-searching" data-title="9.8 Collision"><h3>9.8 Collision</h3>
+<ul class="note-list">
+<li>A collision happens when:</li>
+<ul class="note-list">
+<li>Two keys are assigned the same index.</li>
+</ul>
+<li>Problem:</li>
+<ul class="note-list">
+<li>Each hash table index is expected to store one value.</li>
+</ul>
+<li>Collision techniques from slides:</li>
+<ul class="note-list">
+<li>Linear probing</li>
+<li>Quadratic probing</li>
+<li>Chaining</li>
+<li>Double hashing</li>
+</ul>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-9-linear-probing" data-chapter="chapter-9-searching" data-title="9.9 Linear Probing"><h3>9.9 Linear Probing</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Start at collision point.</li>
+<li>Search linearly for next empty cell.</li>
+<li>If end of table is reached, start from first index.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Calculate hash index.</p>
+<p class="numbered-step">2. If empty, insert.</p>
+<p class="numbered-step">3. If occupied, move to next index.</p>
+<p class="numbered-step">4. Wrap to index 0 after table end.</p>
+<p class="numbered-step">5. Repeat until empty cell is found.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertLinear(vector&lt;int&gt;&amp; table, int key, int emptyValue) {
+    int size = table.size();
+    int index = key % size;
+
+    while (table[index] != emptyValue) {
+        index = (index + 1) % size;
+    }
+
+    table[index] = key;
+}</code></pre></div>
+<h4>Linear Probing Memory Aid: &quot;Hit, Step, Wrap&quot;</h4>
+<ul class="note-list">
+<li>Hit a collision.</li>
+<li>Step to next slot.</li>
+<li>Wrap around if needed.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-10-quadratic-probing" data-chapter="chapter-9-searching" data-title="9.10 Quadratic Probing"><h3>9.10 Quadratic Probing</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>If slot is occupied, try:</li>
+<ul class="note-list">
+<li><code>(hash(x) + 1^2) % size</code></li>
+<li><code>(hash(x) + 2^2) % size</code></li>
+<li><code>(hash(x) + 3^2) % size</code></li>
+</ul>
+<li>Repeat with increasing <code>i</code>.</li>
+</ul>
+<li>Formula:</li>
+<ul class="note-list">
+<li><code>(hash value + i^2) mod table_size</code></li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Calculate original hash index.</p>
+<p class="numbered-step">2. If empty, insert.</p>
+<p class="numbered-step">3. If occupied, set <code>i = 1</code>.</p>
+<p class="numbered-step">4. Try <code>(index + i * i) % size</code>.</p>
+<p class="numbered-step">5. Increase <code>i</code>.</p>
+<p class="numbered-step">6. Repeat until empty cell is found.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>void insertQuadratic(vector&lt;int&gt;&amp; table, int key, int emptyValue) {
+    int size = table.size();
+    int index = key % size;
+    int i = 0;
+
+    while (table[(index + i * i) % size] != emptyValue) {
+        i++;
+    }
+
+    table[(index + i * i) % size] = key;
+}</code></pre></div>
+<h4>Quadratic Probing Memory Aid: &quot;Square the Step&quot;</h4>
+<ul class="note-list">
+<li>Collision step is not +1 every time.</li>
+<li>It jumps by square offsets: 1, 4, 9, ...</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-11-chaining" data-chapter="chapter-9-searching" data-title="9.11 Chaining"><h3>9.11 Chaining</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Each cell points to a linked list of records with the same hash value.</li>
+<li>When collision occurs, create a new node.</li>
+<li>Store and link the new value.</li>
+<li>Worst-case search time is O(n).</li>
+</ul>
+<li>Advantages:</li>
+<ul class="note-list">
+<li>Simple to implement.</li>
+<li>Hash table never fills up completely.</li>
+<li>Less sensitive to hash function/load factor.</li>
+<li>Useful when number/frequency of keys is unknown.</li>
+<li>Deletion is easier.</li>
+</ul>
+<li>Disadvantages:</li>
+<ul class="note-list">
+<li>Cache performance is not good.</li>
+<li>Some table slots may never be used.</li>
+<li>Long chains can make search O(n).</li>
+<li>Extra space needed for links.</li>
+</ul>
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>vector&lt;vector&lt;int&gt;&gt; hashTable(10);
+
+void insertChaining(int key) {
+    int index = key % hashTable.size();
+    hashTable[index].push_back(key);
+}
+
+bool searchChaining(int key) {
+    int index = key % hashTable.size();
+
+    for (int value : hashTable[index]) {
+        if (value == key) return true;
+    }
+
+    return false;
+}</code></pre></div>
+<h4>Chaining Memory Aid: &quot;Same Index, Same Chain&quot;</h4>
+<ul class="note-list">
+<li>If keys collide, link them in the same bucket chain.</li>
+</ul>
+</article>
+<article class="subtopic-card" id="chapter-9-searching-9-12-double-hashing" data-chapter="chapter-9-searching" data-title="9.12 Double Hashing"><h3>9.12 Double Hashing</h3>
+<ul class="note-list">
+<li>From slides:</li>
+<ul class="note-list">
+<li>Open addressed collision resolving technique.</li>
+<li>Applies a second hash function when collision occurs.</li>
+</ul>
+<li>Formula from slides:</li>
+<ul class="note-list">
+<li><code>hash1(key) = key % tableSize</code></li>
+<li><code>hash2(key) = PRIME - (key % PRIME)</code></li>
+<li>New index:</li>
+<ul class="note-list">
+<li><code>(hash1(key) + i * hash2(key)) % tableSize</code></li>
+</ul>
+<li>Increase <code>i</code> when collision occurs.</li>
+</ul>
+<li>Step-by-step:</li>
+</ul>
+<p class="numbered-step">1. Compute <code>hash1(key)</code>.</p>
+<p class="numbered-step">2. If slot is empty, insert.</p>
+<p class="numbered-step">3. If collision occurs, compute <code>hash2(key)</code>.</p>
+<p class="numbered-step">4. Try <code>(hash1 + i * hash2) % tableSize</code>.</p>
+<p class="numbered-step">5. Increase <code>i</code> until an empty slot is found.</p>
+<ul class="note-list">
+<li>Write it:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>cpp</span><button class="copy-code" type="button">Copy</button></div><pre><code>int hash2(int key, int prime) {
+    return prime - (key % prime);
+}
+
+void insertDoubleHash(vector&lt;int&gt;&amp; table, int key, int emptyValue, int prime) {
+    int size = table.size();
+    int h1 = key % size;
+    int h2 = prime - (key % prime);
+    int i = 0;
+
+    int index = h1;
+    while (table[index] != emptyValue) {
+        i++;
+        index = (h1 + i * h2) % size;
+    }
+
+    table[index] = key;
+}</code></pre></div>
+<h4>Double Hashing Memory Aid: &quot;Two Hashes, One Home&quot;</h4>
+<ul class="note-list">
+<li>First hash finds the home.</li>
+<li>Second hash decides jump size.</li>
+<li>Repeated jumps find an empty home.</li>
+</ul>
+</article>
+</section>
+<section class="chapter-section" id="exam-focused-master-checklist" data-title="Exam-Focused Master Checklist"><h2>Exam-Focused Master Checklist</h2>
+<ul class="note-list">
+<li>ADT:</li>
+<ul class="note-list">
+<li>Can explain &quot;what, not how&quot;.</li>
+<li>Can list values, operations, and behavior.</li>
+</ul>
+<li>Big O:</li>
+<ul class="note-list">
+<li>Can drop constants and low-order terms.</li>
+<li>Can identify O(1), O(n), O(n^2), O(log n), O(n log n).</li>
+</ul>
+<li>Vector/STL:</li>
+<ul class="note-list">
+<li>Can use <code>vec.size()</code> and iterators.</li>
+<li>Can explain why traversal is O(n).</li>
+</ul>
+<li>Singly linked list:</li>
+<ul class="note-list">
+<li>Can create node.</li>
+<li>Can insert at empty, beginning, middle, end.</li>
+<li>Can delete at beginning, middle, end.</li>
+<li>Can traverse and reverse.</li>
+</ul>
+<li>Doubly linked list:</li>
+<ul class="note-list">
+<li>Can maintain both <code>prev</code> and <code>next</code>.</li>
+<li>Can insert/delete without breaking both directions.</li>
+<li>Can traverse forward/backward and reverse.</li>
+</ul>
+<li>Stack:</li>
+<ul class="note-list">
+<li>Can explain LIFO.</li>
+<li>Can use STL stack.</li>
+<li>Can implement linked-list stack.</li>
+<li>Can check balanced brackets.</li>
+<li>Can convert infix to postfix.</li>
+<li>Can evaluate postfix.</li>
+</ul>
+<li>Queue:</li>
+<ul class="note-list">
+<li>Can explain FIFO.</li>
+<li>Can use STL queue.</li>
+<li>Can implement linked-list queue.</li>
+</ul>
+<li>Tree:</li>
+<ul class="note-list">
+<li>Can define root, edge, child, sibling, leaf, internal, depth, height, level.</li>
+<li>Can insert/delete/search BST.</li>
+<li>Can write preorder, inorder, postorder.</li>
+<li>Can connect expression tree postorder with postfix.</li>
+</ul>
+<li>Graph:</li>
+<ul class="note-list">
+<li>Can define vertices, edges, order, size.</li>
+<li>Can represent graph using adjacency list and matrix.</li>
+<li>Can apply Dijkstra.</li>
+<li>Can apply Kruskal.</li>
+</ul>
+<li>Sorting:</li>
+<ul class="note-list">
+<li>Can trace insertion, selection, bubble, heap, quick.</li>
+<li>Can explain merge sort as O(n log n) because it is named in Chapter 2.</li>
+</ul>
+<li>Searching:</li>
+<ul class="note-list">
+<li>Can compare sequential and binary search.</li>
+<li>Can use hashing and collision resolution.</li>
+</ul>
+</ul>
+</section>
+      </section>
+    </div>
+  </main>
+
+  <button type="button" class="top-button" id="topButton" aria-label="Back to top">Top</button>
+  <script src="script.js"></script>
+</body>
+</html>
