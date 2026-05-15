@@ -3,35 +3,213 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interactive DSA study page generated from the provided lecture slides.">
-  <title>DSA Study Hub</title>
+  <meta name="description" content="Digital DSA interactive study dashboard generated from the lecture slides.">
+  <title>CSEB3213 DSA Study Dashboard</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-copy">
-      <p class="eyebrow">CSEB3213 DSA Study Hub</p>
-      <h1>Data Structures and Algorithms</h1>
-      <div class="meta-strip" aria-label="Study guide summary">
-        <span>12 sections</span>
-        <span>116 subtopics</span>
-        <span>Static GitHub Pages</span>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <strong>CSEB3213</strong>
+        <span>Data Structures & Algorithms</span>
       </div>
-    </div>
-    <img src="assets/dsa-map.png" alt="Visual map of stacks, linked lists, trees, and graphs.">
-  </header>
+      <label class="sidebar-search">
+        <span>Search topics</span>
+        <input id="sideSearch" type="search" placeholder="linked list, stack, tree...">
+      </label>
+      <nav class="sidebar-nav" aria-label="Study navigation">
+        <p>Overview</p>
+        <a href="#dashboard" class="active"><i class="dot green"></i>Dashboard</a>
+        <a href="#study-checklist"><i class="dot cyan"></i>Study Checklist</a>
+        <a href="#topic-command"><i class="dot rose"></i>Topic Navigator</a>
+        <p>Study Notes</p>
+        <a href="#chapter-1-abstract-data-type-and-introduction-to-stl" data-chapter-link="chapter-1-abstract-data-type-and-introduction-to-stl"><span></span>Chapter 1: Abstract Data Type and Introduction to STL</a>
+<a href="#chapter-2-complexity-analysis" data-chapter-link="chapter-2-complexity-analysis"><span></span>Chapter 2: Complexity Analysis</a>
+<a href="#chapter-3-linked-lists-part-1" data-chapter-link="chapter-3-linked-lists-part-1"><span></span>Chapter 3: Linked Lists, Part 1</a>
+<a href="#chapter-3-linked-lists-part-2" data-chapter-link="chapter-3-linked-lists-part-2"><span></span>Chapter 3: Linked Lists, Part 2</a>
+<a href="#chapter-4-stacks" data-chapter-link="chapter-4-stacks"><span></span>Chapter 4: Stacks</a>
+<a href="#chapter-5-queues" data-chapter-link="chapter-5-queues"><span></span>Chapter 5: Queues</a>
+<a href="#chapter-6-tree-part-1" data-chapter-link="chapter-6-tree-part-1"><span></span>Chapter 6: Tree, Part 1</a>
+<a href="#chapter-6-tree-part-2" data-chapter-link="chapter-6-tree-part-2"><span></span>Chapter 6: Tree, Part 2</a>
+<a href="#chapter-7-graph" data-chapter-link="chapter-7-graph"><span></span>Chapter 7: Graph</a>
+<a href="#chapter-8-sorting" data-chapter-link="chapter-8-sorting"><span></span>Chapter 8: Sorting</a>
+<a href="#chapter-9-searching" data-chapter-link="chapter-9-searching"><span></span>Chapter 9: Searching</a>
+<a href="#exam-focused-master-checklist" data-chapter-link="exam-focused-master-checklist"><span></span>Exam-Focused Master Checklist</a>
+      </nav>
+    </aside>
 
-  <main>
-    <section class="study-console" aria-label="Interactive content">
-      <div class="console-toolbar">
-        <label class="search-box">
-          <span>Search</span>
-          <input id="topicSearch" type="search" placeholder="linked list, stack, tree, sorting...">
-        </label>
-        <button type="button" class="reset-button" id="resetFilters">All topics</button>
-      </div>
-      <div class="chapter-tabs" id="chapterTabs">
-        <button type="button" class="chapter-tab" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl">Ch. 1: Abstract Data Type and Introduction to STL</button>
+    <div class="main-panel">
+      <header class="topbar">
+        <div class="filter-row" aria-label="Topic filters">
+          <span>Filter:</span>
+          <button type="button" class="filter-pill active" data-filter="all">All Topics</button>
+          <button type="button" class="filter-pill" data-filter="critical">Very Critical</button>
+          <button type="button" class="filter-pill" data-filter="important">Important</button>
+          <button type="button" class="filter-pill" data-filter="basic">Basic</button>
+          <button type="button" class="filter-pill" id="expandAll">Expand All</button>
+        </div>
+        <button type="button" class="print-button" id="printButton">Print / PDF</button>
+      </header>
+
+      <main>
+        <section class="hero" id="dashboard">
+          <img src="assets/dsa-circuit.png" alt="Digital DSA circuit map.">
+          <div class="hero-copy">
+            <p class="terminal-kicker">interactive.focus.notes</p>
+            <h1>Data Structures<br>and Algorithms</h1>
+            <p>Digital study dashboard rebuilt from your uploaded lecture notes. Use the sidebar, search, filters, progress checklist, and clickable topics to revise faster.</p>
+            <div class="stats-grid">
+              <div><strong>12</strong><span>sections</span></div>
+              <div><strong>116</strong><span>topics</span></div>
+              <div><strong>70</strong><span>code blocks</span></div>
+              <div><strong>PDF</strong><span>ready</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-card progress-card" id="study-checklist">
+          <div class="panel-title">
+            <div>
+              <span class="square-check">✓</span>
+              <h2>Study Progress Checklist</h2>
+            </div>
+            <strong id="progressLabel">0%</strong>
+          </div>
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <div class="checklist" id="checklist">
+            <label class="check-row" data-level="important" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><input type="checkbox" data-check-id="chapter-1-abstract-data-type-and-introduction-to-stl-learning-targets"><span>Learning Targets</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><input type="checkbox" data-check-id="chapter-1-abstract-data-type-and-introduction-to-stl-1-1-data-structure"><span>1.1 Data Structure</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><input type="checkbox" data-check-id="chapter-1-abstract-data-type-and-introduction-to-stl-1-2-core-data-operations"><span>1.2 Core Data Operations</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><input type="checkbox" data-check-id="chapter-1-abstract-data-type-and-introduction-to-stl-1-3-adt-abstract-data-type"><span>1.3 ADT: Abstract Data Type</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><input type="checkbox" data-check-id="chapter-1-abstract-data-type-and-introduction-to-stl-1-4-adt-example-stack"><span>1.4 ADT Example: Stack</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><input type="checkbox" data-check-id="chapter-1-abstract-data-type-and-introduction-to-stl-1-5-stl-standard-template-library"><span>1.5 STL: Standard Template Library</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><input type="checkbox" data-check-id="chapter-1-abstract-data-type-and-introduction-to-stl-1-6-stl-containers"><span>1.6 STL Containers</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><input type="checkbox" data-check-id="chapter-1-abstract-data-type-and-introduction-to-stl-1-7-stl-iterators"><span>1.7 STL Iterators</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><input type="checkbox" data-check-id="chapter-1-abstract-data-type-and-introduction-to-stl-1-8-stl-algorithms"><span>1.8 STL Algorithms</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><input type="checkbox" data-check-id="chapter-1-abstract-data-type-and-introduction-to-stl-1-9-vector-code-segments"><span>1.9 Vector Code Segments</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-2-complexity-analysis"><input type="checkbox" data-check-id="chapter-2-complexity-analysis-learning-targets"><span>Learning Targets</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-2-complexity-analysis"><input type="checkbox" data-check-id="chapter-2-complexity-analysis-2-1-computational-and-asymptotic-complexity"><span>2.1 Computational and Asymptotic Complexity</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-2-complexity-analysis"><input type="checkbox" data-check-id="chapter-2-complexity-analysis-2-2-performance-vs-complexity"><span>2.2 Performance vs Complexity</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-2-complexity-analysis"><input type="checkbox" data-check-id="chapter-2-complexity-analysis-2-3-big-o-notation"><span>2.3 Big O Notation</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-2-complexity-analysis"><input type="checkbox" data-check-id="chapter-2-complexity-analysis-2-4-how-to-determine-big-o"><span>2.4 How to Determine Big O</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-2-complexity-analysis"><input type="checkbox" data-check-id="chapter-2-complexity-analysis-2-5-o-1-constant-time"><span>2.5 O(1): Constant Time</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-2-complexity-analysis"><input type="checkbox" data-check-id="chapter-2-complexity-analysis-2-6-o-n-linear-time"><span>2.6 O(n): Linear Time</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-2-complexity-analysis"><input type="checkbox" data-check-id="chapter-2-complexity-analysis-2-7-o-n-2-quadratic-time"><span>2.7 O(n^2): Quadratic Time</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-2-complexity-analysis"><input type="checkbox" data-check-id="chapter-2-complexity-analysis-2-8-o-log-n-logarithmic-time"><span>2.8 O(log n): Logarithmic Time</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-2-complexity-analysis"><input type="checkbox" data-check-id="chapter-2-complexity-analysis-2-9-o-n-log-n-linearithmic-time"><span>2.9 O(n log n): Linearithmic Time</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="basic" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-learning-targets"><span>Learning Targets</span><small>BASIC</small></label>
+<label class="check-row" data-level="basic" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-1-why-linked-lists"><span>3.1 Why Linked Lists?</span><small>BASIC</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-2-what-is-a-linked-list"><span>3.2 What Is a Linked List?</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="basic" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-3-advantages-of-linked-lists"><span>3.3 Advantages of Linked Lists</span><small>BASIC</small></label>
+<label class="check-row" data-level="basic" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-4-limitations-of-linked-lists"><span>3.4 Limitations of Linked Lists</span><small>BASIC</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-5-array-vs-linked-list"><span>3.5 Array vs Linked List</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="basic" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-6-types-of-linked-lists"><span>3.6 Types of Linked Lists</span><small>BASIC</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-7-singly-linked-list"><span>3.7 Singly Linked List</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-8-basic-singly-linked-list-operations"><span>3.8 Basic Singly Linked List Operations</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-9-singly-linked-list-node-creation"><span>3.9 Singly Linked List Node Creation</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-10-singly-linked-list-insertion-empty-list"><span>3.10 Singly Linked List Insertion: Empty List</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-11-singly-linked-list-insertion-end"><span>3.11 Singly Linked List Insertion: End</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-12-singly-linked-list-insertion-beginning"><span>3.12 Singly Linked List Insertion: Beginning</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-13-singly-linked-list-insertion-middle"><span>3.13 Singly Linked List Insertion: Middle</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-14-singly-linked-list-with-tail-pointer"><span>3.14 Singly Linked List with Tail Pointer</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-15-singly-linked-list-deletion-beginning"><span>3.15 Singly Linked List Deletion: Beginning</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-16-singly-linked-list-deletion-middle-by-value"><span>3.16 Singly Linked List Deletion: Middle by Value</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-17-singly-linked-list-deletion-end"><span>3.17 Singly Linked List Deletion: End</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-18-deletion-with-tail-pointer"><span>3.18 Deletion with Tail Pointer</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-19-singly-linked-list-traversal"><span>3.19 Singly Linked List Traversal</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-20-singly-linked-list-update"><span>3.20 Singly Linked List Update</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-1"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-1-3-21-singly-linked-list-reversal"><span>3.21 Singly Linked List Reversal</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-22-doubly-linked-list"><span>3.22 Doubly Linked List</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-23-doubly-linked-list-node-creation"><span>3.23 Doubly Linked List Node Creation</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-24-doubly-linked-list-insertion-empty-list"><span>3.24 Doubly Linked List Insertion: Empty List</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-25-doubly-linked-list-insertion-end"><span>3.25 Doubly Linked List Insertion: End</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-26-doubly-linked-list-insertion-beginning"><span>3.26 Doubly Linked List Insertion: Beginning</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-27-doubly-linked-list-insertion-middle"><span>3.27 Doubly Linked List Insertion: Middle</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-28-doubly-linked-list-deletion-beginning"><span>3.28 Doubly Linked List Deletion: Beginning</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-29-doubly-linked-list-deletion-middle"><span>3.29 Doubly Linked List Deletion: Middle</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-30-doubly-linked-list-deletion-end"><span>3.30 Doubly Linked List Deletion: End</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-31-doubly-linked-list-traversal"><span>3.31 Doubly Linked List Traversal</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-32-doubly-linked-list-reversal"><span>3.32 Doubly Linked List Reversal</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-33-doubly-linked-list-advantages"><span>3.33 Doubly Linked List Advantages</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-3-linked-lists-part-2"><input type="checkbox" data-check-id="chapter-3-linked-lists-part-2-3-34-doubly-linked-list-disadvantages"><span>3.34 Doubly Linked List Disadvantages</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="basic" data-chapter="chapter-4-stacks"><input type="checkbox" data-check-id="chapter-4-stacks-learning-targets"><span>Learning Targets</span><small>BASIC</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-4-stacks"><input type="checkbox" data-check-id="chapter-4-stacks-4-1-what-is-a-stack"><span>4.1 What Is a Stack?</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-4-stacks"><input type="checkbox" data-check-id="chapter-4-stacks-4-2-stack-implementation-methods"><span>4.2 Stack Implementation Methods</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-4-stacks"><input type="checkbox" data-check-id="chapter-4-stacks-4-3-stl-stack"><span>4.3 STL Stack</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-4-stacks"><input type="checkbox" data-check-id="chapter-4-stacks-4-4-linked-list-stack"><span>4.4 Linked List Stack</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-4-stacks"><input type="checkbox" data-check-id="chapter-4-stacks-4-5-stack-applications"><span>4.5 Stack Applications</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-4-stacks"><input type="checkbox" data-check-id="chapter-4-stacks-4-6-balanced-parentheses-algorithm"><span>4.6 Balanced Parentheses Algorithm</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-4-stacks"><input type="checkbox" data-check-id="chapter-4-stacks-4-7-infix-to-postfix-conversion"><span>4.7 Infix to Postfix Conversion</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-4-stacks"><input type="checkbox" data-check-id="chapter-4-stacks-4-8-postfix-evaluation"><span>4.8 Postfix Evaluation</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="basic" data-chapter="chapter-5-queues"><input type="checkbox" data-check-id="chapter-5-queues-learning-targets"><span>Learning Targets</span><small>BASIC</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-5-queues"><input type="checkbox" data-check-id="chapter-5-queues-5-1-what-is-a-queue"><span>5.1 What Is a Queue?</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-5-queues"><input type="checkbox" data-check-id="chapter-5-queues-5-2-stl-queue"><span>5.2 STL Queue</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-5-queues"><input type="checkbox" data-check-id="chapter-5-queues-5-3-linked-list-queue"><span>5.3 Linked List Queue</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-5-queues"><input type="checkbox" data-check-id="chapter-5-queues-5-4-queue-applications"><span>5.4 Queue Applications</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-1"><input type="checkbox" data-check-id="chapter-6-tree-part-1-learning-targets"><span>Learning Targets</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-1"><input type="checkbox" data-check-id="chapter-6-tree-part-1-6-1-what-is-a-tree"><span>6.1 What Is a Tree?</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-1"><input type="checkbox" data-check-id="chapter-6-tree-part-1-6-2-types-of-tree-data-structures"><span>6.2 Types of Tree Data Structures</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-1"><input type="checkbox" data-check-id="chapter-6-tree-part-1-6-3-tree-terminology"><span>6.3 Tree Terminology</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-1"><input type="checkbox" data-check-id="chapter-6-tree-part-1-6-4-binary-tree"><span>6.4 Binary Tree</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-1"><input type="checkbox" data-check-id="chapter-6-tree-part-1-6-5-binary-tree-types-and-formulas"><span>6.5 Binary Tree Types and Formulas</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-6-tree-part-1"><input type="checkbox" data-check-id="chapter-6-tree-part-1-6-6-binary-search-tree"><span>6.6 Binary Search Tree</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-6-tree-part-1"><input type="checkbox" data-check-id="chapter-6-tree-part-1-6-7-bst-insertion"><span>6.7 BST Insertion</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-6-tree-part-1"><input type="checkbox" data-check-id="chapter-6-tree-part-1-6-8-bst-deletion"><span>6.8 BST Deletion</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-2"><input type="checkbox" data-check-id="chapter-6-tree-part-2-6-9-expression-tree"><span>6.9 Expression Tree</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-2"><input type="checkbox" data-check-id="chapter-6-tree-part-2-6-10-tree-traversal"><span>6.10 Tree Traversal</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-2"><input type="checkbox" data-check-id="chapter-6-tree-part-2-6-11-bfs-breadth-first-traversal"><span>6.11 BFS: Breadth First Traversal</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-2"><input type="checkbox" data-check-id="chapter-6-tree-part-2-6-12-dfs-traversals"><span>6.12 DFS Traversals</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-6-tree-part-2"><input type="checkbox" data-check-id="chapter-6-tree-part-2-6-13-binary-postfix-postorder-on-expression-tree"><span>6.13 Binary Postfix: Postorder on Expression Tree</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-2"><input type="checkbox" data-check-id="chapter-6-tree-part-2-6-14-tree-linked-list-implementation"><span>6.14 Tree Linked List Implementation</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-6-tree-part-2"><input type="checkbox" data-check-id="chapter-6-tree-part-2-6-15-bst-search"><span>6.15 BST Search</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-6-tree-part-2"><input type="checkbox" data-check-id="chapter-6-tree-part-2-6-16-tree-summary"><span>6.16 Tree Summary</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-7-graph"><input type="checkbox" data-check-id="chapter-7-graph-learning-targets"><span>Learning Targets</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-7-graph"><input type="checkbox" data-check-id="chapter-7-graph-7-1-what-is-a-graph"><span>7.1 What Is a Graph?</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-7-graph"><input type="checkbox" data-check-id="chapter-7-graph-7-2-graph-applications"><span>7.2 Graph Applications</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-7-graph"><input type="checkbox" data-check-id="chapter-7-graph-7-3-graph-types"><span>7.3 Graph Types</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-7-graph"><input type="checkbox" data-check-id="chapter-7-graph-7-4-graph-representation-adjacency-list"><span>7.4 Graph Representation: Adjacency List</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-7-graph"><input type="checkbox" data-check-id="chapter-7-graph-7-5-graph-representation-adjacency-matrix"><span>7.5 Graph Representation: Adjacency Matrix</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-7-graph"><input type="checkbox" data-check-id="chapter-7-graph-7-6-dijkstra-s-shortest-path-algorithm"><span>7.6 Dijkstra&#x27;s Shortest Path Algorithm</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="important" data-chapter="chapter-7-graph"><input type="checkbox" data-check-id="chapter-7-graph-7-7-spanning-tree"><span>7.7 Spanning Tree</span><small>IMPORTANT</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-7-graph"><input type="checkbox" data-check-id="chapter-7-graph-7-8-kruskal-s-algorithm"><span>7.8 Kruskal&#x27;s Algorithm</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-8-sorting"><input type="checkbox" data-check-id="chapter-8-sorting-learning-targets"><span>Learning Targets</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-8-sorting"><input type="checkbox" data-check-id="chapter-8-sorting-8-1-what-is-sorting"><span>8.1 What Is Sorting?</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-8-sorting"><input type="checkbox" data-check-id="chapter-8-sorting-8-2-insertion-sort"><span>8.2 Insertion Sort</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-8-sorting"><input type="checkbox" data-check-id="chapter-8-sorting-8-3-selection-sort"><span>8.3 Selection Sort</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-8-sorting"><input type="checkbox" data-check-id="chapter-8-sorting-8-4-bubble-sort"><span>8.4 Bubble Sort</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-8-sorting"><input type="checkbox" data-check-id="chapter-8-sorting-8-5-heap-sort"><span>8.5 Heap Sort</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-8-sorting"><input type="checkbox" data-check-id="chapter-8-sorting-8-6-quick-sort"><span>8.6 Quick Sort</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-8-sorting"><input type="checkbox" data-check-id="chapter-8-sorting-8-7-merge-sort"><span>8.7 Merge Sort</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-learning-targets"><span>Learning Targets</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-1-what-is-searching"><span>9.1 What Is Searching?</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-2-types-of-searching"><span>9.2 Types of Searching</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-3-sequential-search"><span>9.3 Sequential Search</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-4-binary-search"><span>9.4 Binary Search</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-5-hashing"><span>9.5 Hashing</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-6-requirements-of-a-good-hash-function"><span>9.6 Requirements of a Good Hash Function</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-7-hashing-functions"><span>9.7 Hashing Functions</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-8-collision"><span>9.8 Collision</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-9-linear-probing"><span>9.9 Linear Probing</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-10-quadratic-probing"><span>9.10 Quadratic Probing</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-11-chaining"><span>9.11 Chaining</span><small>CRITICAL</small></label>
+<label class="check-row" data-level="critical" data-chapter="chapter-9-searching"><input type="checkbox" data-check-id="chapter-9-searching-9-12-double-hashing"><span>9.12 Double Hashing</span><small>CRITICAL</small></label>
+          </div>
+        </section>
+
+        <section class="panel-card topic-command" id="topic-command">
+          <div class="panel-title">
+            <div>
+              <span class="square-check">⌘</span>
+              <h2>Click a Covered Subtopic</h2>
+            </div>
+            <button type="button" class="ghost-button" id="resetFilters">Reset</button>
+          </div>
+          <div class="command-search">
+            <input id="topicSearch" type="search" placeholder="Search all 116 subtopics...">
+          </div>
+          <div class="chapter-tabs" id="chapterTabs">
+            <button type="button" class="chapter-tab" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl">Ch. 1: Abstract Data Type and Introduction to STL</button>
 <button type="button" class="chapter-tab" data-chapter="chapter-2-complexity-analysis">Ch. 2: Complexity Analysis</button>
 <button type="button" class="chapter-tab" data-chapter="chapter-3-linked-lists-part-1">Ch. 3: Linked Lists, Part 1</button>
 <button type="button" class="chapter-tab" data-chapter="chapter-3-linked-lists-part-2">Ch. 3: Linked Lists, Part 2</button>
@@ -43,136 +221,129 @@
 <button type="button" class="chapter-tab" data-chapter="chapter-8-sorting">Ch. 8: Sorting</button>
 <button type="button" class="chapter-tab" data-chapter="chapter-9-searching">Ch. 9: Searching</button>
 <button type="button" class="chapter-tab" data-chapter="exam-focused-master-checklist">Exam-Focused Master Checklist</button>
-      </div>
-      <div class="subtopic-grid" id="subtopicGrid">
-        <button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-learning-targets" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>Learning Targets</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-1-data-structure" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.1 Data Structure</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-2-core-data-operations" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.2 Core Data Operations</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-3-adt-abstract-data-type" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.3 ADT: Abstract Data Type</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-4-adt-example-stack" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.4 ADT Example: Stack</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-5-stl-standard-template-library" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.5 STL: Standard Template Library</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-6-stl-containers" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.6 STL Containers</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-7-stl-iterators" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.7 STL Iterators</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-8-stl-algorithms" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.8 STL Algorithms</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-9-vector-code-segments" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl"><span>1.9 Vector Code Segments</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-learning-targets" data-chapter="chapter-2-complexity-analysis"><span>Learning Targets</span><small>Ch. 2: Complexity Analysis</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-1-computational-and-asymptotic-complexity" data-chapter="chapter-2-complexity-analysis"><span>2.1 Computational and Asymptotic Complexity</span><small>Ch. 2: Complexity Analysis</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-2-performance-vs-complexity" data-chapter="chapter-2-complexity-analysis"><span>2.2 Performance vs Complexity</span><small>Ch. 2: Complexity Analysis</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-3-big-o-notation" data-chapter="chapter-2-complexity-analysis"><span>2.3 Big O Notation</span><small>Ch. 2: Complexity Analysis</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-4-how-to-determine-big-o" data-chapter="chapter-2-complexity-analysis"><span>2.4 How to Determine Big O</span><small>Ch. 2: Complexity Analysis</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-5-o-1-constant-time" data-chapter="chapter-2-complexity-analysis"><span>2.5 O(1): Constant Time</span><small>Ch. 2: Complexity Analysis</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-6-o-n-linear-time" data-chapter="chapter-2-complexity-analysis"><span>2.6 O(n): Linear Time</span><small>Ch. 2: Complexity Analysis</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-7-o-n-2-quadratic-time" data-chapter="chapter-2-complexity-analysis"><span>2.7 O(n^2): Quadratic Time</span><small>Ch. 2: Complexity Analysis</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-8-o-log-n-logarithmic-time" data-chapter="chapter-2-complexity-analysis"><span>2.8 O(log n): Logarithmic Time</span><small>Ch. 2: Complexity Analysis</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-2-complexity-analysis-2-9-o-n-log-n-linearithmic-time" data-chapter="chapter-2-complexity-analysis"><span>2.9 O(n log n): Linearithmic Time</span><small>Ch. 2: Complexity Analysis</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-learning-targets" data-chapter="chapter-3-linked-lists-part-1"><span>Learning Targets</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-1-why-linked-lists" data-chapter="chapter-3-linked-lists-part-1"><span>3.1 Why Linked Lists?</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-2-what-is-a-linked-list" data-chapter="chapter-3-linked-lists-part-1"><span>3.2 What Is a Linked List?</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-3-advantages-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1"><span>3.3 Advantages of Linked Lists</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-4-limitations-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1"><span>3.4 Limitations of Linked Lists</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-5-array-vs-linked-list" data-chapter="chapter-3-linked-lists-part-1"><span>3.5 Array vs Linked List</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-6-types-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1"><span>3.6 Types of Linked Lists</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-7-singly-linked-list" data-chapter="chapter-3-linked-lists-part-1"><span>3.7 Singly Linked List</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-8-basic-singly-linked-list-operations" data-chapter="chapter-3-linked-lists-part-1"><span>3.8 Basic Singly Linked List Operations</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-9-singly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-1"><span>3.9 Singly Linked List Node Creation</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-10-singly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-1"><span>3.10 Singly Linked List Insertion: Empty List</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-11-singly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-1"><span>3.11 Singly Linked List Insertion: End</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-12-singly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-1"><span>3.12 Singly Linked List Insertion: Beginning</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-13-singly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-1"><span>3.13 Singly Linked List Insertion: Middle</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-14-singly-linked-list-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1"><span>3.14 Singly Linked List with Tail Pointer</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-15-singly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-1"><span>3.15 Singly Linked List Deletion: Beginning</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-16-singly-linked-list-deletion-middle-by-value" data-chapter="chapter-3-linked-lists-part-1"><span>3.16 Singly Linked List Deletion: Middle by Value</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-17-singly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-1"><span>3.17 Singly Linked List Deletion: End</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-18-deletion-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1"><span>3.18 Deletion with Tail Pointer</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-19-singly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-1"><span>3.19 Singly Linked List Traversal</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-20-singly-linked-list-update" data-chapter="chapter-3-linked-lists-part-1"><span>3.20 Singly Linked List Update</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-1-3-21-singly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-1"><span>3.21 Singly Linked List Reversal</span><small>Ch. 3: Linked Lists, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-22-doubly-linked-list" data-chapter="chapter-3-linked-lists-part-2"><span>3.22 Doubly Linked List</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-23-doubly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-2"><span>3.23 Doubly Linked List Node Creation</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-24-doubly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-2"><span>3.24 Doubly Linked List Insertion: Empty List</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-25-doubly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-2"><span>3.25 Doubly Linked List Insertion: End</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-26-doubly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-2"><span>3.26 Doubly Linked List Insertion: Beginning</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-27-doubly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-2"><span>3.27 Doubly Linked List Insertion: Middle</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-28-doubly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-2"><span>3.28 Doubly Linked List Deletion: Beginning</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-29-doubly-linked-list-deletion-middle" data-chapter="chapter-3-linked-lists-part-2"><span>3.29 Doubly Linked List Deletion: Middle</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-30-doubly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-2"><span>3.30 Doubly Linked List Deletion: End</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-31-doubly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-2"><span>3.31 Doubly Linked List Traversal</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-32-doubly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-2"><span>3.32 Doubly Linked List Reversal</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-33-doubly-linked-list-advantages" data-chapter="chapter-3-linked-lists-part-2"><span>3.33 Doubly Linked List Advantages</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-3-linked-lists-part-2-3-34-doubly-linked-list-disadvantages" data-chapter="chapter-3-linked-lists-part-2"><span>3.34 Doubly Linked List Disadvantages</span><small>Ch. 3: Linked Lists, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-learning-targets" data-chapter="chapter-4-stacks"><span>Learning Targets</span><small>Ch. 4: Stacks</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-1-what-is-a-stack" data-chapter="chapter-4-stacks"><span>4.1 What Is a Stack?</span><small>Ch. 4: Stacks</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-2-stack-implementation-methods" data-chapter="chapter-4-stacks"><span>4.2 Stack Implementation Methods</span><small>Ch. 4: Stacks</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-3-stl-stack" data-chapter="chapter-4-stacks"><span>4.3 STL Stack</span><small>Ch. 4: Stacks</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-4-linked-list-stack" data-chapter="chapter-4-stacks"><span>4.4 Linked List Stack</span><small>Ch. 4: Stacks</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-5-stack-applications" data-chapter="chapter-4-stacks"><span>4.5 Stack Applications</span><small>Ch. 4: Stacks</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-6-balanced-parentheses-algorithm" data-chapter="chapter-4-stacks"><span>4.6 Balanced Parentheses Algorithm</span><small>Ch. 4: Stacks</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-7-infix-to-postfix-conversion" data-chapter="chapter-4-stacks"><span>4.7 Infix to Postfix Conversion</span><small>Ch. 4: Stacks</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-4-stacks-4-8-postfix-evaluation" data-chapter="chapter-4-stacks"><span>4.8 Postfix Evaluation</span><small>Ch. 4: Stacks</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-5-queues-learning-targets" data-chapter="chapter-5-queues"><span>Learning Targets</span><small>Ch. 5: Queues</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-5-queues-5-1-what-is-a-queue" data-chapter="chapter-5-queues"><span>5.1 What Is a Queue?</span><small>Ch. 5: Queues</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-5-queues-5-2-stl-queue" data-chapter="chapter-5-queues"><span>5.2 STL Queue</span><small>Ch. 5: Queues</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-5-queues-5-3-linked-list-queue" data-chapter="chapter-5-queues"><span>5.3 Linked List Queue</span><small>Ch. 5: Queues</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-5-queues-5-4-queue-applications" data-chapter="chapter-5-queues"><span>5.4 Queue Applications</span><small>Ch. 5: Queues</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-learning-targets" data-chapter="chapter-6-tree-part-1"><span>Learning Targets</span><small>Ch. 6: Tree, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-1-what-is-a-tree" data-chapter="chapter-6-tree-part-1"><span>6.1 What Is a Tree?</span><small>Ch. 6: Tree, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-2-types-of-tree-data-structures" data-chapter="chapter-6-tree-part-1"><span>6.2 Types of Tree Data Structures</span><small>Ch. 6: Tree, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-3-tree-terminology" data-chapter="chapter-6-tree-part-1"><span>6.3 Tree Terminology</span><small>Ch. 6: Tree, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-4-binary-tree" data-chapter="chapter-6-tree-part-1"><span>6.4 Binary Tree</span><small>Ch. 6: Tree, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-5-binary-tree-types-and-formulas" data-chapter="chapter-6-tree-part-1"><span>6.5 Binary Tree Types and Formulas</span><small>Ch. 6: Tree, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-6-binary-search-tree" data-chapter="chapter-6-tree-part-1"><span>6.6 Binary Search Tree</span><small>Ch. 6: Tree, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-7-bst-insertion" data-chapter="chapter-6-tree-part-1"><span>6.7 BST Insertion</span><small>Ch. 6: Tree, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-1-6-8-bst-deletion" data-chapter="chapter-6-tree-part-1"><span>6.8 BST Deletion</span><small>Ch. 6: Tree, Part 1</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-9-expression-tree" data-chapter="chapter-6-tree-part-2"><span>6.9 Expression Tree</span><small>Ch. 6: Tree, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-10-tree-traversal" data-chapter="chapter-6-tree-part-2"><span>6.10 Tree Traversal</span><small>Ch. 6: Tree, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-11-bfs-breadth-first-traversal" data-chapter="chapter-6-tree-part-2"><span>6.11 BFS: Breadth First Traversal</span><small>Ch. 6: Tree, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-12-dfs-traversals" data-chapter="chapter-6-tree-part-2"><span>6.12 DFS Traversals</span><small>Ch. 6: Tree, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-13-binary-postfix-postorder-on-expression-tree" data-chapter="chapter-6-tree-part-2"><span>6.13 Binary Postfix: Postorder on Expression Tree</span><small>Ch. 6: Tree, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-14-tree-linked-list-implementation" data-chapter="chapter-6-tree-part-2"><span>6.14 Tree Linked List Implementation</span><small>Ch. 6: Tree, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-15-bst-search" data-chapter="chapter-6-tree-part-2"><span>6.15 BST Search</span><small>Ch. 6: Tree, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-6-tree-part-2-6-16-tree-summary" data-chapter="chapter-6-tree-part-2"><span>6.16 Tree Summary</span><small>Ch. 6: Tree, Part 2</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-7-graph-learning-targets" data-chapter="chapter-7-graph"><span>Learning Targets</span><small>Ch. 7: Graph</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-1-what-is-a-graph" data-chapter="chapter-7-graph"><span>7.1 What Is a Graph?</span><small>Ch. 7: Graph</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-2-graph-applications" data-chapter="chapter-7-graph"><span>7.2 Graph Applications</span><small>Ch. 7: Graph</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-3-graph-types" data-chapter="chapter-7-graph"><span>7.3 Graph Types</span><small>Ch. 7: Graph</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-4-graph-representation-adjacency-list" data-chapter="chapter-7-graph"><span>7.4 Graph Representation: Adjacency List</span><small>Ch. 7: Graph</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-5-graph-representation-adjacency-matrix" data-chapter="chapter-7-graph"><span>7.5 Graph Representation: Adjacency Matrix</span><small>Ch. 7: Graph</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-6-dijkstra-s-shortest-path-algorithm" data-chapter="chapter-7-graph"><span>7.6 Dijkstra&#x27;s Shortest Path Algorithm</span><small>Ch. 7: Graph</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-7-spanning-tree" data-chapter="chapter-7-graph"><span>7.7 Spanning Tree</span><small>Ch. 7: Graph</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-7-graph-7-8-kruskal-s-algorithm" data-chapter="chapter-7-graph"><span>7.8 Kruskal&#x27;s Algorithm</span><small>Ch. 7: Graph</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-learning-targets" data-chapter="chapter-8-sorting"><span>Learning Targets</span><small>Ch. 8: Sorting</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-1-what-is-sorting" data-chapter="chapter-8-sorting"><span>8.1 What Is Sorting?</span><small>Ch. 8: Sorting</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-2-insertion-sort" data-chapter="chapter-8-sorting"><span>8.2 Insertion Sort</span><small>Ch. 8: Sorting</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-3-selection-sort" data-chapter="chapter-8-sorting"><span>8.3 Selection Sort</span><small>Ch. 8: Sorting</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-4-bubble-sort" data-chapter="chapter-8-sorting"><span>8.4 Bubble Sort</span><small>Ch. 8: Sorting</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-5-heap-sort" data-chapter="chapter-8-sorting"><span>8.5 Heap Sort</span><small>Ch. 8: Sorting</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-6-quick-sort" data-chapter="chapter-8-sorting"><span>8.6 Quick Sort</span><small>Ch. 8: Sorting</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-8-sorting-8-7-merge-sort" data-chapter="chapter-8-sorting"><span>8.7 Merge Sort</span><small>Ch. 8: Sorting</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-learning-targets" data-chapter="chapter-9-searching"><span>Learning Targets</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-1-what-is-searching" data-chapter="chapter-9-searching"><span>9.1 What Is Searching?</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-2-types-of-searching" data-chapter="chapter-9-searching"><span>9.2 Types of Searching</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-3-sequential-search" data-chapter="chapter-9-searching"><span>9.3 Sequential Search</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-4-binary-search" data-chapter="chapter-9-searching"><span>9.4 Binary Search</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-5-hashing" data-chapter="chapter-9-searching"><span>9.5 Hashing</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-6-requirements-of-a-good-hash-function" data-chapter="chapter-9-searching"><span>9.6 Requirements of a Good Hash Function</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-7-hashing-functions" data-chapter="chapter-9-searching"><span>9.7 Hashing Functions</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-8-collision" data-chapter="chapter-9-searching"><span>9.8 Collision</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-9-linear-probing" data-chapter="chapter-9-searching"><span>9.9 Linear Probing</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-10-quadratic-probing" data-chapter="chapter-9-searching"><span>9.10 Quadratic Probing</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-11-chaining" data-chapter="chapter-9-searching"><span>9.11 Chaining</span><small>Ch. 9: Searching</small></button>
-<button type="button" class="subtopic-chip" data-target="chapter-9-searching-9-12-double-hashing" data-chapter="chapter-9-searching"><span>9.12 Double Hashing</span><small>Ch. 9: Searching</small></button>
-      </div>
-    </section>
+          </div>
+          <div class="subtopic-grid" id="subtopicGrid">
+            <button type="button" class="subtopic-chip important" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-learning-targets" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important"><span>Learning Targets</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-1-data-structure" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important"><span>1.1 Data Structure</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-2-core-data-operations" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important"><span>1.2 Core Data Operations</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-3-adt-abstract-data-type" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important"><span>1.3 ADT: Abstract Data Type</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-4-adt-example-stack" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important"><span>1.4 ADT Example: Stack</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-5-stl-standard-template-library" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important"><span>1.5 STL: Standard Template Library</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-6-stl-containers" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important"><span>1.6 STL Containers</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-7-stl-iterators" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important"><span>1.7 STL Iterators</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-8-stl-algorithms" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important"><span>1.8 STL Algorithms</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-1-abstract-data-type-and-introduction-to-stl-1-9-vector-code-segments" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important"><span>1.9 Vector Code Segments</span><small>Ch. 1: Abstract Data Type and Introduction to STL</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-2-complexity-analysis-learning-targets" data-chapter="chapter-2-complexity-analysis" data-level="important"><span>Learning Targets</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-2-complexity-analysis-2-1-computational-and-asymptotic-complexity" data-chapter="chapter-2-complexity-analysis" data-level="important"><span>2.1 Computational and Asymptotic Complexity</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-2-complexity-analysis-2-2-performance-vs-complexity" data-chapter="chapter-2-complexity-analysis" data-level="important"><span>2.2 Performance vs Complexity</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-2-complexity-analysis-2-3-big-o-notation" data-chapter="chapter-2-complexity-analysis" data-level="important"><span>2.3 Big O Notation</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-2-complexity-analysis-2-4-how-to-determine-big-o" data-chapter="chapter-2-complexity-analysis" data-level="important"><span>2.4 How to Determine Big O</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-2-complexity-analysis-2-5-o-1-constant-time" data-chapter="chapter-2-complexity-analysis" data-level="important"><span>2.5 O(1): Constant Time</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-2-complexity-analysis-2-6-o-n-linear-time" data-chapter="chapter-2-complexity-analysis" data-level="important"><span>2.6 O(n): Linear Time</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-2-complexity-analysis-2-7-o-n-2-quadratic-time" data-chapter="chapter-2-complexity-analysis" data-level="important"><span>2.7 O(n^2): Quadratic Time</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-2-complexity-analysis-2-8-o-log-n-logarithmic-time" data-chapter="chapter-2-complexity-analysis" data-level="important"><span>2.8 O(log n): Logarithmic Time</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-2-complexity-analysis-2-9-o-n-log-n-linearithmic-time" data-chapter="chapter-2-complexity-analysis" data-level="important"><span>2.9 O(n log n): Linearithmic Time</span><small>Ch. 2: Complexity Analysis</small></button>
+<button type="button" class="subtopic-chip basic" data-target="chapter-3-linked-lists-part-1-learning-targets" data-chapter="chapter-3-linked-lists-part-1" data-level="basic"><span>Learning Targets</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip basic" data-target="chapter-3-linked-lists-part-1-3-1-why-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-level="basic"><span>3.1 Why Linked Lists?</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-1-3-2-what-is-a-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-level="important"><span>3.2 What Is a Linked List?</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip basic" data-target="chapter-3-linked-lists-part-1-3-3-advantages-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-level="basic"><span>3.3 Advantages of Linked Lists</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip basic" data-target="chapter-3-linked-lists-part-1-3-4-limitations-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-level="basic"><span>3.4 Limitations of Linked Lists</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-1-3-5-array-vs-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-level="important"><span>3.5 Array vs Linked List</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip basic" data-target="chapter-3-linked-lists-part-1-3-6-types-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-level="basic"><span>3.6 Types of Linked Lists</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-1-3-7-singly-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-level="important"><span>3.7 Singly Linked List</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-1-3-8-basic-singly-linked-list-operations" data-chapter="chapter-3-linked-lists-part-1" data-level="important"><span>3.8 Basic Singly Linked List Operations</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-1-3-9-singly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-1" data-level="important"><span>3.9 Singly Linked List Node Creation</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-1-3-10-singly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-1" data-level="critical"><span>3.10 Singly Linked List Insertion: Empty List</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-1-3-11-singly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-1" data-level="critical"><span>3.11 Singly Linked List Insertion: End</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-1-3-12-singly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-1" data-level="critical"><span>3.12 Singly Linked List Insertion: Beginning</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-1-3-13-singly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-1" data-level="critical"><span>3.13 Singly Linked List Insertion: Middle</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-1-3-14-singly-linked-list-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1" data-level="important"><span>3.14 Singly Linked List with Tail Pointer</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-1-3-15-singly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-1" data-level="critical"><span>3.15 Singly Linked List Deletion: Beginning</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-1-3-16-singly-linked-list-deletion-middle-by-value" data-chapter="chapter-3-linked-lists-part-1" data-level="critical"><span>3.16 Singly Linked List Deletion: Middle by Value</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-1-3-17-singly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-1" data-level="critical"><span>3.17 Singly Linked List Deletion: End</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-1-3-18-deletion-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1" data-level="critical"><span>3.18 Deletion with Tail Pointer</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-1-3-19-singly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-1" data-level="important"><span>3.19 Singly Linked List Traversal</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-1-3-20-singly-linked-list-update" data-chapter="chapter-3-linked-lists-part-1" data-level="important"><span>3.20 Singly Linked List Update</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-1-3-21-singly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-1" data-level="critical"><span>3.21 Singly Linked List Reversal</span><small>Ch. 3: Linked Lists, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-2-3-22-doubly-linked-list" data-chapter="chapter-3-linked-lists-part-2" data-level="important"><span>3.22 Doubly Linked List</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-2-3-23-doubly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-2" data-level="important"><span>3.23 Doubly Linked List Node Creation</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-2-3-24-doubly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-2" data-level="critical"><span>3.24 Doubly Linked List Insertion: Empty List</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-2-3-25-doubly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-2" data-level="critical"><span>3.25 Doubly Linked List Insertion: End</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-2-3-26-doubly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-2" data-level="critical"><span>3.26 Doubly Linked List Insertion: Beginning</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-2-3-27-doubly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-2" data-level="critical"><span>3.27 Doubly Linked List Insertion: Middle</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-2-3-28-doubly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-2" data-level="critical"><span>3.28 Doubly Linked List Deletion: Beginning</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-2-3-29-doubly-linked-list-deletion-middle" data-chapter="chapter-3-linked-lists-part-2" data-level="critical"><span>3.29 Doubly Linked List Deletion: Middle</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-2-3-30-doubly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-2" data-level="critical"><span>3.30 Doubly Linked List Deletion: End</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-2-3-31-doubly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-2" data-level="important"><span>3.31 Doubly Linked List Traversal</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-3-linked-lists-part-2-3-32-doubly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-2" data-level="critical"><span>3.32 Doubly Linked List Reversal</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-2-3-33-doubly-linked-list-advantages" data-chapter="chapter-3-linked-lists-part-2" data-level="important"><span>3.33 Doubly Linked List Advantages</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-3-linked-lists-part-2-3-34-doubly-linked-list-disadvantages" data-chapter="chapter-3-linked-lists-part-2" data-level="important"><span>3.34 Doubly Linked List Disadvantages</span><small>Ch. 3: Linked Lists, Part 2</small></button>
+<button type="button" class="subtopic-chip basic" data-target="chapter-4-stacks-learning-targets" data-chapter="chapter-4-stacks" data-level="basic"><span>Learning Targets</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-4-stacks-4-1-what-is-a-stack" data-chapter="chapter-4-stacks" data-level="important"><span>4.1 What Is a Stack?</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-4-stacks-4-2-stack-implementation-methods" data-chapter="chapter-4-stacks" data-level="important"><span>4.2 Stack Implementation Methods</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-4-stacks-4-3-stl-stack" data-chapter="chapter-4-stacks" data-level="important"><span>4.3 STL Stack</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-4-stacks-4-4-linked-list-stack" data-chapter="chapter-4-stacks" data-level="important"><span>4.4 Linked List Stack</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-4-stacks-4-5-stack-applications" data-chapter="chapter-4-stacks" data-level="important"><span>4.5 Stack Applications</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-4-stacks-4-6-balanced-parentheses-algorithm" data-chapter="chapter-4-stacks" data-level="critical"><span>4.6 Balanced Parentheses Algorithm</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-4-stacks-4-7-infix-to-postfix-conversion" data-chapter="chapter-4-stacks" data-level="critical"><span>4.7 Infix to Postfix Conversion</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-4-stacks-4-8-postfix-evaluation" data-chapter="chapter-4-stacks" data-level="critical"><span>4.8 Postfix Evaluation</span><small>Ch. 4: Stacks</small></button>
+<button type="button" class="subtopic-chip basic" data-target="chapter-5-queues-learning-targets" data-chapter="chapter-5-queues" data-level="basic"><span>Learning Targets</span><small>Ch. 5: Queues</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-5-queues-5-1-what-is-a-queue" data-chapter="chapter-5-queues" data-level="important"><span>5.1 What Is a Queue?</span><small>Ch. 5: Queues</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-5-queues-5-2-stl-queue" data-chapter="chapter-5-queues" data-level="important"><span>5.2 STL Queue</span><small>Ch. 5: Queues</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-5-queues-5-3-linked-list-queue" data-chapter="chapter-5-queues" data-level="important"><span>5.3 Linked List Queue</span><small>Ch. 5: Queues</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-5-queues-5-4-queue-applications" data-chapter="chapter-5-queues" data-level="important"><span>5.4 Queue Applications</span><small>Ch. 5: Queues</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-1-learning-targets" data-chapter="chapter-6-tree-part-1" data-level="important"><span>Learning Targets</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-1-6-1-what-is-a-tree" data-chapter="chapter-6-tree-part-1" data-level="important"><span>6.1 What Is a Tree?</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-1-6-2-types-of-tree-data-structures" data-chapter="chapter-6-tree-part-1" data-level="important"><span>6.2 Types of Tree Data Structures</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-1-6-3-tree-terminology" data-chapter="chapter-6-tree-part-1" data-level="important"><span>6.3 Tree Terminology</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-1-6-4-binary-tree" data-chapter="chapter-6-tree-part-1" data-level="important"><span>6.4 Binary Tree</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-1-6-5-binary-tree-types-and-formulas" data-chapter="chapter-6-tree-part-1" data-level="important"><span>6.5 Binary Tree Types and Formulas</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-6-tree-part-1-6-6-binary-search-tree" data-chapter="chapter-6-tree-part-1" data-level="critical"><span>6.6 Binary Search Tree</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-6-tree-part-1-6-7-bst-insertion" data-chapter="chapter-6-tree-part-1" data-level="critical"><span>6.7 BST Insertion</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-6-tree-part-1-6-8-bst-deletion" data-chapter="chapter-6-tree-part-1" data-level="critical"><span>6.8 BST Deletion</span><small>Ch. 6: Tree, Part 1</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-2-6-9-expression-tree" data-chapter="chapter-6-tree-part-2" data-level="important"><span>6.9 Expression Tree</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-2-6-10-tree-traversal" data-chapter="chapter-6-tree-part-2" data-level="important"><span>6.10 Tree Traversal</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-2-6-11-bfs-breadth-first-traversal" data-chapter="chapter-6-tree-part-2" data-level="important"><span>6.11 BFS: Breadth First Traversal</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-2-6-12-dfs-traversals" data-chapter="chapter-6-tree-part-2" data-level="important"><span>6.12 DFS Traversals</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-6-tree-part-2-6-13-binary-postfix-postorder-on-expression-tree" data-chapter="chapter-6-tree-part-2" data-level="critical"><span>6.13 Binary Postfix: Postorder on Expression Tree</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-2-6-14-tree-linked-list-implementation" data-chapter="chapter-6-tree-part-2" data-level="important"><span>6.14 Tree Linked List Implementation</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-6-tree-part-2-6-15-bst-search" data-chapter="chapter-6-tree-part-2" data-level="critical"><span>6.15 BST Search</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-6-tree-part-2-6-16-tree-summary" data-chapter="chapter-6-tree-part-2" data-level="important"><span>6.16 Tree Summary</span><small>Ch. 6: Tree, Part 2</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-7-graph-learning-targets" data-chapter="chapter-7-graph" data-level="important"><span>Learning Targets</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-7-graph-7-1-what-is-a-graph" data-chapter="chapter-7-graph" data-level="important"><span>7.1 What Is a Graph?</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-7-graph-7-2-graph-applications" data-chapter="chapter-7-graph" data-level="important"><span>7.2 Graph Applications</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-7-graph-7-3-graph-types" data-chapter="chapter-7-graph" data-level="important"><span>7.3 Graph Types</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-7-graph-7-4-graph-representation-adjacency-list" data-chapter="chapter-7-graph" data-level="important"><span>7.4 Graph Representation: Adjacency List</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-7-graph-7-5-graph-representation-adjacency-matrix" data-chapter="chapter-7-graph" data-level="important"><span>7.5 Graph Representation: Adjacency Matrix</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-7-graph-7-6-dijkstra-s-shortest-path-algorithm" data-chapter="chapter-7-graph" data-level="critical"><span>7.6 Dijkstra&#x27;s Shortest Path Algorithm</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip important" data-target="chapter-7-graph-7-7-spanning-tree" data-chapter="chapter-7-graph" data-level="important"><span>7.7 Spanning Tree</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-7-graph-7-8-kruskal-s-algorithm" data-chapter="chapter-7-graph" data-level="critical"><span>7.8 Kruskal&#x27;s Algorithm</span><small>Ch. 7: Graph</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-8-sorting-learning-targets" data-chapter="chapter-8-sorting" data-level="critical"><span>Learning Targets</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-8-sorting-8-1-what-is-sorting" data-chapter="chapter-8-sorting" data-level="critical"><span>8.1 What Is Sorting?</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-8-sorting-8-2-insertion-sort" data-chapter="chapter-8-sorting" data-level="critical"><span>8.2 Insertion Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-8-sorting-8-3-selection-sort" data-chapter="chapter-8-sorting" data-level="critical"><span>8.3 Selection Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-8-sorting-8-4-bubble-sort" data-chapter="chapter-8-sorting" data-level="critical"><span>8.4 Bubble Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-8-sorting-8-5-heap-sort" data-chapter="chapter-8-sorting" data-level="critical"><span>8.5 Heap Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-8-sorting-8-6-quick-sort" data-chapter="chapter-8-sorting" data-level="critical"><span>8.6 Quick Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-8-sorting-8-7-merge-sort" data-chapter="chapter-8-sorting" data-level="critical"><span>8.7 Merge Sort</span><small>Ch. 8: Sorting</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-learning-targets" data-chapter="chapter-9-searching" data-level="critical"><span>Learning Targets</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-1-what-is-searching" data-chapter="chapter-9-searching" data-level="critical"><span>9.1 What Is Searching?</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-2-types-of-searching" data-chapter="chapter-9-searching" data-level="critical"><span>9.2 Types of Searching</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-3-sequential-search" data-chapter="chapter-9-searching" data-level="critical"><span>9.3 Sequential Search</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-4-binary-search" data-chapter="chapter-9-searching" data-level="critical"><span>9.4 Binary Search</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-5-hashing" data-chapter="chapter-9-searching" data-level="critical"><span>9.5 Hashing</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-6-requirements-of-a-good-hash-function" data-chapter="chapter-9-searching" data-level="critical"><span>9.6 Requirements of a Good Hash Function</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-7-hashing-functions" data-chapter="chapter-9-searching" data-level="critical"><span>9.7 Hashing Functions</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-8-collision" data-chapter="chapter-9-searching" data-level="critical"><span>9.8 Collision</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-9-linear-probing" data-chapter="chapter-9-searching" data-level="critical"><span>9.9 Linear Probing</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-10-quadratic-probing" data-chapter="chapter-9-searching" data-level="critical"><span>9.10 Quadratic Probing</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-11-chaining" data-chapter="chapter-9-searching" data-level="critical"><span>9.11 Chaining</span><small>Ch. 9: Searching</small></button>
+<button type="button" class="subtopic-chip critical" data-target="chapter-9-searching-9-12-double-hashing" data-chapter="chapter-9-searching" data-level="critical"><span>9.12 Double Hashing</span><small>Ch. 9: Searching</small></button>
+          </div>
+        </section>
 
-    <div class="content-layout">
-      <aside class="quick-map" aria-label="Chapter map">
-        <p>Chapter Map</p>
-        <nav>
-          <a href="#chapter-1-abstract-data-type-and-introduction-to-stl">Chapter 1: Abstract Data Type and Introduction to STL</a><a href="#chapter-2-complexity-analysis">Chapter 2: Complexity Analysis</a><a href="#chapter-3-linked-lists-part-1">Chapter 3: Linked Lists, Part 1</a><a href="#chapter-3-linked-lists-part-2">Chapter 3: Linked Lists, Part 2</a><a href="#chapter-4-stacks">Chapter 4: Stacks</a><a href="#chapter-5-queues">Chapter 5: Queues</a><a href="#chapter-6-tree-part-1">Chapter 6: Tree, Part 1</a><a href="#chapter-6-tree-part-2">Chapter 6: Tree, Part 2</a><a href="#chapter-7-graph">Chapter 7: Graph</a><a href="#chapter-8-sorting">Chapter 8: Sorting</a><a href="#chapter-9-searching">Chapter 9: Searching</a><a href="#exam-focused-master-checklist">Exam-Focused Master Checklist</a>
-        </nav>
-      </aside>
-      <section class="notes-content" id="notesContent">
-        <section class="source-note"><h2>DSA Study Notes From Uploaded Slides</h2>
+        <section class="notes-content" id="notesContent">
+          <section class="source-note"><h2>DSA Study Notes From Uploaded Slides</h2>
 <ul class="note-list">
 <li>Source basis:</li>
 <ul class="note-list">
@@ -199,7 +370,7 @@
 </ul>
 </section>
 <section class="chapter-section" id="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="Chapter 1: Abstract Data Type and Introduction to STL"><h2>Chapter 1: Abstract Data Type and Introduction to STL</h2>
-<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-learning-targets" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="Learning Targets"><h3>Learning Targets</h3>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-learning-targets" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important" data-title="Learning Targets"><div class="card-heading"><h3>Learning Targets</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Understand:</li>
 <ul class="note-list">
@@ -211,7 +382,7 @@
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-1-data-structure" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.1 Data Structure"><h3>1.1 Data Structure</h3>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-1-data-structure" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important" data-title="1.1 Data Structure"><div class="card-heading"><h3>1.1 Data Structure</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A program is made of:</li>
 <ul class="note-list">
@@ -237,7 +408,7 @@
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-2-core-data-operations" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.2 Core Data Operations"><h3>1.2 Core Data Operations</h3>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-2-core-data-operations" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important" data-title="1.2 Core Data Operations"><div class="card-heading"><h3>1.2 Core Data Operations</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Main operations from the slides:</li>
 <ul class="note-list">
@@ -253,7 +424,7 @@
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-3-adt-abstract-data-type" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.3 ADT: Abstract Data Type"><h3>1.3 ADT: Abstract Data Type</h3>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-3-adt-abstract-data-type" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important" data-title="1.3 ADT: Abstract Data Type"><div class="card-heading"><h3>1.3 ADT: Abstract Data Type</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Definition:</li>
 <ul class="note-list">
@@ -293,7 +464,7 @@
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-4-adt-example-stack" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.4 ADT Example: Stack"><h3>1.4 ADT Example: Stack</h3>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-4-adt-example-stack" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important" data-title="1.4 ADT Example: Stack"><div class="card-heading"><h3>1.4 ADT Example: Stack</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Stack ADT behavior:</li>
 <ul class="note-list">
@@ -315,7 +486,7 @@
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-5-stl-standard-template-library" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.5 STL: Standard Template Library"><h3>1.5 STL: Standard Template Library</h3>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-5-stl-standard-template-library" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important" data-title="1.5 STL: Standard Template Library"><div class="card-heading"><h3>1.5 STL: Standard Template Library</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>STL provides generic entities:</li>
 <ul class="note-list">
@@ -341,7 +512,7 @@
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-6-stl-containers" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.6 STL Containers"><h3>1.6 STL Containers</h3>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-6-stl-containers" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important" data-title="1.6 STL Containers"><div class="card-heading"><h3>1.6 STL Containers</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A container is:</li>
 <ul class="note-list">
@@ -406,7 +577,7 @@ int main() {
     return 0;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-7-stl-iterators" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.7 STL Iterators"><h3>1.7 STL Iterators</h3>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-7-stl-iterators" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important" data-title="1.7 STL Iterators"><div class="card-heading"><h3>1.7 STL Iterators</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>An iterator is:</li>
 <ul class="note-list">
@@ -437,7 +608,7 @@ int main() {
 <li>R = Random moves anywhere</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-8-stl-algorithms" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.8 STL Algorithms"><h3>1.8 STL Algorithms</h3>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-8-stl-algorithms" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important" data-title="1.8 STL Algorithms"><div class="card-heading"><h3>1.8 STL Algorithms</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>STL algorithms are procedures applied to containers.</li>
 <li>Examples from the slides:</li>
@@ -450,7 +621,7 @@ int main() {
 <li>Some algorithms are implemented as member functions for efficiency.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-9-vector-code-segments" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-title="1.9 Vector Code Segments"><h3>1.9 Vector Code Segments</h3>
+<article class="subtopic-card" id="chapter-1-abstract-data-type-and-introduction-to-stl-1-9-vector-code-segments" data-chapter="chapter-1-abstract-data-type-and-introduction-to-stl" data-level="important" data-title="1.9 Vector Code Segments"><div class="card-heading"><h3>1.9 Vector Code Segments</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Source note:</li>
 <ul class="note-list">
@@ -508,7 +679,7 @@ int main() {
 </article>
 </section>
 <section class="chapter-section" id="chapter-2-complexity-analysis" data-title="Chapter 2: Complexity Analysis"><h2>Chapter 2: Complexity Analysis</h2>
-<article class="subtopic-card" id="chapter-2-complexity-analysis-learning-targets" data-chapter="chapter-2-complexity-analysis" data-title="Learning Targets"><h3>Learning Targets</h3>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-learning-targets" data-chapter="chapter-2-complexity-analysis" data-level="important" data-title="Learning Targets"><div class="card-heading"><h3>Learning Targets</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Understand:</li>
 <ul class="note-list">
@@ -518,7 +689,7 @@ int main() {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-2-complexity-analysis-2-1-computational-and-asymptotic-complexity" data-chapter="chapter-2-complexity-analysis" data-title="2.1 Computational and Asymptotic Complexity"><h3>2.1 Computational and Asymptotic Complexity</h3>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-1-computational-and-asymptotic-complexity" data-chapter="chapter-2-complexity-analysis" data-level="important" data-title="2.1 Computational and Asymptotic Complexity"><div class="card-heading"><h3>2.1 Computational and Asymptotic Complexity</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Algorithms are essential to data structures.</li>
 <li>Data structures are implemented using algorithms.</li>
@@ -534,7 +705,7 @@ int main() {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-2-complexity-analysis-2-2-performance-vs-complexity" data-chapter="chapter-2-complexity-analysis" data-title="2.2 Performance vs Complexity"><h3>2.2 Performance vs Complexity</h3>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-2-performance-vs-complexity" data-chapter="chapter-2-complexity-analysis" data-level="important" data-title="2.2 Performance vs Complexity"><div class="card-heading"><h3>2.2 Performance vs Complexity</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Performance:</li>
 <ul class="note-list">
@@ -552,7 +723,7 @@ int main() {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-2-complexity-analysis-2-3-big-o-notation" data-chapter="chapter-2-complexity-analysis" data-title="2.3 Big O Notation"><h3>2.3 Big O Notation</h3>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-3-big-o-notation" data-chapter="chapter-2-complexity-analysis" data-level="important" data-title="2.3 Big O Notation"><div class="card-heading"><h3>2.3 Big O Notation</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Big O describes:</li>
 <ul class="note-list">
@@ -567,7 +738,7 @@ int main() {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-2-complexity-analysis-2-4-how-to-determine-big-o" data-chapter="chapter-2-complexity-analysis" data-title="2.4 How to Determine Big O"><h3>2.4 How to Determine Big O</h3>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-4-how-to-determine-big-o" data-chapter="chapter-2-complexity-analysis" data-level="important" data-title="2.4 How to Determine Big O"><div class="card-heading"><h3>2.4 How to Determine Big O</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Rules from the slides:</li>
 <ul class="note-list">
@@ -598,7 +769,7 @@ int main() {
 <li>Decide the final Big O.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-2-complexity-analysis-2-5-o-1-constant-time" data-chapter="chapter-2-complexity-analysis" data-title="2.5 O(1): Constant Time"><h3>2.5 O(1): Constant Time</h3>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-5-o-1-constant-time" data-chapter="chapter-2-complexity-analysis" data-level="important" data-title="2.5 O(1): Constant Time"><div class="card-heading"><h3>2.5 O(1): Constant Time</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Constant time means:</li>
 <ul class="note-list">
@@ -619,7 +790,7 @@ int main() {
     return vec.size(); // O(1)
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-2-complexity-analysis-2-6-o-n-linear-time" data-chapter="chapter-2-complexity-analysis" data-title="2.6 O(n): Linear Time"><h3>2.6 O(n): Linear Time</h3>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-6-o-n-linear-time" data-chapter="chapter-2-complexity-analysis" data-level="important" data-title="2.6 O(n): Linear Time"><div class="card-heading"><h3>2.6 O(n): Linear Time</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Linear time means:</li>
 <ul class="note-list">
@@ -648,7 +819,7 @@ for (; i &lt; vec.end(); i++)
     }
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-2-complexity-analysis-2-7-o-n-2-quadratic-time" data-chapter="chapter-2-complexity-analysis" data-title="2.7 O(n^2): Quadratic Time"><h3>2.7 O(n^2): Quadratic Time</h3>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-7-o-n-2-quadratic-time" data-chapter="chapter-2-complexity-analysis" data-level="important" data-title="2.7 O(n^2): Quadratic Time"><div class="card-heading"><h3>2.7 O(n^2): Quadratic Time</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>From the slides:</li>
 <ul class="note-list">
@@ -669,7 +840,7 @@ for (; i &lt; vec.end(); i++)
     }
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-2-complexity-analysis-2-8-o-log-n-logarithmic-time" data-chapter="chapter-2-complexity-analysis" data-title="2.8 O(log n): Logarithmic Time"><h3>2.8 O(log n): Logarithmic Time</h3>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-8-o-log-n-logarithmic-time" data-chapter="chapter-2-complexity-analysis" data-level="important" data-title="2.8 O(log n): Logarithmic Time"><div class="card-heading"><h3>2.8 O(log n): Logarithmic Time</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Logarithmic time grows slowly as n grows.</li>
 <li>Slide rule:</li>
@@ -690,7 +861,7 @@ for (; i &lt; vec.end(); i++)
     }
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-2-complexity-analysis-2-9-o-n-log-n-linearithmic-time" data-chapter="chapter-2-complexity-analysis" data-title="2.9 O(n log n): Linearithmic Time"><h3>2.9 O(n log n): Linearithmic Time</h3>
+<article class="subtopic-card" id="chapter-2-complexity-analysis-2-9-o-n-log-n-linearithmic-time" data-chapter="chapter-2-complexity-analysis" data-level="important" data-title="2.9 O(n log n): Linearithmic Time"><div class="card-heading"><h3>2.9 O(n log n): Linearithmic Time</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>From the slides:</li>
 <ul class="note-list">
@@ -722,7 +893,7 @@ for (; i &lt; vec.end(); i++)
 </article>
 </section>
 <section class="chapter-section" id="chapter-3-linked-lists-part-1" data-title="Chapter 3: Linked Lists, Part 1"><h2>Chapter 3: Linked Lists, Part 1</h2>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-learning-targets" data-chapter="chapter-3-linked-lists-part-1" data-title="Learning Targets"><h3>Learning Targets</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-learning-targets" data-chapter="chapter-3-linked-lists-part-1" data-level="basic" data-title="Learning Targets"><div class="card-heading"><h3>Learning Targets</h3><span class="level-badge basic">BASIC</span></div>
 <ul class="note-list">
 <li>Understand:</li>
 <ul class="note-list">
@@ -731,7 +902,7 @@ for (; i &lt; vec.end(); i++)
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-1-why-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-title="3.1 Why Linked Lists?"><h3>3.1 Why Linked Lists?</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-1-why-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-level="basic" data-title="3.1 Why Linked Lists?"><div class="card-heading"><h3>3.1 Why Linked Lists?</h3><span class="level-badge basic">BASIC</span></div>
 <ul class="note-list">
 <li>Arrays have two major limitations from the slides:</li>
 <ul class="note-list">
@@ -741,7 +912,7 @@ for (; i &lt; vec.end(); i++)
 <li>Linked lists help overcome these limitations.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-2-what-is-a-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-title="3.2 What Is a Linked List?"><h3>3.2 What Is a Linked List?</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-2-what-is-a-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-level="important" data-title="3.2 What Is a Linked List?"><div class="card-heading"><h3>3.2 What Is a Linked List?</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A linked list is:</li>
 <ul class="note-list">
@@ -755,7 +926,7 @@ for (; i &lt; vec.end(); i++)
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-3-advantages-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-title="3.3 Advantages of Linked Lists"><h3>3.3 Advantages of Linked Lists</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-3-advantages-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-level="basic" data-title="3.3 Advantages of Linked Lists"><div class="card-heading"><h3>3.3 Advantages of Linked Lists</h3><span class="level-badge basic">BASIC</span></div>
 <ul class="note-list">
 <li>Dynamic data structure.</li>
 <li>Efficient memory utilization:</li>
@@ -766,13 +937,13 @@ for (; i &lt; vec.end(); i++)
 <li>Insertion and deletion are easier and efficient at specified positions.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-4-limitations-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-title="3.4 Limitations of Linked Lists"><h3>3.4 Limitations of Linked Lists</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-4-limitations-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-level="basic" data-title="3.4 Limitations of Linked Lists"><div class="card-heading"><h3>3.4 Limitations of Linked Lists</h3><span class="level-badge basic">BASIC</span></div>
 <ul class="note-list">
 <li>More space is used because pointers must be stored.</li>
 <li>Searching can be difficult and time consuming.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-5-array-vs-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-title="3.5 Array vs Linked List"><h3>3.5 Array vs Linked List</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-5-array-vs-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-level="important" data-title="3.5 Array vs Linked List"><div class="card-heading"><h3>3.5 Array vs Linked List</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Static array:</li>
 <ul class="note-list">
@@ -789,7 +960,7 @@ for (; i &lt; vec.end(); i++)
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-6-types-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-title="3.6 Types of Linked Lists"><h3>3.6 Types of Linked Lists</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-6-types-of-linked-lists" data-chapter="chapter-3-linked-lists-part-1" data-level="basic" data-title="3.6 Types of Linked Lists"><div class="card-heading"><h3>3.6 Types of Linked Lists</h3><span class="level-badge basic">BASIC</span></div>
 <ul class="note-list">
 <li>Covered:</li>
 <ul class="note-list">
@@ -803,7 +974,7 @@ for (; i &lt; vec.end(); i++)
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-7-singly-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-title="3.7 Singly Linked List"><h3>3.7 Singly Linked List</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-7-singly-linked-list" data-chapter="chapter-3-linked-lists-part-1" data-level="important" data-title="3.7 Singly Linked List"><div class="card-heading"><h3>3.7 Singly Linked List</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A singly linked list:</li>
 <ul class="note-list">
@@ -819,7 +990,7 @@ for (; i &lt; vec.end(); i++)
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-8-basic-singly-linked-list-operations" data-chapter="chapter-3-linked-lists-part-1" data-title="3.8 Basic Singly Linked List Operations"><h3>3.8 Basic Singly Linked List Operations</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-8-basic-singly-linked-list-operations" data-chapter="chapter-3-linked-lists-part-1" data-level="important" data-title="3.8 Basic Singly Linked List Operations"><div class="card-heading"><h3>3.8 Basic Singly Linked List Operations</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Creation</li>
 <li>Insertion</li>
@@ -827,7 +998,7 @@ for (; i &lt; vec.end(); i++)
 <li>Deletion</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-9-singly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-1" data-title="3.9 Singly Linked List Node Creation"><h3>3.9 Singly Linked List Node Creation</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-9-singly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-1" data-level="important" data-title="3.9 Singly Linked List Node Creation"><div class="card-heading"><h3>3.9 Singly Linked List Node Creation</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Understand it:</li>
 <ul class="note-list">
@@ -861,7 +1032,7 @@ Node* createNode(int value) {
 <li>N = NULL at the end</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-10-singly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-1" data-title="3.10 Singly Linked List Insertion: Empty List"><h3>3.10 Singly Linked List Insertion: Empty List</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-10-singly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-1" data-level="critical" data-title="3.10 Singly Linked List Insertion: Empty List"><div class="card-heading"><h3>3.10 Singly Linked List Insertion: Empty List</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -887,7 +1058,7 @@ Node* createNode(int value) {
     }
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-11-singly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-1" data-title="3.11 Singly Linked List Insertion: End"><h3>3.11 Singly Linked List Insertion: End</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-11-singly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-1" data-level="critical" data-title="3.11 Singly Linked List Insertion: End"><div class="card-heading"><h3>3.11 Singly Linked List Insertion: End</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -926,7 +1097,7 @@ Node* createNode(int value) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-12-singly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-1" data-title="3.12 Singly Linked List Insertion: Beginning"><h3>3.12 Singly Linked List Insertion: Beginning</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-12-singly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-1" data-level="critical" data-title="3.12 Singly Linked List Insertion: Beginning"><div class="card-heading"><h3>3.12 Singly Linked List Insertion: Beginning</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -953,7 +1124,7 @@ Node* createNode(int value) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-13-singly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-1" data-title="3.13 Singly Linked List Insertion: Middle"><h3>3.13 Singly Linked List Insertion: Middle</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-13-singly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-1" data-level="critical" data-title="3.13 Singly Linked List Insertion: Middle"><div class="card-heading"><h3>3.13 Singly Linked List Insertion: Middle</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -993,7 +1164,7 @@ Node* createNode(int value) {
 <li>L = Link in the correct order</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-14-singly-linked-list-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1" data-title="3.14 Singly Linked List with Tail Pointer"><h3>3.14 Singly Linked List with Tail Pointer</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-14-singly-linked-list-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1" data-level="important" data-title="3.14 Singly Linked List with Tail Pointer"><div class="card-heading"><h3>3.14 Singly Linked List with Tail Pointer</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Tail pointer:</li>
 <ul class="note-list">
@@ -1023,7 +1194,7 @@ Node* createNode(int value) {
     tail = n;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-15-singly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-1" data-title="3.15 Singly Linked List Deletion: Beginning"><h3>3.15 Singly Linked List Deletion: Beginning</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-15-singly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-1" data-level="critical" data-title="3.15 Singly Linked List Deletion: Beginning"><div class="card-heading"><h3>3.15 Singly Linked List Deletion: Beginning</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -1053,7 +1224,7 @@ Node* createNode(int value) {
     delete n;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-16-singly-linked-list-deletion-middle-by-value" data-chapter="chapter-3-linked-lists-part-1" data-title="3.16 Singly Linked List Deletion: Middle by Value"><h3>3.16 Singly Linked List Deletion: Middle by Value</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-16-singly-linked-list-deletion-middle-by-value" data-chapter="chapter-3-linked-lists-part-1" data-level="critical" data-title="3.16 Singly Linked List Deletion: Middle by Value"><div class="card-heading"><h3>3.16 Singly Linked List Deletion: Middle by Value</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -1092,7 +1263,7 @@ Node* createNode(int value) {
     delete x;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-17-singly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-1" data-title="3.17 Singly Linked List Deletion: End"><h3>3.17 Singly Linked List Deletion: End</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-17-singly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-1" data-level="critical" data-title="3.17 Singly Linked List Deletion: End"><div class="card-heading"><h3>3.17 Singly Linked List Deletion: End</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -1130,7 +1301,7 @@ Node* createNode(int value) {
     delete x;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-18-deletion-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1" data-title="3.18 Deletion with Tail Pointer"><h3>3.18 Deletion with Tail Pointer</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-18-deletion-with-tail-pointer" data-chapter="chapter-3-linked-lists-part-1" data-level="critical" data-title="3.18 Deletion with Tail Pointer"><div class="card-heading"><h3>3.18 Deletion with Tail Pointer</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Beginning deletion with tail:</li>
 <ul class="note-list">
@@ -1170,7 +1341,7 @@ Node* createNode(int value) {
     tail-&gt;next = NULL;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-19-singly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-1" data-title="3.19 Singly Linked List Traversal"><h3>3.19 Singly Linked List Traversal</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-19-singly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-1" data-level="important" data-title="3.19 Singly Linked List Traversal"><div class="card-heading"><h3>3.19 Singly Linked List Traversal</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -1194,7 +1365,7 @@ Node* createNode(int value) {
     }
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-20-singly-linked-list-update" data-chapter="chapter-3-linked-lists-part-1" data-title="3.20 Singly Linked List Update"><h3>3.20 Singly Linked List Update</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-20-singly-linked-list-update" data-chapter="chapter-3-linked-lists-part-1" data-level="important" data-title="3.20 Singly Linked List Update"><div class="card-heading"><h3>3.20 Singly Linked List Update</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Based on the slide exercise:</li>
 <ul class="note-list">
@@ -1220,7 +1391,7 @@ Node* createNode(int value) {
     }
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-21-singly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-1" data-title="3.21 Singly Linked List Reversal"><h3>3.21 Singly Linked List Reversal</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-1-3-21-singly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-1" data-level="critical" data-title="3.21 Singly Linked List Reversal"><div class="card-heading"><h3>3.21 Singly Linked List Reversal</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Source note:</li>
 <ul class="note-list">
@@ -1279,7 +1450,7 @@ Node* createNode(int value) {
 </article>
 </section>
 <section class="chapter-section" id="chapter-3-linked-lists-part-2" data-title="Chapter 3: Linked Lists, Part 2"><h2>Chapter 3: Linked Lists, Part 2</h2>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-22-doubly-linked-list" data-chapter="chapter-3-linked-lists-part-2" data-title="3.22 Doubly Linked List"><h3>3.22 Doubly Linked List</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-22-doubly-linked-list" data-chapter="chapter-3-linked-lists-part-2" data-level="important" data-title="3.22 Doubly Linked List"><div class="card-heading"><h3>3.22 Doubly Linked List</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A doubly linked list:</li>
 <ul class="note-list">
@@ -1296,7 +1467,7 @@ Node* createNode(int value) {
 <li><code>next</code> points to successor.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-23-doubly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-2" data-title="3.23 Doubly Linked List Node Creation"><h3>3.23 Doubly Linked List Node Creation</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-23-doubly-linked-list-node-creation" data-chapter="chapter-3-linked-lists-part-2" data-level="important" data-title="3.23 Doubly Linked List Node Creation"><div class="card-heading"><h3>3.23 Doubly Linked List Node Creation</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Understand it:</li>
 <ul class="note-list">
@@ -1324,7 +1495,7 @@ DNode* createDNode(int value) {
     return n;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-24-doubly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-2" data-title="3.24 Doubly Linked List Insertion: Empty List"><h3>3.24 Doubly Linked List Insertion: Empty List</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-24-doubly-linked-list-insertion-empty-list" data-chapter="chapter-3-linked-lists-part-2" data-level="critical" data-title="3.24 Doubly Linked List Insertion: Empty List"><div class="card-heading"><h3>3.24 Doubly Linked List Insertion: Empty List</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Step-by-step:</li>
 </ul>
@@ -1342,7 +1513,7 @@ DNode* createDNode(int value) {
     }
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-25-doubly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-2" data-title="3.25 Doubly Linked List Insertion: End"><h3>3.25 Doubly Linked List Insertion: End</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-25-doubly-linked-list-insertion-end" data-chapter="chapter-3-linked-lists-part-2" data-level="critical" data-title="3.25 Doubly Linked List Insertion: End"><div class="card-heading"><h3>3.25 Doubly Linked List Insertion: End</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Step-by-step:</li>
 </ul>
@@ -1371,7 +1542,7 @@ DNode* createDNode(int value) {
     n-&gt;prev = p;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-26-doubly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-2" data-title="3.26 Doubly Linked List Insertion: Beginning"><h3>3.26 Doubly Linked List Insertion: Beginning</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-26-doubly-linked-list-insertion-beginning" data-chapter="chapter-3-linked-lists-part-2" data-level="critical" data-title="3.26 Doubly Linked List Insertion: Beginning"><div class="card-heading"><h3>3.26 Doubly Linked List Insertion: Beginning</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Step-by-step:</li>
 </ul>
@@ -1393,7 +1564,7 @@ DNode* createDNode(int value) {
     head = n;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-27-doubly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-2" data-title="3.27 Doubly Linked List Insertion: Middle"><h3>3.27 Doubly Linked List Insertion: Middle</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-27-doubly-linked-list-insertion-middle" data-chapter="chapter-3-linked-lists-part-2" data-level="critical" data-title="3.27 Doubly Linked List Insertion: Middle"><div class="card-heading"><h3>3.27 Doubly Linked List Insertion: Middle</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -1431,7 +1602,7 @@ DNode* createDNode(int value) {
 <li>This avoids losing access to the rest of the list.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-28-doubly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-2" data-title="3.28 Doubly Linked List Deletion: Beginning"><h3>3.28 Doubly Linked List Deletion: Beginning</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-28-doubly-linked-list-deletion-beginning" data-chapter="chapter-3-linked-lists-part-2" data-level="critical" data-title="3.28 Doubly Linked List Deletion: Beginning"><div class="card-heading"><h3>3.28 Doubly Linked List Deletion: Beginning</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -1463,7 +1634,7 @@ DNode* createDNode(int value) {
     delete n;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-29-doubly-linked-list-deletion-middle" data-chapter="chapter-3-linked-lists-part-2" data-title="3.29 Doubly Linked List Deletion: Middle"><h3>3.29 Doubly Linked List Deletion: Middle</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-29-doubly-linked-list-deletion-middle" data-chapter="chapter-3-linked-lists-part-2" data-level="critical" data-title="3.29 Doubly Linked List Deletion: Middle"><div class="card-heading"><h3>3.29 Doubly Linked List Deletion: Middle</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Option 1 from slides:</li>
 <ul class="note-list">
@@ -1498,7 +1669,7 @@ DNode* createDNode(int value) {
     delete n;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-30-doubly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-2" data-title="3.30 Doubly Linked List Deletion: End"><h3>3.30 Doubly Linked List Deletion: End</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-30-doubly-linked-list-deletion-end" data-chapter="chapter-3-linked-lists-part-2" data-level="critical" data-title="3.30 Doubly Linked List Deletion: End"><div class="card-heading"><h3>3.30 Doubly Linked List Deletion: End</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Step-by-step:</li>
 </ul>
@@ -1527,7 +1698,7 @@ DNode* createDNode(int value) {
     delete n;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-31-doubly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-2" data-title="3.31 Doubly Linked List Traversal"><h3>3.31 Doubly Linked List Traversal</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-31-doubly-linked-list-traversal" data-chapter="chapter-3-linked-lists-part-2" data-level="important" data-title="3.31 Doubly Linked List Traversal"><div class="card-heading"><h3>3.31 Doubly Linked List Traversal</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Forward traversal:</li>
 </ul>
@@ -1549,7 +1720,7 @@ DNode* createDNode(int value) {
     }
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-32-doubly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-2" data-title="3.32 Doubly Linked List Reversal"><h3>3.32 Doubly Linked List Reversal</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-32-doubly-linked-list-reversal" data-chapter="chapter-3-linked-lists-part-2" data-level="critical" data-title="3.32 Doubly Linked List Reversal"><div class="card-heading"><h3>3.32 Doubly Linked List Reversal</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Source note:</li>
 <ul class="note-list">
@@ -1587,14 +1758,14 @@ DNode* createDNode(int value) {
     head = last;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-33-doubly-linked-list-advantages" data-chapter="chapter-3-linked-lists-part-2" data-title="3.33 Doubly Linked List Advantages"><h3>3.33 Doubly Linked List Advantages</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-33-doubly-linked-list-advantages" data-chapter="chapter-3-linked-lists-part-2" data-level="important" data-title="3.33 Doubly Linked List Advantages"><div class="card-heading"><h3>3.33 Doubly Linked List Advantages</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Can be traversed forward and backward.</li>
 <li>Deletion is more efficient if the pointer to the node is already given.</li>
 <li>Can insert before a given node quickly.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-34-doubly-linked-list-disadvantages" data-chapter="chapter-3-linked-lists-part-2" data-title="3.34 Doubly Linked List Disadvantages"><h3>3.34 Doubly Linked List Disadvantages</h3>
+<article class="subtopic-card" id="chapter-3-linked-lists-part-2-3-34-doubly-linked-list-disadvantages" data-chapter="chapter-3-linked-lists-part-2" data-level="important" data-title="3.34 Doubly Linked List Disadvantages"><div class="card-heading"><h3>3.34 Doubly Linked List Disadvantages</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Extra space is needed for the previous pointer.</li>
 <li>Operations must maintain the extra previous pointer.</li>
@@ -1602,7 +1773,7 @@ DNode* createDNode(int value) {
 </article>
 </section>
 <section class="chapter-section" id="chapter-4-stacks" data-title="Chapter 4: Stacks"><h2>Chapter 4: Stacks</h2>
-<article class="subtopic-card" id="chapter-4-stacks-learning-targets" data-chapter="chapter-4-stacks" data-title="Learning Targets"><h3>Learning Targets</h3>
+<article class="subtopic-card" id="chapter-4-stacks-learning-targets" data-chapter="chapter-4-stacks" data-level="basic" data-title="Learning Targets"><div class="card-heading"><h3>Learning Targets</h3><span class="level-badge basic">BASIC</span></div>
 <ul class="note-list">
 <li>Understand:</li>
 <ul class="note-list">
@@ -1612,7 +1783,7 @@ DNode* createDNode(int value) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-4-stacks-4-1-what-is-a-stack" data-chapter="chapter-4-stacks" data-title="4.1 What Is a Stack?"><h3>4.1 What Is a Stack?</h3>
+<article class="subtopic-card" id="chapter-4-stacks-4-1-what-is-a-stack" data-chapter="chapter-4-stacks" data-level="important" data-title="4.1 What Is a Stack?"><div class="card-heading"><h3>4.1 What Is a Stack?</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A stack is:</li>
 <ul class="note-list">
@@ -1626,7 +1797,7 @@ DNode* createDNode(int value) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-4-stacks-4-2-stack-implementation-methods" data-chapter="chapter-4-stacks" data-title="4.2 Stack Implementation Methods"><h3>4.2 Stack Implementation Methods</h3>
+<article class="subtopic-card" id="chapter-4-stacks-4-2-stack-implementation-methods" data-chapter="chapter-4-stacks" data-level="important" data-title="4.2 Stack Implementation Methods"><div class="card-heading"><h3>4.2 Stack Implementation Methods</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>From the slides:</li>
 <ul class="note-list">
@@ -1636,7 +1807,7 @@ DNode* createDNode(int value) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-4-stacks-4-3-stl-stack" data-chapter="chapter-4-stacks" data-title="4.3 STL Stack"><h3>4.3 STL Stack</h3>
+<article class="subtopic-card" id="chapter-4-stacks-4-3-stl-stack" data-chapter="chapter-4-stacks" data-level="important" data-title="4.3 STL Stack"><div class="card-heading"><h3>4.3 STL Stack</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Main STL stack functions:</li>
 <ul class="note-list">
@@ -1677,7 +1848,7 @@ int main() {
     return 0;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-4-stacks-4-4-linked-list-stack" data-chapter="chapter-4-stacks" data-title="4.4 Linked List Stack"><h3>4.4 Linked List Stack</h3>
+<article class="subtopic-card" id="chapter-4-stacks-4-4-linked-list-stack" data-chapter="chapter-4-stacks" data-level="important" data-title="4.4 Linked List Stack"><div class="card-heading"><h3>4.4 Linked List Stack</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Option 1 from slides:</li>
 <ul class="note-list">
@@ -1731,7 +1902,7 @@ public:
     }
 };</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-4-stacks-4-5-stack-applications" data-chapter="chapter-4-stacks" data-title="4.5 Stack Applications"><h3>4.5 Stack Applications</h3>
+<article class="subtopic-card" id="chapter-4-stacks-4-5-stack-applications" data-chapter="chapter-4-stacks" data-level="important" data-title="4.5 Stack Applications"><div class="card-heading"><h3>4.5 Stack Applications</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>From the slides:</li>
 <ul class="note-list">
@@ -1751,7 +1922,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-4-stacks-4-6-balanced-parentheses-algorithm" data-chapter="chapter-4-stacks" data-title="4.6 Balanced Parentheses Algorithm"><h3>4.6 Balanced Parentheses Algorithm</h3>
+<article class="subtopic-card" id="chapter-4-stacks-4-6-balanced-parentheses-algorithm" data-chapter="chapter-4-stacks" data-level="critical" data-title="4.6 Balanced Parentheses Algorithm"><div class="card-heading"><h3>4.6 Balanced Parentheses Algorithm</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide algorithm:</li>
 <ul class="note-list">
@@ -1808,7 +1979,7 @@ bool isBalanced(const string&amp; expr) {
     return st.empty();
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-4-stacks-4-7-infix-to-postfix-conversion" data-chapter="chapter-4-stacks" data-title="4.7 Infix to Postfix Conversion"><h3>4.7 Infix to Postfix Conversion</h3>
+<article class="subtopic-card" id="chapter-4-stacks-4-7-infix-to-postfix-conversion" data-chapter="chapter-4-stacks" data-level="critical" data-title="4.7 Infix to Postfix Conversion"><div class="card-heading"><h3>4.7 Infix to Postfix Conversion</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Infix:</li>
 <ul class="note-list">
@@ -1891,8 +2062,7 @@ bool isBalanced(const string&amp; expr) {
 <th>Action</th>
 <th>Stack</th>
 <th>Output</th>
-</tr></thead>
-<tbody>
+</tr></thead><tbody>
 <tr>
 <td>1</td>
 <td><code>A</code></td>
@@ -1975,8 +2145,7 @@ bool isBalanced(const string&amp; expr) {
 <th>Action</th>
 <th>Stack</th>
 <th>Output</th>
-</tr></thead>
-<tbody>
+</tr></thead><tbody>
 <tr>
 <td>1</td>
 <td><code>7</code></td>
@@ -2109,7 +2278,7 @@ string infixToPostfix(const string&amp; infix) {
     return postfix;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-4-stacks-4-8-postfix-evaluation" data-chapter="chapter-4-stacks" data-title="4.8 Postfix Evaluation"><h3>4.8 Postfix Evaluation</h3>
+<article class="subtopic-card" id="chapter-4-stacks-4-8-postfix-evaluation" data-chapter="chapter-4-stacks" data-level="critical" data-title="4.8 Postfix Evaluation"><div class="card-heading"><h3>4.8 Postfix Evaluation</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide algorithm:</li>
 <ul class="note-list">
@@ -2163,7 +2332,7 @@ string infixToPostfix(const string&amp; infix) {
 </article>
 </section>
 <section class="chapter-section" id="chapter-5-queues" data-title="Chapter 5: Queues"><h2>Chapter 5: Queues</h2>
-<article class="subtopic-card" id="chapter-5-queues-learning-targets" data-chapter="chapter-5-queues" data-title="Learning Targets"><h3>Learning Targets</h3>
+<article class="subtopic-card" id="chapter-5-queues-learning-targets" data-chapter="chapter-5-queues" data-level="basic" data-title="Learning Targets"><div class="card-heading"><h3>Learning Targets</h3><span class="level-badge basic">BASIC</span></div>
 <ul class="note-list">
 <li>Understand:</li>
 <ul class="note-list">
@@ -2173,7 +2342,7 @@ string infixToPostfix(const string&amp; infix) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-5-queues-5-1-what-is-a-queue" data-chapter="chapter-5-queues" data-title="5.1 What Is a Queue?"><h3>5.1 What Is a Queue?</h3>
+<article class="subtopic-card" id="chapter-5-queues-5-1-what-is-a-queue" data-chapter="chapter-5-queues" data-level="important" data-title="5.1 What Is a Queue?"><div class="card-heading"><h3>5.1 What Is a Queue?</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A queue is:</li>
 <ul class="note-list">
@@ -2189,7 +2358,7 @@ string infixToPostfix(const string&amp; infix) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-5-queues-5-2-stl-queue" data-chapter="chapter-5-queues" data-title="5.2 STL Queue"><h3>5.2 STL Queue</h3>
+<article class="subtopic-card" id="chapter-5-queues-5-2-stl-queue" data-chapter="chapter-5-queues" data-level="important" data-title="5.2 STL Queue"><div class="card-heading"><h3>5.2 STL Queue</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Main functions:</li>
 <ul class="note-list">
@@ -2225,7 +2394,7 @@ int main() {
     return 0;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-5-queues-5-3-linked-list-queue" data-chapter="chapter-5-queues" data-title="5.3 Linked List Queue"><h3>5.3 Linked List Queue</h3>
+<article class="subtopic-card" id="chapter-5-queues-5-3-linked-list-queue" data-chapter="chapter-5-queues" data-level="important" data-title="5.3 Linked List Queue"><div class="card-heading"><h3>5.3 Linked List Queue</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Option 1 from slides:</li>
 <ul class="note-list">
@@ -2296,7 +2465,7 @@ public:
     }
 };</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-5-queues-5-4-queue-applications" data-chapter="chapter-5-queues" data-title="5.4 Queue Applications"><h3>5.4 Queue Applications</h3>
+<article class="subtopic-card" id="chapter-5-queues-5-4-queue-applications" data-chapter="chapter-5-queues" data-level="important" data-title="5.4 Queue Applications"><div class="card-heading"><h3>5.4 Queue Applications</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>From the slides:</li>
 <ul class="note-list">
@@ -2316,7 +2485,7 @@ public:
 </article>
 </section>
 <section class="chapter-section" id="chapter-6-tree-part-1" data-title="Chapter 6: Tree, Part 1"><h2>Chapter 6: Tree, Part 1</h2>
-<article class="subtopic-card" id="chapter-6-tree-part-1-learning-targets" data-chapter="chapter-6-tree-part-1" data-title="Learning Targets"><h3>Learning Targets</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-1-learning-targets" data-chapter="chapter-6-tree-part-1" data-level="important" data-title="Learning Targets"><div class="card-heading"><h3>Learning Targets</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Understand:</li>
 <ul class="note-list">
@@ -2329,7 +2498,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-1-6-1-what-is-a-tree" data-chapter="chapter-6-tree-part-1" data-title="6.1 What Is a Tree?"><h3>6.1 What Is a Tree?</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-1-what-is-a-tree" data-chapter="chapter-6-tree-part-1" data-level="important" data-title="6.1 What Is a Tree?"><div class="card-heading"><h3>6.1 What Is a Tree?</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A tree is:</li>
 <ul class="note-list">
@@ -2345,7 +2514,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-1-6-2-types-of-tree-data-structures" data-chapter="chapter-6-tree-part-1" data-title="6.2 Types of Tree Data Structures"><h3>6.2 Types of Tree Data Structures</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-2-types-of-tree-data-structures" data-chapter="chapter-6-tree-part-1" data-level="important" data-title="6.2 Types of Tree Data Structures"><div class="card-heading"><h3>6.2 Types of Tree Data Structures</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>General tree:</li>
 <ul class="note-list">
@@ -2368,7 +2537,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-1-6-3-tree-terminology" data-chapter="chapter-6-tree-part-1" data-title="6.3 Tree Terminology"><h3>6.3 Tree Terminology</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-3-tree-terminology" data-chapter="chapter-6-tree-part-1" data-level="important" data-title="6.3 Tree Terminology"><div class="card-heading"><h3>6.3 Tree Terminology</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Root:</li>
 <ul class="note-list">
@@ -2428,7 +2597,7 @@ public:
 <li>I = Internal</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-1-6-4-binary-tree" data-chapter="chapter-6-tree-part-1" data-title="6.4 Binary Tree"><h3>6.4 Binary Tree</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-4-binary-tree" data-chapter="chapter-6-tree-part-1" data-level="important" data-title="6.4 Binary Tree"><div class="card-heading"><h3>6.4 Binary Tree</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A binary tree:</li>
 <ul class="note-list">
@@ -2444,7 +2613,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-1-6-5-binary-tree-types-and-formulas" data-chapter="chapter-6-tree-part-1" data-title="6.5 Binary Tree Types and Formulas"><h3>6.5 Binary Tree Types and Formulas</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-5-binary-tree-types-and-formulas" data-chapter="chapter-6-tree-part-1" data-level="important" data-title="6.5 Binary Tree Types and Formulas"><div class="card-heading"><h3>6.5 Binary Tree Types and Formulas</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Binary tree:</li>
 <ul class="note-list">
@@ -2471,7 +2640,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-1-6-6-binary-search-tree" data-chapter="chapter-6-tree-part-1" data-title="6.6 Binary Search Tree"><h3>6.6 Binary Search Tree</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-6-binary-search-tree" data-chapter="chapter-6-tree-part-1" data-level="critical" data-title="6.6 Binary Search Tree"><div class="card-heading"><h3>6.6 Binary Search Tree</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>A BST is an enhanced binary tree.</li>
 <li>It needs:</li>
@@ -2492,7 +2661,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-1-6-7-bst-insertion" data-chapter="chapter-6-tree-part-1" data-title="6.7 BST Insertion"><h3>6.7 BST Insertion</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-7-bst-insertion" data-chapter="chapter-6-tree-part-1" data-level="critical" data-title="6.7 BST Insertion"><div class="card-heading"><h3>6.7 BST Insertion</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide algorithm:</li>
 <ul class="note-list">
@@ -2544,7 +2713,7 @@ void insert(TreeNode *&amp;root, int value) {
 <li>Connect at empty spot.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-1-6-8-bst-deletion" data-chapter="chapter-6-tree-part-1" data-title="6.8 BST Deletion"><h3>6.8 BST Deletion</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-1-6-8-bst-deletion" data-chapter="chapter-6-tree-part-1" data-level="critical" data-title="6.8 BST Deletion"><div class="card-heading"><h3>6.8 BST Deletion</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Three conditions from the slides:</li>
 <ul class="note-list">
@@ -2619,7 +2788,7 @@ TreeNode* deleteBST(TreeNode *root, int key) {
 </article>
 </section>
 <section class="chapter-section" id="chapter-6-tree-part-2" data-title="Chapter 6: Tree, Part 2"><h2>Chapter 6: Tree, Part 2</h2>
-<article class="subtopic-card" id="chapter-6-tree-part-2-6-9-expression-tree" data-chapter="chapter-6-tree-part-2" data-title="6.9 Expression Tree"><h3>6.9 Expression Tree</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-9-expression-tree" data-chapter="chapter-6-tree-part-2" data-level="important" data-title="6.9 Expression Tree"><div class="card-heading"><h3>6.9 Expression Tree</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Expression tree:</li>
 <ul class="note-list">
@@ -2636,7 +2805,7 @@ TreeNode* deleteBST(TreeNode *root, int key) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-2-6-10-tree-traversal" data-chapter="chapter-6-tree-part-2" data-title="6.10 Tree Traversal"><h3>6.10 Tree Traversal</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-10-tree-traversal" data-chapter="chapter-6-tree-part-2" data-level="important" data-title="6.10 Tree Traversal"><div class="card-heading"><h3>6.10 Tree Traversal</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Two main traversal approaches:</li>
 <ul class="note-list">
@@ -2651,7 +2820,7 @@ TreeNode* deleteBST(TreeNode *root, int key) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-2-6-11-bfs-breadth-first-traversal" data-chapter="chapter-6-tree-part-2" data-title="6.11 BFS: Breadth First Traversal"><h3>6.11 BFS: Breadth First Traversal</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-11-bfs-breadth-first-traversal" data-chapter="chapter-6-tree-part-2" data-level="important" data-title="6.11 BFS: Breadth First Traversal"><div class="card-heading"><h3>6.11 BFS: Breadth First Traversal</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -2691,7 +2860,7 @@ void bfs(TreeNode *root) {
     }
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-2-6-12-dfs-traversals" data-chapter="chapter-6-tree-part-2" data-title="6.12 DFS Traversals"><h3>6.12 DFS Traversals</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-12-dfs-traversals" data-chapter="chapter-6-tree-part-2" data-level="important" data-title="6.12 DFS Traversals"><div class="card-heading"><h3>6.12 DFS Traversals</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -2759,7 +2928,7 @@ void bfs(TreeNode *root) {
 <li>Postorder: LRV = Visit last.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-2-6-13-binary-postfix-postorder-on-expression-tree" data-chapter="chapter-6-tree-part-2" data-title="6.13 Binary Postfix: Postorder on Expression Tree"><h3>6.13 Binary Postfix: Postorder on Expression Tree</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-13-binary-postfix-postorder-on-expression-tree" data-chapter="chapter-6-tree-part-2" data-level="critical" data-title="6.13 Binary Postfix: Postorder on Expression Tree"><div class="card-heading"><h3>6.13 Binary Postfix: Postorder on Expression Tree</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Source connection:</li>
 <ul class="note-list">
@@ -2802,7 +2971,7 @@ void printPostfix(ExprNode *root) {
     cout &lt;&lt; root-&gt;value &lt;&lt; &quot; &quot;;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-2-6-14-tree-linked-list-implementation" data-chapter="chapter-6-tree-part-2" data-title="6.14 Tree Linked List Implementation"><h3>6.14 Tree Linked List Implementation</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-14-tree-linked-list-implementation" data-chapter="chapter-6-tree-part-2" data-level="important" data-title="6.14 Tree Linked List Implementation"><div class="card-heading"><h3>6.14 Tree Linked List Implementation</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Tree node from slides:</li>
 <ul class="note-list">
@@ -2840,7 +3009,7 @@ public:
     }
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-2-6-15-bst-search" data-chapter="chapter-6-tree-part-2" data-title="6.15 BST Search"><h3>6.15 BST Search</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-15-bst-search" data-chapter="chapter-6-tree-part-2" data-level="critical" data-title="6.15 BST Search"><div class="card-heading"><h3>6.15 BST Search</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Slide logic:</li>
 <ul class="note-list">
@@ -2876,7 +3045,7 @@ public:
     return false;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-6-tree-part-2-6-16-tree-summary" data-chapter="chapter-6-tree-part-2" data-title="6.16 Tree Summary"><h3>6.16 Tree Summary</h3>
+<article class="subtopic-card" id="chapter-6-tree-part-2-6-16-tree-summary" data-chapter="chapter-6-tree-part-2" data-level="important" data-title="6.16 Tree Summary"><div class="card-heading"><h3>6.16 Tree Summary</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Trees are useful when data naturally forms a hierarchy.</li>
 <li>Example from slides:</li>
@@ -2889,7 +3058,7 @@ public:
 </article>
 </section>
 <section class="chapter-section" id="chapter-7-graph" data-title="Chapter 7: Graph"><h2>Chapter 7: Graph</h2>
-<article class="subtopic-card" id="chapter-7-graph-learning-targets" data-chapter="chapter-7-graph" data-title="Learning Targets"><h3>Learning Targets</h3>
+<article class="subtopic-card" id="chapter-7-graph-learning-targets" data-chapter="chapter-7-graph" data-level="important" data-title="Learning Targets"><div class="card-heading"><h3>Learning Targets</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Understand:</li>
 <ul class="note-list">
@@ -2901,7 +3070,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-7-graph-7-1-what-is-a-graph" data-chapter="chapter-7-graph" data-title="7.1 What Is a Graph?"><h3>7.1 What Is a Graph?</h3>
+<article class="subtopic-card" id="chapter-7-graph-7-1-what-is-a-graph" data-chapter="chapter-7-graph" data-level="important" data-title="7.1 What Is a Graph?"><div class="card-heading"><h3>7.1 What Is a Graph?</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A graph is:</li>
 <ul class="note-list">
@@ -2925,7 +3094,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-7-graph-7-2-graph-applications" data-chapter="chapter-7-graph" data-title="7.2 Graph Applications"><h3>7.2 Graph Applications</h3>
+<article class="subtopic-card" id="chapter-7-graph-7-2-graph-applications" data-chapter="chapter-7-graph" data-level="important" data-title="7.2 Graph Applications"><div class="card-heading"><h3>7.2 Graph Applications</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -2944,7 +3113,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-7-graph-7-3-graph-types" data-chapter="chapter-7-graph" data-title="7.3 Graph Types"><h3>7.3 Graph Types</h3>
+<article class="subtopic-card" id="chapter-7-graph-7-3-graph-types" data-chapter="chapter-7-graph" data-level="important" data-title="7.3 Graph Types"><div class="card-heading"><h3>7.3 Graph Types</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>Finite graph:</li>
 <ul class="note-list">
@@ -2988,7 +3157,7 @@ public:
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-7-graph-7-4-graph-representation-adjacency-list" data-chapter="chapter-7-graph" data-title="7.4 Graph Representation: Adjacency List"><h3>7.4 Graph Representation: Adjacency List</h3>
+<article class="subtopic-card" id="chapter-7-graph-7-4-graph-representation-adjacency-list" data-chapter="chapter-7-graph" data-level="important" data-title="7.4 Graph Representation: Adjacency List"><div class="card-heading"><h3>7.4 Graph Representation: Adjacency List</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>An adjacency list contains:</li>
 <ul class="note-list">
@@ -3016,7 +3185,7 @@ void addEdge(int u, int v) {
     adjList[u].push_back(v);
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-7-graph-7-5-graph-representation-adjacency-matrix" data-chapter="chapter-7-graph" data-title="7.5 Graph Representation: Adjacency Matrix"><h3>7.5 Graph Representation: Adjacency Matrix</h3>
+<article class="subtopic-card" id="chapter-7-graph-7-5-graph-representation-adjacency-matrix" data-chapter="chapter-7-graph" data-level="important" data-title="7.5 Graph Representation: Adjacency Matrix"><div class="card-heading"><h3>7.5 Graph Representation: Adjacency Matrix</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>An adjacency matrix:</li>
 <ul class="note-list">
@@ -3037,7 +3206,7 @@ void addWeightedEdge(int u, int v, int w) {
     adj[u][v] = w;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-7-graph-7-6-dijkstra-s-shortest-path-algorithm" data-chapter="chapter-7-graph" data-title="7.6 Dijkstra&#x27;s Shortest Path Algorithm"><h3>7.6 Dijkstra&#x27;s Shortest Path Algorithm</h3>
+<article class="subtopic-card" id="chapter-7-graph-7-6-dijkstra-s-shortest-path-algorithm" data-chapter="chapter-7-graph" data-level="critical" data-title="7.6 Dijkstra&#x27;s Shortest Path Algorithm"><div class="card-heading"><h3>7.6 Dijkstra&#x27;s Shortest Path Algorithm</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3111,7 +3280,7 @@ vector&lt;int&gt; dijkstra(vector&lt;vector&lt;int&gt;&gt;&amp; cost, int start)
     return dist;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-7-graph-7-7-spanning-tree" data-chapter="chapter-7-graph" data-title="7.7 Spanning Tree"><h3>7.7 Spanning Tree</h3>
+<article class="subtopic-card" id="chapter-7-graph-7-7-spanning-tree" data-chapter="chapter-7-graph" data-level="important" data-title="7.7 Spanning Tree"><div class="card-heading"><h3>7.7 Spanning Tree</h3><span class="level-badge important">IMPORTANT</span></div>
 <ul class="note-list">
 <li>A spanning tree:</li>
 <ul class="note-list">
@@ -3128,7 +3297,7 @@ vector&lt;int&gt; dijkstra(vector&lt;vector&lt;int&gt;&gt;&amp; cost, int start)
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-7-graph-7-8-kruskal-s-algorithm" data-chapter="chapter-7-graph" data-title="7.8 Kruskal&#x27;s Algorithm"><h3>7.8 Kruskal&#x27;s Algorithm</h3>
+<article class="subtopic-card" id="chapter-7-graph-7-8-kruskal-s-algorithm" data-chapter="chapter-7-graph" data-level="critical" data-title="7.8 Kruskal&#x27;s Algorithm"><div class="card-heading"><h3>7.8 Kruskal&#x27;s Algorithm</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3201,7 +3370,7 @@ int kruskal(int V, vector&lt;Edge&gt;&amp; edges) {
 </article>
 </section>
 <section class="chapter-section" id="chapter-8-sorting" data-title="Chapter 8: Sorting"><h2>Chapter 8: Sorting</h2>
-<article class="subtopic-card" id="chapter-8-sorting-learning-targets" data-chapter="chapter-8-sorting" data-title="Learning Targets"><h3>Learning Targets</h3>
+<article class="subtopic-card" id="chapter-8-sorting-learning-targets" data-chapter="chapter-8-sorting" data-level="critical" data-title="Learning Targets"><div class="card-heading"><h3>Learning Targets</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Understand:</li>
 <ul class="note-list">
@@ -3210,7 +3379,7 @@ int kruskal(int V, vector&lt;Edge&gt;&amp; edges) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-8-sorting-8-1-what-is-sorting" data-chapter="chapter-8-sorting" data-title="8.1 What Is Sorting?"><h3>8.1 What Is Sorting?</h3>
+<article class="subtopic-card" id="chapter-8-sorting-8-1-what-is-sorting" data-chapter="chapter-8-sorting" data-level="critical" data-title="8.1 What Is Sorting?"><div class="card-heading"><h3>8.1 What Is Sorting?</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Sorting means arranging data in a particular format.</li>
 <li>Sorting improves searching efficiency.</li>
@@ -3225,7 +3394,7 @@ int kruskal(int V, vector&lt;Edge&gt;&amp; edges) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-8-sorting-8-2-insertion-sort" data-chapter="chapter-8-sorting" data-title="8.2 Insertion Sort"><h3>8.2 Insertion Sort</h3>
+<article class="subtopic-card" id="chapter-8-sorting-8-2-insertion-sort" data-chapter="chapter-8-sorting" data-level="critical" data-title="8.2 Insertion Sort"><div class="card-heading"><h3>8.2 Insertion Sort</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3281,7 +3450,7 @@ int kruskal(int V, vector&lt;Edge&gt;&amp; edges) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-8-sorting-8-3-selection-sort" data-chapter="chapter-8-sorting" data-title="8.3 Selection Sort"><h3>8.3 Selection Sort</h3>
+<article class="subtopic-card" id="chapter-8-sorting-8-3-selection-sort" data-chapter="chapter-8-sorting" data-level="critical" data-title="8.3 Selection Sort"><div class="card-heading"><h3>8.3 Selection Sort</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3318,7 +3487,7 @@ int kruskal(int V, vector&lt;Edge&gt;&amp; edges) {
 <li>Move it to the front of the unsorted part.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-8-sorting-8-4-bubble-sort" data-chapter="chapter-8-sorting" data-title="8.4 Bubble Sort"><h3>8.4 Bubble Sort</h3>
+<article class="subtopic-card" id="chapter-8-sorting-8-4-bubble-sort" data-chapter="chapter-8-sorting" data-level="critical" data-title="8.4 Bubble Sort"><div class="card-heading"><h3>8.4 Bubble Sort</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3359,7 +3528,7 @@ int kruskal(int V, vector&lt;Edge&gt;&amp; edges) {
 <li>Shrink the unsorted end.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-8-sorting-8-5-heap-sort" data-chapter="chapter-8-sorting" data-title="8.5 Heap Sort"><h3>8.5 Heap Sort</h3>
+<article class="subtopic-card" id="chapter-8-sorting-8-5-heap-sort" data-chapter="chapter-8-sorting" data-level="critical" data-title="8.5 Heap Sort"><div class="card-heading"><h3>8.5 Heap Sort</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3419,7 +3588,7 @@ void heapSort(int arr[], int n) {
 <li>Reheap the remaining heap.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-8-sorting-8-6-quick-sort" data-chapter="chapter-8-sorting" data-title="8.6 Quick Sort"><h3>8.6 Quick Sort</h3>
+<article class="subtopic-card" id="chapter-8-sorting-8-6-quick-sort" data-chapter="chapter-8-sorting" data-level="critical" data-title="8.6 Quick Sort"><div class="card-heading"><h3>8.6 Quick Sort</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3476,7 +3645,7 @@ void quickSort(int arr[], int low, int high) {
 <li>Proceed recursively.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-8-sorting-8-7-merge-sort" data-chapter="chapter-8-sorting" data-title="8.7 Merge Sort"><h3>8.7 Merge Sort</h3>
+<article class="subtopic-card" id="chapter-8-sorting-8-7-merge-sort" data-chapter="chapter-8-sorting" data-level="critical" data-title="8.7 Merge Sort"><div class="card-heading"><h3>8.7 Merge Sort</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Source note:</li>
 <ul class="note-list">
@@ -3545,7 +3714,7 @@ void mergeSort(int arr[], int left, int right) {
 </article>
 </section>
 <section class="chapter-section" id="chapter-9-searching" data-title="Chapter 9: Searching"><h2>Chapter 9: Searching</h2>
-<article class="subtopic-card" id="chapter-9-searching-learning-targets" data-chapter="chapter-9-searching" data-title="Learning Targets"><h3>Learning Targets</h3>
+<article class="subtopic-card" id="chapter-9-searching-learning-targets" data-chapter="chapter-9-searching" data-level="critical" data-title="Learning Targets"><div class="card-heading"><h3>Learning Targets</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Understand:</li>
 <ul class="note-list">
@@ -3554,7 +3723,7 @@ void mergeSort(int arr[], int left, int right) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-1-what-is-searching" data-chapter="chapter-9-searching" data-title="9.1 What Is Searching?"><h3>9.1 What Is Searching?</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-1-what-is-searching" data-chapter="chapter-9-searching" data-level="critical" data-title="9.1 What Is Searching?"><div class="card-heading"><h3>9.1 What Is Searching?</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Searching is finding required information from a collection of items.</li>
 <li>Items may be stored in:</li>
@@ -3572,7 +3741,7 @@ void mergeSort(int arr[], int left, int right) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-2-types-of-searching" data-chapter="chapter-9-searching" data-title="9.2 Types of Searching"><h3>9.2 Types of Searching</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-2-types-of-searching" data-chapter="chapter-9-searching" data-level="critical" data-title="9.2 Types of Searching"><div class="card-heading"><h3>9.2 Types of Searching</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Sequential search:</li>
 <ul class="note-list">
@@ -3590,7 +3759,7 @@ void mergeSort(int arr[], int left, int right) {
 <li>Search by hashing.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-3-sequential-search" data-chapter="chapter-9-searching" data-title="9.3 Sequential Search"><h3>9.3 Sequential Search</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-3-sequential-search" data-chapter="chapter-9-searching" data-level="critical" data-title="9.3 Sequential Search"><div class="card-heading"><h3>9.3 Sequential Search</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3629,7 +3798,7 @@ void mergeSort(int arr[], int left, int right) {
 <li>Move if not found.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-4-binary-search" data-chapter="chapter-9-searching" data-title="9.4 Binary Search"><h3>9.4 Binary Search</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-4-binary-search" data-chapter="chapter-9-searching" data-level="critical" data-title="9.4 Binary Search"><div class="card-heading"><h3>9.4 Binary Search</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3690,7 +3859,7 @@ void mergeSort(int arr[], int left, int right) {
 <li>Halve the search space each time.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-5-hashing" data-chapter="chapter-9-searching" data-title="9.5 Hashing"><h3>9.5 Hashing</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-5-hashing" data-chapter="chapter-9-searching" data-level="critical" data-title="9.5 Hashing"><div class="card-heading"><h3>9.5 Hashing</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Hashing:</li>
 <ul class="note-list">
@@ -3709,7 +3878,7 @@ void mergeSort(int arr[], int left, int right) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-6-requirements-of-a-good-hash-function" data-chapter="chapter-9-searching" data-title="9.6 Requirements of a Good Hash Function"><h3>9.6 Requirements of a Good Hash Function</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-6-requirements-of-a-good-hash-function" data-chapter="chapter-9-searching" data-level="critical" data-title="9.6 Requirements of a Good Hash Function"><div class="card-heading"><h3>9.6 Requirements of a Good Hash Function</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>Easy to compute.</li>
 <li>Distributes keys evenly.</li>
@@ -3717,7 +3886,7 @@ void mergeSort(int arr[], int left, int right) {
 <li>Avoids collisions when possible.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-7-hashing-functions" data-chapter="chapter-9-searching" data-title="9.7 Hashing Functions"><h3>9.7 Hashing Functions</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-7-hashing-functions" data-chapter="chapter-9-searching" data-level="critical" data-title="9.7 Hashing Functions"><div class="card-heading"><h3>9.7 Hashing Functions</h3><span class="level-badge critical">CRITICAL</span></div>
 <h4>Truncation Method</h4>
 <ul class="note-list">
 <li>Truncates part of the key depending on table size.</li>
@@ -3766,7 +3935,7 @@ int extractMiddleTwoOfFiveDigit(int key) {
     return key % size;
 }</code></pre></div>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-8-collision" data-chapter="chapter-9-searching" data-title="9.8 Collision"><h3>9.8 Collision</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-8-collision" data-chapter="chapter-9-searching" data-level="critical" data-title="9.8 Collision"><div class="card-heading"><h3>9.8 Collision</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>A collision happens when:</li>
 <ul class="note-list">
@@ -3785,7 +3954,7 @@ int extractMiddleTwoOfFiveDigit(int key) {
 </ul>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-9-linear-probing" data-chapter="chapter-9-searching" data-title="9.9 Linear Probing"><h3>9.9 Linear Probing</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-9-linear-probing" data-chapter="chapter-9-searching" data-level="critical" data-title="9.9 Linear Probing"><div class="card-heading"><h3>9.9 Linear Probing</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3820,7 +3989,7 @@ int extractMiddleTwoOfFiveDigit(int key) {
 <li>Wrap around if needed.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-10-quadratic-probing" data-chapter="chapter-9-searching" data-title="9.10 Quadratic Probing"><h3>9.10 Quadratic Probing</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-10-quadratic-probing" data-chapter="chapter-9-searching" data-level="critical" data-title="9.10 Quadratic Probing"><div class="card-heading"><h3>9.10 Quadratic Probing</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3864,7 +4033,7 @@ int extractMiddleTwoOfFiveDigit(int key) {
 <li>It jumps by square offsets: 1, 4, 9, ...</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-11-chaining" data-chapter="chapter-9-searching" data-title="9.11 Chaining"><h3>9.11 Chaining</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-11-chaining" data-chapter="chapter-9-searching" data-level="critical" data-title="9.11 Chaining"><div class="card-heading"><h3>9.11 Chaining</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -3911,7 +4080,7 @@ bool searchChaining(int key) {
 <li>If keys collide, link them in the same bucket chain.</li>
 </ul>
 </article>
-<article class="subtopic-card" id="chapter-9-searching-9-12-double-hashing" data-chapter="chapter-9-searching" data-title="9.12 Double Hashing"><h3>9.12 Double Hashing</h3>
+<article class="subtopic-card" id="chapter-9-searching-9-12-double-hashing" data-chapter="chapter-9-searching" data-level="critical" data-title="9.12 Double Hashing"><div class="card-heading"><h3>9.12 Double Hashing</h3><span class="level-badge critical">CRITICAL</span></div>
 <ul class="note-list">
 <li>From slides:</li>
 <ul class="note-list">
@@ -4035,11 +4204,12 @@ void insertDoubleHash(vector&lt;int&gt;&amp; table, int key, int emptyValue, int
 </ul>
 </ul>
 </section>
-      </section>
+        </section>
+      </main>
     </div>
-  </main>
+  </div>
 
-  <button type="button" class="top-button" id="topButton" aria-label="Back to top">Top</button>
+  <button type="button" class="top-button" id="topButton">Top</button>
   <script src="script.js"></script>
 </body>
 </html>
