@@ -1,0 +1,8639 @@
+# Chapter 1 Abstract Data Type and Introduction to STL (Part 1).pptx (17 slides)
+
+## Slide 1
+
+- Abstract Data Type and Introduction to STL
+
+- - Part 1
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with understanding on:
+
+- Data structures concepts
+
+- Abstract Data Types
+
+- Standard Template Library (STL)
+
+- Vector and List
+
+## Slide 3
+
+- What is Data Structure?
+
+- Programs are comprised of two things: data and algorithms.
+
+- Data may be organized in many different ways. The logical or mathematical model of a particular organization of data is called a data structure. It is a technique of storing and organizing data so it can be used efficiently
+
+- The choice of a particular data model depends on two considerations. First, it must be rich enough in structure to mirror the actual relationships of the data in the real world. On the other hands, the structure should be simple enough that one can effectively process the data when necessary.
+
+- Algorithms describe the way the data is to be transformed.
+
+## Slide 4
+
+- What is Data Structure?
+
+- The reason for learning about data structures is because adding structure to our data can make the algorithms much simpler, easier to maintain, and often faster.
+
+- Data structure also describes the relationship among the elements in addition to memory storage. The data appearing in the data structure are processed by means of certain operations. The four operations that play a major role are Inserting, Deleting, Traversing and Searching.
+
+- Other than that, Sorting and Merging are two additional operations used in special situations.
+
+## Slide 5
+
+- Abstract Data Types
+
+- In our program models, data structures are described by abstract data types (ADTs)
+
+- In computer science, an abstract data type (ADT) is a mathematical model for data types where a data type is defined by its behavior (semantics) from the point of view of a user of the data, specifically in terms of possible values, possible operations on data of this type, and the behavior of these operations.
+
+- Only behavior is defined but not implementation
+
+- Examples: Array, List, Queue, Stack, Table, Tree, Vector and many more
+
+## Slide 6
+
+- Abstract Data Types (cont)
+
+## Slide 7
+
+- Abstract Data Types (cont)
+
+- Proper planning is essential to successful implementation of programs
+
+- Typical design methodologies focus on developing models of solutions before implementing them
+
+- These models emphasize structure and function of the algorithms used
+
+- Initially our attention is on what needs to be done, not how it is done
+
+- So, we define program behavior in terms of operations to be performed on data
+
+## Slide 8
+
+- Abstract Data Types : Example
+
+- A stack is a last-in first-out (LIFO) linear structure where items can only be added and removed from one end
+
+- Operations on this stack ADT might include:
+
+- PUSH – add an item to the stack
+
+- POP – remove the item at the top of the stack
+
+- TOP – return the value of the item at the top of the stack
+
+- EMPTY – determine if the stack is empty
+
+- CREATE – create a new empty stack
+
+- Notice these simply describe the things we can do, not how they are done. These details will be reserved for implementation
+
+## Slide 9
+
+- Standard Template Library
+
+- Standard Template Library (STL) provides three generic entities: containers, iterators, and algorithms, and a set of classes that overload the function operator called function objects
+
+- It also has a ready-made set of common classes for C++, such as container and associative arrays
+
+- These can be used with any built-in type and with any user-defined type that supports some elementary operations
+
+## Slide 10
+
+- Standard Template Library
+
+- STL algorithms are independent of containers, which significantly reduces the complexity of the library
+
+- The results of the STL are achieved through using templates
+
+- This allows the use of static binding polymorphism (as opposed to run-time or dynamic binding polymorphism) which is frequently more efficient
+
+## Slide 11
+
+- Standard Template Library : Container
+
+- A container is a data structure that is typically designed to hold objects of the same type and is a way stored data is organized in memory, e.g., an array of elements.
+
+- Containers are implemented as template classes whose methods specify operations on the data in the structures as well as the structures themselves
+
+- A number of these methods are common to all containers, while some are more specific to the container they are defined in
+
+- The data stored in containers can be of any type and must supply some basic methods and operations
+
+- This is especially necessary if pointers are involved
+
+## Slide 12
+
+- Standard Template Library : Container
+
+- class MyClass{
+
+- struct Node{
+
+- int data; Node *next;
+
+- };
+
+- public:
+
+- MyClass(){
+
+- head = NULL;
+
+- }
+
+- Node* createNode(){
+
+- Node *n = new Node();
+
+- cout<<"Enter a number: ";
+
+- cin>>n->data;
+
+- n->next = NULL;
+
+- return n;
+
+- }
+
+- };
+
+- int main(){
+
+- MyClass record;
+
+- record.createNode();
+
+- return 0;
+
+- }
+
+## Slide 13
+
+- Standard Template Library : Iterators
+
+- An iterator is an object that accesses the elements of a container
+
+- Iterators are a generalization of the concept of pointers,  they point to elements in a container, for example you can increment an iterator to point to the next element in an array.
+
+- These capabilities make iterators a major feature that allows the generality of the STL
+
+## Slide 14
+
+- Standard Template Library : Iterators
+
+- The STL implements five types of iterators:
+
+- Input iterators : can read a sequence of values
+
+- Output iterators : can write a sequence of values
+
+- Forward iterators : can be read, written to, or moved forward
+
+- Bidirectional iterators : behaves like forward iterators but can also move backwards
+
+- Random iterators : can move freely in any direction at one time
+
+## Slide 15
+
+- Standard Template Library : Algorithms
+
+- Algorithms in the STL are procedures that are applied to containers to process their data, for example search for an element in an array, or sort an array.
+
+- About 70 generic functions, known as algorithms, are provided in the STL
+
+- These perform operations such as searching and sorting
+
+- Each is implemented to require a certain level of iterator (and therefore will work on any container that provides an interface by iterators)
+
+- Algorithms are in addition to the methods provided by containers, but some algorithms are implemented as member functions for efficiency
+
+## Slide 16
+
+- Standard Template Library : Relationship
+
+- STL
+
+## Slide 17
+
+- End of Part 1
+
+- See you in next class..!
+
+
+
+# Chapter 2 Complexity Analysis.pptx (20 slides)
+
+## Slide 1
+
+- Complexity Analysis
+
+- Revised version: NaziffaNasir sem1 24/25
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with understanding on:
+
+- Complexity Analysis
+
+- Big O Notation
+
+## Slide 3
+
+- Computational and Asymptotic Complexity
+
+- Algorithms are essential aspect of data structures
+
+- Data structures are implemented using algorithms
+
+- Some algorithms are more efficient than others
+
+- Efficiency is preferred; we need metrics to compare them
+
+- An algorithm’s complexity is a function describing the efficiency of the algorithm in terms of the amount of data the algorithm must process
+
+- Time complexity is a measure of how long the function takes to run in terms of its computational steps.
+
+- Complexity Measures Of Efficiency
+
+- Space complexity has to do with the amount of memory used by the function.
+
+## Slide 4
+
+- Computational and Asymptotic Complexity
+
+- Efficiency covers lots of resources including CPU (time) usage, memory usage, disk usage and network usage.
+
+- Be careful to differentiate between:
+
+- Performance: how much time/memory/disk/... is actually used when a program is run. This depends on the machine, compiler, etc. as well as the code.
+
+- Complexity: how do the resource requirements of a program or algorithm scale, i.e., what happens as the size of the problem being solved gets larger?
+
+- Complexity affects performance but not the other way around
+
+## Slide 5
+
+- Big-O Notation
+
+- Big O notation is used in Computer Science to describe the performance or complexity of an algorithm and measure the algorithm's efficiency.
+
+- It measures the time it takes to run the function as the input grows and can be used to describe the execution time required or the space used (e.g. in memory or on disk) by an algorithm
+
+- Big O is sometimes referred to as the algorithm’s upper bound, meaning that it deals with the worst-case scenario. The best-case scenario doesn’t really tell us anything as it will be finding our item in the first pass. We use worst-case to remove uncertainty so that the algorithm will never perform worse than we expect.
+
+## Slide 6
+
+- How To Determine Complexities
+
+- Ignore constant, e.g. 6n -> we read as O(n)
+
+- Certain terms “dominate” others, so ignore low-order terms
+e.g.: O(1) < O(logn) < O(n) < O(nlogn) < O(n2) < O(2n)< O(n!)
+
+- When we write Big O notation, we look for the fastest-growing term as the input gets larger and larger. We can simplify the equation by dropping constants and any non-dominant terms.
+
+- For example, O(2N) becomes O(N), and O(N² + N + 1000) becomes O(N²).
+
+## Slide 7
+
+- 7
+
+- Big O Notation
+
+## Slide 8
+
+- 8
+
+- Constant time : O(1)
+
+- Constant time algorithms will always take same amount of time to be executed.
+
+- The execution time of these algorithm is independent of the size of the input. It means any time a program takes a constant number of instructions, regardless of the input.
+
+- Example of O(1) time is determining the size of a vector – vec.size(), regardless of the size of the vector, because the STL stores the size as part of the vector.
+
+## Slide 9
+
+- 9
+
+- Constant time : O(1)
+
+- Question :
+
+- (Source: Final Exam Sem 2 2019/2020)
+
+- Give THREE (3) examples of operations that take constant time complexity O(1).
+
+## Slide 10
+
+- 10
+
+- Linear Time : O(n)
+
+- This is when the program takes time that is directly proportional to size of its input, n. Therefore the time it will take to run the algorithm will increase proportionately as the size of input n increases.
+
+- For a linear-time algorithm, if the problem size doubles, the number of operations also doubles
+
+- Example of O(n) time is traversing data or elements in vector using iterator.
+
+- vector<int>::iterator i = vec.begin();
+
+- for(; i<vec.end();i++)
+
+- cout<<*i;
+
+## Slide 11
+
+- 11
+
+- Linear Time : O(n)
+
+- Example:
+
+- int count = 0;
+
+- cin >> input;
+
+- for (i = 1; i< input; i++)
+
+- cout << ++count;
+
+- What is the Big-O notation for above algorithm?
+
+## Slide 12
+
+- 12
+
+- Linear Time : O(n)
+
+- How about this one?
+
+- for (int i = 0; i < 100; i++) {
+
+- cout << “Still Guessing?”;
+
+- }
+
+## Slide 13
+
+- 13
+
+- Polynomial time
+
+- Quadratic Time
+
+- In this example the first loop executes n times. For each time the outer loop executes, the inner loop executes n times. Therefore, the statement in the nested loop executes a total of n * n times. Here the complexity is O(n*n) which equals O(n2).
+
+- for (int i=0; i < N; i++) {
+
+- for(int j=0; j< N; j++){
+
+- //do something in constant time
+
+- }
+
+## Slide 14
+
+- 14
+
+- Polynomial time
+
+- Note:
+
+- If we were to nest another for loop, this would become a Cubic Time O(n3), Quartic Time O(n4), etc algorithm.
+
+## Slide 15
+
+- 15
+
+- Polynomial time
+
+- Example:
+
+- for (r=0; r<n; r++){
+
+- for (c=0; c<n; r++)
+
+- cout << array[r][c];
+
+- }
+
+- What is the Big-O notation for above algorithm?
+
+## Slide 16
+
+- 16
+
+- Logarithmic time : O (log n)
+
+- Logarithmic time grows slower as n grows. An easy way to check if a loop is log n is to see if the counting variable (in this case: i) doubles instead of incrementing by 1.
+
+- In the following example int i doesn’t increase by 1 (i++), it doubles with each run thus traversing the loop in log(n) time.
+
+- for(int i = 0; i < n; i *= 2) {
+
+- //do something in constant time
+
+- }
+
+## Slide 17
+
+- 17
+
+- Linearithmic time: O (n log n)
+
+- Linearithmic algorithms are capable of good performance with very large data sets. Some examples of linearithmic algorithms are heapsort, merge sort and quick sort.
+
+- The following example helps us illustrate our point:
+
+- for(int i= 0; i< n; i++) {
+
+- for(int j= 1; j< n; j *= 2){
+
+- //do something in constant time...
+
+- }
+
+## Slide 18
+
+- 18
+
+- Summary
+
+## Slide 19
+
+- 19
+
+- Summary
+
+- There are often many choices of writing code to get to a solution.
+
+- Understanding Big O notation is important in writing algorithms.
+
+- It helps you determine when your algorithm is getting faster or slower.
+
+- You can also compare different methods and choose the most efficient.
+
+## Slide 20
+
+- End of Chapter 2
+
+- That’s all for now..
+
+- See you in next class!
+
+
+
+# Chapter 3 Linked Lists (Part 1).pptx (38 slides)
+
+## Slide 1
+
+- Linked Lists
+
+- - Part 1
+
+- Revised version: NaziffaNasir sem1 24/25
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with understanding on:
+
+- Singly Linked List implementation
+
+- Doubly Linked List implementation
+
+## Slide 3
+
+- Introduction
+
+- Arrays are useful in many applications but suffer from two significant limitations:
+
+- The size of the array must be known at the time the code is compiled
+
+- The elements of the array are the same distance apart in memory, requiring potentially extensive shifting when inserting a new element
+
+- This can be overcome by using linked lists
+
+## Slide 4
+
+- What is Linked List?
+
+- It is a non-sequential collections of independent memory locations (nodes) that store data and links to other nodes
+
+- For every data item in a linked list, there is an associated pointer that would give the memory location of the next data item in the linked list.
+
+- The data items in the linked list are not in consecutive memory locations. They may be anywhere, but the accessing of these data items is easier as each data item contains the address of the next data item.
+
+## Slide 5
+
+- Advantages of Linked List
+
+- Linked lists are dynamic data structures.
+
+- Linked lists have efficient memory utilization. Here, memory is not pre-allocated. Memory is allocated whenever it is required and it is de-allocated (removed) when it is no longer needed.
+
+- Insertion and Deletions are easier and efficient. Linked lists provide flexibility in inserting a data item at a specified position and deletion of the data item from the given position.
+
+## Slide 6
+
+- Limitation of Linked List
+
+- It consumes more space because every node requires an additional pointer to store address of the next node.
+
+- Searching a particular element in list is difficult and also time consuming.
+
+## Slide 7
+
+- Operation Comparison
+
+- Operation
+
+- Static Array
+
+- Linked List
+
+- Linear access
+
+- efficient
+
+- Random access
+
+- efficient
+
+- inefficient
+
+- Insertion/Deletion
+
+- inefficient
+
+- efficient
+
+- Element Re-arrangement
+
+- inefficient
+
+- efficient
+
+- Overhead per element
+
+- none
+
+- 1 or 2 links
+
+- Comparison of operations between static array and linked list
+
+## Slide 8
+
+- Types of Linked List
+
+- Basically, linked list can be categorized into four types:
+
+- Singly Linked List.
+
+- Doubly Linked List.
+
+- Circular Linked List (remark: not covered in this syllabus)
+
+- Circular Double Linked List (remark: not covered in this syllabus)
+
+## Slide 9
+
+- Singly Linked List
+
+## Slide 10
+
+- Singly Linked List
+
+- A singly linked list is one in which all nodes are linked together using a single link (pointer) in sequential order (forward). It is also known as linear linked list.
+
+- head pointer holds address of first node which means the beginning of linked list.
+
+- first node’s pointer holds address of second node, ... and so on.
+
+- last node in the linked list has its next field set to NULL to mark the end of the list.
+
+- Note:
+
+- tail pointer is not
+
+- compulsory
+
+## Slide 11
+
+- Basic Operations of Singly Linked List
+
+- Creation
+
+- Insertion
+
+- Traversal
+
+- Deletion
+
+## Slide 12
+
+- Node Creation
+
+- Data | Pointer
+
+- Creating a singly linked list starts with creating a node. Sufficient memory has to be allocated for creating a node.
+
+- Format of a node:
+
+- Node Creation and Data Initialization:
+
+- Codes:
+
+- OR
+
+- struct datatype{
+
+- Data
+
+- Pointer
+
+- };
+
+- class className{
+
+- Data
+
+- Pointer
+
+- };
+
+- // Node creation:
+
+- Node *n = new Node();
+
+- // Data Initialization:
+
+- n->no = 6;
+
+- n->next = NULL;
+
+- class Node {
+
+- public:
+
+- int no;
+
+- Node *next;
+
+- };
+
+## Slide 13
+
+- Exercise 1
+
+- Question:
+
+- Referring to figure below, write C++ codes for node declaration and creation.
+
+- Name
+
+- ID
+
+- next
+
+- Ali
+
+- 103
+
+- NULL
+
+- 2008
+
+- n
+
+- 2008
+
+- Solution:
+
+## Slide 14
+
+- Node Insertion
+
+- There are three (4) ways to perform node insertion on linked list:
+
+- beginning of linked list
+
+- middle of linked list
+
+- end of linked list
+
+- empty linked list
+
+## Slide 15
+
+- Node Insertion (Empty Linked List)
+
+- Steps to insert first node into an empty linked list are illustrated as follows:
+
+- Step 1
+
+- Node creation:
+
+- Node *n = new Node();
+
+- n->no = 5;
+
+- n->next = NULL;
+
+- Insert first node to linked list:
+
+- if (head == NULL)
+
+- head = n;
+
+- Step 2
+
+## Slide 16
+
+- Node Insertion (End of linked list)
+
+- Steps to insert new node into at the end of linked list (2nd node onwards):
+
+- Step 1
+
+- Node creation:
+
+- Node *n = new Node();
+
+- n->no = 6;
+
+- n->next = NULL;
+
+- Insert new node to end of linked list:
+
+- Node *p = head;
+
+- while (p->next!=NULL)
+
+- p = p->next;
+
+- p->next = n;
+
+- Step 2
+
+- Note:
+
+- Equivalent to push_back() in both STL vector and STL list
+
+## Slide 17
+
+- Node Insertion (beginning of linked list)
+
+- Steps to insert new node at the beginning of linked list :
+
+- Step 1
+
+- Node creation:
+
+- Node *n = new Node();
+
+- n->no = 18;
+
+- n->next = NULL;
+
+- Insert new node to beginning of linked list:
+
+- n->next = head;
+
+- head = n;
+
+- Step 2
+
+- Note:
+
+- Equivalent to push_front() in STL list
+
+- 160
+
+## Slide 18
+
+- Node Insertion (middle of linked list)
+
+- Steps to insert new node into at the middle of linked list (in between nodes):
+
+- Step 1
+
+- Node creation:
+
+- Node *n = new Node();
+
+- n->no = 18;
+
+- n->next = NULL;
+
+- Create additional pointer and move it to 1 position before the insertion location:
+
+- Node *p = head; int i = 1;
+
+- while (i<3) {
+
+- p = p->next;
+
+- i++;
+
+- }
+
+- Step 2
+
+- 160
+
+## Slide 19
+
+- Node Insertion (middle of linked list)
+
+- Step 3
+
+- Link new node to the node after node
+
+- pointed by pointer p:
+
+- n->next = p->next;
+
+- Link node pointed by pointer p to the new node :
+
+- p->next = n;
+
+- Step 4
+
+- 160
+
+## Slide 20
+
+- Exercise 2
+
+- Question:
+
+- By assuming a linked list contains more than n nodes where n>100. Insert a new node with value 5, after a node that contains value 7.
+
+- Solution:
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 7
+
+- head
+
+- Info
+
+- next
+
+- 9
+
+- Info
+
+- next
+
+- 5
+
+- Info
+
+- next
+
+- 9
+
+- N
+
+## Slide 21
+
+- Node Insertion :
+Implementation with tail pointer
+
+## Slide 22
+
+- Node Insertion (Empty Linked List)
+
+- Steps to insert first node into an empty linked list (with tail pointer) are illustrated as follows:
+
+- Step 1
+
+- Node creation:
+
+- Node *n = new Node();
+
+- n->no = 5;
+
+- n->next = NULL;
+
+- Insert first node to linked list:
+
+- if (head == NULL)
+
+- head = tail = n;
+
+- Step 2
+
+## Slide 23
+
+- Node Insertion (End of linked list)
+
+- Steps to insert new node at the end of linked list (2nd node onwards) with tail pointer:
+
+- Step 1
+
+- Node creation:
+
+- Node *n = new Node();
+
+- n->no = 6;
+
+- n->next = NULL;
+
+- Insert new node to end of linked list:
+
+- tail->next = n;
+
+- tail = n;
+
+- Step 2
+
+## Slide 24
+
+- Exercise
+
+- Question:
+
+- Provide a C++ code segment to add a new node at the end of the linked list using tail pointer.
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 7
+
+- head
+
+- Info
+
+- next
+
+- 9
+
+- Info
+
+- next
+
+- 9
+
+- N
+
+- Info
+
+- next
+
+- 6
+
+- n
+
+- tail
+
+## Slide 25
+
+- Node Deletion
+
+- There are three (4) ways to perform node deletion on linked list:
+
+- beginning of linked list
+
+- middle of linked list
+
+- end of linked list
+
+- single node
+
+## Slide 26
+
+- Node Deletion (Beginning of Linked List)
+
+- Steps to delete node at the beginning of linked list are illustrated as follows:
+
+- Step 1
+
+- Create a temporary pointer:
+
+- Node *n = head;
+
+- Move head to the next node:
+
+- head = head->next;
+
+- Step 2
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 7
+
+- N
+
+- head
+
+- Info
+
+- next
+
+- 6
+
+- n
+
+- head
+
+- X
+
+- Delete the targeted node:
+
+- free(n);
+
+- Step 3
+
+- Question:
+
+- What if the linked list contains only single node?
+
+- Answer:
+
+- The implementation remains same.
+
+## Slide 27
+
+- Node Deletion (Middle of Linked List)
+
+- Steps to delete node at the middle of linked list are illustrated as follows:
+
+- Step 1
+
+- Create a temporary pointer:
+
+- Node *n = head, x;
+
+- Move n to 1 position before targeted node:
+
+- while (n -> next -> Info != 6)
+
+- n = n -> next;
+
+- Place x at the targeted node:
+
+- x = n->next;
+
+- Step 2
+
+- Delete the targeted node:
+
+- free(x);
+
+- Step 4
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 6
+
+- head
+
+- tail
+
+- Info
+
+- next
+
+- 9
+
+- n
+
+- X
+
+- n
+
+- Info
+
+- next
+
+- 7
+
+- N
+
+- x
+
+- Link node pointed by n to the node after node pointed by x:
+
+- n->next = x->next;
+
+- Step 3
+
+## Slide 28
+
+- Node Deletion (End of Linked List)
+
+- Steps to delete node at the end of linked list (user’s input) are illustrated as follows:
+
+- Step 1
+
+- Create a temporary pointer:
+
+- Node *n = head, x;
+
+- Move n to 1 position before targeted node:
+
+- while (n -> next -> Info != 7)
+
+- n = n -> next;
+
+- Place x at the targeted node:
+
+- x = n->next;
+
+- Step 2
+
+- Delete the targeted node:
+
+- free(x);
+
+- Step 4
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 6
+
+- head
+
+- Info
+
+- next
+
+- 9
+
+- n
+
+- X
+
+- n
+
+- Info
+
+- next
+
+- 7
+
+- N
+
+- x
+
+- Link node pointed by n to the node after node pointed by x:
+
+- n->next = x->next;
+
+- Step 3
+
+- NULL
+
+## Slide 29
+
+- Node Deletion (End of Linked List)
+
+- Steps to delete node at the end of linked list are illustrated as follows:
+
+- Step 1
+
+- Create a temporary pointer:
+
+- Node *n = head, x;
+
+- Move n to 1 position before targeted node:
+
+- while (n -> next -> next != NULL)
+
+- n = n -> next;
+
+- Place x at the targeted node:
+
+- x = n->next;
+
+- Step 2
+
+- Delete the targeted node:
+
+- free(x);
+
+- Step 4
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 6
+
+- head
+
+- Info
+
+- next
+
+- 9
+
+- n
+
+- X
+
+- n
+
+- Info
+
+- next
+
+- 7
+
+- N
+
+- x
+
+- Link node pointed by n to the node after node pointed by x:
+
+- n->next = x->next;
+
+- OR
+
+- Set the next address of n to NULL:
+
+- n -> next = NULL;
+
+- Step 3
+
+- NULL
+
+## Slide 30
+
+- Exercise
+
+- Question:
+
+- Provide a C++ code segment to remove the last node.
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 7
+
+- head
+
+- Info
+
+- next
+
+- 9
+
+- Info
+
+- next
+
+- 9
+
+- N
+
+## Slide 31
+
+- Node Deletion :
+Implementation with tail pointer
+
+## Slide 32
+
+- Node Deletion (Beginning of Linked List)
+
+- Steps to delete node at the beginning of linked list with tail pointer are illustrated as follows:
+
+- Step 1
+
+- Create a temporary pointer:
+
+- Node *n = head;
+
+- Move head to the next node:
+
+- if(head->Info == 6)
+
+- head = head->next;
+
+- Step 2
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 7
+
+- N
+
+- head
+
+- tail
+
+- Info
+
+- next
+
+- 6
+
+- n
+
+- head
+
+- X
+
+- Delete the targeted node:
+
+- free(n);
+
+- Step 3
+
+- Question:
+
+- What if the linked list contains only single node?
+
+- Answer:
+
+- Additional steps below are required:
+
+- if(head == NULL)
+
+- tail = NULL;
+
+## Slide 33
+
+- Node Deletion (End of Linked List)
+
+- Steps to delete node at the end of linked list (user’s input) with tail pointer are illustrated as follows:
+
+- Step 1
+
+- Create a temporary pointer:
+
+- Node *n = head, x;
+
+- Move n to 1 position before targeted node:
+
+- while (n -> next -> Info != 7)
+
+- n = n -> next;
+
+- Place x at the targeted node:
+
+- x = n->next;
+
+- Step 2
+
+- Delete the targeted node:
+
+- free(x);
+
+- Step 4
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 6
+
+- head
+
+- tail
+
+- Info
+
+- next
+
+- 9
+
+- n
+
+- X
+
+- n
+
+- Info
+
+- next
+
+- 7
+
+- N
+
+- x
+
+- Link node pointed by n to the node after node pointed by x:
+
+- n->next = x->next;
+
+- Additional steps:
+
+- if(x == tail)
+
+- tail = n;
+
+- Step 3
+
+- NULL
+
+## Slide 34
+
+- Node Deletion (End of Linked List)
+
+- Steps to delete node at the end of linked list with tail pointer are illustrated as follows:
+
+- Step 1
+
+- Create a temporary pointer:
+
+- Node *n = head, x;
+
+- Move n to 1 position before node pointed by tail:
+
+- while (n -> next != tail)
+
+- n = n -> next;
+
+- Step 2
+
+- Delete the targeted node:
+
+- free(tail->next);
+
+- Set the next address of tail to NULL:
+
+- tail->next = NULL;
+
+- Step 4
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 6
+
+- head
+
+- tail
+
+- Info
+
+- next
+
+- 9
+
+- n
+
+- X
+
+- n
+
+- Info
+
+- next
+
+- 7
+
+- N
+
+- Move pointer tail to n:
+
+- tail = n;
+
+- Step 3
+
+- NULL
+
+## Slide 35
+
+- Exercise
+
+- Question:
+
+- Provide a C++ code segment to remove the last node using tail pointer.
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 7
+
+- head
+
+- Info
+
+- next
+
+- 9
+
+- Info
+
+- next
+
+- 9
+
+- N
+
+- tail
+
+## Slide 36
+
+- Node Traversal
+
+- Steps to display data in linked list:
+
+- Step 1
+
+- Create a temporary pointer:
+
+- Node *n = head;
+
+- Perform the operation until pointer n reaches NULL position:
+
+- while (n!= NULL){
+
+- cout<<n->Info;
+
+- n = n -> next;
+
+- }
+
+- Step 2
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 7
+
+- N
+
+- head
+
+- Info
+
+- next
+
+- 9
+
+- n
+
+- Output:
+
+- 9
+
+- 2
+
+- 8
+
+- 7
+
+- n
+
+## Slide 37
+
+- Exercise
+
+- Question:
+
+- Provide a C++ code segment to update a node that contains value 7 with value 3.
+
+- Info
+
+- next
+
+- 2
+
+- Info
+
+- next
+
+- 8
+
+- Info
+
+- next
+
+- 7
+
+- head
+
+- tail
+
+- Info
+
+- next
+
+- 9
+
+- Info
+
+- next
+
+- 9
+
+- N
+
+## Slide 38
+
+- End of Part 1
+
+- That’s all for now..
+
+- See you in next class!
+
+
+
+# Chapter 3 Linked Lists (Part 2).pptx (17 slides)
+
+## Slide 1
+
+- Linked Lists
+
+- - Part 2
+
+- Revised version: NaziffaNasir sem1 24/25
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with an understanding on:
+
+- Singly Linked List implementation
+
+- Doubly Linked List implementation
+
+## Slide 3
+
+- Note:
+
+- tail pointer is not
+
+- compulsory
+
+- Doubly Linked List
+
+- A doubly linked list is one in which all nodes are linked together using double links (pointers) in accessing both successor node and predecessor node from the given node position.
+
+- Each node contains three fields: data, left link and right link.
+
+- The prev link points to the predecessor node and the next link points to the successor node. The data field stores the required data.
+
+## Slide 4
+
+- Node Creation
+
+- Creating a doubly linked list starts with creating a node. Sufficient memory has to be allocated for creating a node.
+
+- Format of a node:
+
+- Node Creation
+
+- and Data
+
+- Initialization:
+
+- Codes:
+
+- OR
+
+- struct datatype{
+
+- Data
+
+- Pointer
+
+- };
+
+- class className{
+
+- Data
+
+- Pointer
+
+- };
+
+- // Node creation:
+
+- Node *n = new Node();
+
+- // Data Initialization:
+
+- n->no = 5;
+
+- n->next = NULL;
+
+- n->prev = NULL;
+
+- class Node {
+
+- public:
+
+- int no;
+
+- Node *next, *prev;
+
+- };
+
+## Slide 5
+
+- Node Insertion (Empty Linked List)
+
+- Steps to insert first node into an empty linked list are illustrated as follows:
+
+- Step 1
+
+- Node creation:
+
+- Node *n = new Node();
+
+- n->no = 5;
+
+- n->next = n->prev = NULL;
+
+- Insert first node to linked list:
+
+- if (head == NULL)
+
+- head = n;
+
+- Step 2
+
+## Slide 6
+
+- Node Insertion (End of linked list)
+
+- Steps to insert new node into at the end of linked list (2nd node onwards):
+
+- Step 1
+
+- Node creation:
+
+- Node *n = new Node();
+
+- n->no = 21;
+
+- n->next = n->prev = NULL;
+
+- Insert new node to end of linked list:
+
+- Node *p = head;
+
+- while (p->next!=NULL)
+
+- p = p->next;
+
+- p->next = n;
+
+- n->prev = p;
+
+- Step 2
+
+## Slide 7
+
+- Node Insertion (beginning of linked list)
+
+- Steps to insert new node at the beginning of linked list :
+
+- Step 1
+
+- Node creation:
+
+- Node *n = new Node();
+
+- n->no = 21;
+
+- n->next = n->prev = NULL;
+
+- Insert new node to beginning of linked list:
+
+- n->next = head;
+
+- head->prev = n;
+
+- head = n;
+
+- Step 2
+
+## Slide 8
+
+- Node Insertion (middle of linked list)
+
+- Steps to insert new node into at the middle of linked list (in between nodes):
+
+- Step 1
+
+- Node creation:
+
+- Node *n = new Node();
+
+- n->no = 21;
+
+- n->next = n->prev = NULL;
+
+- Create additional pointer and move it to 1 position before the insertion location:
+
+- Node *p = head; int i = 1;
+
+- while (i<3) {
+
+- p = p->next;
+
+- i++;
+
+- }
+
+- Step 2
+
+## Slide 9
+
+- Node Insertion (middle of linked list)
+
+- Step 3
+
+- Link new node to the node after node
+
+- pointed by pointer p:
+
+- n->next = p->next;
+
+- p->next->prev = n;
+
+- Link node pointed by pointer p to the new node :
+
+- p->next = n;
+
+- n->prev = p;
+
+- Step 4
+
+## Slide 10
+
+- Node Deletion (beginning of linked list)
+
+- Steps to delete node at the beginning of linked list are illustrated as follows:
+
+- Create a temporary pointer and initialized it
+
+- with the address of the first node:
+
+- Node *n = head;
+
+- n
+
+- Step 1
+
+- Move head to the next node:
+
+- head = head->next;
+
+- Step 2
+
+- Delete the targeted node:
+
+- free(n);
+
+- Step 3
+
+- head
+
+- X
+
+- Set the value of the first node’s prev pointer to NULL:
+
+- head->prev = NULL;
+
+- Step 4
+
+- NULL
+
+- Question:
+
+- What if the linked list has a tail pointer and contains only single node?
+
+## Slide 11
+
+- Node Deletion (middle of linked list) – Option 1
+
+- Create two temporary pointers and initialized one of it with the address of the first node:
+
+- Node *n = head, *x;
+
+- Step 1
+
+- Move n to 1 position before the targeted node:
+
+- while (n -> next -> Info != 13)
+
+- n = n -> next;
+
+- Place x at the targeted node:
+
+- x = n->next;
+
+- Step 2
+
+- Step 3
+
+- n
+
+- head
+
+- Target: Delete node with value 13.
+
+- x
+
+- Link node pointed by n to the node after node pointed by x and vice versa:
+
+- n->next = x->next;
+
+- x->next->prev = n;
+
+- Delete the targeted node:
+
+- free(x);
+
+- Step 4
+
+- X
+
+- NULL
+
+- 105
+
+- 109
+
+## Slide 12
+
+- Node Deletion (middle of linked list) – Option 2
+
+- Create a temporary pointer and initialized it with the address of the first node:
+
+- Node *n = head;
+
+- Step 1
+
+- Move n to the targeted node:
+
+- while (n -> Info != 13)
+
+- n = n -> next;
+
+- Step 2
+
+- Step 3
+
+- n
+
+- head
+
+- Target: Delete node with value 13.
+
+- Link the previous node of the node pointed by n to the next node and vice versa:
+
+- n->prev->next = n->next;
+
+- n->next->prev = n->prev;
+
+- Delete the targeted node:
+
+- free(x);
+
+- Step 4
+
+- X
+
+- NULL
+
+- 105
+
+- 109
+
+## Slide 13
+
+- Node Deletion (end of linked list) – Option 1
+
+- Create a temporary pointer and initialized it with the address of the first node:
+
+- Node *n = head;
+
+- Step 1
+
+- Move n to 1 position before the targeted node:
+
+- while (n -> next-> next!= NULL)
+
+- n = n -> next;
+
+- Step 2
+
+- Step 4
+
+- n
+
+- head
+
+- Set the next address of last node to NULL:
+
+- n->next = NULL;
+
+- Delete the targeted node:
+
+- free(n->next);
+
+- Step 3
+
+- X
+
+- NULL
+
+- 105
+
+- 109
+
+- Question:
+
+- What if the linked list has a tail pointer?
+
+## Slide 14
+
+- Node Deletion (end of linked list) – Option 2
+
+- Create a temporary pointer and initialized it with the address of the first node:
+
+- Node *n = head;
+
+- Step 1
+
+- Move n to the targeted node:
+
+- while (n -> next!= NULL)
+
+- n = n -> next;
+
+- Step 2
+
+- Step 4
+
+- n
+
+- head
+
+- Set the next address of the second last node to NULL:
+
+- n->prev->next = NULL;
+
+- Delete the targeted node:
+
+- free(n);
+
+- Step 3
+
+- X
+
+- NULL
+
+- 105
+
+- 109
+
+- Question:
+
+- What if the linked list has a tail pointer?
+
+- Will the steps remain the same?
+
+## Slide 15
+
+- Advantages of Doubly Linked List
+
+- A doubly linked list can be traversed in both directions, forward and backward.
+
+- Delete operation in DLL is more efficient if pointer to the node to be deleted is given. In singly linked list, to delete a node, pointer to the previous node is needed.
+
+- We can quickly insert a new node before a given node. Example, insertion of new node before last node pointed by tail pointer.
+
+## Slide 16
+
+- Disadvantages of Doubly Linked List
+
+- Extra space for a previous pointer..
+
+- All operations require an extra pointer previous to be maintained.
+
+## Slide 17
+
+- End of Chapter 3
+
+- That’s all for now..
+
+- See you in next class!
+
+
+
+# Chapter 4 Stacks.pptx (28 slides)
+
+## Slide 1
+
+- Stacks
+
+- Revised version: NaziffaNasir sem1 24/25
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with understanding on:
+
+- Stack data structure in both STL and Linked List implementation
+
+- Stack applications
+
+## Slide 3
+
+- What is Stack?
+
+- Stack is a restricted access linear data structure which follows a particular order in which the operations are performed.
+
+- It can only be accessed at one of its ends for adding and removing data elements
+
+- It is also known as LIFO (Last In First Out) structure
+
+- Stacks are particularly useful in situations where data have to be stored and processed in reverse order
+
+## Slide 4
+
+- Stack Structure
+
+- 12
+
+- 56
+
+- 71
+
+- 9
+
+- 23
+
+- 45
+
+- 6
+
+- 5
+
+- 45
+
+- 4
+
+- 23
+
+- 3
+
+- 9
+
+- 2
+
+- 71
+
+- 1
+
+- 56
+
+- 0
+
+- 12
+
+- front
+
+- end
+
+- push 91
+
+- pop 91
+
+- 91
+
+- push 91
+
+- pop 91
+
+- 45
+
+- 23
+
+- 9
+
+- 71
+
+- 56
+
+- 12
+
+- front
+
+- end
+
+- push 91
+
+- pop 91
+
+- 91
+
+- Last-in First-out (LIFO) Structures
+
+## Slide 5
+
+- Stack Implementation
+
+- There are three ways to implement a stack:
+
+- Using Array-based (not covered in this syllabus)
+
+- Using Standard Template Library (STL)
+
+- Using Linked List
+
+## Slide 6
+
+- Stack STL Implementation
+
+- Standard Template Library (STL)
+
+- insertion
+
+- front
+
+- end
+
+- middle
+
+- deletion
+
+- front
+
+- end
+
+- middle
+
+- stack
+
+- OR
+
+## Slide 7
+
+- Stack STL Implementation (cont)
+
+- C
+
+- mystack.push(‘C’);
+
+- C
+
+- mystack.push(‘A’);
+
+- A
+
+- C
+
+- mystack.empty() returns false
+
+- Function
+
+- Operation
+
+- empty( )
+
+- determines if the stack is empty
+
+- push(el)
+
+- pushes the data item el onto the top of the stack
+
+- pop( )
+
+- removes the top element from the stack
+
+- top( )
+
+- returns the value of the top element of the stack without removing it
+
+- swap()
+
+- swap the contents of one stack with another stack of same type but the size may vary.
+
+- emplace()
+
+- insert a new element into the stack container, the new element is added on top of the stack.
+
+- mystack.top() returns A
+
+- stack<char>mystack;
+
+- mystack
+
+## Slide 8
+
+- Stack STL Implementation (cont)
+
+- mystack.emplace(‘D’);
+
+- mystack.pop();
+
+- A
+
+- D
+
+- C
+
+- Function
+
+- Operation
+
+- empty( )
+
+- determines if the stack is empty
+
+- push(el)
+
+- pushes the data item el onto the top of the stack
+
+- pop( )
+
+- removes the top element from the stack
+
+- top( )
+
+- returns the value of the top element of the stack without removing it
+
+- swap()
+
+- swap the contents of one stack with another stack of same type but the size may vary.
+
+- emplace()
+
+- insert a new element into the stack container, the new element is added on top of the stack.
+
+- mystack
+
+- D
+
+- A
+
+- B
+
+- mystack
+
+- D
+
+- C
+
+- urstack
+
+- mystack.swap(urstack);
+
+## Slide 9
+
+- Exercise 1
+
+- Level: Easy (Source: Quiz 2 previous semester)
+
+- Write the include preprocessor to use stack container. [1 mark]
+
+- Solution:
+
+- Insert value 30 to myStack. [1 mark]
+
+- Declare an integer stack myStack. [1 mark]
+
+- Solution:
+
+## Slide 10
+
+- Exercise 2
+
+- Level: Easy (Source: Test 1 previous semester)
+
+- Create a stack program that accepts five (5) integer values from user.
+
+- Display total data in stack.
+
+- Remove the data in stack, one by one until the stack is empty. Display the data before you remove it.
+
+- Sample of output
+
+## Slide 11
+
+- Exercise 3
+
+- Level: Easy (Source: Test 1 previous semester)
+
+- Using stack STL implementation, create a C++ program that accepts record with details as follows:
+
+- idNo: int
+
+- weight: float
+
+- Display total record in stack.
+
+- Display all record details in stack.
+
+- Sample of output
+
+## Slide 12
+
+- Stack Linked List Implementation
+
+- Linked List Implementation
+
+- insertion
+
+- head
+
+- tail
+
+- middle
+
+- deletion
+
+- head
+
+- tail
+
+- middle
+
+- stack
+
+- OR
+
+## Slide 13
+
+- Stack Linked List Implementation
+
+- Linked List Implementation (Option 1):
+
+- insertion
+
+- head
+
+- tail
+
+- middle
+
+- deletion
+
+- head
+
+- tail
+
+- middle
+
+- stack
+
+- Algorithm (refer to Chapter 3 Linked List):
+
+- Insertion: Insert a new node at the beginning of linked list
+
+- Deletion: Remove the node at the beginning of linked list
+
+## Slide 14
+
+- Stack Linked List Implementation
+
+- Linked List Implementation (Option 2):
+
+- insertion
+
+- head
+
+- tail
+
+- middle
+
+- deletion
+
+- head
+
+- tail
+
+- middle
+
+- stack
+
+- Algorithm (refer to Chapter 3 Linked List):
+
+- Insertion: Insert a new node at the end of linked list
+
+- Deletion: Remove the node at the end of linked list
+
+## Slide 15
+
+- Exercise 4
+
+- Question:
+
+- Without changing the program flow, modify the STL implementation in Exercise 2 (slide 11) to Linked List implementation.
+
+- Sample of output
+
+## Slide 16
+
+- Stack Applications
+
+- There are numerous applications of stacks:
+
+- Evaluating expressions and parsing syntax
+
+- Balancing delimiters in program code
+
+- Converting numbers between bases
+
+- Processing financial data
+
+- Backtracking algorithms
+
+- Undo function such as in application or software.
+
+- Infix to Postfix /Prefix conversion
+
+- Forward and backward feature in web browsers
+
+- Used in many algorithms like Tower of Hanoi, tree traversals, stock span problem, histogram problem.
+
+- In Graph Algorithms like Topological Sorting and Strongly Connected Components
+
+## Slide 17
+
+- Stack Applications
+
+- Stack Algorithm:
+
+- Checking for a balance parenthesis for a mathematic expression
+
+- Begin
+
+- while not end of expression
+
+- read token
+
+- if the token is “(“ or “{“ or “[“ then
+
+- Push onto the stack
+
+- if the token is “)”or “}” or ”]” then
+
+- Pop the token from the stack
+
+- Compare the pop item with the current token
+
+- if do not match
+
+- Print error message
+
+- break
+
+- end while
+
+- if stack is empty
+
+- all parenthesis pairs were of the same type
+
+- else
+
+- expression is not balance
+
+- end
+
+## Slide 18
+
+- Stack Applications
+
+- Example:
+
+- Use the algorithm to check the following expression:
+
+- ( a – [ ( b + c ) – ( d + e ) ] * sin ( x - y )
+
+- STACK
+
+- (
+
+- [
+
+- (
+
+- pop the token from the stack
+
+- imbalance
+
+## Slide 19
+
+- Stack Applications
+
+- Stack Algorithm:
+
+- Converting Infix to Postfix
+
+- Infix notation: Used by human / programmer in programming
+
+- Postfix: Used by compiler for efficiency and reduce coding as it has simpler set of rules for expression evaluation, easier to parse by compiler.
+
+- Postfix evaluation has No parenthesis required during evaluation
+
+- BEGIN
+
+- Create a new Stack( empty stack)
+
+- While not error and not end of expression, do
+
+- Retrieve the following token
+
+- if token is equal to
+
+- ‘(‘:
+
+- Push onto Stack
+
+- ‘)’ :
+
+- Pop out and display items from the Stack until “(” is encounter in the Stack , but do not display “(“, display error if “(“ is not found
+
+- Operators *,/,+,-:
+
+- If emptyStack or current token is in higher priority compared to the top of the stack,
+
+- Push token to the Stack
+
+- else
+
+- pop top item from stack and display, Repeat this comparison with the remaining item.
+
+- push current token onto stack
+
+- Operand:
+
+- Display the Operand
+
+- End while
+
+- Pop all element
+
+- END
+
+## Slide 20
+
+- Stack Applications
+
+- Infix:
+
+- A * ( B + C )
+
+- A
+
+- *
+
+- (
+
+- B
+
+- C
+
+- +
+
+- pop
+
+- +
+
+- *
+
+- stack is empty
+
+- ‘)’ :
+
+- Pop out and display items from the
+
+- Stack until “(” is encounter in the Stack
+
+- but do not display “(“
+
+- Example 1:
+
+## Slide 21
+
+- Stack Applications
+
+- Example 2:
+
+- Infix:
+
+- 7 * 8 – ( 2 + 3 )
+
+- 7
+
+- *
+
+- (
+
+- 8
+
+- 3
+
+- +
+
+- pop
+
+- +
+
+- *
+
+- stack is empty
+
+- If emptyStack or current token is in higher priority compared to the top of the stack,
+
+- Push token to the Stack
+
+- else
+
+- pop top item from stack and display.
+
+- Repeat this comparison with the remaining item.
+
+- push current token onto stack
+
+- 2
+
+- -
+
+- push
+
+- ‘)’ :
+
+- Pop out and display items from the
+
+- Stack until “(” is encounter in the Stack but do not display “(“
+
+## Slide 22
+
+- Exercise 5
+
+- Question:
+
+- Convert the following infix expressions to postfix expressions.
+
+- ( ( A + B ) * C – D ) * E
+
+- 5 + ( (1 + 2) * 4 ) – 3
+
+- Solution:
+
+## Slide 23
+
+- Stack Applications
+
+- Stack Algorithm: Converting Postfix to Infix
+
+- Begin
+
+- Create an empty stack
+
+- Do while not end of expression
+
+- Gets the next token in the expression
+
+- If token is an operand
+
+- Push onto stack
+
+- If token is an operator do:
+
+- pop the top two items from stack
+
+- execute the expression
+
+- push the result onto stack
+
+- if the end of the expression is encountered
+
+- the final value for the expression is equal to the top value of the stack
+
+- End
+
+## Slide 24
+
+- Stack Applications
+
+- STACK
+
+- 2
+
+- 14
+
+- 4
+
+- pop
+
+- If token is an operand
+
+- Push onto stack
+
+- If token is an operator do:
+
+- pop the top two items from stack
+
+- execute the expression
+
+- push the result onto stack
+
+- pop
+
+- 4
+
+- 2
+
+- *
+
+- = 8
+
+- push
+
+- 8
+
+- 9
+
+- 5
+
+- pop
+
+- 5
+
+- 9
+
+- +
+
+- = 14
+
+- push
+
+- 8
+
+- 14
+
+- -
+
+- = -6
+
+- Example:
+
+- Use the algorithm to check the following expression:
+
+- 2 4 * 9 5 + -
+
+## Slide 25
+
+- Exercise 6
+
+- Question:
+
+- Convert the following postfix expressions to infix expressions.
+
+- 5 1 2 + 4 * + 3 –
+
+- 7 8 * 2 3 +
+
+- Solution:
+
+## Slide 26
+
+- Exercise 7
+
+- Question: Source Sem 2 2017/2018
+
+- What is the equivalent postfix for the infix expression A + (B – C) + D ?
+
+- A B + C - D +
+
+- A B C D - + +
+
+- A B C - + D +
+
+- A B C D + - +
+
+## Slide 27
+
+- Exercise 8
+
+- Question: Source Sem 1 2020/2021
+
+- Given an infix expression as in Figure 1 above.
+
+- Show the content of stack after token at position marked by (i) and (ii) is read. [6 marks]
+
+- Convert the infix expression to postfix expression. [2 marks]
+
+## Slide 28
+
+- End of Chapter 4
+
+- That’s all for now..
+
+- See you in next class!
+
+
+
+# Chapter 5 Queues.pptx (19 slides)
+
+## Slide 1
+
+- Queues
+
+- Revised version: NaziffaNasir sem1 24/25
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with understanding on:
+
+- Queue data structure in both STL and Linked List implementation
+
+- Queue applications
+
+## Slide 3
+
+- What is Queue?
+
+- A queue, like a stack, is a restricted access linear data structure but with additions restricted to one end (the rear) and deletions to the other (the front)
+
+- Since an item added to the queue must migrate from the rear to the front before it is removed, items are removed in the order they are added
+
+- Queue elements may only be inserted at the back (called an enqueue/append operation) and removed from the front (called a dequeue/serve operation)
+
+- It is also known as FIFO (First In First Out) structure
+
+## Slide 4
+
+- Queue Structure
+
+- 56
+
+- 71
+
+- 9
+
+- 23
+
+- 45
+
+- 6
+
+- 5
+
+- 45
+
+- 4
+
+- 23
+
+- 3
+
+- 9
+
+- 2
+
+- 71
+
+- 1
+
+- 56
+
+- 0
+
+- front
+
+- end
+
+- push 91
+
+- pop 12
+
+- 91
+
+- push 91
+
+- pop 12
+
+- 45
+
+- 23
+
+- 9
+
+- 71
+
+- 56
+
+- front
+
+- end
+
+- push 91
+
+- pop 12
+
+- 91
+
+- First-in First-out (FIFO) Structures
+
+- 12
+
+## Slide 5
+
+- Queue Implementation
+
+- There are three ways to implement a queue:
+
+- Using Array-based (already covered in Programming 1)
+
+- Using Standard Template Library (STL)
+
+- Using Linked List
+
+## Slide 6
+
+- Standard Template Library (STL)
+
+- 6
+
+- insertion
+
+- front
+
+- end
+
+- middle
+
+- deletion
+
+- front
+
+- end
+
+- middle
+
+- queue
+
+- OR
+
+- Queue STL Implementation
+
+## Slide 7
+
+- 7
+
+- myQ.push(‘C’);
+
+- myQ.push(‘A’);
+
+- myQ.empty() returns false
+
+- Function
+
+- Operation
+
+- empty( )
+
+- determines if the queue is empty
+
+- push(el)
+
+- pushes the data item el at the end of the queue
+
+- pop( )
+
+- removes the first element of the queue
+
+- front( )
+
+- returns value of the first element of the queue without removing it
+
+- back()
+
+- returns value of the last element of the queue without removing it
+
+- swap()
+
+- swap the contents of one queue with another queue of same type but the size may vary.
+
+- emplace()
+
+- insert a new element into the queue container, the new element is added to the end of the queue.
+
+- myQ.front() returns C
+
+- queue<char>myQ;
+
+- myQ
+
+- C
+
+- A
+
+- myQ.back() returns A
+
+- Queue STL Implementation
+
+- C
+
+- A
+
+## Slide 8
+
+- 8
+
+- myQ.emplace(‘D’);
+
+- myQ.pop();
+
+- C
+
+- B
+
+- A
+
+- D
+
+- myQ.swap(urQ);
+
+- Function
+
+- Operation
+
+- empty( )
+
+- determines if the queue is empty
+
+- push(el)
+
+- pushes the data item el at the end of the queue
+
+- pop( )
+
+- removes the first element of the queue
+
+- front( )
+
+- returns value of the first element of the queue without removing it
+
+- back()
+
+- returns value of the last element of the queue without removing it
+
+- swap()
+
+- swap the contents of one queue with another queue of same type but the size may vary.
+
+- emplace()
+
+- insert a new element into the queue container, the new element is added to the end of the queue.
+
+- myQ
+
+- C
+
+- A
+
+- D
+
+- urQ
+
+- Queue STL Implementation
+
+- C
+
+- D
+
+## Slide 9
+
+- 9
+
+- Queue STL Implementation
+
+## Slide 10
+
+- Exercise 1
+
+- Level: Easy (Source: Quiz 3 previous semester)
+
+- Write the include preprocessor to use queue container. [1 mark]
+
+- Solution:
+
+- Display the first and last values in myQueue. [1 mark]
+
+- Declare an integer queue myQueue and insert value 30 to myQueue. [1 mark]
+
+- Solution:
+
+## Slide 11
+
+- Exercise 2
+
+- Level: Easy (Source: modified Exercise 2 Chap 4)
+
+- Create a queue program that accepts five (5) integer values from user.
+
+- Display total data in queue.
+
+- Remove the data in queue, one by one until the queue is empty. Display the data before you remove it.
+
+- Sample of output
+
+## Slide 12
+
+- Exercise 3
+
+- Level: Easy (Source: modified Exercise 3 Chap 4)
+
+- Using queue STL implementation, create a C++ program that accepts record with details as follows:
+
+- idNo: int
+
+- weight: float
+
+- Display total record in queue.
+
+- Display all record details in queue.
+
+- Sample of output
+
+## Slide 13
+
+- Linked List
+
+- 13
+
+- insertion
+
+- head
+
+- tail
+
+- middle
+
+- deletion
+
+- front
+
+- tail
+
+- middle
+
+- queue
+
+- OR
+
+- Queue Linked List Implementation
+
+- Enqueue/append places the new element in a link node at the end of the linked list.
+
+- Dequeue/serve removes and returns the first element of the list
+
+## Slide 14
+
+- Queue Linked List Implementation
+
+- Linked List Implementation (Option 1):
+
+- Algorithm (refer to Chapter 3 Linked List):
+
+- Insertion: Insert a new node at the end of linked list
+
+- Deletion: Remove the node at the beginning of linked list
+
+- insertion
+
+- head
+
+- tail
+
+- middle
+
+- deletion
+
+- front
+
+- tail
+
+- middle
+
+## Slide 15
+
+- Queue Linked List Implementation
+
+- Linked List Implementation (Option 2):
+
+- insertion
+
+- head
+
+- tail
+
+- middle
+
+- deletion
+
+- front
+
+- tail
+
+- middle
+
+- Algorithm (refer to Chapter 3 Linked List):
+
+- Insertion: Insert a new node at the beginning of linked list
+
+- Deletion: Remove the node at the end of linked list
+
+## Slide 16
+
+- Exercise 4
+
+- Question:
+
+- Without changing the program flow, modify the STL implementation in Exercise 2 (slide 11) to Linked List implementation.
+
+- Sample of output
+
+## Slide 17
+
+- Queue Applications
+
+- There are numerous applications of queues:
+
+- When a resource is shared among multiple consumers. Example: Managing requests on a single shared resource such as CPU scheduling and disk scheduling.
+
+- When data is transferred asynchronously (data not necessarily received at same rate as sent) between two processes. Example: IO Buffers, pipes, file IO, etc.
+
+- In Operating systems. Example: Spooling in printers, handling website traffic, maintaining the playlist in media players
+
+- In Networks. Example: Handling hardware or real-time systems interrupts, routers and switches in networking, mail system
+
+## Slide 18
+
+- For more exercises, do refer to Revision Exercise document uploaded in UNITEN Brighten platform.
+
+## Slide 19
+
+- End of Chapter 5
+
+- That’s all for now..
+
+- See you in next class!
+
+
+
+# Chapter 6 Tree (Part 1).pptx (35 slides)
+
+## Slide 1
+
+- Tree
+
+- - Part 1
+
+- Revised version: NaziffaNasir sem1 24/25
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with understanding on:
+
+- Fundamental of tree data structure and types:
+
+- Binary Tree
+
+- Binary Search Tree
+
+- Expression Tree
+
+- Tree traversal
+
+- Tree applications
+
+## Slide 3
+
+- What is Tree?
+
+- Tree data structure is a non-linear and a hierarchical data structure consisting of a collection of nodes such that each node of the tree stores a value, a list of references to other nodes or also known as children.
+
+- It consists of a central node, structural nodes, and sub nodes, which are connected via edges.
+
+- It can be defined as collection of entities called nodes, linked together to simulate hierarchy.
+
+- In other words, Tree is a widely used abstract data type (ADT) that simulates a hierarchical tree structure
+
+## Slide 4
+
+- Types of Tree Data Structures
+
+- A general tree data structure has no restriction on the number of nodes. It means that a parent node can have any number of child nodes.
+
+- 1
+
+- A binary tree whose elements have at most 2 children, typically named as left and right child.
+
+- 2
+
+## Slide 5
+
+- Types of Tree Data Structures
+
+- A binary search tree is used for various searching and sorting algorithms. It shows that the value of the left node is less than its parent, while the value of right node is greater than its parent.
+
+- The expression tree is a binary tree in which each internal node corresponds to the operator and each leaf node corresponds to the operand.
+
+- 3
+
+- 4
+
+## Slide 6
+
+- Tree Terminology
+
+- Root: Node without any parent. Topmost node of a tree
+
+- Edge: line that connects two nodes, also known as branch.
+
+- Children: Immediate successor nodes
+
+- Siblings: Children of same parent
+
+- Leaf node: Any node that doesn’t have any children. It is also known as external or terminal nodes.
+
+- Internal node: All nodes with at least one child
+
+- Size of a tree: Number of nodes in the tree.
+
+- Example:
+
+- Root: 1
+
+- Parent of Node 5: 2
+
+- Ancestor of Node 5: 1,2
+
+- Children/Descendent of Node 1: (2,3)
+
+- Siblings: (4,5,6), (7,8) and (9,10)
+
+- Leaf node: 4,9,10,6,11,8
+
+- Internal Nodes: 1,2,3,5,7
+
+- Root
+
+- Leaf
+
+## Slide 7
+
+- Tree Terminology (continue)
+
+- Depth of Node x: Length of path from root to Node x
+
+- Height of Node x: Number of edges in the longest path from node x to leaf node
+
+- Height of tree: Height of the tree is the height of the root
+
+- Level of node: Set of all nodes at a given depth is called the level of the tree
+
+- Level 0, Depth=0, Height=3
+
+- Level 1, Depth=1, Height=2
+
+- Level 2, Depth=2, Height=1
+
+- Level 3, Depth=3, Height=0
+
+- Height of node 7 = 1
+
+- Depth of node 4 = 2
+
+## Slide 8
+
+- Exercise 1
+
+- Level: Easy (Source: Test 2 previous semester)
+
+- How many ancestor(s) of node E? [1 mark]
+
+- Solution:
+
+- Are D and I sibling? If no, what is the relationship of these nodes? [1 mark]
+
+- What are the common ancestors of A and C? [1 mark]
+
+- Solution:
+
+## Slide 9
+
+- Exercise 2
+
+- Level: Easy (Source: Test 2 previous semester)
+
+- What is the height of node B? [1 mark]
+
+- Solution:
+
+- What is the size of tree? [1 mark]
+
+- What is the depth of root node? [1 mark]
+
+- Solution:
+
+## Slide 10
+
+- Binary Tree
+
+## Slide 11
+
+- What is Binary Tree?
+
+- A node in a binary tree can have a maximum of 2 child nodes, called left and right child. It is the simplest and most common type of tree.
+
+- There are several types of binary tree such as:
+
+- rooted: simplest type of binary tree where each node has either 0, 1 or 2 child nodes.
+
+- degenerate: all nodes have only one child except the leaf node. It is equivalent to a linked list
+
+- full: every node has either 0 or 2 children. No node should have only 1 child node.
+
+- complete: all levels tree are entirely filled to its maximum capacity.
+
+- rooted binary tree
+
+- degenerate binary tree
+
+## Slide 12
+
+- Types of Binary Tree
+
+- Full binary tree:
+
+- each node has exactly zero or two children
+
+- In a full binary tree, number of leaf nodes = no of internal nodes + 1
+
+- Maximum number of nodes of full binary tree of height “h” is 2h+1 – 1
+
+- Minimum number of nodes of full binary tree of height “h” is 2h+1
+
+- Height of the binary with minimum “n” nodes is (n-1)/2
+
+- Minimum height of the full binary tree of with maximum number of nodes as “n” is [ log(n+1) ] – 1
+
+- full binary tree
+
+## Slide 13
+
+- Types of Binary Tree
+
+- Full binary tree (Example):
+
+- number of leaf nodes = no of internal nodes +1 = 2 + 1 = 3
+
+- max number of nodes of height 2 is 22+1 – 1 = 8 – 1 = 7
+
+- min number of nodes of height 2 is 2(2) + 1 = 4 + 1 = 5
+
+- height of tree with min nodes, example 5 is (5 - 1) / 2 = 4 / 2 = 2
+
+- height of tree with max nodes, example 7 is
+
+- [log(n+1)] – 1 = log(8) – 1 = 3 – 1 = 2
+
+- minimum no of nodes for height 2
+
+- maximum no of nodes for height 2
+
+## Slide 14
+
+- Types of Binary Tree
+
+- Complete binary tree:
+
+- all levels except possibly the last is completely filled and all the nodes in the last level are as left as possible.
+
+- Maximum number of nodes of complete binary tree of height “h” is 2h+1 – 1
+
+- Minimum number of nodes of complete binary tree of height “h” is 2h
+
+- Height of the binary with minimum “n” nodes is log(n)
+
+- Minimum height of the complete binary tree of with maximum number of nodes as “n” is [ log(n+1) ] – 1
+
+- complete binary tree
+
+## Slide 15
+
+- Types of Binary Tree
+
+- Complete binary tree (Example):
+
+- max number of nodes of height 2 is 22+1 – 1 = 8 – 1 = 7
+
+- min number of nodes of height 2 is 22 = 4
+
+- height of tree with min nodes, example 4 is log(4) = 2
+
+- height of tree with max nodes, example 7 is
+
+- [log(n+1)] – 1 = log(8) – 1 = 3 – 1 = 2
+
+- minimum no of nodes for height 2
+
+- maximum no of nodes for height 2
+
+## Slide 16
+
+- Types of Binary Tree
+
+- Summary:
+
+- Minimum nodes
+
+- Maximum nodes
+
+- Binary Tree
+
+- h+1
+
+- 2h+1 – 1
+
+- Full Binary Tree
+
+- 2h+1
+
+- 2h+1 – 1
+
+- Complete Binary Tree
+
+- 2h
+
+- 2h+1 – 1
+
+- Calculation for total number of nodes:
+
+- Calculation for height of tree where n = total number of nodes:
+
+- Minimum height
+
+- Maximum Height
+
+- Binary Tree
+
+- [log(n+1)] – 1
+
+- n-1
+
+- Full Binary Tree
+
+- [log(n+1)] – 1
+
+- (n-1)/2
+
+- Complete Binary Tree
+
+- [log(n+1)] – 1
+
+- log(n)
+
+## Slide 17
+
+- Exercise 3
+
+- Level: Easy (Source: Quiz 3 previous semester)
+
+- A ___________ tree is a tree where for each parent node, there is only one associated child node on right.
+
+- balanced binary tree
+
+- rooted complete binary tree
+
+- complete binary tree
+
+- degenerate tree
+
+## Slide 18
+
+- Exercise 4
+
+- Source: Final Exam previous semester
+
+- Given a binary tree with 31 nodes, what is the minimum possible depth of the tree?
+
+- 3
+
+- 4
+
+- 5
+
+- 6
+
+## Slide 19
+
+- Exercise 5
+
+- Source: Final Exam previous semester
+
+- What is the minimum number of nodes in a full binary tree with level 3?
+
+- 4
+
+- 7
+
+- 9
+
+- 11
+
+## Slide 20
+
+- Exercise 6
+
+- Source: Test 2 previous semester
+
+- What is the minimum number of nodes in a complete binary tree with level 3?
+
+- 4
+
+- 8
+
+- 11
+
+- 15
+
+## Slide 21
+
+- Binary Search Tree
+
+## Slide 22
+
+- What is Binary Search Tree?
+
+- Binary Search Tree (BST) is a further enhancement to binary tree.
+
+- The first important change is that the data we are storing needs a key; if we have a basic type like a string or number then the value itself can be the key and if we have a more complex class, then we need to define a key in that structure or we need to build a unique key for each item.
+
+- The second change is a way to compare those keys which is crucial for the performance of the data structure. Numbers are easiest since we can easily compare which is larger and smaller.
+
+- The third and final change is the way we store the items; the left node's key will always be smaller than the parent node's key and the right node's key will be larger than the parent node.
+
+## Slide 23
+
+- What is Binary Search Tree?
+
+- Every node contains a key that satisfies following criteria:
+
+- the key in left child is less than the key in the parent node
+
+- the key in the right child is more than or equal to the parent node
+
+- the left and right child are again binary search trees.
+
+- BST improves searching operation performance with Big O notation O(log n) by eliminating approximately 50% of the potential nodes.
+
+## Slide 24
+
+- BST Operations – Insertion
+
+- if tree is empty
+
+- create a root node with the new key
+
+- else
+
+- compare key with the top node
+
+- if key = node key
+
+- replace the node with the new value
+
+- else if key > node key
+
+- compare key with the right subtree:
+
+- if subtree is empty create a leaf node
+
+- else add key in right subtree
+
+- else key < node key
+
+- compare key with the left subtree:
+
+- if the subtree is empty create a leaf node
+
+- else add key to the left subtree
+
+- Let's try with this series of data: Source: Quiz 2 S2 2017/18
+49, 28, 18, 83, 40, 17, 97 and 73
+
+## Slide 25
+
+- Exercise 7
+
+- Source: Test 2 previous semester
+
+- Say that you want to insert the following integers into a binary search tree.
+
+- 53, 18, 99, 24, 50, 65, 120
+
+- Draw the final binary search tree that will be constructed if the integers above are inserted into the tree one by one, starting from the leftmost integer in the list.
+
+- Solution
+
+## Slide 26
+
+- BST Operations – Deletion
+
+- For deletion operations, there are 3 conditions to consider:
+
+- Condition 1: the node is a leaf node
+
+- Step: Node is deleted straight from the binary tree
+
+- Condition 2: the node has single child
+
+- Condition 3: the node has two children
+
+## Slide 27
+
+- BST Operations – Deletion
+
+- For deletion operations, there are three (3) conditions to consider:
+
+- Condition 1: the node is a leaf node
+
+- Step: Node is deleted straight from the binary tree
+
+- Example: Delete node with value 30 from the tree.
+
+- 60
+
+- 92
+
+- 70
+
+- 42
+
+- 27
+
+- 85
+
+- 40
+
+- 30
+
+- 15
+
+- 65
+
+- X
+
+- 89
+
+- 68
+
+## Slide 28
+
+- BST Operations – Deletion
+
+- Condition 2: the node has single child
+
+- Step: a) Change the appropriate reference in the node’s parent to point to the child if the deleted node.
+
+- b) The child along with its sub-trees, now take the place of the deleted node.
+
+- Example: Delete node with value 92 from the tree.
+
+- 60
+
+- 92
+
+- 70
+
+- 42
+
+- 27
+
+- 85
+
+- 40
+
+- 30
+
+- 15
+
+- 65
+
+- X
+
+- 89
+
+- 68
+
+## Slide 29
+
+- BST Operations – Deletion
+
+- Condition 3: the node has two children
+
+- Step: a) Replace the node with its inorder successor. Since the node to be deleted has two children, it has a right sub-tree, and its inorder successor is the last left node in this sub-tree.
+
+- b) Since the inorder successor is the last left node in a sub-tree, it can not have a left child. Therefore, it can have at most one child. If it has a right child, the right child will occupy the position of the inorder successor.
+
+- Example 1: Delete node with value 40 from the tree.
+
+- 60
+
+- 92
+
+- 70
+
+- 42
+
+- 27
+
+- 85
+
+- 40
+
+- 30
+
+- 15
+
+- 65
+
+- X
+
+- 89
+
+- 68
+
+## Slide 30
+
+- BST Operations – Deletion
+
+- Condition 3: the node has two children
+
+- Step: a) Replace the node with its inorder successor. Since the node to be deleted has two children, it has a right sub-tree, and its inorder successor is the last left node in this sub-tree.
+
+- b) Since the inorder successor is the last left node in a sub-tree, it can not have a left child. Therefore, it can have at most one child. If it has a right child, the right child will occupy the position of the inorder successor.
+
+- Example 2: Delete node with value 85 from the tree.
+
+- 60
+
+- 92
+
+- 70
+
+- 42
+
+- 27
+
+- 85
+
+- 40
+
+- 30
+
+- 15
+
+- 65
+
+- X
+
+- 89
+
+- 68
+
+## Slide 31
+
+- BST Operations – Deletion
+
+- Condition 3: the node has two children
+
+- Step: a) Replace the node with its inorder successor. Since the node to be deleted has two children, it has a right sub-tree, and its inorder successor is the last left node in this sub-tree.
+
+- b) Since the inorder successor is the last left node in a sub-tree, it can not have a left child. Therefore, it can have at most one child. If it has a right child, the right child will occupy the position of the inorder successor.
+
+- Example 3: Delete node with value 60 from the tree.
+
+- 60
+
+- 92
+
+- 70
+
+- 42
+
+- 27
+
+- 85
+
+- 40
+
+- 30
+
+- 15
+
+- 65
+
+- X
+
+- 89
+
+- 68
+
+## Slide 32
+
+- Exercise 8
+
+- Source: Quiz 3 Sem 1 2017/18
+
+- Do the following processes on below BST structure. Answer each question separately by showing your updated tree structure.
+
+- Insert Q then delete E
+
+- Delete C then insert C
+
+- Solution (a)
+
+- Solution (b)
+
+## Slide 33
+
+- Exercise 9
+
+- Source: Final Exam previous semester
+
+- The following numbers are inserted into an empty binary search tree in the given order: 10, 1, 3, 5, 15, 12, 16. What is the height of the Binary Search Tree (BST)?
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+## Slide 34
+
+- Exercise 10
+
+- Consider this binary search tree. Suppose we remove the root, replacing it with something from the left subtree. What will be the new root?
+
+- 5
+
+- 1
+
+- 2
+
+- 4
+
+## Slide 35
+
+- End of Part 1
+
+- That’s all for now..
+
+- See you in next class!
+
+
+
+# Chapter 6 Tree (Part 2).pptx (32 slides)
+
+## Slide 1
+
+- Tree
+
+- - Part 2
+
+- Revised version: NaziffaNasir sem1 24/25
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with understanding on:
+
+- Fundamental of tree data structure and types:
+
+- Binary Tree
+
+- Binary Search Tree
+
+- Expression Tree
+
+- Tree traversal
+
+- Tree applications
+
+## Slide 3
+
+- Expression Tree
+
+## Slide 4
+
+- What is Expression Tree?
+
+- The expression tree is a binary tree in which each internal node corresponds to the arithmetic operator and each leaf node corresponds to the operand.
+
+- Example of Expression tree for algebraic expression A * (B+C) is as follows:
+
+- *
+
+- C
+
+- B
+
+- +
+
+- A
+
+## Slide 5
+
+- What is Expression Tree?
+
+- Let's try to convert this algebraic expression to expression tree:
+
+- (a + b) – (c + d)
+
+## Slide 6
+
+- Exercise 1
+
+- Source: Final Exam previous semester
+
+- Convert the following expression to tree:
+
+- a + b – c + d
+
+- Solution
+
+## Slide 7
+
+- Exercise 2
+
+- Source: Final Exam previous semester
+
+- Convert the following expression to tree:
+
+- 5 * ( y – 3 ) + 2 / ( x + 7 )
+
+- Solution
+
+## Slide 8
+
+- Tree Traversal
+
+## Slide 9
+
+- Types of Tree Traversal
+
+- A Tree is typically traversed in two ways:
+
+- Breadth First Traversal (or Level Order Traversal)
+
+- Depth First Traversals:
+
+- Inorder Traversal (Left-Root-Right)
+
+- Preorder Traversal (Root-Left-Right)
+
+- Postorder Traversal (Left-Right-Root)
+
+## Slide 10
+
+- Types of Tree Traversal
+
+- Breadth First Traversal (or Level Order Traversal)
+
+- BFS uses Queue data structure for finding a shortest path.
+
+- BFS starts visiting nodes from root, one vertex is selected at a time when it is visited and marked then its adjacent are visited and stored in the queue. It reach a vertex with minimum number of edges from a source vertex.
+
+- BFS is more suitable for searching vertices which are closer to the given source. Hence, if our problem is to search something that is more likely to closer to root, we would prefer BFS.
+
+- BFS considers all neighbors first and therefore not suitable for decision making trees used in games or puzzles.
+
+- A
+
+- C
+
+- G
+
+- F
+
+- E
+
+- D
+
+- B
+
+- BFS: A B C D E F G
+
+## Slide 11
+
+- Types of Tree Traversal
+
+- Depth First Traversals
+
+- It is an edge-based technique.
+
+- In DFS, we might traverse through more edges to reach a destination vertex from a source.
+
+- DFS is more suitable when there are solutions away from source. Hence, if the target node is close to a leaf, we would prefer DFS.
+
+- DFS is more suitable for game or puzzle problems. We make a decision, then explore all paths through this decision. And if this decision leads to win situation, we stop.
+
+- A
+
+- C
+
+- G
+
+- F
+
+- E
+
+- D
+
+- B
+
+- DFS (preorder): A B D E C F G
+
+## Slide 12
+
+- Types of Tree Traversal
+
+- Depth First Traversals (continue):
+
+- Preorder (VLR) - the node is visited before the left and right subtrees.
+
+- Inorder (LVR) - the node is visited between the left and right subtrees.
+
+- Postorder (LRV) - the node is visited after both of the left and right subtrees.
+
+- A
+
+- C
+
+- G
+
+- F
+
+- E
+
+- D
+
+- B
+
+- Preorder: A B D E C F G
+
+- A
+
+- C
+
+- G
+
+- F
+
+- E
+
+- D
+
+- B
+
+- Inorder: D B E A F C G
+
+- A
+
+- C
+
+- G
+
+- F
+
+- E
+
+- D
+
+- B
+
+- Postorder: D E B F G C A
+
+## Slide 13
+
+- Exercise 3
+
+- Let's try to evaluate the preorder, inorder and postorder traversal for this diagram:
+
+- Solution (Preorder):
+
+- Solution (Inorder):
+
+- Solution (Postorder):
+
+- A
+
+- C
+
+- F
+
+- E
+
+- D
+
+- B
+
+## Slide 14
+
+- Exercise 4
+
+- Source: Test 2 previous semester
+
+- Write the Preorder, Inorder and Postorder traversal for figure below:
+
+- Solution (Preorder):
+
+- Solution (Inorder):
+
+- +
+
+- D
+
+- C
+
+- B
+
+- *
+
+- A
+
+- -
+
+- Solution (Postorder):
+
+## Slide 15
+
+- Exercise 5
+
+- Source: Final Exam previous semester
+
+- A prefix expression, + * 5 – y 3 / 2 + x 7 can be represented as an expression tree, by representing operators as non-leaf nodes and operands (variables and constants) as leaf nodes. Show how the above expression would be represented as a binary tree following this convention.
+
+- Solution
+
+## Slide 16
+
+- Exercise 6
+
+- Source: Quiz 3 previous semester
+
+- Draw an expression tree for the below postfix algebraic expression:
+
+- 5 x – y 3 + + 5 x – y / *
+
+- Solution
+
+## Slide 17
+
+- Linked List Implementation
+
+## Slide 18
+
+- Tree Linked List
+
+- Creating a tree linked list starts with creating a node. Sufficient memory has to be allocated for creating a node.
+
+- Format of a node:
+
+- Node Creation and Data Initialization:
+
+- Codes:
+
+- OR
+
+- struct datatype{
+
+- Data
+
+- Pointer
+
+- };
+
+- class className{
+
+- Data
+
+- Pointer
+
+- };
+
+- // Node creation:
+
+- Node *n = new Node();
+
+- // Data Initialization:
+
+- n->no = 6;
+
+- n->left = n->right = NULL;
+
+- class Node {
+
+- public:
+
+- int no;
+
+- Node *left;
+
+- Node *right;
+
+- };
+
+## Slide 19
+
+- Tree Linked List : Program Sample
+
+- Node Creation
+
+- void createNode (){
+
+- Node *n = new Node;
+
+- cout<<"Enter a number: ";
+
+- cin>>n->data;
+
+- n->left = n->right = NULL;
+
+- insert (n, root);
+
+- }
+
+## Slide 20
+
+- Tree Linked List : Program Sample
+
+- Node Insertion
+
+- void insert(Node *n, Node *parent){
+
+- if (root == NULL)
+
+- root = n;
+
+- else if(n->data < parent->data){
+
+- if (parent->left!=NULL)
+
+- insert (n, parent->left);
+
+- else
+
+- parent->left = n; }
+
+- else{
+
+- if (parent->right!=NULL)
+
+- insert (n, parent->right);
+
+- else
+
+- parent->right = n;
+
+- }
+
+## Slide 21
+
+- Tree Linked List : Program Sample
+
+- Node Traversal : display()
+
+- void display(){
+
+- int traversal; Node *p = root;
+
+- cout<<"Choose type of traversal [1] Inorder [2]Preorder [3]Postorder: ";
+
+- cin>>traversal;
+
+- switch(traversal){
+
+- case 1 : inorder(p);break;
+
+- case 2 : preorder(p);break;
+
+- case 3 : postorder(p);break; }
+
+- }
+
+## Slide 22
+
+- Tree Linked List : Program Sample
+
+- Node Traversal : inorder()
+
+- void inorder(Node *p){
+
+- if (p != NULL) {
+
+- inorder (p->left);
+
+- cout<<p->data<<" ";
+
+- inorder (p->right);
+
+- }
+
+## Slide 23
+
+- Tree Linked List : Program Sample
+
+- Node Traversal : preorder()
+
+- void preorder(Node *p){
+
+- if (p != NULL) {
+
+- cout<<p->data<<" ";
+
+- preorder(p->left);
+
+- preorder(p->right);
+
+- }
+
+## Slide 24
+
+- Tree Linked List : Program Sample
+
+- Node Traversal : postorder()
+
+- void postorder(Node *p){
+
+- if (p != NULL) {
+
+- postorder(p->left);
+
+- postorder(p->right);
+
+- cout<<p->data<<" ";
+
+- }
+
+## Slide 25
+
+- Tree Linked List : Program Sample
+
+- Node Traversal : search()
+
+- void search (){
+
+- int key, flag = 0; Node *s = root;
+
+- cout<<"\nEnter a value : ";
+
+- cin>>key;
+
+- if (root == NULL)
+
+- cout<<"Tree is empty";
+
+- else{
+
+- while (s!=NULL){
+
+- if (s->data == key) { cout<<"Data is exist";
+
+- flag = 1;
+
+- }
+
+- if (s->data > key) s = s->left;
+
+- else
+
+- s = s->right;
+
+- }
+
+- if (flag == 0)
+
+- cout<<"Data is not exist";
+
+- }
+
+## Slide 26
+
+- Exercise 7
+
+- Assume that we have a tree linked list, containing n number of nodes, where n > 50. Pointer root points to first node, which act as the head pointer and value is a data in the node.
+
+- Find and correct the error(s) in each of the following code segments. This code segment is to display the largest value in a binary search tree.
+
+- Solution
+
+- Tree *t = root;
+
+- t++;
+
+- cout<<“Largest value is” <<t.value<<endl;
+
+## Slide 27
+
+- Exercise 8
+
+- Assume that we have a tree linked list, containing n number of nodes, where n > 50. Pointer root points to first node, which act as the head pointer and value is a data in the node.
+
+- Find and correct the error(s) in each of the following code segments. This code segment is to delete a node that has a single leaf node on left. Assume that temp is a pointer that points to this node.
+
+- Solution
+
+- free (temp);
+
+## Slide 28
+
+- Exercise 9
+
+- Source: Quiz 3 Sem 1 2020/2021
+
+- Solution
+
+## Slide 29
+
+- Exercise 10
+
+- Source: Quiz 3 Sem 1 2020/2021
+
+- Solution
+
+## Slide 30
+
+- Exercise 11
+
+- Source: Test 2 Sem 1 2020/2021
+
+- Solution
+
+## Slide 31
+
+- Summary
+
+- One reason to use trees might be because you want to store information that naturally forms a hierarchy. For example, the file system on a computer such as folder structure.
+
+- Searching operation can be performed in moderate time with some ordering such as BST which is faster than Linked List
+
+- Node insertion and deletion can be performed in moderate time.
+
+## Slide 32
+
+- End of Chapter 6
+
+- That’s all for now..
+
+- See you in next class!
+
+
+
+# Chapter 7 Graph.pptx (32 slides)
+
+## Slide 1
+
+- Graph
+
+- Revised version: NaziffaNasir sem1 24/25
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with understanding on:
+
+- Fundamental of graph data structure
+
+- Graph types and representation
+
+- Shortest Paths
+
+- Spanning Tree
+
+## Slide 3
+
+- What is Graph?
+
+- Graph data structure is a non-linear data structure consisting of a finite set of vertices (or nodes) and set of edges which connect a pair of nodes.
+
+- A simple graph G = (V, E) consists of a (finite) set denoted by V, and a collection E, of unordered pairs {u, v} of distinct elements from V
+
+- The nodes are sometimes also referred to as vertices and the edges are lines, or link or arcs that connect any two nodes in the graph.
+
+## Slide 4
+
+- What is Graph?
+
+- The number of vertices, the cardinality of V, is called the order of graph and devoted by |V|
+
+- The cardinality of E, called the size of graph, is denoted by |E|
+
+- Vertices
+
+- Edges
+
+## Slide 5
+
+- Graph Application
+
+- Graphs are used to solve many real-life problems such as:
+
+- Networks. It may include paths in a city or telephone network or circuit network.
+
+- Social networks like linkedIn, Facebook. Each person is represented with a vertex (or node). Each node is a structure and contains information like person id, name, gender, locale etc.
+
+- many more (refer to diagram).
+
+- web pages
+
+- network connection
+
+- algorithm analysis
+
+- atom topology
+
+- molecular structure
+
+- cell connection
+
+- discrete strcuture
+
+- geometry
+
+- etc
+
+- social media
+
+- rumors analysis
+
+- social network analysis
+
+- crime investigation
+
+- species tracking
+
+- breeding pattern
+
+- cell cluster (virus)
+
+- road network (GPS)
+
+- organization hierarchy
+
+- financial
+
+- For more details: https://en.wikipedia.org/wiki/Graph_theory#Applications
+
+## Slide 6
+
+- Types of Graph
+
+- Finite graph
+
+- A graph which has finite number of vertices and finite number of edges.
+
+- Infinite graph
+
+- A graph which has infinite number of vertices as well as infinite number of edges.
+
+- Finite Graph
+
+- A
+
+- C
+
+- F
+
+- E
+
+- D
+
+- B
+
+- A
+
+- C
+
+- F
+
+- E
+
+- D
+
+- B
+
+- Infinite Graph
+
+## Slide 7
+
+- Types of Graph
+
+- Trivial graph
+
+- A graph which contains only one vertex and no edge.
+
+- Null Graph
+
+- A graph of order n and size zero that is a graph which contain n number of vertices but do not contain any edge.
+
+- Simple Graph
+
+- A graph which does not contains more than one edge between the pair of vertices. It may contain subgraph, example: A->B->E.
+
+- Trivial Graph
+
+- A
+
+- Null Graph
+
+- A
+
+- C
+
+- F
+
+- D
+
+- B
+
+- A
+
+- C
+
+- F
+
+- E
+
+- D
+
+- B
+
+- Simple Graph
+
+## Slide 8
+
+- Types of Graph
+
+- Directed graph or Digraph
+
+- A graph where every edge maps onto some ordered pair of vertices (Vi, Vj). It restrict the number of edges that can occur between any two vertices to one.
+
+- Undirected Graph
+
+- A graph which does not contains direction.
+
+- Weighted Graph
+
+- A graph which edges have costs associated with them. It can be directed or undirected.
+
+- A
+
+- C
+
+- F
+
+- E
+
+- D
+
+- B
+
+- Directed Graph
+
+- Undirected Graph
+
+- A
+
+- C
+
+- F
+
+- E
+
+- D
+
+- B
+
+- Weighted Graph
+
+- A
+
+- C
+
+- F
+
+- E
+
+- D
+
+- B
+
+- 5
+
+- 9
+
+- 12
+
+- 3
+
+- 7
+
+## Slide 9
+
+- Types of Graph
+
+- Multi graph
+
+- A graph which contain some parallel edges but doesn’t contain any self-loop.
+
+- Pseudo Graph
+
+- A graph with a self loop and some multiple edges.
+
+- Multi Graph
+
+- Pseudo Graph
+
+- A
+
+- C
+
+- F
+
+- E
+
+- D
+
+- B
+
+- A
+
+- C
+
+- F
+
+- E
+
+- D
+
+- B
+
+## Slide 10
+
+- Exercise 1
+
+- Question (Source: Final exam CSEB324 Sem 1 2019/2020):
+
+- Graph is a non-linear data structure consisting of nodes and edges. Supported with drawings, define the following terms:
+
+- Undirected graph [2 marks]
+
+- Pseudo graph [2 marks]
+
+- Weighted graph [2 marks]
+
+## Slide 11
+
+- Graph Representation
+
+- The following are the representations of a graph that are commonly used:
+
+- Adjacency Matrix
+
+- Adjacency List
+
+- The choice of graph representation is situation-specific.
+
+- It depends on the type of operations to be performed and ease of use.
+
+## Slide 12
+
+- Graph Representation
+
+- Adjacency List
+
+- it contains list of vertices and for each vertex, a list of adjacent vertices.
+
+- it can be designed as a table (known as a star representation) or a linked list.
+
+- size of the array is equal to the number of vertices.
+
+- it can also be used to represent a weighted graph. The weights of edges can be represented as lists of pairs.
+
+## Slide 13
+
+- Graph Representation
+
+- Weighted Graph
+
+- A
+
+- C
+
+- E
+
+- D
+
+- B
+
+- A
+
+- C
+
+- E
+
+- D
+
+- B
+
+- 5
+
+- 9
+
+- 12
+
+- 7
+
+- Unweighted Graph
+
+- Vertex Set
+
+- A { B , C }
+
+- B { D , E }
+
+- C { A }
+
+- D { }
+
+- E { B }
+
+## Slide 14
+
+- 14
+
+- Solution (a):
+
+- Solution (b):
+
+- Exercise 2
+
+- Question:
+
+- Referring to graph:
+
+- provide the vertex set
+
+- represent it using Adjacency list
+
+## Slide 15
+
+- 15
+
+- Question:
+
+- Referring to graph:
+
+- provide the vertex set
+
+- represent it using Adjacency list
+
+- Solution (a):
+
+- Solution (b):
+
+- Exercise 3
+
+## Slide 16
+
+- Graph Representation
+
+- Adjacency Matrix
+
+- A graph containing n nodes can be represented by a matrix containing n rows and n columns.
+
+- It is a 2D array of size V x V where V is the number of vertices in a graph.
+
+- The matrix is formed by placing a “1” in the ith row and jth column of the matrix if there is an edge between node i and node j of the graph.
+
+- Adjacency Matrix is also can be used to represent weighted graphs. If adj[i][j] = w, then there is an edge from vertex i to vertex j with weight w.
+
+## Slide 17
+
+- Graph Representation
+
+- Weighted Graph
+
+- A
+
+- C
+
+- E
+
+- D
+
+- B
+
+- A
+
+- C
+
+- E
+
+- D
+
+- B
+
+- 5
+
+- 9
+
+- 12
+
+- 7
+
+- Unweighted Graph
+
+- Vertex Set
+
+- A { B , C }
+
+- B { D , E }
+
+- C { A }
+
+- D { }
+
+- E { B }
+
+## Slide 18
+
+- 18
+
+- Exercise 4
+
+- Solution:
+
+- Question:
+
+- Represent the graph using Adjacency matrix
+
+## Slide 19
+
+- 19
+
+- Exercise 5
+
+- Solution:
+
+- Question:
+
+- Represent the graph using Adjacency matrix
+
+## Slide 20
+
+- Shortest Path Algorithm
+
+- A Dutch computer scientist, Edsger Dijkstra, in 1959, proposed an algorithm that can be applied to a weighted graph.
+
+- The graph can either be directed or undirected with the condition that the graph needs to embrace a non-negative value on its every edge.
+
+- He named this algorithm “Dijkstra’s Algorithm”.
+
+- Dijkstra’s Algorithm is an algorithm that is used for finding the shortest distance, or path, from starting node to target node in a weighted graph.
+
+- It is only applicable when all weights are positive because, during the execution, the weights of the edges are added to find the shortest path.
+
+## Slide 21
+
+- Dijkstra’s Algorithm
+
+- S = {1}
+
+- For(i=2; i<=n; i++)
+
+- D[i] = C[1, i];
+
+- For(i=1; i<=n-1; i++) {
+
+- Choose a vertex w in V-S such that D[w] is minimum
+
+- Add w to S;
+
+- For each vertex v in V-S, do
+
+- D[v] = min(D[v], D[w] + C[w,v])
+
+- }
+
+## Slide 22
+
+- Dijkstra’s Algorithm
+
+- S
+
+- V-S
+
+- W
+
+- D[1]
+
+- D[2]
+
+- D[3]
+
+- D[4]
+
+- 0
+
+- 1, 2, 3, 4
+
+- -
+
+- 5
+
+- 3
+
+- 
+
+- 2
+
+- 0, 4
+
+- 1, 2, 3
+
+- 4
+
+- 5
+
+- 3
+
+- 6
+
+- 2
+
+- 0, 4, 2
+
+- 1, 3
+
+- 2
+
+- 4
+
+- 3
+
+- 5
+
+- 2
+
+- 0, 4, 2, 1
+
+- 3
+
+- 1
+
+- 4
+
+- 3
+
+- 5
+
+- 2
+
+- 0, 4, 2, 1, 3
+
+- -
+
+- 3
+
+- 4
+
+- 3
+
+- 5
+
+- 2
+
+## Slide 23
+
+- Exercise 6
+
+- S
+
+- V-S
+
+- W
+
+- D[1]
+
+- D[2]
+
+- D[3]
+
+- D[4]
+
+- Solution:
+
+- 0
+
+- 1
+
+- 2
+
+- 4
+
+- 3
+
+- Question:
+
+- Apply Dijkstra’s shortest path algorithm to find the shortest paths from node 0 to all the other nodes. List the shortest paths and their total costs in each step, as well as the node selected in each step.
+
+## Slide 24
+
+- Spanning Tree
+
+- A Spanning tree is a subset to a connected graph G, where all the edges are connected, i.e, one can traverse to any edge from a particular edge with or without intermediates.
+
+- A spanning tree must not have any cycle in it.
+
+- If there are N vertices in a connected graph, then the no. of edges that a spanning tree may have is N-1.
+
+- The graph can either be directed or undirected with the condition that the graph needs to embrace a non-negative value on its every edge.
+
+- A minimum spanning tree (MST) or minimum weight spanning tree for a weighted, connected, undirected graph is a spanning tree with a weight less than or equal to the weight of every other spanning tree. The weight/cost of a spanning tree is the sum of weights/costs given to each edge of the spanning tree.
+
+## Slide 25
+
+- Kruskal’s algorithm
+
+- Kruskal’s algorithm to find the minimum cost spanning tree uses the greedy approach. The Greedy Choice is to pick the smallest weight edge that does not cause a cycle in the MST constructed so far.
+
+- Sort all the edges in non-decreasing order of their weight.
+
+- Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far. If cycle is not formed, include this edge. Else, discard it.
+
+- Repeat step#2 until there are (V-1) edges in the spanning tree.
+
+## Slide 26
+
+- Example
+
+- Solution:
+
+- Question:
+
+- Referring to graph shown in the figure below, calculate the minimum cost spanning tree of the graph using Kruskal’s algorithm. Redraw the graph.
+
+- MST = { {c,f} , {a,f} , {a,b} }
+
+- Total minimum cost = 7
+
+## Slide 27
+
+- Exercise 7
+
+- Solution:
+
+- Question:
+
+- Referring to graph shown in the figure below, calculate the minimum cost spanning tree of the graph using Kruskal’s algorithm. Redraw the graph.
+
+## Slide 28
+
+- Exercise 8
+
+- Solution:
+
+- Question:
+
+- Find the minimum spanning tree of the graph using Kruskal’s algorithm. Show your work.
+
+## Slide 29
+
+- Exercise 9(a)
+
+- Question (Source Test 2 Sem 2 2019/2020):
+
+- A Graph is a non-linear data structure consisting of nodes and edges. Figure 1 shows the delivery time, in hours, of Pos Laju Malaysia journeys between six (6) states in Malaysia. Referring to the figure, answer the following questions:
+
+- What is the type of the graph? Support your answer with an explanation. [4 marks]
+
+- Answer:
+
+## Slide 30
+
+- Exercise 9(b)
+
+- Apply Dijkstra’s shortest path algorithm to find the shortest paths from state T1 to all the other states. Draw the shortest paths diagram and their total costs in each step, as well as the state selected in each step. [4 marks]
+
+- Solution:
+
+- T1
+
+- T2
+
+- T6
+
+- T4
+
+- T3
+
+- T5
+
+- S
+
+- V-S
+
+- W
+
+- T2
+
+- T3
+
+- T4
+
+- T5
+
+- T6
+
+## Slide 31
+
+- Exercise 9(c)
+
+- Find the minimum spanning tree of the graph using Kruskal’s algorithm. Show your work. [3 marks]
+
+- Solution:
+
+- T1
+
+- T2
+
+- T6
+
+- T4
+
+- T3
+
+- T5
+
+- Answer:
+
+- MST =
+
+- Total minimum cost =
+
+## Slide 32
+
+- End of Chapter 7
+
+- That’s all for now..
+
+- See you in next class!
+
+
+
+# Chapter 8 Sorting.pptx (36 slides)
+
+## Slide 1
+
+- Sorting
+
+- Revised version: NaziffaNasir sem1 24/25
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with understanding on:
+
+- type of sorting algorithms in data structure
+
+- implementation of all sorting algorithms
+
+## Slide 3
+
+- What is Sorting?
+
+- Sorting refers to arranging data in a particular format to improve the efficiency.
+
+- The importance of sorting lies in the fact that data searching can be optimized to a very high level, if data is stored in a sorted manner.
+
+- The choice may vary considerably depending on the application and the user’s needs
+
+- Once a criterion is chosen, the second step is determining how to apply it to the data
+
+- Common measures are the number of comparisons that occur and the number of data movements that take place
+
+## Slide 4
+
+- What is Sorting?
+
+- Since these values may be difficult to determine exactly, approximations are often used using Big-O notation.
+
+- In term of complexity of the algorithms, some methods are considerably less efficient than others
+
+- For smaller data sets, they may prove to be faster, because their coding is simpler and executes faster. Thus, these algorithms may prove more useful with less data than their more elaborate counterparts
+
+- Practical considerations have to be taken into account in choosing the algorithm to use
+
+## Slide 5
+
+- Insertion Sort
+
+- Insertion sort is a simple algorithm that builds the final sorted list one item at a time
+
+- Each repetition of the sort takes an element from input and inserts it into the correct position in the already-sorted list, until no input elements remain
+
+- The array is virtually split into a sorted and an unsorted part.
+
+- Values from the unsorted part are picked and placed at the correct position in the sorted part.
+
+## Slide 6
+
+- Insertion Sort (cont)
+
+- Algorithm (ascending order):
+
+- Iterate from arr[1] to arr[n] over the array.
+
+- Compare the current element (key) to its predecessor.
+
+- If the key element is smaller than its predecessor, compare it to the elements before. Move the greater elements one position up to make space for the swapped element.
+
+- 5
+
+- 8
+
+- 3
+
+- 2
+
+- 9
+
+- 5
+
+- 8
+
+- 3
+
+- 2
+
+- 9
+
+- 2
+
+- 3
+
+- 5
+
+- 8
+
+- 9
+
+- 3
+
+- 5
+
+- 8
+
+- 2
+
+- 9
+
+- 2
+
+- 3
+
+- 5
+
+- 8
+
+- 9
+
+- Original data
+
+- Iteration 1
+
+- Iteration 3
+
+- Iteration 2
+
+- Iteration 4
+
+- Position moved: 0
+
+- Position moved: 2
+
+- Position moved: 3
+
+- Position moved: 0
+
+## Slide 7
+
+- Exercise 1
+
+- Question:
+
+- Trace the insertion sort as it sorts the following array of integers into descending order:
+
+- 7 13 30 2 19 21
+
+## Slide 8
+
+- Selection Sort
+
+- The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning.
+
+- The algorithm maintains two subarrays in a given array.
+
+- The subarray which is already sorted
+
+- Remaining subarray which is unsorted.
+
+- In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.
+
+## Slide 9
+
+- Selection Sort (cont)
+
+- 5
+
+- 8
+
+- 3
+
+- 2
+
+- 9
+
+- 2
+
+- 8
+
+- 3
+
+- 5
+
+- 9
+
+- 2
+
+- 3
+
+- 5
+
+- 8
+
+- 9
+
+- 2
+
+- 3
+
+- 8
+
+- 5
+
+- 9
+
+- 2
+
+- 3
+
+- 5
+
+- 8
+
+- 9
+
+- Original data
+
+- Iteration 1
+
+- Iteration 3
+
+- Iteration 2
+
+- Iteration 4
+
+- sorted
+
+- find smallest data from unsorted subarray and swap with
+
+- element at 1st position
+
+- find smallest data from unsorted subarray and swap with
+
+- element at 2nd position
+
+- find smallest data from unsorted subarray and swap with
+
+- element at 3rd position
+
+- find smallest data from unsorted subarray and swap with
+
+- element at 4th position
+
+- all data have been sorted
+
+## Slide 10
+
+- Exercise 2
+
+- Question:
+
+- Trace the selection sort as it sorts the following array of integers into ascending order:
+
+- 15 75 25 30 60 31
+
+## Slide 11
+
+- Bubble Sort
+
+- Bubble sort is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted
+
+- On each pass through the list, it compares pairs of adjacent items and swaps them if they are in the wrong order
+
+- The passes through the list are repeated until no swaps are needed, which indicates that the list is sorted
+
+- The algorithm gets its name from the way smaller elements "bubble" to the top of the list
+
+## Slide 12
+
+- Bubble Sort (cont)
+
+- Algorithm (ascending order):
+
+- pair = n – 1;
+
+- do {
+
+- last = 1;
+
+- for (i = 1; i <= pair; i ++)
+
+- if (x[i] > x[i + 1]){
+
+- swap x[i] with x[i + 1];
+
+- last = i;
+
+- }
+
+- pair = last - 1;
+
+- } while (pair != 0);
+
+- 5
+
+- 8
+
+- 3
+
+- 2
+
+- 9
+
+- 5
+
+- 8
+
+- 3
+
+- 2
+
+- 9
+
+- 5
+
+- 3
+
+- 2
+
+- 8
+
+- 9
+
+- 5
+
+- 3
+
+- 8
+
+- 2
+
+- 9
+
+- 5
+
+- 3
+
+- 2
+
+- 8
+
+- 9
+
+- Original data
+
+- Pair 1
+
+- Iteration 1
+
+- 5
+
+- 3
+
+- 2
+
+- 8
+
+- 9
+
+- Pair 2
+
+- Pair 3
+
+- Pair 4
+
+- Note:
+
+- Repeat the same step until the last iteration is complete
+
+## Slide 13
+
+- Exercise 3
+
+- Question:
+
+- Trace the bubble sort as it sorts the following array of integers into descending order:
+
+- 80 29 19 75 10 50
+
+## Slide 14
+
+- Heap Sort
+
+- Heap sort is a comparison-based sorting technique based on Binary Heap data structure.
+
+- This was the motivation behind the development of heap sort, created by John W. J. Williams in 1964
+
+- It is similar to selection sort where we first find the minimum element and place the minimum element at the beginning (min-heap) or vice versa (max-heap).
+
+- We repeat the same process for the remaining elements.
+
+## Slide 15
+
+- Binary Heap is a binary tree with following properties:
+
+- complete tree (all levels are completely filled except possibly the last level and the last level has all keys as left as possible)
+
+- either min heap or max heap
+
+- Min Binary Heap - the key at root must be minimum among all keys present in Binary Heap. The same property must be recursively true for all nodes in Binary Tree.
+
+- Max Binary Heap - the key at root must be maximum among all keys present in Binary Heap. The same property must be recursively true for all nodes in Binary Tree.
+
+- Heap Sort (cont)
+
+## Slide 16
+
+- Heap Sort (cont)
+
+- Algorithm (ascending order or max-heap):
+
+- Turn the original array into a heap array.
+
+- Exchange the root which is the largest element in the heap with the last element in the unsorted list. The largest element being added to the beginning of the sorted list.
+
+- Then reheap down to reconstruct the heap and exchange again.
+
+- The reheap and exchange process continues until the entire list is sorted.
+
+## Slide 17
+
+- 17
+
+- 1. Build heap tree
+
+- 45
+
+- 23
+
+- 78
+
+- 8
+
+- 32
+
+- 56
+
+- 45
+
+- 23
+
+- 78
+
+- 8
+
+- 32
+
+- 56
+
+- first, convert the array into binary tree
+
+- then, convert the binary tree into heap tree
+
+- 45
+
+- 23
+
+- 78
+
+- 8
+
+- 32
+
+- 56
+
+- Original data
+
+- 78
+
+- 32
+
+- 56
+
+- 8
+
+- 23
+
+- 45
+
+- Heap data
+
+- Heap Sort (cont)
+
+## Slide 18
+
+- Run Step 2, 3 and 4
+
+- 78
+
+- 32
+
+- 56
+
+- 8
+
+- 23
+
+- 45
+
+- 32
+
+- 56
+
+- 8
+
+- 23
+
+- 45
+
+- Reheap
+
+- 78
+
+- 32
+
+- 56
+
+- 8
+
+- 23
+
+- 45
+
+- Heap data
+
+- Heap Sort (cont)
+
+- Iteration 1
+
+- 78
+
+- 56
+
+- 32
+
+- 45
+
+- 8
+
+- 23
+
+## Slide 19
+
+- 19
+
+- Run Step 2, 3 and 4
+
+- 32
+
+- 45
+
+- 8
+
+- 23
+
+- 56
+
+- Reheap
+
+- 32
+
+- 45
+
+- 8
+
+- 23
+
+- Heap Sort (cont)
+
+- Iteration 1
+
+- 56
+
+- 32
+
+- 45
+
+- 8
+
+- 23
+
+- 78
+
+- Iteration 2
+
+- 78
+
+- 45
+
+- 32
+
+- 23
+
+- 8
+
+- 56
+
+## Slide 20
+
+- 20
+
+- Run Step 2, 3 and 4
+
+- Reheap
+
+- 32
+
+- 23
+
+- 8
+
+- 32
+
+- 23
+
+- 8
+
+- 45
+
+- Heap Sort (cont)
+
+- Iteration 2
+
+- 45
+
+- 32
+
+- 23
+
+- 8
+
+- 56
+
+- 78
+
+- Iteration 3
+
+- 56
+
+- 78
+
+- 32
+
+- 8
+
+- 23
+
+- 45
+
+## Slide 21
+
+- 21
+
+- Run Step 2, 3 and 4
+
+- Reheap
+
+- 8
+
+- 23
+
+- 32
+
+- 8
+
+- 23
+
+- Heap Sort (cont)
+
+- Iteration 3
+
+- 32
+
+- 8
+
+- 23
+
+- 45
+
+- 56
+
+- 78
+
+- Iteration 4
+
+- 45
+
+- 56
+
+- 78
+
+- 23
+
+- 8
+
+- 32
+
+## Slide 22
+
+- 22
+
+- Run Step 2, 3 and 4
+
+- Reheap
+
+- 8
+
+- 23
+
+- 8
+
+- Heap Sort (cont)
+
+- Iteration 4
+
+- 23
+
+- 8
+
+- 32
+
+- 45
+
+- 56
+
+- 78
+
+- Iteration 5
+
+- 32
+
+- 45
+
+- 56
+
+- 78
+
+- 8
+
+- 23
+
+## Slide 23
+
+- Exercise 4
+
+- Question:
+
+- Trace the heap sort as it sorts the following array of integers into descending order:
+
+- 9 4 3 11 14 5 16
+
+## Slide 24
+
+- Quick Sort
+
+- Quick sort is one of the divide and conquer algorithms.
+
+- It picks an element as pivot and partitions the given array around the picked pivot.
+
+- There are many different versions of Quick sort that pick pivot in different ways.
+
+- Always pick first element as pivot.
+
+- Always pick last element as pivot (covered in this syllabus)
+
+- Pick a random element as pivot.
+
+- Pick median as pivot.
+
+## Slide 25
+
+- Quick Sort
+
+- Initially, the array is divided into two subarrays, one containing items less than or equal to a chosen item called the pivot or bound, and the other containing elements larger than or equal to the pivot
+
+- This process is repeated on these two subarrays, creating four subarrays, and it is continued until we have subarrays of one element
+
+- Because the grouping of items separates them into smaller and larger, these one-element arrays do not need to be sorted at all, they are already arranged in order
+
+## Slide 26
+
+- Quick Sort
+
+- // low: Starting index,high: Ending index
+
+- void quickSort(arr[], low, high)
+
+- {
+
+- if (low < high){
+
+- pi = partition(arr, low, high);
+
+- /* pi is partitioning index,
+
+- arr[pi]is now at right place */
+
+- quickSort(arr, low, pi - 1);
+
+- // Before pi
+
+- quickSort(arr, pi + 1, high);
+
+- // After pi
+
+- }
+
+- Algorithm for recursive Quick Sort function
+
+- int partition (arr[], low, high){
+
+- // pivot (Element to be placed at right position)
+
+- pivot = arr[high];
+
+- i = (low - 1) // Index of smaller element
+
+- for (j = low; j <= high - 1; j++)
+
+- {
+
+- // If current element is smaller than the pivot
+
+- if (arr[j] < pivot)
+
+- {
+
+- i++; // increment index of smaller element
+
+- swap arr[i] and arr[j]
+
+- }
+
+- swap arr[i + 1] and arr[high])
+
+- return (i + 1)
+
+- }
+
+- Algorithm for Quick Sort partition
+
+- Source: https://www.geeksforgeeks.org/quick-sort/
+
+## Slide 27
+
+- Quick Sort
+
+- 30
+
+- 40
+
+- 20
+
+- 90
+
+- 110
+
+- 70
+
+- Original data
+
+- i = low – 1 = -1
+
+- j = low = 0
+
+- high
+
+- low
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 30
+
+- 40
+
+- 20
+
+- 90
+
+- 110
+
+- 70
+
+- Data
+
+- Index
+
+- i
+
+- j
+
+- a[j] < pivot = 30 < 70 = true : i++ -> i = 0
+
+- swap a[i] and a[j] = swap 30 and 30
+
+- j++ -> j =1
+
+- pivot
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 30
+
+- 40
+
+- 20
+
+- 90
+
+- 110
+
+- 70
+
+- Data
+
+- Index
+
+- i
+
+- j
+
+- a[j] < pivot = 40 < 70 = true : i++ -> i = 1
+
+- swap a[i] and a[j] = swap 40 and 40
+
+- j++ -> j = 2
+
+## Slide 28
+
+- Quick Sort
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 30
+
+- 40
+
+- 20
+
+- 90
+
+- 110
+
+- 70
+
+- Data
+
+- Index
+
+- i
+
+- j
+
+- a[j] < pivot = 20 < 70 = true : i++ -> i = 2
+
+- swap a[i] and a[j] = swap 20 and 20
+
+- j++ -> j = 3
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 30
+
+- 40
+
+- 20
+
+- 90
+
+- 110
+
+- 70
+
+- Data
+
+- Index
+
+- i
+
+- j
+
+- a[j] < pivot = 90 < 70 = false
+
+- j++ -> j = 4
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 30
+
+- 40
+
+- 20
+
+- 90
+
+- 110
+
+- 70
+
+- Data
+
+- Index
+
+- i
+
+- j
+
+- a[j] < pivot = 110 < 70 = false
+
+- j++ -> j = 5
+
+## Slide 29
+
+- Quick Sort
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 30
+
+- 40
+
+- 20
+
+- 90
+
+- 110
+
+- 70
+
+- Data
+
+- Index
+
+- i
+
+- j
+
+- j <= high-1, process stop
+
+- swap a[i + 1] and a[high] = swap 90 and 70
+
+- high
+
+- low
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 30
+
+- 40
+
+- 20
+
+- 70
+
+- 110
+
+- 90
+
+- Data
+
+- Index
+
+- partition
+
+- high
+
+- low
+
+- smaller values
+
+- larger values
+
+- repeat the same process for both left and right sides of partition
+
+- 0
+
+- 1
+
+- 2
+
+- 30
+
+- 40
+
+- 20
+
+- Data
+
+- Index
+
+- high
+
+- low
+
+- 0
+
+- 1
+
+- 110
+
+- 90
+
+- Data
+
+- Index
+
+- high
+
+- low
+
+- (A)
+
+- (B)
+
+## Slide 30
+
+- Quick Sort
+
+- (A)
+
+- 0
+
+- 1
+
+- 2
+
+- 30
+
+- 40
+
+- 20
+
+- Data
+
+- Index
+
+- high
+
+- low
+
+- i
+
+- j
+
+- i = low – 1 = -1
+
+- j = low = 0
+
+- a[j] < pivot = 30 < 20
+
+- j++ -> j =1
+
+- 0
+
+- 1
+
+- 2
+
+- 30
+
+- 40
+
+- 20
+
+- Data
+
+- Index
+
+- high
+
+- low
+
+- i
+
+- j
+
+- a[j] < pivot = 40 < 20
+
+- j++ -> j = 2
+
+- 0
+
+- 1
+
+- 2
+
+- 30
+
+- 40
+
+- 20
+
+- Data
+
+- Index
+
+- high
+
+- low
+
+- i
+
+- j
+
+- j <= high-1, process stop
+
+- swap a[i + 1] and a[high] = swap 30 and 20
+
+## Slide 31
+
+- Quick Sort
+
+- (A)
+
+- 0
+
+- 1
+
+- 2
+
+- 20
+
+- 40
+
+- 30
+
+- Data
+
+- Index
+
+- high
+
+- low
+
+- i
+
+- j
+
+- repeat the same process for right side of partition
+
+- partition
+
+- 0
+
+- 1
+
+- 40
+
+- 30
+
+- Data
+
+- Index
+
+- high
+
+- low
+
+- i
+
+- j
+
+- i = low – 1 = -1
+
+- j = low = 0
+
+- a[j] < pivot = 40 < 30 = false
+
+- j++ -> j =1
+
+- 0
+
+- 1
+
+- 30
+
+- 40
+
+- Data
+
+- Index
+
+- high
+
+- low
+
+- i
+
+- j
+
+- j <= high-1, process stop
+
+- swap a[i + 1] and a[high] = swap 40 and 30
+
+## Slide 32
+
+- Quick Sort
+
+- (B)
+
+- i = low – 1 = -1
+
+- j = low = 0
+
+- a[j] < pivot = 110 < 30 = false
+
+- j++ -> j =1
+
+- 0
+
+- 1
+
+- 110
+
+- 90
+
+- Data
+
+- Index
+
+- high
+
+- low
+
+- i
+
+- j
+
+- j <= high-1, process stop
+
+- swap a[i + 1] and a[high] = swap 110 and 90
+
+- 0
+
+- 1
+
+- 90
+
+- 110
+
+- Data
+
+- Index
+
+- high
+
+- low
+
+- i
+
+- j
+
+## Slide 33
+
+- Quick Sort
+
+- partition
+
+- RESULT
+
+- 30
+
+- 40
+
+- 20
+
+- 110
+
+- 90
+
+- 30
+
+- 40
+
+- 20
+
+- 90
+
+- 110
+
+- 70
+
+- Original data
+
+- 70
+
+- partition
+
+- 20
+
+- 40
+
+- 30
+
+- partition
+
+- 20
+
+- 30
+
+- 40
+
+- 90
+
+- 110
+
+- 20
+
+- 30
+
+- 40
+
+- 70
+
+- 90
+
+- 110
+
+- Sorted data
+
+## Slide 34
+
+- Exercise 5
+
+- Question: Source Final Exam Sem 1 2021/2022
+
+- Given a series of data: 52, 37, 63, 14, 17, 8, 6, 25. Using Quick sort algorithm, sort the data in ascending order. Show your works by stating the values of partitions, left and right sides for each iteration.
+
+## Slide 35
+
+- Exercise 6
+
+- Question: Source Quiz 5 previous semester
+
+- Given a series of data: 12, 11, 10, 5, 4, 13 and 6. Using Quick sort algorithm, sort the data in ascending order. Show your works by stating the values of partitions, left and right sides for each iteration. Write NULL for the empty partition or left/right sides.
+
+## Slide 36
+
+- End of Chapter 8
+
+- That’s all for now..
+
+- See you in next class!
+
+
+
+# Chapter 9 Searching.pptx (41 slides)
+
+## Slide 1
+
+- Searching
+
+- Revised version: NaziffaNasir sem1 24/25
+
+## Slide 2
+
+- Learning Objectives
+
+- This module aims to provide students with understanding on:
+
+- type of searching algorithms in data structure
+
+- implementation of all searching algorithms
+
+## Slide 3
+
+- What is Searching?
+
+- Searching in data structure refers to the process of finding the required information from a collection of items stored as elements in the computer memory.
+
+- These sets of items are in different forms, such as an array, linked list, graph, or tree.
+
+- Example of searching applications:
+
+- Looking for a Name by giving the telephone number.
+
+- Databases - student record, staff record, sales record
+
+- Internet - search engine : Yahoo, Google
+
+## Slide 4
+
+- Type of Searching
+
+- Sequential Search:
+
+- the list or array is traversed sequentially while checking every component of the set.
+
+- Example: Linear Search.
+
+- Interval Search:
+
+- These algorithms are specifically designed for searching in sorted data-structures. These type of searching algorithms are much more efficient than Linear Search as they repeatedly target the center of the search structure and divide the search space in half.
+
+- Example: Binary Search.
+
+- Search by Hashing
+
+## Slide 5
+
+- Sequential Search
+
+- It is the simplest search algorithm in data structure and checks each item in the set of elements until it matches the searched element till the end of data collection.
+
+- When the given data is unsorted, a linear search algorithm is preferred over other search algorithms.
+
+- Time complexity:
+
+- Best-case = O(1) occurs when the searched item is present at the first element in the search array.
+
+- Worst-case = O(n) occurs when the required element is at the tail of the array or not present at all.
+
+- Average- case = average case occurs when the item to be searched is in somewhere middle of the Array.
+
+## Slide 6
+
+- Sequential Search
+
+- Example of sequential search in Array implementation
+
+- Example of sequential search in STL implementation
+
+- Example of sequential search in Linked List implementation
+
+## Slide 7
+
+- Sequential Search
+
+- Advantage:
+
+- It is useful for limited sized data sets as it is simple and does not require data to be structured in any way
+
+- Disadvantage:
+
+- Time consuming (large list)
+
+## Slide 8
+
+- Binary Search
+
+- Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half.
+
+- This search algorithm works on the principle of divide and conquer.
+
+- Binary search looks for a particular item by comparing the middle most item of the collection. If a match occurs, then the index of item is returned.
+
+- Binary search is a fast search algorithm with run-time complexity of Ο(log n).
+
+## Slide 9
+
+- Binary Search
+
+- Algorithm:
+
+- Mark the first element as LOW and last element as HI
+
+- Find the mid point: MID = (LOW + HI) /2
+
+- Check:
+
+- If key = MID, return index, where key is the target.
+
+- If key < MID, HI = MID – 1 and carry on the same process
+
+- If key > MID, LOW = MID + 1 and carry on the same process
+
+- Repeat the same process until you find the value (target) or if LOW and HI cross each other
+
+## Slide 10
+
+- 10
+
+- 4
+
+- 62
+
+- 77
+
+- 81
+
+- 7
+
+- 8
+
+- 21
+
+- 22
+
+- 36
+
+- 10
+
+- 14
+
+- 91
+
+- LOW
+
+- HI
+
+- MID = (LOW + HI) /2 = 11/2 = 5
+
+- Target : 62
+
+- MID = (6+11)/2 = 8
+
+- 4
+
+- 62
+
+- 77
+
+- 81
+
+- 7
+
+- 8
+
+- 21
+
+- 22
+
+- 36
+
+- 10
+
+- 14
+
+- 91
+
+- Compare MID with key value
+
+- LOW
+
+- HI
+
+- Binary Search (Example 1)
+
+- MID is smaller than key.
+
+- Move LOW to MID + 1.
+
+- Calculate MID
+
+- Compare MID with key value
+
+- MID == key
+
+- Print out “Element is found”.
+
+- Calculate MID
+
+## Slide 11
+
+- 11
+
+- 4
+
+- 62
+
+- 77
+
+- 81
+
+- 7
+
+- 8
+
+- 21
+
+- 22
+
+- 36
+
+- 10
+
+- 14
+
+- 91
+
+- LOW
+
+- HI
+
+- MID = (LOW + HI) /2 = 11/2 = 5
+
+- Target : 9
+
+- MID = (0+4) / 2 = 2
+
+- 4
+
+- 62
+
+- 77
+
+- 81
+
+- 7
+
+- 8
+
+- 21
+
+- 22
+
+- 36
+
+- 10
+
+- 14
+
+- 91
+
+- HI
+
+- LOW
+
+- Binary Search (Example 2)
+
+- Compare MID with key value
+
+- MID is bigger than key.
+
+- Move HI to MID - 1.
+
+- Calculate MID
+
+- Compare MID with key value
+
+- MID is smaller than key.
+
+- Move LOW to MID + 1.
+
+- Calculate MID
+
+## Slide 12
+
+- 12
+
+- Target : 9
+
+- MID = (3+4) / 2 = 3
+
+- 4
+
+- 62
+
+- 77
+
+- 81
+
+- 7
+
+- 8
+
+- 21
+
+- 22
+
+- 36
+
+- 10
+
+- 14
+
+- 91
+
+- HI
+
+- LOW
+
+- Binary Search (Example 2)
+
+- Compare MID with key value
+
+- MID is bigger than key.
+
+- Move HI to MID - 1.
+
+- Calculate MID
+
+- target is Not Found in the list
+
+- LOW and HI cross each other
+
+- 4
+
+- 62
+
+- 77
+
+- 81
+
+- 7
+
+- 8
+
+- 21
+
+- 22
+
+- 36
+
+- 10
+
+- 14
+
+- 91
+
+- HI
+
+- LOW
+
+## Slide 13
+
+- Exercise 1
+
+- Question:
+
+- Using Binary Search, show all steps to search value 45 in the array given:
+
+- index
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 6
+
+- integer
+
+- 45
+
+- 18
+
+- 7
+
+- 61
+
+- 30
+
+- 12
+
+- 28
+
+## Slide 14
+
+- Exercise 2
+
+- Question: (source: Quiz 3 Sem II 2018/2019)
+
+- Using binary search algorithm, show step by step how to find data 56 in the array given. You may use diagram to depict the process.
+
+- Array
+
+- 7
+
+- 15
+
+- 19
+
+- 24
+
+- 35
+
+- 38
+
+- 41
+
+- 56
+
+- 74
+
+- 86
+
+- 95
+
+- 99
+
+- Index
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 6
+
+- 7
+
+- 8
+
+- 9
+
+- 10
+
+- 11
+
+## Slide 15
+
+- What is Hashing?
+
+- Hashing is a technique of mapping a large amount of data into small tables using a hashing function.
+
+- It is a technique that uniquely identifies a specific item from a collection of similar items.
+
+- It uses hash tables to store the data in an array format. Each value in the array has assigned a unique index number.
+
+- Hash tables use a technique to generate these unique index numbers for each value stored in an array format. This technique is called the hash technique.
+
+## Slide 16
+
+- What is Hashing?
+
+- The hash function converts the item into a small integer or hash value. This integer is used as an index to store the original data. It stores the data in a hash table.The hash key is used to locate the data quickly.
+
+- We only need to find the index of the desired item, rather than finding the data.
+
+- Key (k)
+
+- Index/ reference
+
+- Hash
+
+- Function
+
+- H (k)
+
+## Slide 17
+
+- What is Hashing?
+
+- Example:
+
+- ID
+
+- Name
+
+- Course
+
+- 10050
+
+- Ali Bin Abu
+
+- BCS(SE)
+
+- 10048
+
+- Lim Li Hiang
+
+- BCS(SN)
+
+- 10021
+
+- Ramu A/L Ravi
+
+- BCS(CS)
+
+- 10079
+
+- Sameer
+
+- BIT(GM)
+
+- 10087
+
+- John Lee
+
+- BIT(IS)
+
+- 10033
+
+- Hussein
+
+- BIT(VM)
+
+- more records..
+
+- Hash Function:
+
+- index = ID % array size
+
+- Index
+
+- ID
+
+- 50
+
+- 10050
+
+- 48
+
+- 10048
+
+- 21
+
+- 10021
+
+- 79
+
+- 10079
+
+- 87
+
+- 10087
+
+- 33
+
+- 10033
+
+- ..
+
+- more records..
+
+## Slide 18
+
+- Requirement of Hashing Function
+
+- The has function must satisfy the following requirements:
+
+- A good hash function is easy to compute.
+
+- A good hash function never gets stuck in clustering and distributes keys evenly across the hash table.
+
+- A good hash function avoids collision when two elements or items get assigned to the same hash value.
+
+## Slide 19
+
+- Type of Hashing Function
+
+- Truncation method
+
+- It truncates a part of the given keys, depending upon the size of the hash table.
+
+- Then, the respective right most or left most or both right & left digits are truncated and used as hash code value.
+
+## Slide 20
+
+- 20
+
+- key %100
+
+- Truncation
+
+- Example 1: Truncate the first 3 digits of original key
+
+- Key
+
+- 26785
+
+- Index
+
+- 85
+
+- key /1000
+
+- Example 2: Truncate the last 3 digits of original key
+
+- Key
+
+- 26785
+
+- Example 3: Truncate the first and last two digits of original key
+
+- Key
+
+- 26785
+
+- key /100%100
+
+- key %10000/100
+
+- Type of Hashing Function
+
+- or
+
+- Index
+
+- 26
+
+- Index
+
+- 67
+
+## Slide 21
+
+- Type of Hashing Function
+
+- Digit Extraction Method
+
+- Selected digits are extracted from the key and used as the address.
+
+- For example, using UNITEN eight employee number to hash to a five digits address (00001 to 99999) we could select the first, fourth digits and last three digits and use them as the address.
+
+- Hash Function
+
+- Key
+
+- 90020479
+
+- Index
+
+- 92479
+
+## Slide 22
+
+- Type of Hashing Function
+
+- Modular Arithmetic
+
+- The key is converted into an integer, the integer is then divided by the size of the index range and the remainder is taken as the index position of the record.
+
+- index = key % size
+
+- Key
+
+- 100252
+
+- *assume array size is 100
+
+- If we are very lucky, our keys might be such that there is only 1 key that maps to each index.
+
+- We might still have the situation where two keys map to the same index, for example: 100252 and 100352. This condition is called a COLLISION.
+
+- Index
+
+- 52
+
+## Slide 23
+
+- Collision
+
+- Hashing in data structure falls into a collision if two keys are assigned the same index number in the hash table.
+
+- The collision creates a problem because each index in a hash table is supposed to store only one value.
+
+- There are several collision resolution techniques to manage the performance of a hash table such as Linear Probing, Quadratic probing, Chaining, Double hashing and many more.
+
+## Slide 24
+
+- Linear Probing
+
+- In linear probing, hashing performs a search operation and probes linearly for the next empty cell.
+
+- Steps:
+
+- Start at the point where the collision occurred and do a sequential search through the table for an empty location.
+
+- After reaching the end of table, start probing from the first.
+
+## Slide 25
+
+- Linear Probing
+
+- Insert the key into hash table
+
+- 456
+
+- 235
+
+- 268
+
+- 428
+
+- 104
+
+- 273
+
+- 126
+
+- 316
+
+- Original data
+
+- 456
+
+- 235
+
+- 268
+
+- 428
+
+- 104
+
+- 273
+
+- 126
+
+- 316
+
+- Key % array size
+
+- 6
+
+- 5
+
+- 8
+
+- 4
+
+- 3
+
+- 6
+
+- Original data
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 6
+
+- 7
+
+- 8
+
+- 9
+
+- Data
+
+- Index
+
+- 456
+
+- 428
+
+- 268
+
+- 235
+
+- 273
+
+- 104
+
+- 316
+
+- 126
+
+- Hash Table
+
+- Calculate the hash value for all keys.
+
+- Hash value
+
+- X
+
+## Slide 26
+
+- Exercise 3
+
+- Question: (Source: Final Exam previous semester)
+
+- Using linear probing collision technique, insert the following keys into a hash table of size M, where M = 9.
+
+- 2
+
+- 41
+
+- 37
+
+- 3
+
+- 5
+
+- 38
+
+- Key
+
+## Slide 27
+
+- Quadratic Probing
+
+- In quadratic probing, hashing performs a search operation and probes for the next empty cell using following algorithm:
+
+- Steps:
+
+- If the slot hash(x) % array size is occupied, then we try (hash(x) + 12) % array size .
+
+- If (hash(x) + 12) % array size is also occupied, then we try (hash(x) + 22) % array size .
+
+- If (hash(x) + 22) % array size is also occupied, then we try (hash(x) + 32) % array size .
+
+- This process is repeated for all the values of i until an empty slot is found.
+
+- ( Hash value + i2 ) mod (table_ size) with i=1,2,3..
+
+## Slide 28
+
+- Quadratic Probing
+
+- Insert the key into hash table
+
+- 456
+
+- 235
+
+- 268
+
+- 428
+
+- 104
+
+- 273
+
+- 126
+
+- 316
+
+- Original data
+
+- 456
+
+- 235
+
+- 268
+
+- 428
+
+- 104
+
+- 273
+
+- 126
+
+- 316
+
+- Key % array size
+
+- 6
+
+- 5
+
+- 8
+
+- 4
+
+- 3
+
+- 6
+
+- Original data
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 6
+
+- 7
+
+- 8
+
+- 9
+
+- Data
+
+- Index
+
+- 456
+
+- 428
+
+- 268
+
+- 235
+
+- 273
+
+- 104
+
+- 316
+
+- 126
+
+- Hash Table
+
+- Calculate the hash value for all keys.
+
+- Hash value
+
+- X
+
+- (hash (428) + 12 ) % 10 = 9
+
+- (hash (126) + 12 ) % 10 = 7
+
+- (hash (316) + 12 ) % 10 = 7
+
+- X
+
+- (hash (316) + 22 ) % 10 = 0
+
+## Slide 29
+
+- Exercise 4
+
+- Question: (Source: Final Exam previous semester)
+
+- Given six keys as follows and a hash table of size 8. Using the modular arithmetic method, resolve collisions by quadratic probing.
+
+- 10
+
+- 14
+
+- 23
+
+- 41
+
+- 49
+
+- 55
+
+- Key
+
+## Slide 30
+
+- Chaining
+
+- The idea is to make each cell of hash table point to a linked list of records that have same hash function value.
+
+- Whenever a collision occurs, a new node is created. The new value is stored and linked to the old value.
+
+- Worst case searching time is O(n).
+
+## Slide 31
+
+- Chaining
+
+- Insert the key into hash table
+
+- 456
+
+- 235
+
+- 268
+
+- 428
+
+- 104
+
+- 273
+
+- 126
+
+- 316
+
+- Original data
+
+- 456
+
+- 235
+
+- 268
+
+- 428
+
+- 104
+
+- 273
+
+- 126
+
+- 316
+
+- Key % array size
+
+- 6
+
+- 5
+
+- 8
+
+- 4
+
+- 3
+
+- 6
+
+- Original data
+
+- Hash Table
+
+- Calculate the hash value for all keys.
+
+- Hash value
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 6
+
+- 7
+
+- 8
+
+- 9
+
+- Index
+
+- Key
+
+- 428
+
+- 126
+
+- 316
+
+- 456
+
+- 235
+
+- 268
+
+- 104
+
+- 273
+
+## Slide 32
+
+- CCI
+
+- COE
+
+- COBA
+
+- CES
+
+- COGS
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- SW
+
+- SN
+
+- CS
+
+- IS
+
+- GM
+
+- VM
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- CE
+
+- ME
+
+- EE
+
+- EP
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- SW0107888
+
+- SW0107889
+
+- SW0107890
+
+- GM0105648
+
+- GM0105649
+
+- SN0105458
+
+- CE0103788
+
+- Chaining
+
+## Slide 33
+
+- Advantages:
+
+- Simple to implement.
+
+- Hash table never fills up, we can always add more elements to the chain.
+
+- Less sensitive to the hash function or load factors.
+
+- It is mostly used when it is unknown how many and how frequently keys may be inserted or deleted.
+
+- Deletion process is easier.
+
+- Chaining
+
+## Slide 34
+
+- Disadvantages:
+
+- Cache performance of chaining is not good as keys are stored using a linked list. Open addressing provides better cache performance as everything is stored in the same table.
+
+- Wastage of Space (Some Parts of hash table are never used)
+
+- If the chain becomes long, then search time can become O(n) in the worst case.
+
+- Uses extra space for links.
+
+- Chaining
+
+## Slide 35
+
+- Exercise 5
+
+- Question: (Source: Final Exam previous semester)
+
+- Given keys as follows and a hash table of size 10. Perform hashing algorithm and resolve collisions by using chaining technique.
+
+- 15
+
+- 28
+
+- 38
+
+- 26
+
+- 48
+
+- 55
+
+- 71
+
+- 98
+
+- 33
+
+- Key
+
+## Slide 36
+
+- Collision resolving technique in Open Addressed Hash tables.
+
+- It uses the idea of applying a second hash function to key when a collision occurs.
+
+- A popular second hash function is as follows where PRIME is smaller than the table size.
+
+- Double Hashing
+
+- hash2 (key) = PRIME – (key % PRIME)
+
+## Slide 37
+
+- hash1(key) = key % tableSize
+
+- hash2(key) = PRIME – (key % PRIME)
+
+- hash1(key)
+
+- hash2(key)
+
+- (hash1(key) + i * hash2(key)) % tableSize
+
+- *we repeat by increasing i when collision occurs
+
+- Double Hashing
+
+## Slide 38
+
+- Insert the following data into a hash table using double hashing as the collision resolution strategy. Assume tableSize = 13, h1(key)= k % 13, h2(key)= 7 - (k % 7).
+
+- Keys: 19, 27, 36, 10
+
+- hash1(19) = 19 % 13 = 6
+
+- hash1(27) = 27 % 13 = 1
+
+- hash1(36) = 36 % 13 = 10
+
+- hash1(10) = 10 % 13 = 10
+
+- Collision
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 6
+
+- 7
+
+- 8
+
+- 9
+
+- 10
+
+- 11
+
+- 12
+
+- hash2(10) = 7 – (10 % 7) = 4
+
+- Collision
+
+- (hash1(10) + i * hash2(10)) % 13
+
+- = (10 + 1 * 4) % 13 = 1
+
+- (hash1(10) + i * hash2(10)) % 13
+
+- = (10 + 2 * 4) % 13 = 5
+
+- i = i + 1 = 2
+
+- 19
+
+- 27
+
+- 36
+
+- 10
+
+- Double Hashing
+
+- Hash Table
+
+## Slide 39
+
+- Exercise 6
+
+- Question: (Source: Final Exam Sem 1 2021/2022)
+
+- Referring to the figure below, series of data have been inserted into a hash table with size 10. The second hash function is H2(key) = key mod prime, where prime’s value is 3. What will be the index location for the next key with value 17?
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 6
+
+- 7
+
+- 8
+
+- 9
+
+- 52
+
+- 63
+
+- 14
+
+- 37
+
+- 8
+
+- Key
+
+- Index
+
+## Slide 40
+
+- Exercise 7
+
+- Question: (Source: Quiz previous semester)
+
+- Given the following conditions of hash table:
+
+- The size of the hash table is 13.
+
+- Open addressing and double hashing are used to resolve collisions.
+
+- The first hash function used is H1(key) = key mod table size.
+
+- The second hash function is H2(key) = 1 + key mod 11
+
+- What values will be in the hash table after the following sequence of insertions:
+
+- 79, 69, 98, 50, 72 and 14? Show your work using hash table.
+
+- 0
+
+- 1
+
+- 2
+
+- 3
+
+- 4
+
+- 5
+
+- 6
+
+- 7
+
+- 8
+
+- 9
+
+- 10
+
+- 11
+
+- 12
+
+- Key
+
+- Index
+
+## Slide 41
+
+- End of Chapter 9
+
+- That’s all for now..
+
+- See you during Final Exam!
+
+
