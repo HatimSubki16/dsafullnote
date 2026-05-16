@@ -171,8 +171,6 @@ code[class*="language-"]{font-family:'Space Mono',monospace!important}
 .bigo-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;font-family:'Space Mono',monospace}
 .bigo-dot{width:10px;height:10px;border-radius:2px}
 
-
-
 /* --- ADVANCED VISUALIZER LAYOUTS --- */
 .algo-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
 .algo-pill{background:var(--surface2);border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:7px 11px;font-size:12px;font-family:'Space Mono',monospace;cursor:pointer;transition:all .2s}
@@ -226,7 +224,6 @@ h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--mute
 </head>
 <body>
 
-<!-- SIDEBAR -->
 <nav id="sidebar">
   <div class="sidebar-header">
     <div class="logo">DSA Study Guide</div>
@@ -254,7 +251,6 @@ h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--mute
   <div style="height:24px"></div>
 </nav>
 
-<!-- MAIN -->
 <div id="main">
   <div class="topbar">
     <span class="topbar-title">📚 DSA Complete Study Notes</span>
@@ -263,7 +259,6 @@ h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--mute
 
   <div class="content">
 
-    <!-- EXAM CHECKLIST -->
     <div class="checklist-card" id="checklist">
       <h2>🎯 Final Exam Mastery Checklist</h2>
       <p>Click each topic to mark it as mastered. Progress is saved in your browser.</p>
@@ -272,7 +267,6 @@ h4{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--mute
       <div style="font-size:12px;color:var(--muted);margin-top:8px" id="progress-text">0 / 8 topics mastered</div>
     </div>
 
-    <!-- ═══════ CH 1: ADT ═══════ -->
     <div class="chapter" id="ch1">
       <div class="chapter-header">
         <span class="chapter-num">CH 01</span>
@@ -394,10 +388,7 @@ int main() {
           </div>
         </div>
       </div>
-    </div><!-- /ch1 -->
-
-    <!-- ═══════ CH 2: BIG-O ═══════ -->
-    <div class="chapter" id="ch2">
+    </div><div class="chapter" id="ch2">
       <div class="chapter-header">
         <span class="chapter-num">CH 02</span>
         <span class="chapter-title">Complexity Analysis &amp; Big-O Notation</span>
@@ -473,10 +464,7 @@ for (int i = 0; i &lt; n; i++)
     for (int j = 0; j &lt; n; j++) { /* ... */ }</code></pre>
         </div>
       </div>
-    </div><!-- /ch2 -->
-
-    <!-- ═══════ CH 3: LINKED LISTS ═══════ -->
-    <div class="chapter" id="ch3">
+    </div><div class="chapter" id="ch3">
       <div class="chapter-header">
         <span class="chapter-num">CH 03</span>
         <span class="chapter-title">Linked Lists</span>
@@ -615,9 +603,7 @@ void deleteEnd() {
 }</code></pre>
           </div>
         </div>
-      </div><!-- singly section -->
-
-      <div class="section">
+      </div><div class="section">
         <div class="section-title">Doubly Linked List</div>
         <div class="card" style="font-family:'Space Mono',monospace;font-size:12px;color:var(--accent2)">
           NULL ←[5|prev|next]↔[21|prev|next]↔[8|prev|next]→ NULL
@@ -694,7 +680,6 @@ void traverseBackward() { Node *n=tail; while(n) {cout&lt;&lt;n->no&lt;&lt;" "; 
         </div>
       </div>
 
-      <!-- LIST REVERSAL -->
       <div class="section" id="reversal-section">
         <div class="section-title"><span class="exam-badge">⭐ EXAM</span> Linked List Reversal — Iterative &amp; Recursive</div>
 
@@ -754,7 +739,6 @@ Node* reverseRecursive(Node* head) {
           <strong>Recursive:</strong> Recurse to end → on unwind, flip each link
         </div>
 
-        <!-- Interactive reversal visualizer -->
         <div class="visualizer" style="margin-top:16px">
           <div class="viz-title">🎮 Linked List Reversal — Visual Demo</div>
           <div class="viz-input-row">
@@ -766,10 +750,7 @@ Node* reverseRecursive(Node* head) {
           <div id="ll-status" style="margin-top:10px;font-size:13px;color:var(--muted);font-family:'Space Mono',monospace"></div>
         </div>
       </div>
-    </div><!-- /ch3 -->
-
-    <!-- ═══════ CH 4: STACKS ═══════ -->
-    <div class="chapter" id="ch4">
+    </div><div class="chapter" id="ch4">
       <div class="chapter-header">
         <span class="chapter-num">CH 04</span>
         <span class="chapter-title">Stacks &amp; Applications</span>
@@ -805,7 +786,6 @@ Node* reverseRecursive(Node* head) {
         </div>
       </div>
 
-      <!-- BRACKETS -->
       <div class="section" id="brackets-section">
         <div class="section-title"><span class="exam-badge">⭐ EXAM</span> Application: Balanced Bracket Checker</div>
         <div class="code-wrapper">
@@ -846,7 +826,6 @@ Node* reverseRecursive(Node* head) {
         </div>
       </div>
 
-      <!-- INFIX TO POSTFIX -->
       <div class="section" id="infix-section">
         <div class="section-title"><span class="exam-badge">⭐ EXAM</span> Application: Infix → Postfix Conversion</div>
 
@@ -875,7 +854,6 @@ Node* reverseRecursive(Node* head) {
         </div>
         <div class="mnemonic"><strong>Mnemonic: "DOPE"</strong> — Display operands, Open brackets get pushed, Pop on close, Empty stack at end</div>
 
-        <!-- INFIX VISUALIZER -->
         <div class="visualizer" style="margin-top:16px">
           <div class="viz-title">🎮 Step-by-Step Infix → Postfix Visualizer</div>
           <div class="viz-input-row">
@@ -927,10 +905,7 @@ int evalPostfix(string expr) {
 // Dry run "2 4 * 9 5 + –" → 2×4=8, 9+5=14, 8–14=–6</code></pre>
         </div>
       </div>
-    </div><!-- /ch4 -->
-
-    <!-- ═══════ CH 5: QUEUES ═══════ -->
-    <div class="chapter" id="ch5">
+    </div><div class="chapter" id="ch5">
       <div class="chapter-header">
         <span class="chapter-num">CH 05</span>
         <span class="chapter-title">Queues</span>
@@ -984,10 +959,7 @@ myQ.back();      // 'A'
 myQ.pop();       // removes 'C'</code></pre>
         </div>
       </div>
-    </div><!-- /ch5 -->
-
-    <!-- ═══════ CH 6: TREES ═══════ -->
-    <div class="chapter" id="ch6">
+    </div><div class="chapter" id="ch6">
       <div class="chapter-header">
         <span class="chapter-num">CH 06</span>
         <span class="chapter-title">Trees — Binary, BST, Expression &amp; Traversal</span>
@@ -1091,7 +1063,6 @@ void inorder(Node *node) {
         </div>
 
 
-        <!-- Enhanced tree visualizers -->
         <div class="visualizer" style="margin-top:16px">
           <div class="viz-title">Interactive Tree Traversal</div>
           <div style="margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap">
@@ -1159,10 +1130,7 @@ void inorder(Node *node) {
           </div>
         </div>
       </div>
-    </div><!-- /ch6 -->
-
-    <!-- ═══════ CH 7: GRAPHS ═══════ -->
-    <div class="chapter" id="ch7">
+    </div><div class="chapter" id="ch7">
       <div class="chapter-header">
         <span class="chapter-num">CH 07</span>
         <span class="chapter-title">Graphs — Types &amp; Representation</span>
@@ -1208,11 +1176,7 @@ void inorder(Node *node) {
           </div>
         </div>
       </div>
-    </div><!-- /ch7 -->
-
-
-    <!-- CH 8: SORTING -->
-    <div class="chapter" id="ch8">
+    </div><div class="chapter" id="ch8">
       <div class="chapter-header">
         <span class="chapter-num">CH 08</span>
         <span class="chapter-title">Sorting Algorithms</span>
@@ -1311,11 +1275,7 @@ void inorder(Node *node) {
           </div>
         </div>
       </div>
-    </div><!-- /ch8 -->
-
-
-    <!-- CH 9: SEARCHING -->
-    <div class="chapter" id="ch9">
+    </div><div class="chapter" id="ch9">
       <div class="chapter-header">
         <span class="chapter-num">CH 09</span>
         <span class="chapter-title">Searching</span>
@@ -1369,14 +1329,8 @@ void inorder(Node *node) {
           </div>
         </div>
       </div>
-    </div><!-- /ch9 -->
+    </div></div></div><button id="mobile-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
 
-  </div><!-- /content -->
-</div><!-- /main -->
-
-<button id="mobile-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
-
-<!-- PRISM JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
 
@@ -1555,45 +1509,15 @@ const priority = {'*':2,'/':2,'+':1,'-':1};
 function isOperand(t){ return /[A-Za-z0-9]/.test(t); }
 function isOperator(t){ return '+-*/'.includes(t); }
 
-function computeInfixSteps(tokens){
-  const steps=[]; let stack=[], output=[];
-  tokens.forEach(token=>{
-    const snapshot=(a,s,o)=>({action:a,stack:[...s],output:[...o],token});
-    if(isOperand(token)){
-      output.push(token);
-      steps.push(snapshot(`Operand → output '${token}'`,stack,output));
-    } else if(token==='('){
-      stack.push(token);
-      steps.push(snapshot(`'(' → PUSH`,stack,output));
-    } else if(token===')'){
-      while(stack.length&&stack[stack.length-1]!=='('){
-        output.push(stack.pop());
-      }
-      stack.pop(); // discard '('
-      steps.push(snapshot(`')' → POP until '(', discard '('`,stack,output));
-    } else if(isOperator(token)){
-      let action=`Operator '${token}'`;
-      while(stack.length&&stack[stack.length-1]!=='('&&isOperator(stack[stack.length-1])&&priority[stack[stack.length-1]]>=priority[token]){
-        output.push(stack.pop());
-      }
-      stack.push(token);
-      steps.push(snapshot(action+` → stack`,stack,output));
-    }
-  });
-  while(stack.length){ output.push(stack.pop()); steps.push(snapshot(`End — POP remaining`,stack.length?[...stack]:[],output)); stack.pop&&null; }
-  // fix: redo properly
-  return computeInfixStepsClean(tokens);
-}
-
 function computeInfixStepsClean(tokens){
   const steps=[]; let stack=[], output=[];
-  tokens.forEach(token=>{
+  tokens.forEach((token, i) => {
     if(isOperand(token)){
       output.push(token);
-      steps.push({token,action:`Operand → OUTPUT '${token}'`,stack:[...stack],output:[...output]});
+      steps.push({token, tokenIndex: i, action:`Operand → OUTPUT '${token}'`,stack:[...stack],output:[...output]});
     } else if(token==='('){
       stack.push(token);
-      steps.push({token,action:`'(' → PUSH onto stack`,stack:[...stack],output:[...output]});
+      steps.push({token, tokenIndex: i, action:`'(' → PUSH onto stack`,stack:[...stack],output:[...output]});
     } else if(token===')'){
       let popped=[];
       while(stack.length&&stack[stack.length-1]!=='('){
@@ -1601,7 +1525,7 @@ function computeInfixStepsClean(tokens){
         output.push(popped[popped.length-1]);
       }
       stack.pop(); // discard '('
-      steps.push({token,action:`')' → POP+OUTPUT ${popped.join(',')}, discard '('`,stack:[...stack],output:[...output]});
+      steps.push({token, tokenIndex: i, action:`')' → POP+OUTPUT ${popped.join(',')}, discard '('`,stack:[...stack],output:[...output]});
     } else if(isOperator(token)){
       let popped=[];
       while(stack.length&&stack[stack.length-1]!=='('&&isOperator(stack[stack.length-1])&&priority[stack[stack.length-1]]>=priority[token]){
@@ -1610,12 +1534,12 @@ function computeInfixStepsClean(tokens){
       }
       stack.push(token);
       const popStr = popped.length?` (popped ${popped.join(',')})`:` (stack empty or lower priority)`;
-      steps.push({token,action:`Operator '${token}'${popStr} → PUSH`,stack:[...stack],output:[...output]});
+      steps.push({token, tokenIndex: i, action:`Operator '${token}'${popStr} → PUSH`,stack:[...stack],output:[...output]});
     }
   });
   while(stack.length>0){
     output.push(stack.pop());
-    steps.push({token:'(end)',action:`End → POP remaining`,stack:[...stack],output:[...output]});
+    steps.push({token:'(end)', tokenIndex: tokens.length, action:`End → POP remaining`,stack:[...stack],output:[...output]});
   }
   return steps;
 }
@@ -1654,11 +1578,16 @@ function stepInfix(){
 }
 function renderInfixTokens(tokens, currentStep){
   const container = document.getElementById('infix-tokens');
-  const currentToken = currentStep>=0?infixSteps[currentStep].token:'';
-  container.innerHTML = tokens.map((t,i)=>{
-    const doneBefore = infixSteps.slice(0,currentStep).some(s=>s.token===t&&infixSteps.indexOf(s)<currentStep);
-    const isCurrent = (currentStep>=0&&infixSteps[currentStep]&&infixSteps[currentStep].token===t&&i===infixSteps.filter((s,j)=>j<=currentStep&&s.token===t).length-1+tokens.slice(0,i).filter(tt=>tt===t).length-tokens.slice(0,currentStep+1).filter(tt=>tt===t).length);
-    return `<span class="token-chip">${t}</span>`;
+  let activeIndex = -1;
+  if (currentStep >= 0 && infixSteps[currentStep] && infixSteps[currentStep].tokenIndex !== undefined) {
+      activeIndex = infixSteps[currentStep].tokenIndex;
+  }
+  container.innerHTML = tokens.map((t,i) => {
+    let cls = 'token-chip';
+    if (i === activeIndex) cls += ' active';
+    else if (activeIndex !== -1 && i < activeIndex) cls += ' done';
+    else if (activeIndex === tokens.length) cls += ' done'; // (end) state covers all
+    return `<span class="${cls}">${t}</span>`;
   }).join('');
 }
 function resetInfix(){ infixSteps=[]; infixCurrent=-1; document.getElementById('infix-tokens').innerHTML=''; document.getElementById('infix-stack').innerHTML=''; document.getElementById('infix-output').textContent=''; document.getElementById('infix-steps-body').innerHTML=''; document.getElementById('infix-step-counter').textContent=''; }
@@ -1678,8 +1607,11 @@ function buildLLHTML(arr, prev, curr){
   }).join('');
 }
 function animateReversal(){
-  const vals = document.getElementById('ll-input').value.trim().split(/\s+/).map(Number).filter(v=>!isNaN(v));
+  const valText = document.getElementById('ll-input').value.trim();
+  if(!valText) return; // Prevent empty array execution
+  const vals = valText.split(/\s+/).map(Number).filter(v=>!isNaN(v));
   if(!vals.length) return;
+  
   llArray = [...vals]; llSteps=[]; llCurrent=0;
   // Simulate reversal
   let prev=-1,curr=0;
@@ -1705,151 +1637,6 @@ function playLLSteps(i){
 }
 function resetReversal(){ document.getElementById('ll-visual').innerHTML=''; document.getElementById('ll-status').textContent=''; }
 
-// ─────────────────────────────────────────────
-// TREE TRAVERSAL VISUALIZER
-// ─────────────────────────────────────────────
-const treeData = {
-  val:'A', id:0, left:{
-    val:'B', id:1, left:{val:'D',id:3,left:null,right:null}, right:{val:'E',id:4,left:null,right:null}
-  }, right:{
-    val:'C', id:2, left:{val:'F',id:5,left:null,right:null}, right:{val:'G',id:6,left:null,right:null}
-  }
-};
-const nodePositions = {0:[250,30],1:[125,90],2:[375,90],3:[65,155],4:[185,155],5:[315,155],6:[435,155]};
-const edges = [[0,1],[0,2],[1,3],[1,4],[2,5],[2,6]];
-
-function drawTree(visitedSet=new Set()){
-  const svg = document.getElementById('treeSvg');
-  svg.innerHTML='';
-  edges.forEach(([a,b])=>{
-    const [x1,y1]=nodePositions[a],[x2,y2]=nodePositions[b];
-    svg.innerHTML+=`<line x1="${x1}" y1="${y1+18}" x2="${x2}" y2="${y2-18}" class="tree-edge"/>`;
-  });
-  Object.entries(nodePositions).forEach(([id,[x,y]])=>{
-    const node = findNode(treeData,parseInt(id));
-    if(!node) return;
-    const v = visitedSet.has(parseInt(id));
-    svg.innerHTML+=`<circle cx="${x}" cy="${y}" r="18" class="node-circle${v?' visited':''}"/>
-    <text x="${x}" y="${y}" class="node-text${v?' visited':''}">${node.val}</text>`;
-  });
-}
-function findNode(tree,id){ if(!tree)return null; if(tree.id===id)return tree; return findNode(tree.left,id)||findNode(tree.right,id); }
-
-function getOrder(type){
-  const result=[];
-  function preorder(n){if(!n)return;result.push(n.id);preorder(n.left);preorder(n.right);}
-  function inorder(n){if(!n)return;inorder(n.left);result.push(n.id);inorder(n.right);}
-  function postorder(n){if(!n)return;postorder(n.left);postorder(n.right);result.push(n.id);}
-  function bfs(root){const q=[root];while(q.length){const n=q.shift();if(!n)continue;result.push(n.id);q.push(n.left,n.right);}}
-  if(type==='preorder')preorder(treeData);
-  else if(type==='inorder')inorder(treeData);
-  else if(type==='postorder')postorder(treeData);
-  else bfs(treeData);
-  return result;
-}
-
-function runTraversal(type){
-  resetTreeViz();
-  const order=getOrder(type);
-  const names={preorder:'Preorder (VLR): ',inorder:'Inorder (LVR): ',postorder:'Postorder (LRV): ',bfs:'BFS Level Order: '};
-  let visited=new Set(), delay=0;
-  order.forEach((id,i)=>{
-    setTimeout(()=>{
-      visited.add(id); drawTree(visited);
-      const labels=Object.values({preorder:'ABDECRFG',inorder:'DBEA...'})||[];
-      const node=findNode(treeData,id);
-      document.getElementById('traversal-output').textContent=names[type]+order.map(i=>findNode(treeData,i).val).slice(0,visited.size).join(' → ');
-    }, i*500);
-  });
-}
-function resetTreeViz(){ drawTree(); document.getElementById('traversal-output').textContent=''; }
-drawTree();
-
-// ─────────────────────────────────────────────
-// INSERTION SORT VISUALIZER
-// ─────────────────────────────────────────────
-let isArr=[], isStep=0, isSteps=[];
-function buildISSteps(arr){
-  const steps=[], a=[...arr];
-  steps.push({arr:[...a],sorted:0,key:-1,comparing:-1,info:'Original array'});
-  for(let i=1;i<a.length;i++){
-    const key=a[i];
-    steps.push({arr:[...a],sorted:i-1,key:i,comparing:i,info:`Key = ${key} (index ${i}). Compare with sorted region.`});
-    let j=i-1;
-    while(j>=0&&a[j]>key){
-      a[j+1]=a[j];
-      steps.push({arr:[...a],sorted:i-1,key:j,comparing:j,info:`${a[j+1]} > ${key}, shift right`});
-      j--;
-    }
-    a[j+1]=key;
-    steps.push({arr:[...a],sorted:i,key:j+1,comparing:-1,info:`Insert ${key} at index ${j+1}. Sorted: [${a.slice(0,i+1).join(', ')}]`});
-  }
-  steps.push({arr:[...a],sorted:a.length-1,key:-1,comparing:-1,info:`✅ Sorted! [${a.join(', ')}]`});
-  return steps;
-}
-function renderISBars(step){
-  const {arr,sorted,key,comparing} = step;
-  const max = Math.max(...arr);
-  const container = document.getElementById('is-bars');
-  container.innerHTML = arr.map((v,i)=>{
-    let cls='sort-bar';
-    if(i<=sorted&&i!==key) cls+=' sorted';
-    if(i===comparing||i===key) cls+=' comparing';
-    return `<div class="${cls}" style="height:${Math.max(8,v/max*110)}px" title="${v}"></div>`;
-  }).join('');
-  document.getElementById('is-info').textContent=`Step ${isStep}/${isSteps.length-1}: ${step.info}`;
-}
-function startInsertionSort(){
-  const vals=document.getElementById('is-input').value.trim().split(/\s+/).map(Number).filter(v=>!isNaN(v));
-  if(!vals.length)return;
-  isArr=[...vals]; isStep=0; isSteps=buildISSteps(vals);
-  renderISBars(isSteps[0]);
-}
-function stepInsertionSort(){
-  if(!isSteps.length){startInsertionSort();return;}
-  if(isStep<isSteps.length-1){ isStep++; renderISBars(isSteps[isStep]); }
-}
-function runInsertionSortFull(){
-  if(!isSteps.length){startInsertionSort();return;}
-  function run(i){ if(i>=isSteps.length)return; isStep=i; renderISBars(isSteps[i]); setTimeout(()=>run(i+1),200); }
-  run(isStep);
-}
-
-// ─────────────────────────────────────────────
-// BINARY SEARCH VISUALIZER
-// ─────────────────────────────────────────────
-function startBinarySearch(){
-  const arr=document.getElementById('bs-arr').value.trim().split(/\s+/).map(Number).filter(v=>!isNaN(v));
-  const key=parseInt(document.getElementById('bs-key').value);
-  const steps=[];
-  let low=0,hi=arr.length-1,found=-1;
-  while(low<=hi){
-    const mid=Math.floor((low+hi)/2);
-    steps.push({low,hi,mid,state:arr[mid]===key?'found':arr[mid]<key?'right':'left'});
-    if(arr[mid]===key){found=mid;break;}
-    else if(key<arr[mid]) hi=mid-1;
-    else low=mid+1;
-  }
-  if(found===-1) steps.push({low,hi,mid:-1,state:'notfound'});
-  playBSSteps(arr,key,steps,0);
-}
-function playBSSteps(arr,key,steps,si){
-  if(si>=steps.length)return;
-  const s=steps[si];
-  const display=document.getElementById('bs-display');
-  display.innerHTML=arr.map((v,i)=>{
-    let bg='var(--surface2)',color='var(--muted)',border='var(--border)';
-    if(s.state==='found'&&i===s.mid){bg='rgba(34,197,94,.15)';color='#22c55e';border='rgba(34,197,94,.5)';}
-    else if(i===s.mid){bg='rgba(249,168,37,.12)';color='var(--accent2)';border='rgba(249,168,37,.4)';}
-    else if(i>=s.low&&i<=s.hi){bg='rgba(0,229,197,.06)';color='var(--text)';border='rgba(0,229,197,.25)';}
-    return `<div style="padding:8px 12px;border-radius:6px;background:${bg};color:${color};border:1px solid ${border};font-family:'Space Mono',monospace;font-size:13px">${v}</div>`;
-  }).join('');
-  const msg={found:`✅ Found ${key} at index ${s.mid}`,notfound:`❌ ${key} not found`,left:`${arr[s.mid]} > ${key} → search LEFT (hi=${s.mid-1})`,right:`${arr[s.mid]} < ${key} → search RIGHT (low=${s.mid+1})`};
-  document.getElementById('bs-info').textContent=`Step ${si+1}: mid=${s.mid>=0?s.mid:'—'} arr[mid]=${s.mid>=0?arr[s.mid]:'—'} — ${msg[s.state]}`;
-  if(s.state!=='found'&&s.state!=='notfound') setTimeout(()=>playBSSteps(arr,key,steps,si+1),900);
-}
-
-
 // -------------------------------------------------------------
 // ADVANCED VISUALIZERS ADDED FROM THE PDF NOTES
 // -------------------------------------------------------------
@@ -1859,7 +1646,9 @@ function vizEscape(value){
 function parseVizNumbers(id){
   const el = document.getElementById(id);
   if(!el) return [];
-  return el.value.trim().split(/\s+/).map(Number).filter(v => Number.isFinite(v)).slice(0, 14);
+  const textVal = el.value.trim();
+  if(!textVal) return []; // Explicitly catch empty strings
+  return textVal.split(/\s+/).map(Number).filter(v => Number.isFinite(v)).slice(0, 14);
 }
 function setAlgoButtonActive(selector, attr, value){
   document.querySelectorAll(selector).forEach(btn => btn.classList.toggle('active', btn.getAttribute(attr) === value));
@@ -2429,7 +2218,6 @@ function initAdvancedVisualizers(){
   resetSearchViz();
 }
 initAdvancedVisualizers();
-
 </script>
 </body>
 </html>
